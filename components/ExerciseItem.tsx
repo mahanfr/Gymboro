@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Text, TextInput, View } from "react-native";
+import { Button, Text, TextInput, View, StyleSheet} from "react-native";
 import ExerciseSetItem from "./ExerciseSetItem";
 import { ThemedText } from "./ThemedText";
 
@@ -22,9 +22,12 @@ export default function ExerciseItem(props: IProps) {
     const [sets, setSets] = useState<ISet[]>(props.exercise.sets?  props.exercise.sets : [defaultSet])
     const [title, setTitle] = useState<string>(props.exercise.title);
     const [titleOnFocus, setTitleOnFocus] = useState<boolean>(false);
+    const destroySet = (id : number) => {
+       setSets([...sets.slice(0, id)]) 
+    }
     return (
       <View>
-        <View style={{ flexDirection: "row", alignItems: "center" , justifyContent: "space-between"}}>
+        <View style={styles.flex}>
         {titleOnFocus? 
           <TextInput 
             style={{backgroundColor: "#fff", padding: 4, outline: 'none'}}
@@ -43,9 +46,24 @@ export default function ExerciseItem(props: IProps) {
         </View>
         <View >
             {sets.map((item, index) => 
-                <ExerciseSetItem key={index} id={index} rep={item.rep} weight={item.weight} />
+                <ExerciseSetItem
+                  key={index}
+                  id={index}
+                  rep={item.rep}
+                  weight={item.weight}
+                  onDestroy={destroySet}
+                />
             )}
         </View>
       </View>
     );
 }
+
+const styles = StyleSheet.create({
+    flex: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        marginVertical: 10,
+    },
+})

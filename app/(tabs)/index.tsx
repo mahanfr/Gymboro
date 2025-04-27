@@ -15,7 +15,7 @@ export default function HomeScreen() {
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={<></>}>
-      <ThemedView style={styles.stepContainer}>
+      <ThemedView style={styles.card}>
         {exercises.map((ex, index) => 
           <ExerciseItem key={index} exercise={ex}/>       
         )}
@@ -31,16 +31,10 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
-  stepContainer: {
+  card: {
     gap: 8,
+    backgroundColor: "#1e1e1e",
+    padding: 18,
     marginBottom: 8,
-  },
-  exerciseValueInput: {
-    minHeight: 35,
-    backgroundColor: "#fff",
-    paddingInline: 2,
-    width: 50,
-    textAlign: "center",
-    outline: 'none'
   },
 });
