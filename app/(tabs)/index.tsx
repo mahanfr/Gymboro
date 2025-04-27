@@ -5,20 +5,27 @@ import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
 import { Button } from 'react-native';
 import { useState } from 'react';
-import ExerciseItem from '@/components/ExerciseItem';
+import ExerciseItem, { IExercise, ISet } from '@/components/ExerciseItem';
 
 export default function HomeScreen() {
-  const [exerciseValue, setExerciseValue] = useState<number>(0);
+  const defaultSet: ISet = {rep: 5, weight: 10}
+  const defaultExercise : IExercise = {title: "New Exercise", sets: [defaultSet]}
+  const [exercises, setExercises] = useState<IExercise[]>([defaultExercise]);
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={<></>}>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText>
-          Edit to see changes.
-        </ThemedText>
-        <ExerciseItem title={'Bench Press'} />
-        </ThemedView>
+        {exercises.map((ex, index) => 
+          <ExerciseItem key={index} exercise={ex}/>       
+        )}
+        <Button 
+          title='Add Exercise' 
+          onPress={() => {
+            setExercises((prevExercises) => [...prevExercises, defaultExercise])
+          }} 
+        />
+      </ThemedView>
     </ParallaxScrollView>
   );
 }

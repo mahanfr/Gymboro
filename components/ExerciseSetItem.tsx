@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "react-native";
 import { Alert, StyleSheet, TextInput, View, Text } from 'react-native';
+import { ThemedText } from "./ThemedText";
 
 interface IProps {
     id: number,
@@ -13,9 +14,9 @@ export default function ExerciseSetItem(props: IProps) {
    const [weight, setWeight] = useState<number>(props.weight)
    return (
     <View style={{flexDirection:'row', alignItems:'center', justifyContent: "space-between"}}>
-        <Text>Set {props.id + 1}</Text>
+        <ThemedText>Set {props.id + 1}</ThemedText>
         <View style={{flexDirection:'row', alignItems:'center'}}>
-          <Text>Rep: </Text>
+          <ThemedText>Rep: </ThemedText>
           <Button title='+' color="#000" onPress={() => setRep(rep + 1)}/>
           <TextInput style={[styles.exerciseValueInput, {outline:'none'}]} 
             value={rep.toString()} 
@@ -23,7 +24,7 @@ export default function ExerciseSetItem(props: IProps) {
           <Button title='-' color="#000" onPress={() => setRep(rep - 1)}/>
         </View>
         <View style={{flexDirection:'row', alignItems:'center'}}>
-          <Text>Weight: </Text>
+          <ThemedText>Weight: </ThemedText>
           <Button title='+' color="#000" onPress={() => setWeight(weight + 1)}/>
           <TextInput style={[styles.exerciseValueInput, {outline:'none'}]} 
             value={weight.toString() + 'kg'} 
