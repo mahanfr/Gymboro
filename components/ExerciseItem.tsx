@@ -50,7 +50,7 @@ export default function ExerciseItem(props: IProps) {
       <View style={styles.flex}>
         <ThemedText style={styles.x}>set</ThemedText>
         <ThemedText style={styles.header}>Last</ThemedText>
-        <ThemedText style={styles.header}>rape</ThemedText>
+        <ThemedText style={styles.header}>rep</ThemedText>
         <ThemedText style={styles.header}>weight</ThemedText>
         <ThemedText style={styles.x}></ThemedText>
       </View>

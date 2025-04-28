@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-native";
-import { Alert, StyleSheet, TextInput, View, Text } from "react-native";
+import { StyleSheet, TextInput, View, Text } from "react-native";
 import { ThemedText } from "./ThemedText";
 
 interface IProps {
