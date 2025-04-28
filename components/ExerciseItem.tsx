@@ -25,8 +25,20 @@ export default function ExerciseItem(props: IProps) {
   const [title, setTitle] = useState<string>(props.exercise.title);
   const [titleOnFocus, setTitleOnFocus] = useState<boolean>(false);
   const destroySet = (id: number) => {
-    setSets([...sets.slice(0, id)]);
+    let newSets = [...sets]
+    newSets.splice(id, 1)
+    setSets(newSets);
   };
+
+  const updateSet = (id: number, rep: number, weight: number) => {
+    if (rep < 1) { rep = 1 }
+    else if (weight < 1) { weight = 1 }
+    else {
+      let newSet = [...sets]
+      newSet[id] = {rep: rep, weight: weight}
+      setSets(newSet)
+    }
+  }
   return (
     <View style={styles.container}>
       <View style={styles.flex}>
@@ -57,10 +69,11 @@ export default function ExerciseItem(props: IProps) {
       <View>
         {sets.map((item, index) => (
           <ExerciseSetItem
-            key={index}
+            key={Math.random()}
             id={index}
             rep={item.rep}
             weight={item.weight}
+            onUpdate={updateSet}
             onDestroy={destroySet}
           />
         ))}
