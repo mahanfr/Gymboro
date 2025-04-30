@@ -43,7 +43,7 @@ export default function ExerciseItem(props: IProps) {
   }
   return (
     <View style={styles.container}>
-      <View style={styles.flex}>
+      <View style={[styles.flex, {paddingHorizontal: 10}]}>
         {titleOnFocus ? (
           <TextInput
             style={{ backgroundColor: "#fff", padding: 4, outline: "none" }}
@@ -54,12 +54,24 @@ export default function ExerciseItem(props: IProps) {
         ) : (
           <ThemedText onPress={() => setTitleOnFocus(true)}>{title}</ThemedText>
         )}
-        <Button
-          title="Add Set"
-          onPress={() => {
-            setSets((prevSets) => [...prevSets, defaultSet]);
-          }}
-        />
+        <View style={[styles.flex, {gap: 7}]}>
+          <Button
+            title="Remove"
+            color={"#b93e51"}
+            onPress={() => {}}
+          />
+          <Button
+            title="Save"
+            color={"#3eb951"}
+            onPress={() => {}}
+          />
+          <Button
+            title="Add Set"
+            onPress={() => {
+              setSets((prevSets) => [...prevSets, defaultSet]);
+            }}
+          />
+        </View>
       </View>
       <View style={styles.flex}>
         <ThemedText style={styles.x}>set</ThemedText>
@@ -75,6 +87,8 @@ export default function ExerciseItem(props: IProps) {
             id={index}
             rep={item.rep}
             weight={item.weight}
+            lastRep={5}
+            lastWeight={10}
             onUpdate={updateSet}
             onDestroy={destroySet}
           />
