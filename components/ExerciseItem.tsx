@@ -2,16 +2,7 @@ import { useState } from "react";
 import { Button, Text, TextInput, View, StyleSheet } from "react-native";
 import ExerciseSetItem from "./ExerciseSetItem";
 import { ThemedText } from "./ThemedText";
-
-export interface ISet {
-  rep: number;
-  weight: number;
-}
-
-export interface IExercise {
-  title: string;
-  sets?: ISet[];
-}
+import { IExercise, ISet } from "@/data/Exercise";
 
 interface IProps {
   exercise: IExercise;

@@ -2,7 +2,8 @@ import { StyleSheet } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { Button, ScrollView } from "react-native";
 import { useState } from "react";
-import ExerciseItem, { IExercise, ISet } from "@/components/ExerciseItem";
+import ExerciseItem from "@/components/ExerciseItem";
+import { IExercise, ISet } from "@/data/Exercise";
 
 export default function HomeScreen() {
   const defaultSet: ISet = { rep: 5, weight: 10 };
