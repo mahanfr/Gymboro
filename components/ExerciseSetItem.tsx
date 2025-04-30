@@ -73,8 +73,19 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
   },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    color: "white",
+    textAlign: "center",
+  },
   x: {
     width: "9.5%",
     textAlign: "center",
+  },
+  flex: {
+    width: "27%",
+    display: "flex",
+    alignItems: "center",
   },
 });
