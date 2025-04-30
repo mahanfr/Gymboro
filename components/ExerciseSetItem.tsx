@@ -33,27 +33,39 @@ export default function ExerciseSetItem(props: IProps) {
       <ThemedText style={styles.flexChild}>
         <Text>10x20kg</Text>
       </ThemedText>
-      <View style={styles.flexChild}>
-        <Button title="+" color="#000" onPress={() => setRep(rep + 1)} />
-        <TextInput
-          style={[styles.exerciseValueInput, { outline: "none" }]}
-          value={rep.toString()}
-          onChangeText={(text: string) => {
-            setRep(Number.parseInt(text));
-          }}
-        />
-        <Button title="-" color="#000" onPress={() => setRep(rep - 1)} />
+      <View style={styles.flex}>
+        <View style={styles.button}>
+          <Button title="-" color="#000" onPress={() => setRep(rep - 1)} />
+          <TextInput
+            style={[styles.exerciseValueInput, { outline: "none" }]}
+            value={rep.toString()}
+            onChangeText={(text: string) => {
+              setRep(Number.parseInt(text));
+            }}
+          />
+          <Button title="+" color="#000" onPress={() => setRep(rep + 1)} />
+        </View>
       </View>
-      <View style={styles.flexChild}>
-        <Button title="+" color="#000" onPress={() => setWeight(weight + 1)} />
-        <TextInput
-          style={[styles.exerciseValueInput, { outline: "none" }]}
-          value={weight.toString() + "kg"}
-          onChangeText={(text: string) => {
-            setWeight(Number.parseInt(text));
-          }}
-        />
-        <Button title="-" color="#000" onPress={() => setWeight(weight - 1)} />
+      <View style={styles.flex}>
+        <View style={styles.button}>
+          <Button
+            title="-"
+            color="#000"
+            onPress={() => setWeight(weight - 1)}
+          />
+          <TextInput
+            style={[styles.exerciseValueInput, { outline: "none" }]}
+            value={weight.toString() + " KG"}
+            onChangeText={(text: string) => {
+              setWeight(Number.parseInt(text));
+            }}
+          />
+          <Button
+            title="+"
+            color="#000"
+            onPress={() => setWeight(weight + 1)}
+          />
+        </View>
       </View>
       <View style={styles.x}>
         <Button title="X" color="#000" onPress={() => alert("pp")} />
@@ -78,8 +90,19 @@ const styles = StyleSheet.create({
     color: "white",
     textAlign: "center",
   },
+  button: {
+    flexDirection: "row",
+    alignItems: "center",
+    color: "white",
+    textAlign: "center",
+  },
   x: {
     width: "9.5%",
     textAlign: "center",
+  },
+  flex: {
+    width: "27%",
+    display: "flex",
+    alignItems: "center",
   },
 });

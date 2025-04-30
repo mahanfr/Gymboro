@@ -19,11 +19,13 @@ interface IProps {
 
 export default function ExerciseItem(props: IProps) {
   const defaultSet: ISet = { rep: 5, weight: 10 };
+
+  const [title, setTitle] = useState<string>(props.exercise.title);
+  const [titleOnFocus, setTitleOnFocus] = useState<boolean>(false);
   const [sets, setSets] = useState<ISet[]>(
     props.exercise.sets ? props.exercise.sets : [defaultSet]
   );
-  const [title, setTitle] = useState<string>(props.exercise.title);
-  const [titleOnFocus, setTitleOnFocus] = useState<boolean>(false);
+
   const destroySet = (id: number) => {
     setSets([...sets.slice(0, id)]);
   };
