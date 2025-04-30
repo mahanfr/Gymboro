@@ -13,6 +13,9 @@ const MAPPING = {
   'paperplane.fill': 'send',
   'chevron.left.forwardslash.chevron.right': 'code',
   'chevron.right': 'chevron-right',
+  'gearshape.fill': 'settings',
+  'target': 'fastfood',
+  'calendar': 'calendar-month',
 } as Partial<
   Record<
     import('expo-symbols').SymbolViewProps['name'],
