@@ -28,27 +28,31 @@ export default function ExerciseSetItem(props: IProps) {
       <ThemedText style={styles.flexChild}>
         <Text>10x20kg</Text>
       </ThemedText>
-      <View style={styles.flexChild}>
-        <Button title="+" color="#000" onPress={() => props.onUpdate(props.id, rep + 1, weight)} />
-        <TextInput
-          style={[styles.exerciseValueInput, { outline: "none" }]}
-          value={props.rep.toString()}
-          onChangeText={(text: string) => {
-            props.onUpdate(props.id, Number.parseInt(text), weight)
-          }}
-        />
-        <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep - 1, weight)} />
+      <View style={styles.flex}>
+        <View style={styles.button}>
+          <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep - 1, weight)} />
+          <TextInput
+            style={[styles.exerciseValueInput, { outline: "none" }]}
+            value={props.rep.toString()}
+            onChangeText={(text: string) => {
+              props.onUpdate(props.id, Number.parseInt(text), weight)
+            }}
+          />
+          <Button title="+" color="#000" onPress={() => props.onUpdate(props.id, rep + 1, weight)} />
+        </View>
       </View>
-      <View style={styles.flexChild}>
-        <Button title="+" color="#000" onPress={() => props.onUpdate(props.id, rep , weight + 1)} />
-        <TextInput
-          style={[styles.exerciseValueInput, { outline: "none" }]}
-          value={weight.toString() + "kg"}
-          onChangeText={(text: string) => {
-            props.onUpdate(props.id, rep , Number.parseInt(text))
-          }}
-        />
-        <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep , weight - 1)} />
+      <View style={styles.flex}>
+        <View style={styles.button}>
+          <Button title="+" color="#000" onPress={() => props.onUpdate(props.id, rep , weight + 1)} />
+          <TextInput
+            style={[styles.exerciseValueInput, { outline: "none" }]}
+            value={weight.toString() + "kg"}
+            onChangeText={(text: string) => {
+              props.onUpdate(props.id, rep , Number.parseInt(text))
+            }}
+          />
+          <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep , weight - 1)} />
+        </View>
       </View>
       <View style={styles.x}>
         <Button title="X" color="#000" onPress={() => props.onDestroy(props.id)} />
