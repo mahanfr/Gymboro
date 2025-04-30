@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "react-native";
-import { Alert, StyleSheet, TextInput, View, Text } from "react-native";
+import { StyleSheet, TextInput, View, Text } from "react-native";
 import { ThemedText } from "./ThemedText";
 
 interface IProps {
@@ -8,17 +8,12 @@ interface IProps {
   rep: number;
   weight: number;
   onDestroy: (id: number) => void;
+  onUpdate: (id: number, rep: number, weight: number) => void;
 }
 
 export default function ExerciseSetItem(props: IProps) {
-  const [rep, setRep] = useState<number>(props.rep);
-  const [weight, setWeight] = useState<number>(props.weight);
-
-  useEffect(() => {
-    if (rep <= 0 || weight <= 0) {
-      props.onDestroy(props.id);
-    }
-  }, [rep, weight]);
+  var rep = props.rep;
+  var weight = props.weight;
 
   return (
     <View
@@ -33,42 +28,30 @@ export default function ExerciseSetItem(props: IProps) {
       <ThemedText style={styles.flexChild}>
         <Text>10x20kg</Text>
       </ThemedText>
-      <View style={styles.flex}>
-        <View style={styles.button}>
-          <Button title="-" color="#000" onPress={() => setRep(rep - 1)} />
-          <TextInput
-            style={[styles.exerciseValueInput, { outline: "none" }]}
-            value={rep.toString()}
-            onChangeText={(text: string) => {
-              setRep(Number.parseInt(text));
-            }}
-          />
-          <Button title="+" color="#000" onPress={() => setRep(rep + 1)} />
-        </View>
+      <View style={styles.flexChild}>
+        <Button title="+" color="#000" onPress={() => props.onUpdate(props.id, rep + 1, weight)} />
+        <TextInput
+          style={[styles.exerciseValueInput, { outline: "none" }]}
+          value={props.rep.toString()}
+          onChangeText={(text: string) => {
+            props.onUpdate(props.id, Number.parseInt(text), weight)
+          }}
+        />
+        <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep - 1, weight)} />
       </View>
-      <View style={styles.flex}>
-        <View style={styles.button}>
-          <Button
-            title="-"
-            color="#000"
-            onPress={() => setWeight(weight - 1)}
-          />
-          <TextInput
-            style={[styles.exerciseValueInput, { outline: "none" }]}
-            value={weight.toString() + " KG"}
-            onChangeText={(text: string) => {
-              setWeight(Number.parseInt(text));
-            }}
-          />
-          <Button
-            title="+"
-            color="#000"
-            onPress={() => setWeight(weight + 1)}
-          />
-        </View>
+      <View style={styles.flexChild}>
+        <Button title="+" color="#000" onPress={() => props.onUpdate(props.id, rep , weight + 1)} />
+        <TextInput
+          style={[styles.exerciseValueInput, { outline: "none" }]}
+          value={weight.toString() + "kg"}
+          onChangeText={(text: string) => {
+            props.onUpdate(props.id, rep , Number.parseInt(text))
+          }}
+        />
+        <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep , weight - 1)} />
       </View>
       <View style={styles.x}>
-        <Button title="X" color="#000" onPress={() => alert("pp")} />
+        <Button title="X" color="#000" onPress={() => props.onDestroy(props.id)} />
       </View>
     </View>
   );

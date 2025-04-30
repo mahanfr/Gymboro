@@ -27,8 +27,20 @@ export default function ExerciseItem(props: IProps) {
   );
 
   const destroySet = (id: number) => {
-    setSets([...sets.slice(0, id)]);
+    let newSets = [...sets]
+    newSets.splice(id, 1)
+    setSets(newSets);
   };
+
+  const updateSet = (id: number, rep: number, weight: number) => {
+    if (rep < 1) { rep = 1 }
+    else if (weight < 1) { weight = 1 }
+    else {
+      let newSet = [...sets]
+      newSet[id] = {rep: rep, weight: weight}
+      setSets(newSet)
+    }
+  }
   return (
     <View style={styles.container}>
       <View style={styles.flex}>
@@ -52,17 +64,18 @@ export default function ExerciseItem(props: IProps) {
       <View style={styles.flex}>
         <ThemedText style={styles.x}>set</ThemedText>
         <ThemedText style={styles.header}>Last</ThemedText>
-        <ThemedText style={styles.header}>rape</ThemedText>
+        <ThemedText style={styles.header}>rep</ThemedText>
         <ThemedText style={styles.header}>weight</ThemedText>
         <ThemedText style={styles.x}></ThemedText>
       </View>
       <View>
         {sets.map((item, index) => (
           <ExerciseSetItem
-            key={index}
+            key={Math.random()}
             id={index}
             rep={item.rep}
             weight={item.weight}
+            onUpdate={updateSet}
             onDestroy={destroySet}
           />
         ))}
