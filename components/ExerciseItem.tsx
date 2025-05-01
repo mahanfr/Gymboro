@@ -27,26 +27,34 @@ export default function ExerciseItem(props: IProps) {
   );
 
   const destroySet = (id: number) => {
-    let newSets = [...sets]
-    newSets.splice(id, 1)
+    let newSets = [...sets];
+    newSets.splice(id, 1);
     setSets(newSets);
   };
 
   const updateSet = (id: number, rep: number, weight: number) => {
-    if (rep < 1) { rep = 1 }
-    else if (weight < 1) { weight = 1 }
-    else {
-      let newSet = [...sets]
-      newSet[id] = {rep: rep, weight: weight}
-      setSets(newSet)
+    if (rep < 1 || !rep) {
+      let newSet = [...sets];
+      newSet[id] = { rep: 1, weight: weight };
+      setSets(newSet);
+      // rep = 1;
+    } else if (weight < 1 || !weight) {
+      let newSet = [...sets];
+      newSet[id] = { rep: rep, weight: 1 };
+      setSets(newSet);
+      // weight = 1;
+    } else {
+      let newSet = [...sets];
+      newSet[id] = { rep: rep, weight: weight };
+      setSets(newSet);
     }
-  }
+  };
   return (
     <View style={styles.container}>
       <View style={styles.flex}>
         {titleOnFocus ? (
           <TextInput
-            style={{ backgroundColor: "#fff", padding: 4, outline: "none" }}
+            style={styles.textInput}
             onChangeText={(val: string) => setTitle(val)}
             onBlur={() => setTitleOnFocus(false)}
             value={title}
@@ -65,13 +73,13 @@ export default function ExerciseItem(props: IProps) {
         <ThemedText style={styles.x}>set</ThemedText>
         <ThemedText style={styles.header}>Last</ThemedText>
         <ThemedText style={styles.header}>rep</ThemedText>
-        <ThemedText style={styles.header}>weight</ThemedText>
+        <ThemedText style={styles.header}>weight (KG)</ThemedText>
         <ThemedText style={styles.x}></ThemedText>
       </View>
       <View>
         {sets.map((item, index) => (
           <ExerciseSetItem
-            key={Math.random()}
+            key={index} //bruh
             id={index}
             rep={item.rep}
             weight={item.weight}
@@ -92,11 +100,11 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   header: {
-    width: "27%",
+    width: "29%",
     textAlign: "center",
   },
   x: {
-    width: "9.5%",
+    width: "6.5%",
     textAlign: "center",
   },
   container: {
@@ -108,5 +116,9 @@ const styles = StyleSheet.create({
     padding: 5,
     paddingBottom: 10,
     backgroundColor: "#353535",
+  },
+  textInput: {
+    backgroundColor: "white",
+    padding: 4,
   },
 });
