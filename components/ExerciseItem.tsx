@@ -2,16 +2,7 @@ import { useState } from "react";
 import { Button, Text, TextInput, View, StyleSheet } from "react-native";
 import ExerciseSetItem from "./ExerciseSetItem";
 import { ThemedText } from "./ThemedText";
-
-export interface ISet {
-  rep: number;
-  weight: number;
-}
-
-export interface IExercise {
-  title: string;
-  sets?: ISet[];
-}
+import { IExercise, ISet } from "@/data/Exercise";
 
 interface IProps {
   exercise: IExercise;
@@ -51,7 +42,7 @@ export default function ExerciseItem(props: IProps) {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.flex}>
+      <View style={[styles.flex, {paddingHorizontal: 10}]}>
         {titleOnFocus ? (
           <TextInput
             style={styles.textInput}
@@ -62,12 +53,24 @@ export default function ExerciseItem(props: IProps) {
         ) : (
           <ThemedText onPress={() => setTitleOnFocus(true)}>{title}</ThemedText>
         )}
-        <Button
-          title="Add Set"
-          onPress={() => {
-            setSets((prevSets) => [...prevSets, defaultSet]);
-          }}
-        />
+        <View style={[styles.flex, {gap: 7}]}>
+          <Button
+            title="Remove"
+            color={"#b93e51"}
+            onPress={() => {}}
+          />
+          <Button
+            title="Save"
+            color={"#3eb951"}
+            onPress={() => {}}
+          />
+          <Button
+            title="Add Set"
+            onPress={() => {
+              setSets((prevSets) => [...prevSets, defaultSet]);
+            }}
+          />
+        </View>
       </View>
       <View style={styles.flex}>
         <ThemedText style={styles.x}>set</ThemedText>
@@ -83,6 +86,8 @@ export default function ExerciseItem(props: IProps) {
             id={index}
             rep={item.rep}
             weight={item.weight}
+            lastRep={5}
+            lastWeight={10}
             onUpdate={updateSet}
             onDestroy={destroySet}
           />

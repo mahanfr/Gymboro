@@ -7,6 +7,8 @@ interface IProps {
   id: number;
   rep: number;
   weight: number;
+  lastWeight?: number;
+  lastRep?: number;
   onDestroy: (id: number) => void;
   onUpdate: (id: number, rep: number, weight: number) => void;
 }
@@ -18,7 +20,7 @@ export default function ExerciseSetItem(props: IProps) {
     <View style={styles.container}>
       <ThemedText style={styles.x}>{props.id + 1}</ThemedText>
       <ThemedText style={styles.flexChild}>
-        <Text>10x20kg</Text>
+        <Text>{props.lastRep}x{props.lastWeight}Kg</Text>
       </ThemedText>
       <View style={styles.button}>
         <Button
