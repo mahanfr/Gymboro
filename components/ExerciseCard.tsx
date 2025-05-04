@@ -2,56 +2,39 @@ import { View, Image, Text, ViewStyle, StyleProp, StyleSheet } from "react-nativ
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 
+let image_path = "../assets/images/groups_icon/";
 type ExerciseCardProps = {
   isLightMode?: boolean;
   isEnglish?: boolean;
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
+  titleEnglish?: string;
+  titleFarsi?: string;
+  detailEnglish?: string;
+  detailFarsi?: string;
+  image?: string;
 };
-const ExerciseCard: React.FC<ExerciseCardProps> = ({ isLightMode = true, isEnglish = true, style }) => {
+const ExerciseCard: React.FC<ExerciseCardProps> = ({
+  isLightMode = true,
+  isEnglish = true,
+  style,
+  titleEnglish,
+  titleFarsi,
+  detailFarsi,
+  detailEnglish,
+  image = "404.png",
+}) => {
+  let image_url = image_path + image;
   return (
     <View>
-      <ThemedView style={[styles.flexContainer]} lightMode={false}>
+      <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={isLightMode}>
         <View>
-          <ThemedText type="subtitle" lightMode={false}>
-            something
+          <ThemedText type="subtitle" lightMode={isLightMode}>
+            {isEnglish ? titleEnglish : titleFarsi}
           </ThemedText>
-          <ThemedText type="detail">something22222</ThemedText>
+          <ThemedText type="detail">{isEnglish ? detailEnglish : detailFarsi}</ThemedText>
         </View>
-        <ThemedView lightMode={true} /* the lightmode is opposit here*/ style={[styles.imageContainer]}>
-          <Image style={styles.image} source={require("../assets/images/groups_icon/shoulders_icon.png")} />
-        </ThemedView>
-      </ThemedView>
-      <ThemedView style={[styles.flexContainer]} lightMode={false}>
-        <View>
-          <ThemedText type="subtitle" lightMode={false}>
-            something
-          </ThemedText>
-          <ThemedText type="detail">something22222</ThemedText>
-        </View>
-        <ThemedView lightMode={true} /* the lightmode is opposit here*/ style={[styles.imageContainer]}>
-          <Image style={styles.image} source={require("../assets/images/groups_icon/shoulders_icon.png")} />
-        </ThemedView>
-      </ThemedView>
-      <ThemedView style={[styles.flexContainer]} lightMode={true}>
-        <View>
-          <ThemedText type="subtitle" lightMode={true} /* the lightmode is opposit here*/>
-            something
-          </ThemedText>
-          <ThemedText type="detail">something22222</ThemedText>
-        </View>
-        <ThemedView style={[styles.imageContainer]}>
-          <Image style={styles.image} source={require("../assets/images/groups_icon/shoulders_icon.png")} />
-        </ThemedView>
-      </ThemedView>
-      <ThemedView style={[styles.flexContainer]} lightMode={true}>
-        <View>
-          <ThemedText type="subtitle" lightMode={true} /* the lightmode is opposit here*/>
-            something
-          </ThemedText>
-          <ThemedText type="detail">something22222</ThemedText>
-        </View>
-        <ThemedView style={[styles.imageContainer]}>
-          <Image style={styles.image} source={require("../assets/images/groups_icon/shoulders_icon.png")} />
+        <ThemedView lightMode={!isLightMode} style={[styles.imageContainer]}>
+          <Image style={styles.image} source={require(image_url)} />
         </ThemedView>
       </ThemedView>
     </View>
@@ -59,10 +42,21 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({ isLightMode = true, isEngli
 };
 
 const styles = StyleSheet.create({
-  flexContainer: {
+  flexContainerEnglish: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    width: "100%",
+    borderBottomWidth: 1,
+  },
+  flexContainerFarsi: {
+    display: "flex",
+    flexDirection: "row-reverse",
+    justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 10,
     paddingVertical: 5,
     width: "100%",

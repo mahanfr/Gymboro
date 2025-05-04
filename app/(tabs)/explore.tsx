@@ -6,6 +6,21 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import WorkoutDetails from "../[workoutDetails]";
 
+let list: {
+  titleEnglish: string;
+  titleFarsi: string;
+  detailEnglish: string;
+  detailFarsi: string;
+  image: string;
+}[] = [
+  {
+    titleEnglish: "Shoulders",
+    titleFarsi: "سر شانه ها",
+    detailEnglish: "the thing near neck",
+    detailFarsi: "هر سه عضله ی سر شانه ها",
+    image: "404.png", //only give the name of the image
+  },
+];
 export default function TabTwoScreen() {
   return (
     <ScrollView>
@@ -14,8 +29,19 @@ export default function TabTwoScreen() {
           <View style={[styles.flex]}>
             {/* <MuscleBack style={styles.size} />
           <MuscleFront style={styles.size} /> */}
-            {/* <ExerciseCard /> */}
-            <WorkoutDetails />
+            {list.map((item) => (
+              <ExerciseCard
+                key={0}
+                isLightMode={false}
+                isEnglish={false}
+                titleEnglish={item.titleEnglish}
+                titleFarsi={item.titleFarsi}
+                detailEnglish={item.detailEnglish}
+                detailFarsi={item.detailFarsi}
+                // image={item.image}
+              />
+            ))}
+            {/* <WorkoutDetails /> */}
           </View>
         </SafeAreaView>
       </SafeAreaProvider>
@@ -37,7 +63,4 @@ const styles = StyleSheet.create({
     width: "50%",
     height: Dimensions.get("window").height,
   },
-  // marginTop: {
-  //   marginTop: 30,
-  // },
 });
