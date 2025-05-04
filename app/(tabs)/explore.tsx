@@ -5,20 +5,20 @@ import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import WorkoutDetails from "../[workoutDetails]";
-
+let image_path = "../assets/images/groups_icon/";
 let list: {
   titleEnglish: string;
   titleFarsi: string;
   detailEnglish: string;
   detailFarsi: string;
-  image: string;
+  image: NodeJS.Require;
 }[] = [
   {
     titleEnglish: "Shoulders",
     titleFarsi: "سر شانه ها",
     detailEnglish: "the thing near neck",
     detailFarsi: "هر سه عضله ی سر شانه ها",
-    image: "404.png", //only give the name of the image
+    image: require("../../assets/images/groups_icon/shoulders_icon.png"), //No you can't make it string or use (+) oporation
   },
 ];
 export default function TabTwoScreen() {
@@ -38,7 +38,7 @@ export default function TabTwoScreen() {
                 titleFarsi={item.titleFarsi}
                 detailEnglish={item.detailEnglish}
                 detailFarsi={item.detailFarsi}
-                // image={item.image}
+                image={item.image}
               />
             ))}
             {/* <WorkoutDetails /> */}

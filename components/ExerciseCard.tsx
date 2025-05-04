@@ -11,7 +11,7 @@ type ExerciseCardProps = {
   titleFarsi?: string;
   detailEnglish?: string;
   detailFarsi?: string;
-  image?: string;
+  image: NodeJS.Require;
 };
 const ExerciseCard: React.FC<ExerciseCardProps> = ({
   isLightMode = true,
@@ -21,11 +21,10 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
   titleFarsi,
   detailFarsi,
   detailEnglish,
-  image = "404.png",
+  image = require("../assets/images/groups_icon/404.png"),
 }) => {
-  let image_url = image_path + image;
   return (
-    <View>
+    <View style={style}>
       <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={isLightMode}>
         <View>
           <ThemedText type="subtitle" lightMode={isLightMode}>
@@ -34,7 +33,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
           <ThemedText type="detail">{isEnglish ? detailEnglish : detailFarsi}</ThemedText>
         </View>
         <ThemedView lightMode={!isLightMode} style={[styles.imageContainer]}>
-          <Image style={styles.image} source={require(image_url)} />
+          <Image style={styles.image} source={image} />
         </ThemedView>
       </ThemedView>
     </View>

@@ -50,9 +50,7 @@ export default function ExerciseSetItem(props: IProps) {
       </View>
       <View style={styles.x}>
         <Text onPress={() => props.onDestroy(props.id)}>
-          <Svg data-slot="icon" fill="none" strokeWidth="1.5" stroke="white" width={30} height={30} viewBox="0 0 24 24" aria-hidden={true}>
-            <Path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"></Path>
-          </Svg>
+          <X />
         </Text>
       </View>
     </View>
@@ -102,3 +100,10 @@ const styles = StyleSheet.create({
     paddingBottom: 2,
   },
 });
+const X = () => {
+  return (
+    <Svg data-slot="icon" fill="none" stroke-width="1.5" stroke="white" width={30} height={30} viewBox="0 0 24 24" aria-hidden={true}>
+      <Path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></Path>
+    </Svg>
+  );
+};
