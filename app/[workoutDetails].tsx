@@ -30,7 +30,7 @@ const WorkoutDetails: React.FC<WorkoutDetailsProps> = (id) => {
   };
 
   return (
-    <ThemedView>
+    <ThemedView lightMode={false}>
       <View style={styles.wrapper}>
         <ScrollView
           ref={scrollRef}
@@ -51,14 +51,16 @@ const WorkoutDetails: React.FC<WorkoutDetailsProps> = (id) => {
         <View style={styles.dotsContainer}>
           <Svg height={20} width={images.length * (6 + 10)}>
             {images.map((_, index) => (
-              <Circle key={index} cx={index * 15 + 10} cy="10" r="5" fill={index === currentIndex ? "#000" : "#ccc"} />
+              <Circle key={index} cx={index * 15 + 10} cy="10" r="5" fill={index === currentIndex ? "#0F0" : "#ccc"} />
             ))}
           </Svg>
         </View>
       </View>
-      <ThemedView>
-        <ThemedText type="subtitle">Bench Press</ThemedText>
-        <ThemedText>other stuff how to do it and stuff</ThemedText>
+      <ThemedView lightMode={false}>
+        <ThemedText lightMode={false} type="subtitle">
+          Bench Press
+        </ThemedText>
+        <ThemedText lightMode={false}>other stuff how to do it and stuff</ThemedText>
       </ThemedView>
     </ThemedView>
   );
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
   wrapper: {
     height: height * 0.5,
     position: "relative",
-    marginBottom: 5,
+    marginBottom: 15,
   },
   scrollContent: {
     alignItems: "center",
@@ -86,7 +88,7 @@ const styles = StyleSheet.create({
   },
   dotsContainer: {
     position: "absolute",
-    bottom: -10,
+    bottom: -15,
     display: "flex",
     width: "100%",
     flexDirection: "row",
