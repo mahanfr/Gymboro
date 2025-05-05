@@ -1,32 +1,59 @@
-import { StyleSheet, Image, Platform, Dimensions } from "react-native";
+import { StyleSheet, Image, Platform, Dimensions, View, ScrollView } from "react-native";
 
-import { ThemedView } from "@/components/ThemedView";
 import MuscleBack from "@/components/MuscleBack";
 import MuscleFront from "@/components/MuscleFront";
-import {
-  SafeAreaFrameContext,
-  SafeAreaProvider,
-  SafeAreaView,
-} from "react-native-safe-area-context";
+import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
+import ExerciseCard from "../../components/ExerciseCard";
+import WorkoutDetails from "../[workoutDetails]";
 
+let list: {
+  titleEnglish: string;
+  titleFarsi: string;
+  detailEnglish: string;
+  detailFarsi: string;
+  image: NodeJS.Require;
+}[] = [
+  {
+    titleEnglish: "Shoulders",
+    titleFarsi: "سر شانه ها",
+    detailEnglish: "All three shoulder muscles",
+    detailFarsi: "هر سه عضله ی سر شانه ها",
+    image: require("../../assets/images/groups_icon/shoulders_icon.png"), //No you can't make it string or use (+) oporation
+  },
+];
 export default function TabTwoScreen() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView>
-        <ThemedView style={styles.flex}>
-          <MuscleBack style={styles.size} />
-          <MuscleFront style={styles.size} />
-        </ThemedView>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <ScrollView>
+      <SafeAreaProvider>
+        <SafeAreaView>
+          <View style={[styles.flex]}>
+            {/* <MuscleBack style={styles.size} />
+          <MuscleFront style={styles.size} /> */}
+            {/* {list.map((item, index) => (
+              <ExerciseCard
+                key={index}
+                isLightMode={false}
+                isEnglish={false}
+                titleEnglish={item.titleEnglish}
+                titleFarsi={item.titleFarsi}
+                detailEnglish={item.detailEnglish}
+                detailFarsi={item.detailFarsi}
+                image={item.image}
+              />
+            ))} */}
+            <WorkoutDetails id={0} />
+          </View>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   flex: {
-    display: "flex",
-    width: "100%",
-    flexDirection: "row",
+    // display: "flex",
+    // width: "100%",
+    // flexDirection: "row",
   },
   border: {
     borderColor: "white",
