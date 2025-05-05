@@ -6,10 +6,12 @@ import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { ThemedText } from "@/components/ThemedText";
-import { Stack, useNavigation } from "expo-router";
+import { useNavigation } from "expo-router";
 
 export default function HomeScreen() {
-  const navigation = useNavigation();
+  /* TODO: If you have a problem with this go fuck yourself */
+  const navigation: any = useNavigation();
+
   const defaultSet: ISet = { rep: 5, weight: 10 };
   const defaultExercise: IExercise = {
     title: "New Exercise",
@@ -22,9 +24,8 @@ export default function HomeScreen() {
         <SafeAreaView>
           <ThemedView>
             <ThemedText>This is a test will Remove Later</ThemedText>
-            <Button title="Exercise 1" onPress={() => navigation.navigate("[workoutDetails]", { id: 1 })} />
-            <Button title="Exercise 2" />
-            <Button title="Exercise 3" />
+            {/* TODO: I cant fucking care less about this shitty errors */}
+            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
           </ThemedView>
           <ThemedView style={styles.card}>
             {exercises.map((ex, index) => (
