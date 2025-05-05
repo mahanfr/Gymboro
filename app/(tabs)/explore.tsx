@@ -5,7 +5,7 @@ import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import WorkoutDetails from "../[workoutDetails]";
-let image_path = "../assets/images/groups_icon/";
+
 let list: {
   titleEnglish: string;
   titleFarsi: string;
@@ -16,7 +16,7 @@ let list: {
   {
     titleEnglish: "Shoulders",
     titleFarsi: "سر شانه ها",
-    detailEnglish: "the thing near neck",
+    detailEnglish: "All three shoulder muscles",
     detailFarsi: "هر سه عضله ی سر شانه ها",
     image: require("../../assets/images/groups_icon/shoulders_icon.png"), //No you can't make it string or use (+) oporation
   },
@@ -29,9 +29,9 @@ export default function TabTwoScreen() {
           <View style={[styles.flex]}>
             {/* <MuscleBack style={styles.size} />
           <MuscleFront style={styles.size} /> */}
-            {list.map((item) => (
+            {/* {list.map((item, index) => (
               <ExerciseCard
-                key={0}
+                key={index}
                 isLightMode={false}
                 isEnglish={false}
                 titleEnglish={item.titleEnglish}
@@ -40,8 +40,8 @@ export default function TabTwoScreen() {
                 detailFarsi={item.detailFarsi}
                 image={item.image}
               />
-            ))}
-            {/* <WorkoutDetails /> */}
+            ))} */}
+            <WorkoutDetails id={0} />
           </View>
         </SafeAreaView>
       </SafeAreaProvider>

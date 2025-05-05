@@ -102,8 +102,8 @@ const styles = StyleSheet.create({
 });
 const X = () => {
   return (
-    <Svg data-slot="icon" fill="none" stroke-width="1.5" stroke="white" width={30} height={30} viewBox="0 0 24 24" aria-hidden={true}>
-      <Path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></Path>
+    <Svg fill="none" strokeWidth="1.5" stroke="white" width={30} height={30} viewBox="0 0 24 24" aria-hidden={true}>
+      <Path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"></Path>
     </Svg>
   );
 };
