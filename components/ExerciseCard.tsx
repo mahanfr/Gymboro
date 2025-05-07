@@ -2,7 +2,6 @@ import { View, Image, Text, ViewStyle, StyleProp, StyleSheet } from "react-nativ
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 
-let image_path = "../assets/images/groups_icon/";
 type ExerciseCardProps = {
   isLightMode?: boolean;
   isEnglish?: boolean;

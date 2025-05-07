@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   dotsContainer: {
     position: "absolute",
-    bottom: -15,
+    bottom: -18,
     display: "flex",
     width: "100%",
     flexDirection: "row",
