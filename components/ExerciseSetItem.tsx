@@ -20,9 +20,9 @@ export default function ExerciseSetItem(props: IProps) {
     <View style={styles.container}>
       <ThemedText style={styles.x}>{props.id + 1}</ThemedText>
       <ThemedText style={styles.flexChild}>
-        <Text>
+        <ThemedText>
           {props.lastRep}x{props.lastWeight}Kg
-        </Text>
+        </ThemedText>
       </ThemedText>
       <View style={styles.button}>
         <Button title="-" color="#000" onPress={() => props.onUpdate(props.id, rep - 1, weight)} />

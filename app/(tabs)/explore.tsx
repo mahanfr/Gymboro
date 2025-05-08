@@ -4,7 +4,6 @@ import MuscleBack from "@/components/MuscleBack";
 import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
-import WorkoutDetails from "../[workoutDetails]";
 
 let list: {
   titleEnglish: string;
@@ -41,7 +40,7 @@ export default function TabTwoScreen() {
                 image={item.image}
               />
             ))} */}
-            <WorkoutDetails id={0} />
+            {/*<WorkoutDetails id={0} /> */}
           </View>
         </SafeAreaView>
       </SafeAreaProvider>

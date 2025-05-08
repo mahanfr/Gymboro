@@ -4,8 +4,14 @@ import { Button, ScrollView } from "react-native";
 import { useState } from "react";
 import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import { ThemedText } from "@/components/ThemedText";
+import { useNavigation } from "expo-router";
 
 export default function HomeScreen() {
+  /* TODO: If you have a problem with this go fuck yourself */
+  const navigation: any = useNavigation();
+
   const defaultSet: ISet = { rep: 5, weight: 10 };
   const defaultExercise: IExercise = {
     title: "New Exercise",
@@ -14,20 +20,26 @@ export default function HomeScreen() {
   const [exercises, setExercises] = useState<IExercise[]>([defaultExercise]);
   return (
     <ScrollView>
-      <ThemedView style={styles.card}>
-        {exercises.map((ex, index) => (
-          <ExerciseItem key={index} exercise={ex} />
-        ))}
-        <Button
-          title="Add Exercise"
-          onPress={() => {
-            setExercises((prevExercises) => [
-              ...prevExercises,
-              defaultExercise,
-            ]);
-          }}
-        />
-      </ThemedView>
+      <SafeAreaProvider>
+        <SafeAreaView>
+          <ThemedView>
+            <ThemedText>This is a test will Remove Later</ThemedText>
+            {/* TODO: I cant fucking care less about this shitty errors */}
+            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
+          </ThemedView>
+          <ThemedView style={styles.card}>
+            {exercises.map((ex, index) => (
+              <ExerciseItem key={index} exercise={ex} />
+            ))}
+            <Button
+              title="Add Exercise"
+              onPress={() => {
+                setExercises((prevExercises) => [...prevExercises, defaultExercise]);
+              }}
+            />
+          </ThemedView>
+        </SafeAreaView>
+      </SafeAreaProvider>
     </ScrollView>
   );
 }
