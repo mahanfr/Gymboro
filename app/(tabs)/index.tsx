@@ -25,7 +25,10 @@ export default function HomeScreen() {
           <ThemedView>
             <ThemedText>This is a test will Remove Later</ThemedText>
             {/* TODO: I cant fucking care less about this shitty errors */}
-            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
+            <Button
+              title="Bench Press"
+              onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
+            />
           </ThemedView>
           <ThemedView style={styles.card}>
             {exercises.map((ex, index) => (
@@ -34,7 +37,10 @@ export default function HomeScreen() {
             <Button
               title="Add Exercise"
               onPress={() => {
-                setExercises((prevExercises) => [...prevExercises, defaultExercise]);
+                setExercises((prevExercises) => [
+                  ...prevExercises,
+                  defaultExercise,
+                ]);
               }}
             />
           </ThemedView>
