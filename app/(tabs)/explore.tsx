@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   size: {
-    width: "50%",
-    height: Dimensions.get("window").height,
+    // width: "50%",
+    height: Dimensions.get("window").height - 50,
   },
 });
