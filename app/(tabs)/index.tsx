@@ -9,7 +9,7 @@ import { ThemedText } from "@/components/ThemedText";
 import { useNavigation } from "expo-router";
 
 export default function HomeScreen() {
-  /* TODO: If you have a problem with this go fuck yourself */
+  /* TODO: bro you've gone full schizo  */
   const navigation: any = useNavigation();
 
   const defaultSet: ISet = { rep: 5, weight: 10 };
@@ -25,10 +25,7 @@ export default function HomeScreen() {
           <ThemedView>
             <ThemedText>This is a test will Remove Later</ThemedText>
             {/* TODO: what error? you tweakin */}
-            <Button
-              title="Bench Press"
-              onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
-            />
+            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
           </ThemedView>
           <ThemedView style={styles.card}>
             {exercises.map((ex, index) => (
@@ -37,10 +34,7 @@ export default function HomeScreen() {
             <Button
               title="Add Exercise"
               onPress={() => {
-                setExercises((prevExercises) => [
-                  ...prevExercises,
-                  defaultExercise,
-                ]);
+                setExercises((prevExercises) => [...prevExercises, defaultExercise]);
               }}
             />
           </ThemedView>
@@ -53,7 +47,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   card: {
     gap: 8,
-    backgroundColor: "#1e1e1e",
+    // backgroundColor: "#1e1e1e",
     padding: 4,
     marginBottom: 8,
   },

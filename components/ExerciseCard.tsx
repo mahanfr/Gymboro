@@ -1,9 +1,10 @@
 import { View, Image, Text, ViewStyle, StyleProp, StyleSheet } from "react-native";
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
-
+import { useContext } from "react";
+import { Settings_createcontext } from "../app/_layout";
 type ExerciseCardProps = {
-  isLightMode?: boolean;
+  // isLightMode?: boolean;
   isEnglish?: boolean;
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
   titleEnglish?: string;
@@ -13,7 +14,7 @@ type ExerciseCardProps = {
   image: NodeJS.Require;
 };
 const ExerciseCard: React.FC<ExerciseCardProps> = ({
-  isLightMode = true,
+  // isLightMode = true,
   isEnglish = true,
   style,
   titleEnglish,
@@ -22,16 +23,21 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
   detailEnglish,
   image = require("../assets/images/groups_icon/404.png"),
 }) => {
+  const context = useContext(Settings_createcontext);
+
+  const { settings, setSettings } = context ?? { settings: { lightMode: true }, setSettings: () => {} };
+  let lightMode = settings.lightMode;
+
   return (
     <View style={style}>
-      <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={isLightMode}>
+      <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={lightMode}>
         <View>
-          <ThemedText type="subtitle" lightMode={isLightMode}>
+          <ThemedText type="subtitle" lightMode={lightMode}>
             {isEnglish ? titleEnglish : titleFarsi}
           </ThemedText>
           <ThemedText type="detail">{isEnglish ? detailEnglish : detailFarsi}</ThemedText>
         </View>
-        <ThemedView lightMode={!isLightMode} style={[styles.imageContainer]}>
+        <ThemedView lightMode={!lightMode} style={[styles.imageContainer]}>
           <Image style={styles.image} source={image} />
         </ThemedView>
       </ThemedView>

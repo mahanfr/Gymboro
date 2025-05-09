@@ -3,6 +3,8 @@ import { Button, Text, TextInput, View, StyleSheet } from "react-native";
 import ExerciseSetItem from "./ExerciseSetItem";
 import { ThemedText } from "./ThemedText";
 import { IExercise, ISet } from "@/data/Exercise";
+import { ThemedView } from "./ThemedView";
+import Svg, { Path } from "react-native-svg";
 
 interface IProps {
   exercise: IExercise;
@@ -13,9 +15,7 @@ export default function ExerciseItem(props: IProps) {
 
   const [title, setTitle] = useState<string>(props.exercise.title);
   const [titleOnFocus, setTitleOnFocus] = useState<boolean>(false);
-  const [sets, setSets] = useState<ISet[]>(
-    props.exercise.sets ? props.exercise.sets : [defaultSet]
-  );
+  const [sets, setSets] = useState<ISet[]>(props.exercise.sets ? props.exercise.sets : [defaultSet]);
 
   const destroySet = (id: number) => {
     let newSets = [...sets];
@@ -41,35 +41,17 @@ export default function ExerciseItem(props: IProps) {
     }
   };
   return (
-    <View style={styles.container}>
-      <View style={[styles.flex, {paddingHorizontal: 10}]}>
+    <ThemedView style={styles.container}>
+      <View style={[styles.flex, { paddingHorizontal: 10 }]}>
         {titleOnFocus ? (
-          <TextInput
-            style={styles.textInput}
-            onChangeText={(val: string) => setTitle(val)}
-            onBlur={() => setTitleOnFocus(false)}
-            value={title}
-          />
+          <TextInput style={styles.textInput} onChangeText={(val: string) => setTitle(val)} onBlur={() => setTitleOnFocus(false)} value={title} />
         ) : (
           <ThemedText onPress={() => setTitleOnFocus(true)}>{title}</ThemedText>
         )}
-        <View style={[styles.flex, {gap: 7}]}>
-          <Button
-            title="Remove"
-            color={"#b93e51"}
-            onPress={() => {}}
-          />
-          <Button
-            title="Save"
-            color={"#3eb951"}
-            onPress={() => {}}
-          />
-          <Button
-            title="Add Set"
-            onPress={() => {
-              setSets((prevSets) => [...prevSets, defaultSet]);
-            }}
-          />
+        <View style={[styles.flex, { gap: 7 }]}>
+          {/* <Button title="Remove" color={"#b93e51"} onPress={() => {}} /> */}
+          <X color={"#b93e51"} />
+          {/* <Button title="Save" color={"#3eb951"} onPress={() => {}} /> */}
         </View>
       </View>
       <View style={styles.flex}>
@@ -92,8 +74,22 @@ export default function ExerciseItem(props: IProps) {
             onDestroy={destroySet}
           />
         ))}
+        {/* <Button
+          title="Add Set"
+          onPress={() => {
+            setSets((prevSets) => [...prevSets, defaultSet]);
+          }}
+        /> */}
+        <View style={[styles.flex, { justifyContent: "flex-end" }]}>
+          <PlusCircleIcon
+            onPress={() => {
+              setSets((prevSets) => [...prevSets, defaultSet]);
+            }}
+            color={"#3eb951"}
+          />
+        </View>
       </View>
-    </View>
+    </ThemedView>
   );
 }
 
@@ -116,14 +112,28 @@ const styles = StyleSheet.create({
     // borderColor: "white",
     borderStyle: "solid",
     borderWidth: 1,
-    borderBottomColor: "white",
+    // borderBottomColor: "white",
     marginBottom: 20,
     padding: 5,
     paddingBottom: 10,
-    backgroundColor: "#353535",
+    // backgroundColor: "#353535",
   },
   textInput: {
     backgroundColor: "white",
     padding: 4,
   },
 });
+const X = ({ color }: { color: string }) => {
+  return (
+    <Svg fill="none" strokeWidth="1.5" width={30} height={30} viewBox="0 0 24 24" aria-hidden={true}>
+      <Path stroke={color} strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"></Path>
+    </Svg>
+  );
+};
+const PlusCircleIcon = ({ color, onPress }: { color: string; onPress: () => void }) => {
+  return (
+    <Svg onPress={onPress} fill="none" strokeWidth={1.5} width={32} height={32} stroke="currentColor" viewBox="0 0 24 24" aria-hidden={true}>
+      <Path stroke={color} strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+    </Svg>
+  );
+};

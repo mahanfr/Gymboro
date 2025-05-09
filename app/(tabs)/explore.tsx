@@ -18,6 +18,7 @@ let list: {
     detailEnglish: "All three shoulder muscles",
     detailFarsi: "هر سه عضله ی سر شانه ها",
     image: require("../../assets/images/groups_icon/shoulders_icon.png"), //No you can't make it string or use (+) oporation
+    //TODO please fix the newly added pictures... have to merge some muscles like chest and also rename them properly tnx
   },
 ];
 export default function TabTwoScreen() {
@@ -28,10 +29,10 @@ export default function TabTwoScreen() {
           <View style={[styles.flex]}>
             {/* <MuscleBack style={styles.size} />
           <MuscleFront style={styles.size} /> */}
-            {/* {list.map((item, index) => (
+            {list.map((item, index) => (
               <ExerciseCard
                 key={index}
-                isLightMode={false}
+                // isLightMode={false}
                 isEnglish={false}
                 titleEnglish={item.titleEnglish}
                 titleFarsi={item.titleFarsi}
@@ -39,7 +40,7 @@ export default function TabTwoScreen() {
                 detailFarsi={item.detailFarsi}
                 image={item.image}
               />
-            ))} */}
+            ))}
             {/*<WorkoutDetails id={0} /> */}
           </View>
         </SafeAreaView>

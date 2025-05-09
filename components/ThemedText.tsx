@@ -1,6 +1,8 @@
 import { Text, type TextProps, StyleSheet } from "react-native";
 import { Colors } from "../constants/Colors";
 import { useThemeColor } from "@/hooks/useThemeColor";
+import { useContext } from "react";
+import { Settings_createcontext } from "../app/_layout";
 
 // export type ThemedTextProps = TextProps & {
 //   lightColor?: string;
@@ -11,8 +13,16 @@ export type ThemedTextProps = TextProps & {
   lightMode?: boolean;
   type?: "default" | "title" | "defaultSemiBold" | "subtitle" | "link" | "detail";
 };
-export function ThemedText({ style, lightMode = true, type = "default", ...rest }: ThemedTextProps) {
+export function ThemedText({ style, type = "default", ...rest }: ThemedTextProps) {
   // const color = useThemeColor({ light: lightColor, dark: darkColor },);
+
+  const context = useContext(Settings_createcontext);
+  if (!context) {
+    throw new Error("ThemedView must be used within a SettingsContext.Provider");
+  }
+  const { settings, setSettings } = context;
+  let lightMode = settings.lightMode;
+
   const color = lightMode ? Colors.light.color : Colors.dark.color;
 
   return (
