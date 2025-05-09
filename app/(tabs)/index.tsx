@@ -24,7 +24,7 @@ export default function HomeScreen() {
         <SafeAreaView>
           <ThemedView>
             <ThemedText>This is a test will Remove Later</ThemedText>
-            {/* TODO: I cant fucking care less about this shitty errors */}
+            {/* TODO: what error? you tweakin */}
             <Button
               title="Bench Press"
               onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}

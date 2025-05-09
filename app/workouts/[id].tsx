@@ -28,7 +28,7 @@ const images = [
 const WorkoutDetails = () => {
   const navigation = useNavigation();
   const { id } = useLocalSearchParams();
-  const workout = WORKOUTS[id];
+  const workout = WORKOUTS[Number(id)];
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<ScrollView>(null);
 
@@ -66,7 +66,13 @@ const WorkoutDetails = () => {
         <View style={styles.dotsContainer}>
           <Svg height={20} width={images.length * (6 + 10)}>
             {images.map((_, index) => (
-              <Circle key={index} cx={index * 15 + 10} cy="10" r="5" fill={index === currentIndex ? "#0F0" : "#ccc"} />
+              <Circle
+                key={index}
+                cx={index * 15 + 10}
+                cy="10"
+                r="5"
+                fill={index === currentIndex ? "#0F0" : "#ccc"}
+              />
             ))}
           </Svg>
         </View>
@@ -75,7 +81,9 @@ const WorkoutDetails = () => {
         <ThemedText lightMode={false} type="subtitle">
           Bench Press
         </ThemedText>
-        <ThemedText lightMode={false}>other stuff how to do it and stuff</ThemedText>
+        <ThemedText lightMode={false}>
+          other stuff how to do it and stuff
+        </ThemedText>
       </ThemedView>
     </ThemedView>
   );
