@@ -1,9 +1,10 @@
-import { StyleSheet, Image, Platform, Dimensions, View, ScrollView } from "react-native";
+import { StyleSheet, Image, Platform, Dimensions, View, ScrollView, Text, Button } from "react-native";
 
 import MuscleBack from "@/components/MuscleBack";
 import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
+import { useNavigation } from "expo-router";
 
 let list: {
   titleEnglish: string;
@@ -22,10 +23,14 @@ let list: {
   },
 ];
 export default function TabTwoScreen() {
+  const navigation: any = useNavigation();
   return (
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
+          <View>
+            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
+          </View>
           <View style={[styles.flex]}>
             {/* <MuscleBack style={styles.size} />
           <MuscleFront style={styles.size} /> */}

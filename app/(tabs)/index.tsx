@@ -9,7 +9,6 @@ import { ThemedText } from "@/components/ThemedText";
 import { useNavigation } from "expo-router";
 
 export default function HomeScreen() {
-  /* TODO: bro you've gone full schizo  */
   const navigation: any = useNavigation();
 
   const defaultSet: ISet = { rep: 5, weight: 10 };
@@ -22,11 +21,6 @@ export default function HomeScreen() {
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
-          <ThemedView>
-            <ThemedText>This is a test will Remove Later</ThemedText>
-            {/* TODO: what error? you tweakin */}
-            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
-          </ThemedView>
           <ThemedView style={styles.card}>
             {exercises.map((ex, index) => (
               <ExerciseItem key={index} exercise={ex} />

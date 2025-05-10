@@ -36,7 +36,7 @@ export default function TabLayout() {
         headerShown: true,
         headerTitle: pathNameToTitle(),
         headerLeft: () => {
-          if (pathName === "/" || pathName === "/diet" || pathName === "/explore") {
+          if (pathName === "/") {
             return null;
           }
           return (

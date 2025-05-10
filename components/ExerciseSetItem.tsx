@@ -4,6 +4,7 @@ import Svg, { Path } from "react-native-svg";
 import { useContext } from "react";
 import { Settings_createcontext } from "../app/_layout";
 import { Colors } from "../constants/Colors";
+import { MaterialIcons } from "@expo/vector-icons";
 
 interface IProps {
   id: number;
@@ -51,14 +52,15 @@ export default function ExerciseSetItem(props: IProps) {
         <Text
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
-            fontSize: 30,
+            fontSize: 20,
             padding: 2,
             textAlign: "center",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: 60,
-            borderRadius: 20,
+            marginHorizontal: 4,
+            width: 50,
+            borderRadius: 4,
             backgroundColor: lightMode ? Colors.dark.background : Colors.light.background,
           }}
         >
@@ -86,14 +88,15 @@ export default function ExerciseSetItem(props: IProps) {
         <Text
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
-            fontSize: 30,
+            fontSize: 20,
             padding: 2,
             textAlign: "center",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: 60,
-            borderRadius: 20,
+            marginHorizontal: 4,
+            width: 50,
+            borderRadius: 4,
             backgroundColor: lightMode ? Colors.dark.background : Colors.light.background,
           }}
         >
@@ -103,9 +106,9 @@ export default function ExerciseSetItem(props: IProps) {
           +
         </Text>
       </View>
-      <View style={styles.x}>
+      <View>
         <Text onPress={() => props.onDestroy(props.id)}>
-          <X color={lightMode ? Colors.light.color : Colors.dark.color} />
+          <MaterialIcons name="remove-circle-outline" size={28} color={"#c83b60"} />
         </Text>
       </View>
     </View>
@@ -140,10 +143,6 @@ const styles = StyleSheet.create({
   themedText: {
     fontSize: 30,
   },
-  x: {
-    width: "6.5%",
-    textAlign: "center",
-  },
   flex: {
     width: "29%",
     display: "flex",
@@ -157,7 +156,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingBottom: 2,
+    marginBottom: 4,
   },
 });
 const X = ({ color }: { color: string }) => {

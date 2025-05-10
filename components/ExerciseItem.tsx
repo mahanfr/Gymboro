@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Button, Text, TextInput, View, StyleSheet } from "react-native";
+import { Button, Text, TextInput, View, StyleSheet, TouchableOpacity } from "react-native";
 import ExerciseSetItem from "./ExerciseSetItem";
 import { ThemedText } from "./ThemedText";
 import { IExercise, ISet } from "@/data/Exercise";
 import { ThemedView } from "./ThemedView";
 import Svg, { Path } from "react-native-svg";
+import { MaterialIcons } from "@expo/vector-icons";
 
 interface IProps {
   exercise: IExercise;
@@ -48,10 +49,10 @@ export default function ExerciseItem(props: IProps) {
         ) : (
           <ThemedText onPress={() => setTitleOnFocus(true)}>{title}</ThemedText>
         )}
-        <View style={[styles.flex, { gap: 7 }]}>
-          {/* <Button title="Remove" color={"#b93e51"} onPress={() => {}} /> */}
-          <X color={"#b93e51"} />
-          {/* <Button title="Save" color={"#3eb951"} onPress={() => {}} /> */}
+        <View style={[styles.flex]}>
+          <TouchableOpacity onPress={() => {}}>
+            <MaterialIcons name="remove-circle" color={"#b93e51"} size={28} />
+          </TouchableOpacity>
         </View>
       </View>
       <View style={styles.flex}>
@@ -74,20 +75,25 @@ export default function ExerciseItem(props: IProps) {
             onDestroy={destroySet}
           />
         ))}
-        {/* <Button
-          title="Add Set"
+        <TouchableOpacity
+          style={[styles.flex, { marginHorizontal: 5, justifyContent: "center", borderWidth: 2, paddingVertical: 8, borderColor: "#51e081" }]}
           onPress={() => {
             setSets((prevSets) => [...prevSets, defaultSet]);
           }}
-        /> */}
-        <View style={[styles.flex, { justifyContent: "flex-end" }]}>
-          <PlusCircleIcon
+        >
+          <ThemedText style={{ fontSize: 16, color: "#51e081" }}>ADD SET</ThemedText>
+        </TouchableOpacity>
+        {/*
+        <View style={[styles.flex, { justifyContent: "flex-end", marginHorizontal: 10 }]}>
+          <TouchableOpacity
             onPress={() => {
               setSets((prevSets) => [...prevSets, defaultSet]);
             }}
-            color={"#3eb951"}
-          />
+          >
+            <MaterialIcons name="add-circle" color={"#30e361"} size={28} />
+          </TouchableOpacity>
         </View>
+       */}
       </View>
     </ThemedView>
   );
@@ -113,27 +119,14 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderWidth: 1,
     // borderBottomColor: "white",
-    marginBottom: 20,
+    marginBottom: 5,
     padding: 5,
-    paddingBottom: 10,
-    // backgroundColor: "#353535",
+    paddingVertical: 10,
+    borderRadius: 10,
+    backgroundColor: "#ffffff10",
   },
   textInput: {
     backgroundColor: "white",
     padding: 4,
   },
 });
-const X = ({ color }: { color: string }) => {
-  return (
-    <Svg fill="none" strokeWidth="1.5" width={30} height={30} viewBox="0 0 24 24" aria-hidden={true}>
-      <Path stroke={color} strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12"></Path>
-    </Svg>
-  );
-};
-const PlusCircleIcon = ({ color, onPress }: { color: string; onPress: () => void }) => {
-  return (
-    <Svg onPress={onPress} fill="none" strokeWidth={1.5} width={32} height={32} stroke="currentColor" viewBox="0 0 24 24" aria-hidden={true}>
-      <Path stroke={color} strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-    </Svg>
-  );
-};
