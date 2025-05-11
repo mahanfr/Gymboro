@@ -29,8 +29,6 @@ export default function TabTwoScreen() {
       <SafeAreaProvider>
         <SafeAreaView>
           <View style={[styles.flex]}>
-            {/* <MuscleBack style={styles.size} />
-          <MuscleFront style={styles.size} /> */}
             {list.map((item, index) => (
               <ExerciseCard
                 key={index}
@@ -63,9 +61,5 @@ const styles = StyleSheet.create({
   border: {
     borderColor: "white",
     borderWidth: 1,
-  },
-  size: {
-    // width: "50%",
-    height: Dimensions.get("window").height - 50,
   },
 });

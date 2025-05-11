@@ -1,68 +1,14 @@
 import * as React from "react";
 import { View, ViewStyle, StyleProp } from "react-native";
 import Svg, { Path } from "react-native-svg";
+import { MusclesActivation } from "./MuscleGraph";
 
-const percentageToColor: Record<number, string> = {
-  0: "#A8F1FF",
-  25: "#309898",
-  50: "#FF9F00",
-  75: "#CB0404",
-  100: "#732255",
-};
-function get_color(percentage: number) {
-  const keys = Object.keys(percentageToColor)
-    .map(Number)
-    .sort((a, b) => a - b);
-  const closestKey = keys.reduce((prev, curr) => (percentage >= curr ? curr : prev), 0);
-  return percentageToColor[closestKey] || "#fff";
+interface IProps {
+  style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
+  activator: MusclesActivation;
 }
 
-type HighlightMuscle = {
-  muscleName: string;
-  percentage?: number;
-};
-
-type MuscleFrontProps = {
-  style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
-  highlightMuscle?: Array<HighlightMuscle>;
-};
-
-const MuscleFront: React.FC<MuscleFrontProps> = ({ style, highlightMuscle }) => {
-  highlightMuscle = [{ muscleName: "back", percentage: 51 }];
-  // highlightMuscle = [{ percentage: 25 }];
-  console.log(highlightMuscle[0].percentage);
-  console.log(get_color(highlightMuscle[0].percentage ?? 0));
-  const [fillColor, setFillColor] = React.useState({
-    chest: "",
-    chest_upper: "",
-    chest_lower: "",
-    chest_middle: "", //TODO svg upper lower nadare
-    biceps: "",
-    shoulders: "",
-    shoulder_anterior: "",
-    shoulder_lateral: "",
-    shoulder_posterior: "",
-    triceps: "",
-    forearms: "",
-    forearms_extensors: "",
-    forearms_flexors: "",
-    forearms_brachioradialis: "", // harry potter spell ahh name
-    abs: "",
-    neck: "",
-    traps: "",
-    calves: "",
-    abductors: "",
-    adductors: "",
-    quadriceps: "",
-    Hamstrings: "",
-    glutes: "",
-    legs: "",
-    arms: "",
-    back: "",
-    upper_back: "",
-    lower_back: "",
-    lats: "", //some muscles should be combination of others like back => lower-upper-lat-trap
-  });
+const MuscleFront = ({ style, activator }: IProps) => {
   return (
     <View style={style}>
       <Svg width="100%" height="100%" fill="none" viewBox="0 0 596 1133">
@@ -426,28 +372,34 @@ const MuscleFront: React.FC<MuscleFrontProps> = ({ style, highlightMuscle }) => 
           fill="#BDBDBD"
         />
         <Path
+          id="rectus_abdominis"
           d="M301.882 347.551C305.882 347.551 311.382 350.301 322.882 355.551C328.882 358.29 334.282 362.226 339.882 364.926C346.882 368.301 344.757 378.926 344.757 381.926C344.757 384.75 346.64 390.676 344.462 392.925C344.326 393.065 344.175 393.191 344.007 393.301C341.132 395.176 309.382 387.426 301.882 387.426C294.382 387.426 294.757 382.176 294.382 363.801C294.007 345.426 297.882 347.551 301.882 347.551Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("abs")}
         />
         <Path
+          id="rectus_abdominis"
           d="M284.381 347.551C280.381 347.551 274.881 350.301 263.381 355.551C257.381 358.29 251.981 362.226 246.381 364.926C239.381 368.301 241.506 378.926 241.506 381.926C241.506 384.75 239.623 390.676 241.801 392.925C241.937 393.065 242.088 393.191 242.256 393.301C245.131 395.176 276.881 387.426 284.381 387.426C291.881 387.426 291.506 382.176 291.881 363.801C292.256 345.426 288.381 347.551 284.381 347.551Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("abs")}
         />
         <Path
+          id="rectus_abdominis"
           d="M296.18 395.551C299.18 387.926 310.93 391.176 323.93 393.301C329.18 394.16 334.366 395.898 341.555 396.551C343.813 396.757 345.125 398.285 345.883 400.426C347.433 404.804 346.666 411.745 346.93 415.176C347.448 421.916 346.935 429.688 344.176 433.426C343.609 434.195 342.947 434.793 342.18 435.176C337.68 437.426 309.305 431.301 301.93 429.551C294.555 427.801 293.18 403.176 296.18 395.551Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("abs")}
         />
         <Path
+          id="rectus_abdominis"
           d="M290.179 395.551C287.179 387.926 275.429 391.176 262.429 393.301C257.179 394.16 251.993 395.898 244.804 396.551C242.546 396.757 241.234 398.285 240.476 400.426C238.926 404.804 239.693 411.745 239.429 415.176C238.911 421.916 239.425 429.688 242.183 433.426C242.75 434.195 243.412 434.793 244.179 435.176C248.679 437.426 277.054 431.301 284.429 429.551C291.804 427.801 293.179 403.176 290.179 395.551Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("abs")}
         />
         <Path
+          id="rectus_abdominis"
           d="M295.691 311.801C296.066 301.801 305.066 304.176 314.191 305.426C319.864 309.318 327.539 312.216 337.566 313.551C338.649 314.176 342.466 318.176 346.566 329.176C351.691 342.926 348.904 364.66 345.441 364.926C342.191 365.176 329.816 355.301 322.941 351.426C316.066 347.551 303.691 345.551 297.691 339.301C294.936 336.431 295.316 321.801 295.691 311.801Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("abs")}
         />
         <Path
+          id="rectus_abdominis"
           d="M290.691 311.801C290.316 301.801 281.316 304.176 272.191 305.426C266.518 309.318 258.842 312.216 248.816 313.551C247.732 314.176 243.916 318.176 239.816 329.176C234.691 342.926 237.478 364.66 240.941 364.926C244.191 365.176 256.566 355.301 263.441 351.426C270.316 347.551 282.691 345.551 288.691 339.301C291.446 336.431 291.066 321.801 290.691 311.801Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("abs")}
         />
         <Path
           d="M458.625 304.21L457.385 278.413C457.175 275.292 456.763 266.966 456.763 258.21C456.763 247.21 455.763 225.96 445.013 210.21C434.996 195.535 428.561 192.797 416 187.74C415.08 187.369 414.489 187.111 413.5 186.71C403.37 185.345 395.345 187.243 389 189.435C384.305 191.057 380.53 192.841 377.5 193.585C370.375 195.335 359.875 196.96 342.5 198.96C345.75 198.749 350.375 202.336 354.5 204.086C358.625 205.836 361.75 204.086 375.5 208.711C389.25 213.336 396.625 225.086 401.875 229.711C407.125 234.336 412.75 237.336 418.25 255.586C432.122 267.027 440.054 276.129 446.743 285.585C451.747 292.66 454.025 296.347 458.625 304.21Z"
@@ -458,12 +410,14 @@ const MuscleFront: React.FC<MuscleFrontProps> = ({ style, highlightMuscle }) => 
           fill="#BDBDBD"
         />
         <Path
+          id="chest"
           d="M314.842 204.134C320.092 200.634 329.592 199.884 343.342 199.009C346.592 198.798 350.342 202.384 354.467 204.134C358.592 205.884 361.717 204.134 375.467 208.759C389.217 213.384 396.592 225.134 401.842 229.759C407.092 234.384 412.717 237.384 418.217 255.634C412.317 252.834 404.842 246.967 401.842 244.384V247.009L403.125 262.25C400.25 269 394.15 286.325 392.75 301.625C388.35 305.825 377.062 310.381 371.967 312.134C362.689 314.707 351.318 315.695 337.717 313.884C291.717 307.759 297.842 269.634 298.217 246.259C298.592 222.884 309.592 207.634 314.842 204.134Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("chest")}
         />
         <Path
+          id="chest"
           d="M271.625 204.134C266.375 200.634 256.875 199.884 243.125 199.009C239.875 198.798 236.125 202.384 232 204.134C227.875 205.884 224.75 204.134 211 208.759C197.25 213.384 189.875 225.134 184.625 229.759C179.375 234.384 173.75 237.384 168.25 255.634C174.15 252.834 181.625 246.967 184.625 244.384V247.009L183.342 262.25C186.217 269 192.317 286.325 193.717 301.625C198.117 305.825 209.405 310.381 214.5 312.134C223.777 314.707 235.149 315.695 248.75 313.884C294.75 307.759 288.625 269.634 288.25 246.259C287.875 222.884 276.875 207.634 271.625 204.134Z"
-          fill="#BDBDBD"
+          fill={activator.getColor("chest")}
         />
         <Path
           d="M261.625 155.75L269.625 139.625L293.375 152.125L317 139.625L324.375 155.75L331.875 196.375H328.875L327.375 195.5L316 196.875L315.5 197.625L307.125 200.375L306.5 199.5L298.875 203.5L293.375 206.875L280.25 199.875L279.5 200.375L275.25 199.5L270.5 197L259 195.875L254.375 196.375L261.625 155.75Z"
