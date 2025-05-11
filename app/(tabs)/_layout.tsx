@@ -1,4 +1,4 @@
-import { Tabs, usePathname, useRouter } from "expo-router";
+import { Tabs, useNavigation, usePathname, useRouter } from "expo-router";
 import React from "react";
 import { Platform, TouchableOpacity } from "react-native";
 
@@ -22,6 +22,7 @@ export default function TabLayout() {
   const borderColor = lightMode ? Colors.light.borderColor : Colors.dark.borderColor;
   const pathName = usePathname();
   const router = useRouter();
+  const navigation: any = useNavigation();
 
   const pathNameToTitle = (): string => {
     return pathName.split("/").pop() || "Gymboro";
@@ -36,7 +37,7 @@ export default function TabLayout() {
         headerShown: true,
         headerTitle: pathNameToTitle(),
         headerLeft: () => {
-          if (pathName === "/") {
+          if (pathName === "/" || pathName === "/diet" || pathName === "/explore") {
             return null;
           }
           return (
@@ -50,7 +51,7 @@ export default function TabLayout() {
             return null;
           }
           return (
-            <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => router.push("/settings")}>
+            <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => navigation.navigate("settings")}>
               <MaterialIcons name="settings" size={28} color={lightMode ? Colors["light"].tint : Colors["dark"].tint} />
             </TouchableOpacity>
           );

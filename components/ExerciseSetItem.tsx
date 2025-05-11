@@ -25,7 +25,7 @@ export default function ExerciseSetItem(props: IProps) {
 
   return (
     <View style={styles.container}>
-      <ThemedText style={styles.x}>{props.id + 1}</ThemedText>
+      <ThemedText>{props.id + 1}</ThemedText>
       <ThemedText style={styles.flexChild}>
         <ThemedText>
           {props.lastRep}x{props.lastWeight}Kg
@@ -35,20 +35,6 @@ export default function ExerciseSetItem(props: IProps) {
         <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
           -
         </Text>
-        {/* TODO Input sucks asssss the performence issue was input shit */}
-        {/* TODO we cannnnnn put input and do some fuckery-do-do to fix the preformence issue buttttt i can't be fucked tbh */}
-        {/* <TextInput
-          style={[
-            styles.exerciseValueInput,
-            { backgroundColor: lightMode ? Colors.dark.background : Colors.light.background, color: lightMode ? Colors.dark.color : Colors.light.color },
-          ]}
-          value={props.rep.toString()}
-          onChangeText={(text: string) => {
-            props.onUpdate(props.id, Number.parseInt(text), weight);
-          }}
-          keyboardType="numeric"
-        /> */}
-
         <Text
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
@@ -74,17 +60,6 @@ export default function ExerciseSetItem(props: IProps) {
         <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
           -
         </Text>
-        {/* <TextInput
-          style={[
-            styles.exerciseValueInput,
-            { backgroundColor: lightMode ? Colors.dark.background : Colors.light.background, color: lightMode ? Colors.dark.color : Colors.light.color },
-          ]}
-          value={weight.toString()}
-          onChangeText={(text: string) => {
-            props.onUpdate(props.id, rep, Number.parseInt(text));
-          }}
-          keyboardType="numeric"
-        /> */}
         <Text
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
@@ -157,6 +132,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 4,
+    paddingHorizontal: 5,
   },
 });
 const X = ({ color }: { color: string }) => {

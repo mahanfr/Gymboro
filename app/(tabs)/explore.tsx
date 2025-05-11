@@ -28,9 +28,6 @@ export default function TabTwoScreen() {
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
-          <View>
-            <Button title="Bench Press" onPress={() => navigation.navigate("workouts/[id]", { id: 0 })} />
-          </View>
           <View style={[styles.flex]}>
             {/* <MuscleBack style={styles.size} />
           <MuscleFront style={styles.size} /> */}
@@ -44,6 +41,9 @@ export default function TabTwoScreen() {
                 detailEnglish={item.detailEnglish}
                 detailFarsi={item.detailFarsi}
                 image={item.image}
+                onPress={() => {
+                  navigation.navigate("muscles/[muscle]", { muscle: "chest" });
+                }}
               />
             ))}
             {/*<WorkoutDetails id={0} /> */}

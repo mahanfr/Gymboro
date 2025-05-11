@@ -1,9 +1,10 @@
-import { View, Image, Text, ViewStyle, StyleProp, StyleSheet } from "react-native";
+import { View, Image, Text, ViewStyle, StyleProp, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 import { useContext } from "react";
 import { Settings_createcontext } from "../app/_layout";
-type ExerciseCardProps = {
+
+interface IProps {
   // isLightMode?: boolean;
   isEnglish?: boolean;
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
@@ -11,9 +12,11 @@ type ExerciseCardProps = {
   titleFarsi?: string;
   detailEnglish?: string;
   detailFarsi?: string;
+  onPress: () => void;
   image: NodeJS.Require;
-};
-const ExerciseCard: React.FC<ExerciseCardProps> = ({
+}
+
+const ExerciseCard: React.FC<IProps> = ({
   // isLightMode = true,
   isEnglish = true,
   style,
@@ -21,6 +24,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
   titleFarsi,
   detailFarsi,
   detailEnglish,
+  onPress,
   image = require("../assets/images/groups_icon/404.png"),
 }) => {
   const context = useContext(Settings_createcontext);
@@ -29,7 +33,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
   let lightMode = settings.lightMode;
 
   return (
-    <View style={style}>
+    <TouchableOpacity onPress={onPress} style={style}>
       <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={lightMode}>
         <View>
           <ThemedText type="subtitle" lightMode={lightMode}>
@@ -41,7 +45,7 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
           <Image style={styles.image} source={image} />
         </ThemedView>
       </ThemedView>
-    </View>
+    </TouchableOpacity>
   );
 };
 
