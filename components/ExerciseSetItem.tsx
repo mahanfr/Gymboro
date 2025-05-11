@@ -25,33 +25,19 @@ export default function ExerciseSetItem(props: IProps) {
   return (
     <View style={styles.container}>
       <ThemedText style={styles.x}>{props.id + 1}</ThemedText>
-      <ThemedText style={styles.flexChild}>
+      <View style={styles.flexChild}>
         <ThemedText>
           {props.lastRep}x{props.lastWeight}Kg
         </ThemedText>
-      </ThemedText>
+      </View>
       <View style={styles.button}>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
+        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
           -
-        </Text>
-        {/* TODO Input sucks asssss the performence issue was input shit */}
-        {/* TODO we cannnnnn put input and do some fuckery-do-do to fix the preformence issue buttttt i can't be fucked tbh */}
-        {/* <TextInput
-          style={[
-            styles.exerciseValueInput,
-            { backgroundColor: lightMode ? Colors.dark.background : Colors.light.background, color: lightMode ? Colors.dark.color : Colors.light.color },
-          ]}
-          value={props.rep.toString()}
-          onChangeText={(text: string) => {
-            props.onUpdate(props.id, Number.parseInt(text), weight);
-          }}
-          keyboardType="numeric"
-        /> */}
-
-        <Text
+        </ThemedText>
+        <ThemedText
+          type="title"
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
-            fontSize: 30,
             padding: 2,
             textAlign: "center",
             display: "flex",
@@ -63,30 +49,19 @@ export default function ExerciseSetItem(props: IProps) {
           }}
         >
           {props.rep}
-        </Text>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep + 1, weight)}>
+        </ThemedText>
+        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep + 1, weight)}>
           +
-        </Text>
+        </ThemedText>
       </View>
       <View style={styles.button}>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
+        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
           -
-        </Text>
-        {/* <TextInput
-          style={[
-            styles.exerciseValueInput,
-            { backgroundColor: lightMode ? Colors.dark.background : Colors.light.background, color: lightMode ? Colors.dark.color : Colors.light.color },
-          ]}
-          value={weight.toString()}
-          onChangeText={(text: string) => {
-            props.onUpdate(props.id, rep, Number.parseInt(text));
-          }}
-          keyboardType="numeric"
-        /> */}
-        <Text
+        </ThemedText>
+        <ThemedText
+          type="title"
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
-            fontSize: 30,
             padding: 2,
             textAlign: "center",
             display: "flex",
@@ -98,10 +73,10 @@ export default function ExerciseSetItem(props: IProps) {
           }}
         >
           {props.weight}
-        </Text>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep, weight + 1)}>
+        </ThemedText>
+        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep, weight + 1)}>
           +
-        </Text>
+        </ThemedText>
       </View>
       <View style={styles.x}>
         <Text onPress={() => props.onDestroy(props.id)}>
@@ -114,9 +89,7 @@ export default function ExerciseSetItem(props: IProps) {
 
 const styles = StyleSheet.create({
   exerciseValueInput: {
-    // minHeight: 35,
     backgroundColor: "#f00",
-    // paddingInline: 2,
     borderRadius: 50,
     width: 50,
     padding: 4,
@@ -126,32 +99,19 @@ const styles = StyleSheet.create({
     width: "29%",
     color: "white",
     textAlign: "center",
+    display: "flex",
+    alignItems: "center",
   },
   button: {
     width: "29%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
-
-    // color: "white",
-    // textAlign: "center",
-  },
-  themedText: {
-    fontSize: 30,
   },
   x: {
     width: "6.5%",
     textAlign: "center",
-  },
-  flex: {
-    width: "29%",
-    display: "flex",
-    alignItems: "center",
-  },
-  border: {
-    borderColor: "white",
-    borderWidth: 1,
   },
   container: {
     flexDirection: "row",

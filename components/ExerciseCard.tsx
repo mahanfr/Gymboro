@@ -30,11 +30,9 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
 
   return (
     <View style={style}>
-      <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={lightMode}>
+      <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi}>
         <View>
-          <ThemedText type="subtitle" lightMode={lightMode}>
-            {isEnglish ? titleEnglish : titleFarsi}
-          </ThemedText>
+          <ThemedText type="subtitle">{isEnglish ? titleEnglish : titleFarsi}</ThemedText>
           <ThemedText type="detail">{isEnglish ? detailEnglish : detailFarsi}</ThemedText>
         </View>
         <ThemedView lightMode={!lightMode} style={[styles.imageContainer]}>
