@@ -5,6 +5,7 @@ import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import SimpleLineChart from "@/components/LineChart";
+import GityChart from "@/components/GityChart";
 
 let list: {
   titleEnglish: string;
@@ -44,6 +45,7 @@ export default function TabTwoScreen() {
             ))}
             {/*<WorkoutDetails id={0} /> */}
             <SimpleLineChart />
+            <GityChart />
           </View>
         </SafeAreaView>
       </SafeAreaProvider>
