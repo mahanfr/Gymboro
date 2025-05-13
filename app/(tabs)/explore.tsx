@@ -1,7 +1,5 @@
 import { StyleSheet, Image, Platform, Dimensions, View, ScrollView, Text, Button } from "react-native";
 
-import MuscleBack from "@/components/MuscleBack";
-import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import { useNavigation } from "expo-router";
@@ -61,5 +59,8 @@ const styles = StyleSheet.create({
   border: {
     borderColor: "white",
     borderWidth: 1,
+  },
+  size: {
+    height: Dimensions.get("window").height / 2,
   },
 });

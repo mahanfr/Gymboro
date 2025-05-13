@@ -1,7 +1,7 @@
 import { ThemedView } from "./ThemedView";
 import MuscleBack from "@/components/MuscleBack";
 import MuscleFront from "@/components/MuscleFront";
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 
 interface IProps {
   activation?: boolean;
@@ -11,8 +11,12 @@ export default function MuscleGraph(props: IProps) {
   const activator = new MusclesActivation();
   return (
     <ThemedView style={styles.flex}>
-      <MuscleBack style={styles.size} activator={activator} />
-      <MuscleFront style={styles.size} activator={activator} />
+      <View style={{ width: "50%" }}>
+        <MuscleBack style={styles.size} activator={activator} />
+      </View>
+      <View style={{ width: "50%" }}>
+        <MuscleFront style={styles.size} activator={activator} />
+      </View>
     </ThemedView>
   );
 }
@@ -20,18 +24,18 @@ export default function MuscleGraph(props: IProps) {
 const styles = StyleSheet.create({
   flex: {
     display: "flex",
-    flexDirection: "row",
+    width: "100%",
     justifyContent: "space-evenly",
-    alignItems: "center",
     paddingVertical: 10,
+    flexDirection: "row",
   },
   size: {
-    height: Dimensions.get("window").height - 50,
+    height: Dimensions.get("window").height / 2,
   },
 });
 
 export class MusclesActivation {
-  chest = 0;
+  chest = 3;
 
   shin = 0;
   tibialis_anterior = 0;
@@ -60,7 +64,7 @@ export class MusclesActivation {
   abs = 0;
   obliques = 0;
 
-  adductors = 0;
+  adductors = 3;
 
   abductors = 0;
 
@@ -83,7 +87,7 @@ export class MusclesActivation {
 
   lats = 0;
 
-  glutes = 0;
+  glutes = 3;
 
   hamstrings = 0;
   biceps_femoris = 0;

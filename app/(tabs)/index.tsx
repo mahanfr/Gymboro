@@ -5,12 +5,9 @@ import { useState } from "react";
 import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { useNavigation } from "expo-router";
 import MuscleGraph from "@/components/MuscleGraph";
 
 export default function HomeScreen() {
-  const navigation: any = useNavigation();
-
   const defaultSet: ISet = { rep: 5, weight: 10 };
   const defaultExercise: IExercise = {
     title: "New Exercise",
