@@ -10,10 +10,12 @@ import { useContext } from "react";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { Settings_createcontext } from "../../app/_layout";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { useTranslation } from "react-i18next";
 
 export default function TabLayout() {
   // const colorScheme = useColorScheme();
   const context = useContext(Settings_createcontext);
+  const { t } = useTranslation();
 
   const { settings, setSettings } = context ?? { settings: { lightMode: true }, setSettings: () => {} };
   let lightMode = settings.lightMode;
@@ -70,21 +72,21 @@ export default function TabLayout() {
       <Tabs.Screen
         name="explore"
         options={{
-          title: "Workouts",
+          title: t("tabs.workouts"),
           tabBarIcon: ({ color }) => <MaterialIcons name="fitness-center" size={28} color={color} />,
         }}
       />
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: t("tabs.home"),
           tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
         }}
       />
       <Tabs.Screen
         name="diet"
         options={{
-          title: "Diet",
+          title: t("tabs.diet"),
           tabBarIcon: ({ color }) => <MaterialIcons size={28} name="restaurant" color={color} />,
         }}
       />

@@ -1,0 +1,18 @@
+{
+    "language": "Language",
+    "tabs": {
+        "workouts": "Workouts",
+        "home": "Home",
+        "diet": "Diet"
+    },
+    "home": {
+        "title": "Home",
+        "new_exercise": "New Exercise"
+    },
+    "settings": {
+        "title": "settings",
+        "weight_inc":  "Weight Scale",
+        "theme": "Theme",
+        "language": "Language"
+    }
+}

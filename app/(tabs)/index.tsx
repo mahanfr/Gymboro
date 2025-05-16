@@ -6,9 +6,11 @@ import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import MuscleGraph from "@/components/MuscleGraph";
+import { useTranslation } from "react-i18next";
 
 export default function HomeScreen() {
   const defaultSet: ISet = { rep: 5, weight: 10 };
+  const { t } = useTranslation();
   const defaultExercise: IExercise = {
     title: "New Exercise",
     sets: [defaultSet],
@@ -24,7 +26,7 @@ export default function HomeScreen() {
               <ExerciseItem key={index} exercise={ex} />
             ))}
             <Button
-              title="Add Exercise"
+              title={t("home.new_exercise")}
               onPress={() => {
                 setExercises((prevExercises) => [...prevExercises, defaultExercise]);
               }}

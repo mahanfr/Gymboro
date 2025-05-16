@@ -1,0 +1,18 @@
+{
+    "language": "زبان",
+    "tabs": {
+        "workouts": "حرکات",
+        "home": "خانه",
+        "diet": "رژیم غذایی"
+    },
+    "home": {
+        "title": "خانه",
+        "new_exercise": "حرکت جدید"
+    },
+    "settings": {
+        "title": "تنظیمات",
+        "weight_inc": "ضریب وزنی",
+        "theme": "تم",
+        "language": "زبان"
+    }
+}
