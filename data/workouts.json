@@ -1,0 +1,498 @@
+{
+  "workouts": [
+    {
+      "name": "Barbell Bench Press",
+      "muscles_affected": ["Pectoralis Major", "Triceps", "Deltoids"],
+      "category": "Chest",
+      "explanation": "Lie on a flat bench with a barbell gripped slightly wider than shoulder-width. Lower the bar to your chest, then press it back up to the starting position.",
+      "similar_workouts": [
+        "Dumbbell Bench Press",
+        "Machine Chest Press",
+        "Floor Press",
+        "Close-Grip Bench Press",
+        "Incline Barbell Press"
+      ]
+    },
+    {
+      "name": "Deadlift",
+      "muscles_affected": ["Hamstrings", "Glutes", "Erector Spinae", "Quadriceps"],
+      "category": "Full Body",
+      "explanation": "Stand with feet hip-width apart, bend at the hips and knees to grip the barbell. Keep your back straight as you lift the bar by extending your hips and knees.",
+      "similar_workouts": [
+        "Romanian Deadlift",
+        "Sumo Deadlift",
+        "Trap Bar Deadlift",
+        "Deficit Deadlift",
+        "Single-Leg Deadlift"
+      ]
+    },
+    {
+      "name": "Squat",
+      "muscles_affected": ["Quadriceps", "Hamstrings", "Glutes", "Calves"],
+      "category": "Legs",
+      "explanation": "Stand with feet shoulder-width apart, lower your body by bending your knees and hips, keeping your chest up. Return to standing by driving through your heels.",
+      "similar_workouts": [
+        "Front Squat",
+        "Overhead Squat",
+        "Goblet Squat",
+        "Bulgarian Split Squat",
+        "Hack Squat"
+      ]
+    },
+    {
+      "name": "Pull-Up",
+      "muscles_affected": ["Latissimus Dorsi", "Biceps", "Trapezius"],
+      "category": "Back",
+      "explanation": "Hang from a pull-up bar with hands shoulder-width apart. Pull your body up until your chin is above the bar, then lower back down with control.",
+      "similar_workouts": [
+        "Chin-Up",
+        "Lat Pulldown",
+        "Assisted Pull-Up",
+        "Commando Pull-Up",
+        "Weighted Pull-Up"
+      ]
+    },
+    {
+      "name": "Overhead Press",
+      "muscles_affected": ["Deltoids", "Triceps", "Upper Chest"],
+      "category": "Shoulders",
+      "explanation": "Stand with feet shoulder-width apart, hold a barbell at shoulder height. Press the bar overhead until your arms are fully extended, then lower it back down.",
+      "similar_workouts": [
+        "Dumbbell Shoulder Press",
+        "Push Press",
+        "Arnold Press",
+        "Landmine Press",
+        "Seated Military Press"
+      ]
+    },
+    {
+      "name": "Bent Over Row",
+      "muscles_affected": ["Latissimus Dorsi", "Trapezius", "Biceps"],
+      "category": "Back",
+      "explanation": "Bend at the hips with a slight knee bend, hold a barbell with hands shoulder-width apart. Pull the bar towards your waist, then lower it back down.",
+      "similar_workouts": [
+        "Pendlay Row",
+        "Yates Row",
+        "T-Bar Row",
+        "Seated Cable Row",
+        "Meadows Row"
+      ]
+    },
+    {
+      "name": "Dumbbell Fly",
+      "muscles_affected": ["Pectoralis Major", "Anterior Deltoids"],
+      "category": "Chest",
+      "explanation": "Lie on a flat bench with dumbbells in each hand. With a slight bend in your elbows, lower the weights out to the sides, then bring them back up in an arc motion.",
+      "similar_workouts": [
+        "Cable Crossover",
+        "Pec Deck Fly",
+        "Incline Dumbbell Fly",
+        "Low Cable Fly",
+        "Standing Cable Fly"
+      ]
+    },
+    {
+      "name": "Leg Press",
+      "muscles_affected": ["Quadriceps", "Hamstrings", "Glutes"],
+      "category": "Legs",
+      "explanation": "Sit in the leg press machine with feet shoulder-width apart on the platform. Push the platform away by extending your knees, then return to the starting position.",
+      "similar_workouts": [
+        "Hack Squat",
+        "Belt Squat",
+        "Single-Leg Press",
+        "Vertical Leg Press",
+        "Sled Push"
+      ]
+    },
+    {
+      "name": "Lat Pulldown",
+      "muscles_affected": ["Latissimus Dorsi", "Biceps", "Trapezius"],
+      "category": "Back",
+      "explanation": "Sit at a lat pulldown machine, grip the bar wider than shoulder-width. Pull the bar down to your chest, then slowly return it to the starting position.",
+      "similar_workouts": [
+        "Close-Grip Pulldown",
+        "Reverse-Grip Pulldown",
+        "Straight-Arm Pulldown",
+        "Single-Arm Pulldown",
+        "Neutral-Grip Pulldown"
+      ]
+    },
+    {
+      "name": "Romanian Deadlift",
+      "muscles_affected": ["Hamstrings", "Glutes", "Erector Spinae"],
+      "category": "Legs",
+      "explanation": "Hold a barbell with hands shoulder-width apart, keep your back straight as you hinge at the hips to lower the bar. Return to standing by driving your hips forward.",
+      "similar_workouts": [
+        "Stiff-Leg Deadlift",
+        "Single-Leg Romanian Deadlift",
+        "Kettlebell Romanian Deadlift",
+        "Snatch-Grip Deadlift",
+        "Good Morning"
+      ]
+    },
+    {
+      "name": "Incline Dumbbell Press",
+      "muscles_affected": ["Upper Pectoralis", "Deltoids", "Triceps"],
+      "category": "Chest",
+      "explanation": "Lie on an incline bench with dumbbells in each hand. Press the weights up until your arms are extended, then lower them back down to chest level.",
+      "similar_workouts": [
+        "Incline Barbell Press",
+        "Incline Smith Machine Press",
+        "Low-to-High Cable Fly",
+        "Incline Push-Up",
+        "Landmine Incline Press"
+      ]
+    },
+    {
+      "name": "Cable Crossover",
+      "muscles_affected": ["Pectoralis Major", "Anterior Deltoids"],
+      "category": "Chest",
+      "explanation": "Stand between two cable machines with handles at shoulder height. Bring your hands together in front of your chest in a hugging motion, then return to the starting position.",
+      "similar_workouts": [
+        "Pec Deck Fly",
+        "Dumbbell Fly",
+        "Standing Cable Fly",
+        "Single-Arm Cable Fly",
+        "Incline Cable Fly"
+      ]
+    },
+    {
+      "name": "Bulgarian Split Squat",
+      "muscles_affected": ["Quadriceps", "Glutes", "Hamstrings"],
+      "category": "Legs",
+      "explanation": "Stand a few feet in front of a bench, place one foot behind you on the bench. Lower your body until your front thigh is parallel to the ground, then push back up.",
+      "similar_workouts": [
+        "Forward Lunge",
+        "Reverse Lunge",
+        "Step-Up",
+        "Pistol Squat",
+        "Single-Leg Press"
+      ]
+    },
+    {
+      "name": "Face Pull",
+      "muscles_affected": ["Rear Deltoids", "Trapezius", "Rotator Cuff"],
+      "category": "Shoulders",
+      "explanation": "Attach a rope to a cable machine at face height. Pull the rope towards your face while spreading your hands apart, then slowly return to the starting position.",
+      "similar_workouts": [
+        "Bent-Over Reverse Fly",
+        "Band Pull-Apart",
+        "High Cable Rear Delt Fly",
+        "Prone Incline Rear Delt Raise",
+        "Reverse Pec Deck Fly"
+      ]
+    },
+    {
+      "name": "Hanging Leg Raise",
+      "muscles_affected": ["Rectus Abdominis", "Hip Flexors"],
+      "category": "Core",
+      "explanation": "Hang from a pull-up bar, keep your legs straight as you lift them up to hip height. Lower them back down with control.",
+      "similar_workouts": [
+        "Knee Raises",
+        "Captain's Chair Leg Raise",
+        "Lying Leg Raise",
+        "Toes-to-Bar",
+        "Hanging Windshield Wipers"
+      ]
+    },
+    {
+      "name": "Barbell Curl",
+      "muscles_affected": ["Biceps Brachii", "Brachialis"],
+      "category": "Arms",
+      "explanation": "Stand with feet shoulder-width apart, hold a barbell with an underhand grip. Curl the bar up towards your shoulders, then lower it back down.",
+      "similar_workouts": [
+        "EZ Bar Curl",
+        "Preacher Curl",
+        "Concentration Curl",
+        "Hammer Curl",
+        "Incline Dumbbell Curl"
+      ]
+    },
+    {
+      "name": "Skull Crusher",
+      "muscles_affected": ["Triceps Brachii"],
+      "category": "Arms",
+      "explanation": "Lie on a flat bench with an EZ bar or dumbbells. Lower the weight towards your forehead by bending your elbows, then extend your arms to return to the starting position.",
+      "similar_workouts": [
+        "Overhead Triceps Extension",
+        "Close-Grip Bench Press",
+        "Triceps Dip",
+        "Cable Overhead Extension",
+        "JM Press"
+      ]
+    },
+    {
+      "name": "Seated Calf Raise",
+      "muscles_affected": ["Gastrocnemius", "Soleus"],
+      "category": "Legs",
+      "explanation": "Sit on a calf raise machine with your knees under the pads. Raise your heels as high as possible, then lower them below the platform for a stretch.",
+      "similar_workouts": [
+        "Standing Calf Raise",
+        "Donkey Calf Raise",
+        "Leg Press Calf Raise",
+        "Farmer's Walk on Toes",
+        "Box Jump"
+      ]
+    },
+    {
+      "name": "Front Squat",
+      "muscles_affected": ["Quadriceps", "Glutes", "Core"],
+      "category": "Legs",
+      "explanation": "Hold a barbell in the front rack position (resting on your shoulders). Squat down by bending your knees and hips, then drive back up through your heels.",
+      "similar_workouts": [
+        "Zercher Squat",
+        "Overhead Squat",
+        "Goblet Squat",
+        "Safety Bar Squat",
+        "Clean-Grip Front Squat"
+      ]
+    },
+    {
+      "name": "T-Bar Row",
+      "muscles_affected": ["Latissimus Dorsi", "Trapezius", "Biceps"],
+      "category": "Back",
+      "explanation": "Stand over a T-bar row machine, bend at the hips with a slight knee bend. Pull the handle towards your torso, then lower it back down with control.",
+      "similar_workouts": [
+        "Meadows Row",
+        "Landmine Row",
+        "Seal Row",
+        "Chest-Supported T-Bar Row",
+        "Single-Arm Landmine Row"
+      ]
+    },
+    {
+      "name": "Dips",
+      "muscles_affected": ["Triceps", "Pectoralis Major", "Deltoids"],
+      "category": "Arms",
+      "explanation": "Grip parallel bars, lower your body by bending your elbows until your shoulders are below your elbows. Push back up to the starting position.",
+      "similar_workouts": [
+        "Bench Dips",
+        "Ring Dips",
+        "Weighted Dips",
+        "Machine Dip",
+        "Close-Grip Bench Press"
+      ]
+    },
+    {
+      "name": "Hammer Curl",
+      "muscles_affected": ["Biceps Brachii", "Brachialis", "Brachioradialis"],
+      "category": "Arms",
+      "explanation": "Hold dumbbells with a neutral grip (palms facing each other). Curl the weights up while keeping your palms inward, then lower them back down.",
+      "similar_workouts": [
+        "Cross-Body Hammer Curl",
+        "Rope Hammer Curl",
+        "Zottman Curl",
+        "Reverse Curl",
+        "Towel Grip Curl"
+      ]
+    },
+    {
+      "name": "Lateral Raise",
+      "muscles_affected": ["Lateral Deltoids"],
+      "category": "Shoulders",
+      "explanation": "Hold dumbbells at your sides with a slight bend in your elbows. Raise the weights out to the sides until they reach shoulder height, then lower them back down.",
+      "similar_workouts": [
+        "Cable Lateral Raise",
+        "Leaning Lateral Raise",
+        "Plate Front Raise",
+        "Bent-Over Lateral Raise",
+        "Machine Lateral Raise"
+      ]
+    },
+    {
+      "name": "Reverse Fly",
+      "muscles_affected": ["Rear Deltoids", "Trapezius"],
+      "category": "Shoulders",
+      "explanation": "Bend at the hips with dumbbells in hand, keep a slight bend in your elbows. Raise the weights out to the sides, squeezing your shoulder blades together.",
+      "similar_workouts": [
+        "Face Pull",
+        "Reverse Pec Deck",
+        "Bent-Over Cable Fly",
+        "Prone Incline Rear Delt Raise",
+        "Band Pull-Apart"
+      ]
+    },
+    {
+      "name": "Hack Squat",
+      "muscles_affected": ["Quadriceps", "Glutes", "Hamstrings"],
+      "category": "Legs",
+      "explanation": "Stand in a hack squat machine with your shoulders under the pads. Lower your body by bending your knees, then push back up through your heels.",
+      "similar_workouts": [
+        "V-Squat Machine",
+        "Belt Squat",
+        "Sled Hack Squat",
+        "Bulgarian Split Squat",
+        "Landmine Squat"
+      ]
+    },
+    {
+      "name": "Preacher Curl",
+      "muscles_affected": ["Biceps Brachii", "Brachialis"],
+      "category": "Arms",
+      "explanation": "Sit at a preacher curl bench, rest your arms on the pad. Curl the barbell or dumbbells up, then lower them back down with control.",
+      "similar_workouts": [
+        "Spider Curl",
+        "Concentration Curl",
+        "Incline Dumbbell Curl",
+        "Machine Preacher Curl",
+        "Zottman Curl"
+      ]
+    },
+    {
+      "name": "Seated Row",
+      "muscles_affected": ["Latissimus Dorsi", "Trapezius", "Biceps"],
+      "category": "Back",
+      "explanation": "Sit at a seated row machine, grip the handle and keep your back straight. Pull the handle towards your torso, then slowly extend your arms to return to the starting position.",
+      "similar_workouts": [
+        "Chest-Supported Row",
+        "Inverted Row",
+        "Single-Arm Cable Row",
+        "Meadows Row",
+        "Bent-Over Dumbbell Row"
+      ]
+    },
+    {
+      "name": "Standing Calf Raise",
+      "muscles_affected": ["Gastrocnemius", "Soleus"],
+      "category": "Legs",
+      "explanation": "Stand on a calf raise machine with your shoulders under the pads. Raise your heels as high as possible, then lower them below the platform for a stretch.",
+      "similar_workouts": [
+        "Donkey Calf Raise",
+        "Smith Machine Calf Raise",
+        "Single-Leg Calf Raise",
+        "Farmer's Walk on Toes",
+        "Jump Rope"
+      ]
+    },
+    {
+      "name": "Close-Grip Bench Press",
+      "muscles_affected": ["Triceps", "Pectoralis Major"],
+      "category": "Arms",
+      "explanation": "Lie on a flat bench with hands closer than shoulder-width on the barbell. Lower the bar to your chest, then press it back up, focusing on triceps engagement.",
+      "similar_workouts": [
+        "Floor Press",
+        "JM Press",
+        "Board Press",
+        "Reverse-Grip Bench Press",
+        "Dips"
+      ]
+    },
+    {
+      "name": "Incline Cable Fly",
+      "muscles_affected": ["Upper Pectoralis", "Anterior Deltoids"],
+      "category": "Chest",
+      "explanation": "Set an incline bench between two cable machines. With handles at the bottom, bring your hands together in an arc motion, squeezing your chest at the top.",
+      "similar_workouts": [
+        "Low-to-High Cable Fly",
+        "Incline Dumbbell Fly",
+        "Pec Deck Fly",
+        "Landmine Press",
+        "Reverse-Grip Incline Press"
+      ]
+    },
+    {
+      "name": "Good Morning",
+      "muscles_affected": ["Hamstrings", "Glutes", "Erector Spinae"],
+      "category": "Legs",
+      "explanation": "Stand with feet shoulder-width apart, place a barbell on your shoulders. Hinge at the hips to lower your torso until it's nearly parallel to the floor, then return to standing.",
+      "similar_workouts": [
+        "Romanian Deadlift",
+        "Back Extension",
+        "Reverse Hyperextension",
+        "Stiff-Leg Deadlift",
+        "Seated Good Morning"
+      ]
+    },
+    {
+      "name": "Arnold Press",
+      "muscles_affected": ["Deltoids", "Triceps"],
+      "category": "Shoulders",
+      "explanation": "Sit on a bench with dumbbells at shoulder height, palms facing you. As you press the weights overhead, rotate your palms to face forward. Reverse the motion on the way down.",
+      "similar_workouts": [
+        "Neutral-Grip Shoulder Press",
+        "Landmine Press",
+        "Push Press",
+        "Single-Arm Dumbbell Press",
+        "Behind-the-Neck Press"
+      ]
+    },
+    {
+      "name": "Zottman Curl",
+      "muscles_affected": ["Biceps", "Brachioradialis", "Forearms"],
+      "category": "Arms",
+      "explanation": "Hold dumbbells with palms facing up during the curl. At the top, rotate your palms to face down as you lower the weights.",
+      "similar_workouts": [
+        "Reverse Curl",
+        "Hammer Curl",
+        "Wrist Roller",
+        "Towel Grip Curl",
+        "Fat Grip Curl"
+      ]
+    },
+    {
+      "name": "Pec Deck Fly",
+      "muscles_affected": ["Pectoralis Major"],
+      "category": "Chest",
+      "explanation": "Sit at a pec deck machine with your arms against the pads. Bring your hands together in front of your chest by squeezing your pecs, then return to the starting position.",
+      "similar_workouts": [
+        "Cable Crossover",
+        "Dumbbell Fly",
+        "Standing Cable Fly",
+        "Incline Cable Fly",
+        "Low Cable Fly"
+      ]
+    },
+    {
+      "name": "Step-Up",
+      "muscles_affected": ["Quadriceps", "Glutes", "Hamstrings"],
+      "category": "Legs",
+      "explanation": "Stand facing a bench or platform, step one foot onto it. Push through your heel to lift your body up, then step back down with control.",
+      "similar_workouts": [
+        "Box Jump",
+        "Lateral Step-Up",
+        "Weighted Step-Up",
+        "Plyo Step-Up",
+        "Single-Leg Press"
+      ]
+    },
+    {
+      "name": "Chin-Up",
+      "muscles_affected": ["Biceps", "Latissimus Dorsi"],
+      "category": "Back",
+      "explanation": "Hang from a pull-up bar with an underhand grip (palms facing you). Pull your body up until your chin is above the bar, then lower back down.",
+      "similar_workouts": [
+        "Neutral-Grip Pull-Up",
+        "Commando Pull-Up",
+        "Towel Grip Chin-Up",
+        "Weighted Chin-Up",
+        "Assisted Chin-Up"
+      ]
+    },
+    {
+      "name": "Landmine Press",
+      "muscles_affected": ["Shoulders", "Triceps", "Core"],
+      "category": "Shoulders",
+      "explanation": "Place one end of a barbell in a landmine or corner. Press the weighted end overhead from shoulder height, keeping your core engaged.",
+      "similar_workouts": [
+        "Single-Arm Landmine Press",
+        "Landmine Shoulder Press",
+        "Kneeling Landmine Press",
+        "Landmine Twist Press",
+        "Arnold Press"
+      ]
+    },
+    {
+      "name": "Farmer's Walk",
+      "muscles_affected": ["Forearms", "Traps", "Core"],
+      "category": "Full Body",
+      "explanation": "Hold heavy dumbbells or farmer's walk handles at your sides. Walk maintaining an upright posture for a set distance or time.",
+      "similar_workouts": [
+        "Suitcase Carry",
+        "Overhead Carry",
+        "Trap Bar Carry",
+        "Waiter's Walk",
+        "Sandbag Carry"
+      ]
+    }
+  ]
+}
