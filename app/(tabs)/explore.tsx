@@ -1,9 +1,8 @@
-import { StyleSheet, Image, Platform, Dimensions, View, ScrollView } from "react-native";
+import { StyleSheet, Image, Platform, Dimensions, View, ScrollView, Text, Button } from "react-native";
 
-import MuscleBack from "@/components/MuscleBack";
-import MuscleFront from "@/components/MuscleFront";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
+import { useNavigation } from "expo-router";
 import SimpleLineChart from "@/components/LineChart";
 import GityChart from "@/components/GityChart";
 import Hexygon from "@/components/Hexygon";
@@ -25,13 +24,12 @@ let list: {
   },
 ];
 export default function TabTwoScreen() {
+  const navigation: any = useNavigation();
   return (
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
           <View style={[styles.flex]}>
-            {/* <MuscleBack style={styles.size} />
-          <MuscleFront style={styles.size} /> */}
             {list.map((item, index) => (
               <ExerciseCard
                 key={index}
@@ -42,6 +40,9 @@ export default function TabTwoScreen() {
                 detailEnglish={item.detailEnglish}
                 detailFarsi={item.detailFarsi}
                 image={item.image}
+                onPress={() => {
+                  navigation.navigate("muscles/[muscle]", { muscle: "chest" });
+                }}
               />
             ))}
             {/*<WorkoutDetails id={0} /> */}
@@ -66,7 +67,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   size: {
-    // width: "50%",
-    height: Dimensions.get("window").height - 50,
+    height: Dimensions.get("window").height / 2,
   },
 });
