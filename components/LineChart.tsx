@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import Svg, { Line, Path, G, Text as SvgText, Circle } from "react-native-svg";
+import { ThemedText } from "./ThemedText";
 
 const LineChart = () => {
   // Months data
@@ -49,9 +50,9 @@ const LineChart = () => {
 
   // Generate path for the line - now matches circle positions
   const createPath = () => {
-    let path = `M 0 ${getY(data[0])}`; // Start at x=0 instead of x=padding
+    let path = `M 4 ${getY(data[0])}`; // Start at x=0 instead of x=padding
     for (let i = 1; i < data.length; i++) {
-      path += ` L ${i * 50} ${getY(data[i])}`; // Remove padding from x calculation
+      path += ` L ${i * 50 + 4} ${getY(data[i])}`; // Remove padding from x calculation
     }
     return path;
   };
@@ -64,7 +65,7 @@ const LineChart = () => {
         </TouchableOpacity>
 
         <View style={styles.monthContainer}>
-          <Text style={styles.monthText}>{months[currentMonth].name}</Text>
+          <ThemedText style={styles.monthText}>{months[currentMonth].name}</ThemedText>
         </View>
 
         <TouchableOpacity onPress={handleNext} style={styles.button}>
@@ -110,8 +111,8 @@ const LineChart = () => {
             <G>
               {Array.from({ length: 31 }, () => 0).map((_, i) => (
                 <G key={`day-${i}`}>
-                  <Line x1={i * 50} y1={chartHeight - padding} x2={i * 50} y2={chartHeight - padding + 5} stroke="black" strokeWidth="1" />
-                  <SvgText x={i * 50} y={chartHeight - padding + 20} fontSize="10" textAnchor="middle" fill="black">
+                  <Line x1={i * 50 + 4} y1={chartHeight - padding} x2={i * 50 + 4} y2={chartHeight - padding + 5} stroke="black" strokeWidth="1" />
+                  <SvgText x={i * 50 + 4} y={chartHeight - padding + 20} fontSize="10" textAnchor="middle" fill="black">
                     {i + 1}
                   </SvgText>
                 </G>
@@ -123,7 +124,7 @@ const LineChart = () => {
 
             {/* Data points */}
             {data.map((value, i) => (
-              <Circle key={`point-${i}`} cx={i * 50} cy={getY(value)} r={5} fill={"blue"} />
+              <Circle key={`point-${i}`} cx={i * 50 + 4} cy={getY(value)} r={5} fill={"blue"} />
             ))}
           </Svg>
         </ScrollView>

@@ -6,6 +6,7 @@ import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import SimpleLineChart from "@/components/LineChart";
 import GityChart from "@/components/GityChart";
+import Hexygon from "@/components/Hexygon";
 
 let list: {
   titleEnglish: string;
@@ -46,6 +47,7 @@ export default function TabTwoScreen() {
             {/*<WorkoutDetails id={0} /> */}
             <SimpleLineChart />
             <GityChart />
+            <Hexygon values={[8, 7, 6, 10, 5, 7]} />
           </View>
         </SafeAreaView>
       </SafeAreaProvider>
