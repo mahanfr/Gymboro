@@ -5,7 +5,6 @@ import { useState } from "react";
 import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import MuscleGraph from "@/components/MuscleGraph";
 
 export default function HomeScreen() {
   const defaultSet: ISet = { rep: 5, weight: 10 };
@@ -18,7 +17,6 @@ export default function HomeScreen() {
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
-          <MuscleGraph />
           <ThemedView style={styles.card}>
             {exercises.map((ex, index) => (
               <ExerciseItem key={index} exercise={ex} />

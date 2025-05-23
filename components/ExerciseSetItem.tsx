@@ -30,12 +30,12 @@ export default function ExerciseSetItem(props: IProps) {
         <ThemedText>
           {props.lastRep}x{props.lastWeight}Kg
         </ThemedText>
-      </View>
+      </ThemedText>
       <View style={styles.button}>
         <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
           -
-        </Text>
-        <Text
+        </ThemedText>
+        <ThemedText
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
             fontSize: 20,
@@ -59,8 +59,8 @@ export default function ExerciseSetItem(props: IProps) {
       <View style={styles.button}>
         <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
           -
-        </Text>
-        <Text
+        </ThemedText>
+        <ThemedText
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
             fontSize: 20,

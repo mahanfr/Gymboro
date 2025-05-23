@@ -1,16 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import Svg, { Polygon, Circle, Text, Line } from "react-native-svg";
+import { ThemedText } from "./ThemedText";
+import { ThemedView } from "./ThemedView";
+import { useContext } from "react";
+import { Settings_createcontext } from "../app/_layout";
 
 interface HexygonProps {
-  values: number[];
+  data: {
+    _1day?: number[];
+    _1week?: number[];
+    _1month?: number[];
+    _3months?: number[];
+    _1year?: number[];
+    all?: number[];
+  };
 }
 
-const Hexygon: React.FC<HexygonProps> = ({ values }) => {
-  // Validate values
-  if (!values || values.length !== 6) {
-    values = [5, 5, 5, 5, 5, 5]; // Default to 5 if invalid
-  }
+const Hexygon: React.FC<HexygonProps> = ({ data }) => {
+  const context = useContext(Settings_createcontext);
+  const { settings, setSettings } = context ?? { settings: { lightMode: true }, setSettings: () => {} };
+  let lightMode = settings.lightMode;
+
+  const [selectedDateRange, setSelectedDateRange] = useState(0);
+  const [values, setValues] = useState<number[]>([0, 0, 0, 0, 0, 0]); // Default to 6 values
+
+  // Move the data validation inside useEffect
+  useEffect(() => {
+    switch (selectedDateRange) {
+      case 0:
+        setValues(data._1day && data._1day.length === 6 ? data._1day : [0, 0, 0, 0, 0, 0]);
+        break;
+      case 1:
+        setValues(data._1week && data._1week.length === 6 ? data._1week : [0, 0, 0, 0, 0, 0]);
+        break;
+      case 2:
+        setValues(data._1month && data._1month.length === 6 ? data._1month : [0, 0, 0, 0, 0, 0]);
+        break;
+      case 3:
+        setValues(data._3months && data._3months.length === 6 ? data._3months : [0, 0, 0, 0, 0, 0]);
+        break;
+      case 4:
+        setValues(data._1year && data._1year.length === 6 ? data._1year : [0, 0, 0, 0, 0, 0]);
+        break;
+      case 5:
+        setValues(data.all && data.all.length === 6 ? data.all : [0, 0, 0, 0, 0, 0]);
+        break;
+      default:
+        setValues([0, 0, 0, 0, 0, 0]);
+    }
+  }, [selectedDateRange, data]);
 
   // Normalize values to 1-10 range
   const normalizedValues = values.map((val) => Math.min(10, Math.max(1, val)));
@@ -44,6 +83,20 @@ const Hexygon: React.FC<HexygonProps> = ({ values }) => {
 
   return (
     <View style={styles.container}>
+      <View>
+        <View style={styles.dateSelector}>
+          {["1D", "1W", "1M", "3M", "1Y", "All"].map((label, index) => (
+            <ThemedText
+              key={index}
+              lightMode={!lightMode}
+              style={[styles.dates, selectedDateRange === index && { backgroundColor: lightMode ? "#ddd" : "#555" }]}
+              onPress={() => setSelectedDateRange(index)}
+            >
+              {label}
+            </ThemedText>
+          ))}
+        </View>
+      </View>
       <Svg width={size} height={size}>
         {/* Background hexagon grid */}
         {[1, 0.75, 0.5, 0.25].map((scale, i) => (
@@ -65,16 +118,7 @@ const Hexygon: React.FC<HexygonProps> = ({ values }) => {
         {labels.map((label, i) => {
           const pos = getLabelPosition(i);
           return (
-            <Text
-              key={i}
-              x={pos.x}
-              y={pos.y}
-              fill="#333"
-              fontSize="12"
-              textAnchor="middle"
-              alignmentBaseline="middle"
-              //   transform={`rotate(${(pos.angle * 180) / Math.PI + 90}, ${pos.x}, ${pos.y})`}
-            >
+            <Text key={i} x={pos.x} y={pos.y} fill="#333" fontSize="12" textAnchor="middle" alignmentBaseline="middle">
               {label}
             </Text>
           );
@@ -105,6 +149,20 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  },
+  dateSelector: {
+    display: "flex",
+    flexDirection: "row",
+    alignContent: "center",
+    alignItems: "center",
+  },
+  dates: {
+    paddingHorizontal: 5,
+    paddingVertical: 3,
+    textAlign: "center",
+    borderRadius: 20,
+    width: 50,
+    marginHorizontal: 2,
   },
 });
 
