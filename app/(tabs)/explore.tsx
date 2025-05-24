@@ -1,44 +1,47 @@
-import { StyleSheet, Image, Platform, Dimensions, View, ScrollView, Text, Button } from "react-native";
+import {
+  StyleSheet,
+  Image,
+  Platform,
+  Dimensions,
+  View,
+  ScrollView,
+  Text,
+  Button,
+} from "react-native";
 
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import { useNavigation } from "expo-router";
+import { useTranslation } from "react-i18next";
 
-let list: {
-  titleEnglish: string;
-  titleFarsi: string;
-  detailEnglish: string;
-  detailFarsi: string;
-  image: NodeJS.Require;
-}[] = [
-  {
-    titleEnglish: "Shoulders",
-    titleFarsi: "سر شانه ها",
-    detailEnglish: "All three shoulder muscles",
-    detailFarsi: "هر سه عضله ی سر شانه ها",
-    image: require("../../assets/images/groups_icon/shoulders_icon.png"), //No you can't make it string or use (+) oporation
-    //TODO please fix the newly added pictures... have to merge some muscles like chest and also rename them properly tnx
-  },
-];
 export default function TabTwoScreen() {
   const navigation: any = useNavigation();
+  const { t } = useTranslation();
+
+  let categories = [
+    ["shoulders", require("../../assets/images/muscle_groups/shoulders.png")],
+    ["chest", require("../../assets/images/muscle_groups/chest.png")],
+    ["back", require("../../assets/images/muscle_groups/back.png")],
+    ["full_body", require("../../assets/images/muscle_groups/full_body.png")],
+    ["biceps", require("../../assets/images/muscle_groups/biceps.png")],
+    ["triceps", require("../../assets/images/muscle_groups/triceps.png")],
+    ["legs", require("../../assets/images/muscle_groups/legs.png")],
+    ["core", require("../../assets/images/muscle_groups/core.png")],
+    ["cardio", require("../../assets/images/muscle_groups/cardio.png")],
+  ];
+
   return (
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
           <View style={[styles.flex]}>
-            {list.map((item, index) => (
+            {categories.map((item, index) => (
               <ExerciseCard
+                title={t(`workouts.categories.${item[0]}`)}
                 key={index}
-                // isLightMode={false}
-                isEnglish={false}
-                titleEnglish={item.titleEnglish}
-                titleFarsi={item.titleFarsi}
-                detailEnglish={item.detailEnglish}
-                detailFarsi={item.detailFarsi}
-                image={item.image}
+                image={item[1]}
                 onPress={() => {
-                  navigation.navigate("muscles/[muscle]", { muscle: "chest" });
+                  navigation.navigate("muscles/[muscle]", { muscle: item[0] });
                 }}
               />
             ))}

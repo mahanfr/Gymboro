@@ -14,5 +14,18 @@
         "weight_inc": "ضریب وزنی",
         "theme": "تم",
         "language": "زبان"
+    },
+    "workouts": {
+        "categories": {
+            "shoulders": "سر شانه ها",
+            "chest": "سینه",
+            "back": "کمر و زیر بقل",
+            "full_body": "تمام بدن",
+            "biceps": "جلو بازو",
+            "triceps": "پشت بازو",
+            "legs": "پا",
+            "core": "شکم",
+            "cardio": "هوازی"
+        }
     }
 }
