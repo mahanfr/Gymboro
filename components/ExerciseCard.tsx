@@ -17,8 +17,8 @@ interface IProps {
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
   title?: string;
   detail?: string;
-  onPress: () => void;
-  image: NodeJS.Require;
+  onPress?: () => void;
+  image?: NodeJS.Require;
 }
 
 const ExerciseCard: React.FC<IProps> = ({
@@ -26,7 +26,7 @@ const ExerciseCard: React.FC<IProps> = ({
   title,
   detail,
   onPress,
-  image = require("../assets/images/groups_icon/404.png"),
+  image = require("../assets/images/muscle_groups/404.png"),
 }) => {
   const context = useContext(Settings_createcontext);
   const { i18n, t } = useTranslation();
