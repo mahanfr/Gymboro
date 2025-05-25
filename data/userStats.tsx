@@ -371,6 +371,96 @@ const userStats = () => {
         semitendinosus: 0,
       }),
     },
+    exerciseHistory: {
+      workoutRoutine: {
+        day1: {
+          title: "rest day",
+          isRestday: true,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: [],
+        },
+        day2: {
+          title: "Chesterday",
+          isRestday: false,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: ["incline_benchpress", "benchpress", "fly"],
+        },
+        day3: {
+          title: "legday",
+          isRestday: false,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: ["leg_extention", "leg_press", "squat"],
+        },
+        day4: {
+          title: "rest day",
+          isRestday: true,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: [],
+        },
+        day5: {
+          title: "bicep & core",
+          isRestday: false,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: ["preacher", "jeffy", "situps"],
+        },
+        day6: {
+          title: "Back",
+          isRestday: false,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: ["t_bar", "row"],
+        },
+        day7: {
+          title: "rest day",
+          isRestday: true,
+          involvedMuscleGroups: "",
+          involvedMuscles: new MusclesActivation(), //should be calculated on edit
+          involvedMoves: [],
+        },
+      },
+      /**
+       * we have 4 different types of excercises
+       * a. reps x weight
+       * b. duration x speed
+       * c. reps only
+       * d. duration only
+       */
+      benchPress: [
+        {
+          date: "10.10.24",
+          sets: [
+            { reps: 10, weight: 20 },
+            { reps: 10, weight: 30 },
+          ],
+        },
+      ],
+      jog: [
+        {
+          date: "10.10.24",
+          sets: [
+            { duration: 20, speed: 15 },
+            { duration: 20, speed: 15 },
+          ],
+        },
+      ],
+      kick: [
+        {
+          date: "10.10.24",
+          sets: [{ reps: 20 }, { reps: 20 }],
+        },
+      ],
+      plank: [
+        {
+          date: "10.10.24",
+          sets: [{ duration: 20 }],
+        },
+      ],
+    },
   };
 };
 

@@ -1,10 +1,12 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { Button, ScrollView } from "react-native";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import PopupManager, { usePopupManager } from "@/components/Popup";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
   const defaultSet: ISet = { rep: 5, weight: 10 };
@@ -13,6 +15,7 @@ export default function HomeScreen() {
     sets: [defaultSet],
   };
   const [exercises, setExercises] = useState<IExercise[]>([defaultExercise]);
+  const { popups, showPopup, hidePopup } = usePopupManager();
   return (
     <ScrollView>
       <SafeAreaProvider>
@@ -28,6 +31,11 @@ export default function HomeScreen() {
               }}
             />
           </ThemedView>
+
+          <TouchableOpacity style={{ alignSelf: "center" }} onPress={() => showPopup({ popupKey: "errorPopup", message: "This is an error message" })}>
+            <MaterialIcons name="goat" color={"black"} size={28} />
+          </TouchableOpacity>
+          <PopupManager popups={popups} onClose={hidePopup} />
         </SafeAreaView>
       </SafeAreaProvider>
     </ScrollView>

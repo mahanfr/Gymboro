@@ -12,6 +12,7 @@ interface IProps {
   weight: number;
   lastWeight?: number;
   lastRep?: number;
+  disable?: boolean;
   onDestroy: (id: number) => void;
   onUpdate: (id: number, rep: number, weight: number) => void;
 }
@@ -27,12 +28,10 @@ export default function ExerciseSetItem(props: IProps) {
     <View style={styles.container}>
       <ThemedText>{props.id + 1}</ThemedText>
       <ThemedText style={styles.flexChild}>
-        <ThemedText>
-          {props.lastRep}x{props.lastWeight}Kg
-        </ThemedText>
+        {props.lastRep}x{props.lastWeight}Kg
       </ThemedText>
       <View style={styles.button}>
-        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
           -
         </ThemedText>
         <ThemedText
@@ -52,12 +51,12 @@ export default function ExerciseSetItem(props: IProps) {
         >
           {props.rep}
         </ThemedText>
-        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep + 1, weight)}>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep + 1, weight)}>
           +
         </ThemedText>
       </View>
       <View style={styles.button}>
-        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
           -
         </ThemedText>
         <ThemedText
@@ -77,13 +76,13 @@ export default function ExerciseSetItem(props: IProps) {
         >
           {props.weight}
         </ThemedText>
-        <ThemedText type="title" onPress={() => props.onUpdate(props.id, rep, weight + 1)}>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep, weight + 1)}>
           +
         </ThemedText>
       </View>
       <View>
         <Text onPress={() => props.onDestroy(props.id)}>
-          <MaterialIcons name="remove-circle-outline" size={28} color={"#c83b60"} />
+          <MaterialIcons name="remove-circle-outline" size={28} color={props.disable ? "transparent" : "#c83b60"} />
         </Text>
       </View>
     </View>
@@ -100,10 +99,7 @@ const styles = StyleSheet.create({
   },
   flexChild: {
     width: "29%",
-    color: "white",
     textAlign: "center",
-    display: "flex",
-    alignItems: "center",
   },
   button: {
     width: "29%",
