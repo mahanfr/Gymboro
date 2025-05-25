@@ -25,7 +25,7 @@ const ExerciseCard: React.FC<IProps> = ({
   detailFarsi,
   detailEnglish,
   onPress,
-  image = require("../assets/images/groups_icon/404.png"),
+  image = require("../assets/images/muscle_groups/404.png"),
 }) => {
   const context = useContext(Settings_createcontext);
 

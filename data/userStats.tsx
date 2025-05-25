@@ -3,7 +3,7 @@
  * @summary it's only temprory and with be changed
  */
 
-import { MusclesActivation } from "@/components/MuscleGraph";
+import { MusclesActivation, categories } from "../data/DataTypes";
 const userStats = () => {
   return {
     gittyChart: { 2025: [0, 2, 3, 5, 6, 10, 20, 50, 12, 22], 2024: [0, 2, 11, 12, 15, 43, 46, 55, 56, 79] },
@@ -371,58 +371,58 @@ const userStats = () => {
         semitendinosus: 0,
       }),
     },
-    exerciseHistory: {
-      workoutRoutine: {
-        day1: {
-          title: "rest day",
-          isRestday: true,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: [],
-        },
-        day2: {
-          title: "Chesterday",
-          isRestday: false,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: ["incline_benchpress", "benchpress", "fly"],
-        },
-        day3: {
-          title: "legday",
-          isRestday: false,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: ["leg_extention", "leg_press", "squat"],
-        },
-        day4: {
-          title: "rest day",
-          isRestday: true,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: [],
-        },
-        day5: {
-          title: "bicep & core",
-          isRestday: false,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: ["preacher", "jeffy", "situps"],
-        },
-        day6: {
-          title: "Back",
-          isRestday: false,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: ["t_bar", "row"],
-        },
-        day7: {
-          title: "rest day",
-          isRestday: true,
-          involvedMuscleGroups: "",
-          involvedMuscles: new MusclesActivation(), //should be calculated on edit
-          involvedMoves: [],
-        },
+    workoutRoutine: {
+      day1: {
+        title: "rest day",
+        isRestday: true,
+        involvedMuscleGroups: [categories.rest], // show primary involved muslce groups
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: [],
       },
+      day2: {
+        title: "Chesterday",
+        isRestday: false,
+        involvedMuscleGroups: [categories.chest], // show primary involved muslce groups
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: ["incline_benchpress", "benchpress", "fly"],
+      },
+      day3: {
+        title: "legday",
+        isRestday: false,
+        involvedMuscleGroups: [categories.legs], // show primary involved muslce groups
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: ["leg_extention", "leg_press", "squat"],
+      },
+      day4: {
+        title: "rest day",
+        isRestday: true,
+        involvedMuscleGroups: [categories.rest], // show primary involved muslce groups
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: [],
+      },
+      day5: {
+        title: "bicep & core",
+        isRestday: false,
+        involvedMuscleGroups: [categories.biceps, categories.core], // show primary involved muslce groups
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: ["preacher", "jeffy", "situps"],
+      },
+      day6: {
+        title: "Back",
+        isRestday: false,
+        involvedMuscleGroups: [categories.back], // show primary involved muslce groups
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: ["t_bar", "row"],
+      },
+      day7: {
+        title: "rest day",
+        isRestday: true,
+        involvedMuscleGroups: [categories.rest], //
+        involvedMuscles: new MusclesActivation(), //should be calculated on edit
+        involvedMoves: [],
+      },
+    },
+    exerciseHistory: {
       /**
        * we have 4 different types of excercises
        * a. reps x weight
@@ -465,10 +465,3 @@ const userStats = () => {
 };
 
 export default userStats;
-
-/**
- * for gitty chart:
- * year : [day's index]
- *
- *
- */

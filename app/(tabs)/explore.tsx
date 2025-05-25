@@ -12,12 +12,11 @@ let list: {
   image: NodeJS.Require;
 }[] = [
   {
-    titleEnglish: "Shoulders",
-    titleFarsi: "سر شانه ها",
-    detailEnglish: "All three shoulder muscles",
-    detailFarsi: "هر سه عضله ی سر شانه ها",
-    image: require("../../assets/images/groups_icon/shoulders_icon.png"), //No you can't make it string or use (+) oporation
-    //TODO please fix the newly added pictures... have to merge some muscles like chest and also rename them properly tnx
+    titleEnglish: "Chest",
+    titleFarsi: "سینه",
+    detailEnglish: "All three chest muscles",
+    detailFarsi: "هر سه عضله ی سینه",
+    image: require("../../assets/images/muscle_groups/chest.png"),
   },
 ];
 export default function TabTwoScreen() {
