@@ -1,0 +1,2216 @@
+[
+  {
+    "id": 1,
+    "name": "Barbell Bench Press",
+    "muscles_affected": {
+      "chest": 50,
+      "anterior_deltoid": 30,
+      "triceps": 20
+    },
+    "category": "chest",
+    "description": "Lie on a flat bench with your feet flat on the floor. Grip the barbell slightly wider than shoulder-width apart. Lower the bar to your mid-chest, then press it back up until your arms are fully extended.",
+    "name_fa": "پرس سینه با هالتر",
+    "description_fa": "روی یک نیمکت صاف دراز بکشید و پاهایتان را روی زمین قرار دهید. هالتر را کمی پهن‌تر از عرض شانه بگیرید. هالتر را تا میانه سینه خود پایین بیاورید، سپس آن را به سمت بالا فشار دهید تا بازوهایتان کاملاً کشیده شوند.",
+    "similar_workouts": ["Dumbbell Bench Press", "Incline Barbell Press", "Decline Barbell Press"]
+  },
+  {
+    "id": 2,
+    "name": "Incline Dumbbell Press",
+    "muscles_affected": {
+      "upper_chest": 60,
+      "anterior_deltoid": 25,
+      "triceps": 15
+    },
+    "category": "chest",
+    "description": "Set an adjustable bench to an incline (30-45 degrees). Lie back with a dumbbell in each hand, palms facing each other. Lower the dumbbells to the sides of your upper chest, then press them back up.",
+    "name_fa": "پرس دمبل بالاسینه",
+    "description_fa": "یک نیمکت قابل تنظیم را به حالت شیبدار (30-45 درجه) تنظیم کنید. با یک دمبل در هر دست به پشت دراز بکشید، کف دست ها رو به یکدیگر. دمبل ها را به طرفین قسمت بالای سینه خود پایین بیاورید، سپس آنها را به سمت بالا فشار دهید.",
+    "similar_workouts": ["Incline Barbell Press", "Machine Incline Press", "Low Cable Flyes"]
+  },
+  {
+    "id": 3,
+    "name": "Pec Deck Fly",
+    "muscles_affected": {
+      "chest": 80,
+      "anterior_deltoid": 10,
+      "biceps": 10
+    },
+    "category": "chest",
+    "description": "Sit on the pec deck machine with your back flat against the pad. Grip the handles with your elbows slightly bent. Bring the handles together in front of you, squeezing your chest, then slowly return to the starting position.",
+    "name_fa": "فلای دستگاه پگ دک",
+    "description_fa": "روی دستگاه پگ دک بنشینید و پشتتان را صاف روی پد قرار دهید. دسته ها را با آرنج کمی خم بگیرید. دسته ها را جلوی خود به هم نزدیک کنید، سینه خود را فشار دهید، سپس به آرامی به موقعیت شروع بازگردید.",
+    "similar_workouts": ["Cable Crossover", "Dumbbell Flyes", "Machine Chest Fly"]
+  },
+  {
+    "id": 4,
+    "name": "Push-ups",
+    "muscles_affected": {
+      "chest": 40,
+      "anterior_deltoid": 30,
+      "triceps": 30
+    },
+    "category": "chest",
+    "description": "Start in a plank position with your hands slightly wider than shoulder-width apart. Lower your chest towards the floor by bending your elbows, then push back up until your arms are straight.",
+    "name_fa": "شنا سوئدی",
+    "description_fa": "در وضعیت پلانک با دستانی کمی پهن‌تر از عرض شانه شروع کنید. سینه خود را با خم کردن آرنج‌ها به سمت زمین پایین بیاورید، سپس به سمت بالا فشار دهید تا بازوهایتان صاف شوند.",
+    "similar_workouts": ["Knee Push-ups", "Incline Push-ups", "Decline Push-ups"]
+  },
+  {
+    "id": 5,
+    "name": "Dumbbell Pullover",
+    "muscles_affected": {
+      "chest": 40,
+      "lats": 40,
+      "triceps": 20
+    },
+    "category": "chest",
+    "description": "Lie perpendicular on a bench with only your upper back supported. Hold one dumbbell with both hands above your chest. Lower the dumbbell behind your head in an arc, then pull it back over your chest.",
+    "name_fa": "پول اوور دمبل",
+    "description_fa": "به صورت عمود بر روی نیمکت دراز بکشید به طوری که فقط قسمت بالایی کمرتان تکیه داشته باشد. یک دمبل را با هر دو دست بالای سینه خود بگیرید. دمبل را به صورت قوس‌دار پشت سر خود پایین بیاورید، سپس آن را دوباره روی سینه خود بکشید.",
+    "similar_workouts": ["Barbell Pullover", "Straight-Arm Cable Pulldown"]
+  },
+  {
+    "id": 6,
+    "name": "Barbell Row",
+    "muscles_affected": {
+      "lats": 40,
+      "rhomboids": 30,
+      "biceps": 20,
+      "rear_deltoid": 10
+    },
+    "category": "back",
+    "description": "Stand with feet shoulder-width apart, knees slightly bent, and hinge at your hips so your torso is almost parallel to the floor. Grip the barbell with an overhand grip, slightly wider than shoulder-width. Pull the bar towards your lower chest, squeezing your shoulder blades, then lower it with control.",
+    "name_fa": "پارویی هالتر",
+    "description_fa": "با پاهای به عرض شانه، زانوهای کمی خم، و با خم شدن از مفصل ران، بدن خود را تقریباً موازی با زمین قرار دهید. هالتر را با دستگیره از بالا، کمی پهن‌تر از عرض شانه بگیرید. میله را به سمت قسمت پایین سینه خود بکشید، تیغه‌های شانه خود را به هم نزدیک کنید، سپس آن را با کنترل پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Row", "T-Bar Row", "Seated Cable Row"]
+  },
+  {
+    "id": 7,
+    "name": "Pull-ups",
+    "muscles_affected": {
+      "lats": 60,
+      "biceps": 20,
+      "forearms": 10,
+      "rear_deltoid": 10
+    },
+    "category": "back",
+    "description": "Hang from a pull-up bar with an overhand grip, hands slightly wider than shoulder-width. Pull yourself up until your chin clears the bar, squeezing your lats, then lower yourself with control.",
+    "name_fa": "بارفیکس",
+    "description_fa": "از میله بارفیکس با دستگیره از بالا، دست‌ها کمی پهن‌تر از عرض شانه آویزان شوید. خود را بالا بکشید تا چانه‌تان از میله رد شود، عضلات لت خود را منقبض کنید، سپس با کنترل خود را پایین بیاورید.",
+    "similar_workouts": ["Chin-ups", "Lat Pulldown", "Assisted Pull-ups"]
+  },
+  {
+    "id": 8,
+    "name": "Deadlift",
+    "muscles_affected": {
+      "hamstrings": 30,
+      "glutes": 25,
+      "lower_back": 25,
+      "lats": 10,
+      "traps": 10
+    },
+    "category": "full_body",
+    "description": "Stand with your feet hip-width apart, barbell over mid-foot. Hinge at your hips and bend your knees to grip the bar with an overhand or mixed grip. Keeping your back straight, lift the bar by extending your hips and knees, then lower it with control.",
+    "name_fa": "ددلیفت",
+    "description_fa": "با پاهای به عرض لگن، هالتر بالای میانه پاها قرار دهید. از مفصل ران خم شوید و زانوهای خود را خم کنید تا میله را با دستگیره از بالا یا ترکیبی بگیرید. با صاف نگه داشتن کمر، میله را با کشیدن باسن و زانوها بلند کنید، سپس با کنترل پایین بیاورید.",
+    "similar_workouts": ["Romanian Deadlift", "Sumo Deadlift", "Good Mornings"]
+  },
+  {
+    "id": 9,
+    "name": "Seated Cable Row",
+    "muscles_affected": {
+      "lats": 50,
+      "rhomboids": 30,
+      "biceps": 20
+    },
+    "category": "back",
+    "description": "Sit on the cable row machine with your feet on the footplate and knees slightly bent. Grip the handle (V-bar or straight bar) with both hands. Pull the handle towards your lower abdomen, squeezing your shoulder blades, then slowly extend your arms.",
+    "name_fa": "پارویی سیم‌کش نشسته",
+    "description_fa": "روی دستگاه پارویی سیم‌کش بنشینید و پاهایتان را روی صفحه قرار دهید و زانوهایتان کمی خم باشد. دسته (میله V یا میله صاف) را با هر دو دست بگیرید. دسته را به سمت قسمت پایین شکم خود بکشید، تیغه‌های شانه خود را به هم نزدیک کنید، سپس به آرامی بازوهایتان را دراز کنید.",
+    "similar_workouts": ["Barbell Row", "Dumbbell Row", "T-Bar Row"]
+  },
+  {
+    "id": 10,
+    "name": "Lat Pulldown",
+    "muscles_affected": {
+      "lats": 70,
+      "biceps": 20,
+      "forearms": 10
+    },
+    "category": "back",
+    "description": "Sit on the lat pulldown machine and grip the bar with a wide overhand grip. Pull the bar down to your upper chest, squeezing your lats, then slowly release it back up.",
+    "name_fa": "لت پول داون",
+    "description_fa": "روی دستگاه لت پول داون بنشینید و میله را با دستگیره از بالا و پهن بگیرید. میله را به سمت بالای سینه خود بکشید، عضلات لت خود را منقبض کنید، سپس به آرامی آن را به سمت بالا رها کنید.",
+    "similar_workouts": ["Pull-ups", "Chin-ups", "Straight-Arm Cable Pulldown"]
+  },
+  {
+    "id": 11,
+    "name": "Overhead Press (Barbell)",
+    "muscles_affected": {
+      "anterior_deltoid": 40,
+      "lateral_deltoid": 30,
+      "triceps": 20,
+      "upper_traps": 10
+    },
+    "category": "shoulders",
+    "description": "Stand with feet shoulder-width apart, gripping the barbell slightly wider than shoulder-width. Press the bar overhead until your arms are fully extended, then lower it with control to your upper chest.",
+    "name_fa": "پرس بالای سر (هالتر)",
+    "description_fa": "با پاهای به عرض شانه بایستید و هالتر را کمی پهن‌تر از عرض شانه بگیرید. میله را به سمت بالا فشار دهید تا بازوهایتان کاملاً کشیده شوند، سپس آن را با کنترل به سمت بالای سینه خود پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Overhead Press", "Machine Shoulder Press", "Arnold Press"]
+  },
+  {
+    "id": 12,
+    "name": "Lateral Raise (Dumbbell)",
+    "muscles_affected": {
+      "lateral_deltoid": 80,
+      "anterior_deltoid": 10,
+      "rear_deltoid": 10
+    },
+    "category": "shoulders",
+    "description": "Stand with a dumbbell in each hand, palms facing your thighs. Keeping a slight bend in your elbows, raise the dumbbells out to the sides until your arms are parallel to the floor, then slowly lower them.",
+    "name_fa": "بالا آوردن جانبی (دمبل)",
+    "description_fa": "با یک دمبل در هر دست، کف دست ها رو به ران هایتان بایستید. با کمی خمیدگی در آرنج ها، دمبل ها را به طرفین بالا بیاورید تا بازوهایتان موازی با زمین شوند، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Cable Lateral Raise", "Machine Lateral Raise", "Front Raise"]
+  },
+  {
+    "id": 13,
+    "name": "Front Raise (Dumbbell)",
+    "muscles_affected": {
+      "anterior_deltoid": 80,
+      "lateral_deltoid": 10,
+      "upper_chest": 10
+    },
+    "category": "shoulders",
+    "description": "Stand with a dumbbell in each hand, palms facing your body. Keeping your arms straight, raise the dumbbells straight in front of you until they are parallel to the floor, then slowly lower them.",
+    "name_fa": "بالا آوردن از جلو (دمبل)",
+    "description_fa": "با یک دمبل در هر دست، کف دست ها رو به بدن خود بایستید. با صاف نگه داشتن بازوها، دمبل ها را مستقیماً جلوی خود بالا بیاورید تا موازی با زمین شوند، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Barbell Front Raise", "Cable Front Raise", "Plate Front Raise"]
+  },
+  {
+    "id": 14,
+    "name": "Face Pulls",
+    "muscles_affected": {
+      "rear_deltoid": 50,
+      "upper_back": 30,
+      "rotator_cuff": 20
+    },
+    "category": "shoulders",
+    "description": "Set a cable machine to chest height with a rope attachment. Grip the rope with an overhand grip, pulling it towards your face while externally rotating your shoulders. Squeeze your upper back, then slowly extend your arms.",
+    "name_fa": "فیس پول",
+    "description_fa": "دستگاه سیم‌کش را در ارتفاع سینه با بند طنابی تنظیم کنید. طناب را با دستگیره از بالا بگیرید و آن را به سمت صورت خود بکشید در حالی که شانه‌های خود را به بیرون می‌چرخانید. قسمت بالایی کمر خود را منقبض کنید، سپس به آرامی بازوهایتان را دراز کنید.",
+    "similar_workouts": ["Band Face Pulls", "Reverse Pec Deck Fly", "Dumbbell Rear Delt Fly"]
+  },
+  {
+    "id": 15,
+    "name": "Shrugs (Barbell)",
+    "muscles_affected": {
+      "upper_traps": 80,
+      "middle_traps": 20
+    },
+    "category": "shoulders",
+    "description": "Stand with feet shoulder-width apart, gripping a barbell in front of you with an overhand grip. Keeping your arms straight, shrug your shoulders up towards your ears, squeezing your traps, then slowly lower them.",
+    "name_fa": "شراگ (هالتر)",
+    "description_fa": "با پاهای به عرض شانه بایستید و هالتر را جلوی خود با دستگیره از بالا بگیرید. با صاف نگه داشتن بازوها، شانه های خود را به سمت گوش هایتان بالا بیاورید، عضلات ذوزنقه‌ای خود را منقبض کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Shrugs", "Machine Shrugs"]
+  },
+  {
+    "id": 16,
+    "name": "Barbell Bicep Curl",
+    "muscles_affected": {
+      "biceps": 80,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Stand with feet shoulder-width apart, gripping a barbell with an underhand grip, hands shoulder-width apart. Keeping your elbows tucked, curl the bar up towards your chest, squeezing your biceps, then slowly lower it.",
+    "name_fa": "جلو بازو هالتر",
+    "description_fa": "با پاهای به عرض شانه بایستید و هالتر را با دستگیره از پایین، دست ها به عرض شانه بگیرید. با نگه داشتن آرنج ها نزدیک بدن، میله را به سمت سینه خود بالا بیاورید، جلو بازوهای خود را منقبض کنید، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Bicep Curl", "Hammer Curl", "Preacher Curl"]
+  },
+  {
+    "id": 17,
+    "name": "Hammer Curl (Dumbbell)",
+    "muscles_affected": {
+      "brachialis": 50,
+      "biceps": 30,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Stand with a dumbbell in each hand, palms facing your body. Keeping your elbows tucked, curl the dumbbells up towards your shoulders, maintaining the neutral grip, then slowly lower them.",
+    "name_fa": "جلو بازو چکشی (دمبل)",
+    "description_fa": "با یک دمبل در هر دست، کف دست ها رو به بدن خود بایستید. با نگه داشتن آرنج ها نزدیک بدن، دمبل ها را به سمت شانه های خود بالا بیاورید، دستگیره خنثی را حفظ کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Barbell Curl (wide grip)", "Rope Hammer Curl"]
+  },
+  {
+    "id": 18,
+    "name": "Preacher Curl (Machine)",
+    "muscles_affected": {
+      "biceps": 90,
+      "forearms": 10
+    },
+    "category": "biceps",
+    "description": "Sit on the preacher curl machine with your arms extended over the pad. Grip the handles with an underhand grip. Curl the handles up towards your shoulders, squeezing your biceps, then slowly lower them.",
+    "name_fa": "جلو بازو لاری (دستگاه)",
+    "description_fa": "روی دستگاه جلو بازو لاری بنشینید و بازوهای خود را روی پد دراز کنید. دسته ها را با دستگیره از پایین بگیرید. دسته ها را به سمت شانه های خود بالا بیاورید، جلو بازوهای خود را منقبض کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Preacher Curl", "Barbell Preacher Curl"]
+  },
+  {
+    "id": 19,
+    "name": "Concentration Curl (Dumbbell)",
+    "muscles_affected": {
+      "biceps": 95,
+      "forearms": 5
+    },
+    "category": "biceps",
+    "description": "Sit on a bench with your legs spread. Rest your elbow on your inner thigh, holding a dumbbell with an underhand grip. Curl the dumbbell up towards your shoulder, focusing on the bicep contraction, then slowly lower it.",
+    "name_fa": "جلو بازو تمرکزی (دمبل)",
+    "description_fa": "روی یک نیمکت با پاهای باز بنشینید. آرنج خود را روی ران داخلی خود قرار دهید و یک دمبل را با دستگیره از پایین بگیرید. دمبل را به سمت شانه خود بالا بیاورید، با تمرکز بر انقباض جلو بازو، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Spider Curl"]
+  },
+  {
+    "id": 20,
+    "name": "Cable Bicep Curl",
+    "muscles_affected": {
+      "biceps": 80,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Stand facing a low pulley on a cable machine. Grip a straight bar or EZ bar with an underhand grip. Keeping your elbows tucked, curl the bar up towards your chest, squeezing your biceps, then slowly lower it.",
+    "name_fa": "جلو بازو سیم‌کش",
+    "description_fa": "روبروی یک سیم‌کش پایین روی دستگاه سیم‌کش بایستید. یک میله صاف یا میله EZ را با دستگیره از پایین بگیرید. با نگه داشتن آرنج ها نزدیک بدن، میله را به سمت سینه خود بالا بیاورید، جلو بازوهای خود را منقبض کنید، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Bicep Curl", "Barbell Bicep Curl"]
+  },
+  {
+    "id": 21,
+    "name": "Triceps Pushdown (Rope)",
+    "muscles_affected": {
+      "triceps": 80,
+      "forearms": 20
+    },
+    "category": "triceps",
+    "description": "Stand facing a high pulley on a cable machine. Grip the rope attachment with an overhand grip, palms facing each other. Push the rope down, extending your arms fully, squeezing your triceps, then slowly return to the starting position.",
+    "name_fa": "پشت بازو سیم‌کش (طناب)",
+    "description_fa": "روبروی یک سیم‌کش بالا روی دستگاه سیم‌کش بایستید. بند طنابی را با دستگیره از بالا بگیرید، کف دست ها رو به یکدیگر. طناب را به سمت پایین فشار دهید، بازوهایتان را کاملاً بکشید، پشت بازوهای خود را منقبض کنید، سپس به آرامی به موقعیت شروع بازگردید.",
+    "similar_workouts": ["Triceps Pushdown (straight bar)", "Overhead Cable Extension"]
+  },
+  {
+    "id": 22,
+    "name": "Overhead Dumbbell Extension",
+    "muscles_affected": {
+      "triceps": 90,
+      "forearms": 10
+    },
+    "category": "triceps",
+    "description": "Sit or stand, holding one dumbbell with both hands, extending it overhead. Lower the dumbbell behind your head by bending your elbows, keeping them close to your head, then extend your arms back up.",
+    "name_fa": "پشت بازو دمبل بالای سر",
+    "description_fa": "بنشینید یا بایستید، یک دمبل را با هر دو دست بالای سر خود نگه دارید. دمبل را با خم کردن آرنج ها پشت سر خود پایین بیاورید، آنها را نزدیک سر خود نگه دارید، سپس بازوهایتان را به سمت بالا بکشید.",
+    "similar_workouts": ["Overhead Barbell Extension", "Cable Overhead Triceps Extension"]
+  },
+  {
+    "id": 23,
+    "name": "Close-Grip Bench Press",
+    "muscles_affected": {
+      "triceps": 60,
+      "chest": 30,
+      "anterior_deltoid": 10
+    },
+    "category": "triceps",
+    "description": "Lie on a flat bench. Grip the barbell with a close overhand grip (inside shoulder-width). Lower the bar to your mid-chest, keeping your elbows tucked, then press it back up until your arms are fully extended.",
+    "name_fa": "پرس سینه دست جمع",
+    "description_fa": "روی یک نیمکت صاف دراز بکشید. هالتر را با دستگیره از بالا و نزدیک (داخل عرض شانه) بگیرید. میله را تا میانه سینه خود پایین بیاورید، آرنج ها را نزدیک بدن نگه دارید، سپس آن را به سمت بالا فشار دهید تا بازوهایتان کاملاً کشیده شوند.",
+    "similar_workouts": ["Dumbbell Floor Press", "Dips (triceps focused)"]
+  },
+  {
+    "id": 24,
+    "name": "Dips (Triceps Focused)",
+    "muscles_affected": {
+      "triceps": 70,
+      "lower_chest": 20,
+      "anterior_deltoid": 10
+    },
+    "category": "triceps",
+    "description": "Support yourself on parallel bars with your arms straight. Lean forward slightly and lower your body by bending your elbows, keeping them tucked. Push back up until your arms are straight.",
+    "name_fa": "پارالل (تمرکز بر پشت بازو)",
+    "description_fa": "خود را با بازوهای صاف روی میله های موازی نگه دارید. کمی به جلو خم شوید و با خم کردن آرنج ها، بدن خود را پایین بیاورید، آنها را نزدیک بدن نگه دارید. به سمت بالا فشار دهید تا بازوهایتان صاف شوند.",
+    "similar_workouts": ["Close-Grip Bench Press", "Machine Dips"]
+  },
+  {
+    "id": 25,
+    "name": "Skullcrushers (EZ Bar)",
+    "muscles_affected": {
+      "triceps": 90,
+      "forearms": 10
+    },
+    "category": "triceps",
+    "description": "Lie on a flat bench, holding an EZ bar with an overhand grip, arms extended above your chest. Keeping your upper arms stationary, lower the bar towards your forehead by bending your elbows, then extend your arms back up.",
+    "name_fa": "سیم‌کش بالای سر (میله EZ)",
+    "description_fa": "روی یک نیمکت صاف دراز بکشید، یک میله EZ را با دستگیره از بالا بگیرید، بازوها بالای سینه دراز. با ثابت نگه داشتن بازوهای بالایی، میله را با خم کردن آرنج ها به سمت پیشانی خود پایین بیاورید، سپس بازوهایتان را به سمت بالا بکشید.",
+    "similar_workouts": ["Dumbbell Skullcrushers", "Cable Skullcrushers"]
+  },
+  {
+    "id": 26,
+    "name": "Barbell Squat (High Bar)",
+    "muscles_affected": {
+      "quadriceps": 50,
+      "glutes": 30,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Stand with the barbell resting on your upper back/traps. Feet shoulder-width apart, toes slightly out. Descend by bending your knees and hips, keeping your chest up and back straight, until your thighs are parallel to the floor or lower. Drive back up through your heels.",
+    "name_fa": "اسکوات هالتر (میله بالا)",
+    "description_fa": "با هالتر روی قسمت بالایی کمر/عضلات ذوزنقه‌ای بایستید. پاها به عرض شانه، انگشتان پا کمی به بیرون. با خم کردن زانوها و باسن، سینه رو به بالا و کمر صاف، پایین بروید تا ران‌هایتان موازی با زمین یا پایین‌تر شوند. از طریق پاشنه پاها به سمت بالا حرکت کنید.",
+    "similar_workouts": ["Front Squat", "Leg Press", "Goblet Squat"]
+  },
+  {
+    "id": 27,
+    "name": "Leg Press",
+    "muscles_affected": {
+      "quadriceps": 60,
+      "glutes": 30,
+      "hamstrings": 10
+    },
+    "category": "legs",
+    "description": "Sit on the leg press machine with your feet shoulder-width apart on the footplate and knees slightly bent. Release the safeties and lower the weight by bending your knees until they are close to your chest. Push the weight back up by extending your legs.",
+    "name_fa": "پرس پا",
+    "description_fa": "روی دستگاه پرس پا بنشینید و پاهایتان را به عرض شانه روی صفحه پا قرار دهید و زانوهایتان کمی خم باشد. قفل ها را آزاد کنید و با خم کردن زانوهایتان وزن را پایین بیاورید تا نزدیک سینه شما شوند. با کشیدن پاهایتان وزن را به سمت بالا فشار دهید.",
+    "similar_workouts": ["Barbell Squat", "Hack Squat"]
+  },
+  {
+    "id": 28,
+    "name": "Romanian Deadlift (Barbell)",
+    "muscles_affected": {
+      "hamstrings": 60,
+      "glutes": 30,
+      "lower_back": 10
+    },
+    "category": "legs",
+    "description": "Stand with feet hip-width apart, holding a barbell in front of your thighs with an overhand grip. Keeping a slight bend in your knees and a straight back, hinge at your hips, lowering the bar until you feel a stretch in your hamstrings, then return to the starting position.",
+    "name_fa": "ددلیفت رومانیایی (هالتر)",
+    "description_fa": "با پاهای به عرض لگن بایستید و یک هالتر را جلوی ران هایتان با دستگیره از بالا بگیرید. با کمی خمیدگی در زانوها و کمر صاف، از مفصل ران خم شوید و میله را پایین بیاورید تا احساس کشش در همسترینگ خود کنید، سپس به موقعیت شروع بازگردید.",
+    "similar_workouts": ["Good Mornings", "Glute-Ham Raise", "Hyperextensions"]
+  },
+  {
+    "id": 29,
+    "name": "Leg Extension",
+    "muscles_affected": {
+      "quadriceps": 90,
+      "hip_flexors": 10
+    },
+    "category": "legs",
+    "description": "Sit on the leg extension machine with your shins under the padded bar. Extend your legs forward, straightening your knees, squeezing your quads, then slowly lower the weight.",
+    "name_fa": "جلو ران (دستگاه)",
+    "description_fa": "روی دستگاه جلو ران بنشینید و ساق پاهایتان را زیر میله پددار قرار دهید. پاهای خود را به سمت جلو بکشید، زانوهایتان را صاف کنید، عضلات چهارسر ران خود را منقبض کنید، سپس به آرامی وزن را پایین بیاورید.",
+    "similar_workouts": ["Sissy Squat"]
+  },
+  {
+    "id": 30,
+    "name": "Leg Curl (Lying)",
+    "muscles_affected": {
+      "hamstrings": 90,
+      "calves": 10
+    },
+    "category": "legs",
+    "description": "Lie face down on the leg curl machine with your Achilles tendons under the padded lever. Curl your heels towards your glutes, squeezing your hamstrings, then slowly extend your legs.",
+    "name_fa": "پشت ران (خوابیده)",
+    "description_fa": "رو به شکم روی دستگاه پشت ران دراز بکشید و تاندون‌های آشیل خود را زیر اهرم پددار قرار دهید. پاشنه‌های خود را به سمت باسن خود بکشید، همسترینگ خود را منقبض کنید، سپس به آرامی پاهایتان را دراز کنید.",
+    "similar_workouts": ["Seated Leg Curl", "Standing Leg Curl"]
+  },
+  {
+    "id": 31,
+    "name": "Calf Raises (Standing)",
+    "muscles_affected": {
+      "gastrocnemius": 70,
+      "soleus": 30
+    },
+    "category": "legs",
+    "description": "Stand on a raised platform or step with your heels hanging off. Raise up onto the balls of your feet as high as possible, squeezing your calves, then lower your heels below the platform to stretch your calves.",
+    "name_fa": "ساق پا ایستاده",
+    "description_fa": "روی یک سکوی بلند یا پله بایستید و پاشنه‌هایتان آویزان باشد. تا جایی که ممکن است روی پنجه پاهایتان بالا بیایید، ساق پاهای خود را منقبض کنید، سپس پاشنه‌هایتان را زیر سکو پایین بیاورید تا ساق پاهای خود را بکشید.",
+    "similar_workouts": ["Seated Calf Raises", "Donkey Calf Raises"]
+  },
+  {
+    "id": 32,
+    "name": "Plank",
+    "muscles_affected": {
+      "abs": 40,
+      "obliques": 30,
+      "lower_back": 20,
+      "shoulders": 10
+    },
+    "category": "core",
+    "description": "Start in a push-up position, then lower onto your forearms. Keep your body in a straight line from head to heels, engaging your core and glutes. Hold for time.",
+    "name_fa": "پلانک",
+    "description_fa": "در وضعیت شنا سوئدی شروع کنید، سپس روی ساعد خود پایین بیایید. بدن خود را از سر تا پاشنه پا در یک خط مستقیم نگه دارید، عضلات مرکزی و باسن خود را درگیر کنید. برای مدت زمان مشخص نگه دارید.",
+    "similar_workouts": ["Side Plank", "Reverse Plank"]
+  },
+  {
+    "id": 33,
+    "name": "Crunches",
+    "muscles_affected": {
+      "upper_abs": 70,
+      "obliques": 30
+    },
+    "category": "core",
+    "description": "Lie on your back with knees bent and feet flat on the floor. Place your hands behind your head or across your chest. Lift your head and shoulders off the floor, engaging your abs, then slowly lower back down.",
+    "name_fa": "کرانچ",
+    "description_fa": "به پشت دراز بکشید و زانوهایتان را خم کرده و پاهایتان را روی زمین قرار دهید. دستانتان را پشت سر یا روی سینه خود قرار دهید. سر و شانه‌های خود را از زمین بلند کنید، عضلات شکم خود را درگیر کنید، سپس به آرامی به سمت پایین بازگردید.",
+    "similar_workouts": ["Reverse Crunches", "Bicycle Crunches"]
+  },
+  {
+    "id": 34,
+    "name": "Russian Twists",
+    "muscles_affected": {
+      "obliques": 70,
+      "abs": 30
+    },
+    "category": "core",
+    "description": "Sit on the floor with your knees bent and feet flat or slightly elevated. Lean back slightly, engaging your core. Twist your torso from side to side, touching the floor beside you with your hands or a weight.",
+    "name_fa": "پیچش روسی",
+    "description_fa": "روی زمین با زانوهای خمیده و پاهای صاف یا کمی بالا نشسته باشید. کمی به عقب خم شوید و عضلات مرکزی خود را درگیر کنید. تنه خود را از یک طرف به طرف دیگر بچرخانید و با دستان خود یا یک وزنه به زمین کنار خود دست بزنید.",
+    "similar_workouts": ["Side Bends (dumbbell)", "Cable Wood Chops"]
+  },
+  {
+    "id": 35,
+    "name": "Leg Raises",
+    "muscles_affected": {
+      "lower_abs": 60,
+      "hip_flexors": 40
+    },
+    "category": "core",
+    "description": "Lie on your back with your legs straight. Keep your lower back pressed into the floor. Raise your legs towards the ceiling until they are perpendicular to the floor, then slowly lower them without touching the floor.",
+    "name_fa": "بالا آوردن پا",
+    "description_fa": "به پشت دراز بکشید و پاهایتان را صاف نگه دارید. قسمت پایین کمر خود را به زمین فشار دهید. پاهای خود را به سمت سقف بالا بیاورید تا عمود بر زمین شوند، سپس به آرامی آنها را بدون تماس با زمین پایین بیاورید.",
+    "similar_workouts": ["Hanging Leg Raises", "Reverse Crunches"]
+  },
+  {
+    "id": 36,
+    "name": "Hyperextensions (Back Extension)",
+    "muscles_affected": {
+      "lower_back": 60,
+      "glutes": 20,
+      "hamstrings": 20
+    },
+    "category": "core",
+    "description": "Position yourself on a hyperextension bench, with your hips at the pivot point and ankles secured. Lower your upper body towards the floor, keeping your back straight, then raise back up until your body forms a straight line.",
+    "name_fa": "هایپر اکستنشن (تقویت کمر)",
+    "description_fa": "روی نیمکت هایپر اکستنشن قرار بگیرید، با باسن در نقطه محوری و مچ پاها محکم شده. قسمت بالایی بدن خود را به سمت زمین پایین بیاورید، کمر خود را صاف نگه دارید، سپس به سمت بالا بازگردید تا بدن شما یک خط مستقیم را تشکیل دهد.",
+    "similar_workouts": ["Good Mornings", "Reverse Hyperextensions"]
+  },
+  {
+    "id": 37,
+    "name": "Goblet Squat",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "core": 10
+    },
+    "category": "legs",
+    "description": "Stand with feet slightly wider than shoulder-width, holding a dumbbell vertically against your chest. Descend into a squat, keeping your chest up and elbows inside your knees, then drive back up.",
+    "name_fa": "اسکوات گابلت",
+    "description_fa": "با پاهایی کمی پهن‌تر از عرض شانه بایستید و یک دمبل را به صورت عمودی جلوی سینه خود نگه دارید. به حالت اسکوات پایین بروید، سینه رو به بالا و آرنج‌ها را داخل زانوها نگه دارید، سپس به سمت بالا حرکت کنید.",
+    "similar_workouts": ["Bodyweight Squat", "Dumbbell Front Squat"]
+  },
+  {
+    "id": 38,
+    "name": "Lunges (Dumbbell)",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 40,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Stand with a dumbbell in each hand. Take a step forward with one leg, lowering your hips until both knees are bent at approximately 90 degrees. Push off the front foot to return to the starting position. Alternate legs.",
+    "name_fa": "لانگز (دمبل)",
+    "description_fa": "با یک دمبل در هر دست بایستید. با یک پا به جلو قدم بردارید، باسن خود را پایین بیاورید تا هر دو زانو تقریباً 90 درجه خم شوند. با پای جلویی فشار وارد کنید تا به موقعیت شروع بازگردید. پاها را یکی در میان انجام دهید.",
+    "similar_workouts": ["Barbell Lunges", "Walking Lunges", "Reverse Lunges"]
+  },
+  {
+    "id": 39,
+    "name": "Step-ups (Dumbbell)",
+    "muscles_affected": {
+      "glutes": 50,
+      "quadriceps": 40,
+      "hamstrings": 10
+    },
+    "category": "legs",
+    "description": "Stand in front of a sturdy box or bench with a dumbbell in each hand. Step onto the box with one foot, driving through your heel to stand up, bringing the other leg up. Step back down and alternate legs.",
+    "name_fa": "استپ آپ (دمبل)",
+    "description_fa": "جلوی یک جعبه یا نیمکت محکم با یک دمبل در هر دست بایستید. با یک پا روی جعبه قدم بگذارید، با فشار از پاشنه پا بالا بیایید و پای دیگر را بالا بیاورید. دوباره پایین بیایید و پاها را یکی در میان انجام دهید.",
+    "similar_workouts": ["Box Jumps (plyometric)", "Pistol Squats (advanced)"]
+  },
+  {
+    "id": 40,
+    "name": "Good Mornings",
+    "muscles_affected": {
+      "hamstrings": 50,
+      "lower_back": 30,
+      "glutes": 20
+    },
+    "category": "legs",
+    "description": "Stand with a barbell resting on your upper back/traps (lighter weight is recommended). Keeping a slight bend in your knees and a straight back, hinge at your hips, lowering your torso until it's near parallel to the floor, then return to upright.",
+    "name_fa": "گود مورنینگ",
+    "description_fa": "با هالتر روی قسمت بالایی کمر/عضلات ذوزنقه‌ای بایستید (وزن سبک‌تر توصیه می‌شود). با کمی خمیدگی در زانوها و کمر صاف، از مفصل ران خم شوید و تنه خود را پایین بیاورید تا نزدیک موازی با زمین شود، سپس به حالت عمودی بازگردید.",
+    "similar_workouts": ["Romanian Deadlift", "Hyperextensions"]
+  },
+  {
+    "id": 41,
+    "name": "Glute Bridge",
+    "muscles_affected": {
+      "glutes": 70,
+      "hamstrings": 30
+    },
+    "category": "legs",
+    "description": "Lie on your back with knees bent and feet flat on the floor, close to your glutes. Drive through your heels, lifting your hips off the floor until your body forms a straight line from shoulders to knees. Squeeze your glutes at the top, then slowly lower.",
+    "name_fa": "پل باسن",
+    "description_fa": "به پشت دراز بکشید و زانوهایتان را خم کرده و پاهایتان را صاف روی زمین، نزدیک به باسن خود قرار دهید. از طریق پاشنه‌هایتان فشار وارد کنید، باسن خود را از زمین بلند کنید تا بدنتان از شانه‌ها تا زانوها یک خط مستقیم را تشکیل دهد. در بالا باسن خود را منقبض کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Hip Thrust (Barbell)", "Single-Leg Glute Bridge"]
+  },
+  {
+    "id": 42,
+    "name": "Hip Thrust (Barbell)",
+    "muscles_affected": {
+      "glutes": 80,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Sit on the floor with your upper back against a bench, a barbell across your hips. Roll the barbell over your hips. Drive through your heels, lifting your hips towards the ceiling, squeezing your glutes at the top, then slowly lower.",
+    "name_fa": "هیپ تراست (هالتر)",
+    "description_fa": "روی زمین بنشینید و قسمت بالایی کمرتان به نیمکت تکیه داشته باشد، یک هالتر روی باسن خود قرار دهید. هالتر را روی باسن خود بچرخانید. از طریق پاشنه‌هایتان فشار وارد کنید، باسن خود را به سمت سقف بلند کنید، باسن خود را در بالا منقبض کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Glute Bridge", "Reverse Hyperextensions"]
+  },
+  {
+    "id": 43,
+    "name": "Machine Shoulder Press",
+    "muscles_affected": {
+      "anterior_deltoid": 50,
+      "lateral_deltoid": 30,
+      "triceps": 20
+    },
+    "category": "shoulders",
+    "description": "Sit on the machine shoulder press, adjusting the seat so the handles are at shoulder height. Press the handles overhead, extending your arms, then slowly lower them.",
+    "name_fa": "پرس شانه دستگاه",
+    "description_fa": "روی دستگاه پرس شانه بنشینید و صندلی را طوری تنظیم کنید که دسته‌ها در ارتفاع شانه قرار گیرند. دسته‌ها را بالای سر خود فشار دهید، بازوهایتان را دراز کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Overhead Press (Barbell/Dumbbell)"]
+  },
+  {
+    "id": 44,
+    "name": "Machine Chest Press",
+    "muscles_affected": {
+      "chest": 60,
+      "anterior_deltoid": 20,
+      "triceps": 20
+    },
+    "category": "chest",
+    "description": "Sit on the machine chest press, adjusting the seat so the handles are at mid-chest height. Press the handles forward, extending your arms, squeezing your chest, then slowly return them.",
+    "name_fa": "پرس سینه دستگاه",
+    "description_fa": "روی دستگاه پرس سینه بنشینید و صندلی را طوری تنظیم کنید که دسته‌ها در ارتفاع میانه سینه قرار گیرند. دسته‌ها را به سمت جلو فشار دهید، بازوهایتان را دراز کنید، سینه خود را منقبض کنید، سپس به آرامی آنها را به موقعیت شروع بازگردانید.",
+    "similar_workouts": ["Barbell Bench Press", "Dumbbell Bench Press"]
+  },
+  {
+    "id": 45,
+    "name": "Machine Leg Curl",
+    "muscles_affected": {
+      "hamstrings": 90,
+      "calves": 10
+    },
+    "category": "legs",
+    "description": "Sit on the seated leg curl machine with your shins under the padded bar. Curl your heels towards your glutes, squeezing your hamstrings, then slowly extend your legs.",
+    "name_fa": "پشت ران دستگاه (نشسته)",
+    "description_fa": "روی دستگاه پشت ران نشسته بنشینید و ساق پاهایتان را زیر میله پددار قرار دهید. پاشنه‌های خود را به سمت باسن خود بکشید، همسترینگ خود را منقبض کنید، سپس به آرامی پاهایتان را دراز کنید.",
+    "similar_workouts": ["Lying Leg Curl", "Standing Leg Curl"]
+  },
+  {
+    "id": 46,
+    "name": "Machine Leg Extension",
+    "muscles_affected": {
+      "quadriceps": 90,
+      "hip_flexors": 10
+    },
+    "category": "legs",
+    "description": "Sit on the leg extension machine with your shins under the padded bar. Extend your legs forward, straightening your knees, squeezing your quads, then slowly lower the weight.",
+    "name_fa": "جلو ران دستگاه",
+    "description_fa": "روی دستگاه جلو ران بنشینید و ساق پاهایتان را زیر میله پددار قرار دهید. پاهای خود را به سمت جلو بکشید، زانوهایتان را صاف کنید، عضلات چهارسر ران خود را منقبض کنید، سپس به آرامی وزن را پایین بیاورید.",
+    "similar_workouts": ["Leg Extension"]
+  },
+  {
+    "id": 47,
+    "name": "Cable Crossover (High)",
+    "muscles_affected": {
+      "lower_chest": 70,
+      "middle_chest": 20,
+      "anterior_deltoid": 10
+    },
+    "category": "chest",
+    "description": "Stand between two high pulleys with D-handles. Step forward slightly, keeping a slight bend in your elbows. Bring the handles down and across your body, squeezing your lower chest, then slowly return.",
+    "name_fa": "کراس اوور سیم‌کش (بالا)",
+    "description_fa": "بین دو سیم‌کش بالا با دسته‌های D-شکل بایستید. کمی به جلو قدم بردارید، با کمی خمیدگی در آرنج‌ها. دسته‌ها را به سمت پایین و عرض بدن خود بیاورید، قسمت پایین سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Dumbbell Flyes (Decline)", "Pec Deck Fly"]
+  },
+  {
+    "id": 48,
+    "name": "Cable Crossover (Middle)",
+    "muscles_affected": {
+      "middle_chest": 70,
+      "anterior_deltoid": 20,
+      "triceps": 10
+    },
+    "category": "chest",
+    "description": "Stand between two middle pulleys with D-handles. Step forward slightly, keeping a slight bend in your elbows. Bring the handles together in front of you, squeezing your middle chest, then slowly return.",
+    "name_fa": "کراس اوور سیم‌کش (وسط)",
+    "description_fa": "بین دو سیم‌کش میانی با دسته‌های D-شکل بایستید. کمی به جلو قدم بردارید، با کمی خمیدگی در آرنج‌ها. دسته‌ها را جلوی خود به هم نزدیک کنید، قسمت میانی سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Dumbbell Flyes (Flat)", "Pec Deck Fly"]
+  },
+  {
+    "id": 49,
+    "name": "Cable Crossover (Low)",
+    "muscles_affected": {
+      "upper_chest": 70,
+      "anterior_deltoid": 20,
+      "biceps": 10
+    },
+    "category": "chest",
+    "description": "Stand between two low pulleys with D-handles. Step forward slightly, keeping a slight bend in your elbows. Bring the handles up and across your body, squeezing your upper chest, then slowly return.",
+    "name_fa": "کراس اوور سیم‌کش (پایین)",
+    "description_fa": "بین دو سیم‌کش پایین با دسته‌های D-شکل بایستید. کمی به جلو قدم بردارید، با کمی خمیدگی در آرنج‌ها. دسته‌ها را به سمت بالا و عرض بدن خود بیاورید، قسمت بالایی سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Dumbbell Flyes (Incline)", "Incline Barbell Press"]
+  },
+  {
+    "id": 50,
+    "name": "Cable Row (Wide Grip)",
+    "muscles_affected": {
+      "upper_back": 40,
+      "rhomboids": 30,
+      "rear_deltoid": 20,
+      "biceps": 10
+    },
+    "category": "back",
+    "description": "Sit on the cable row machine with a wide grip bar. Pull the bar towards your upper abdomen, squeezing your shoulder blades together, then slowly extend your arms.",
+    "name_fa": "پارویی سیم‌کش (دستگیره پهن)",
+    "description_fa": "روی دستگاه پارویی سیم‌کش با میله دستگیره پهن بنشینید. میله را به سمت قسمت بالای شکم خود بکشید، تیغه‌های شانه خود را به هم نزدیک کنید، سپس به آرامی بازوهایتان را دراز کنید.",
+    "similar_workouts": ["Barbell Row (wide grip)", "Pull-ups (wide grip)"]
+  },
+  {
+    "id": 51,
+    "name": "Cable Lat Pulldown (Reverse Grip)",
+    "muscles_affected": {
+      "lats": 60,
+      "biceps": 30,
+      "forearms": 10
+    },
+    "category": "back",
+    "description": "Sit on the lat pulldown machine and grip the bar with a close underhand grip. Pull the bar down to your upper chest, squeezing your lats and biceps, then slowly release it back up.",
+    "name_fa": "لت پول داون سیم‌کش (دستگیره برعکس)",
+    "description_fa": "روی دستگاه لت پول داون بنشینید و میله را با دستگیره از پایین و نزدیک بگیرید. میله را به سمت بالای سینه خود بکشید، عضلات لت و جلو بازوهای خود را منقبض کنید، سپس به آرامی آن را به سمت بالا رها کنید.",
+    "similar_workouts": ["Chin-ups", "Reverse Grip Barbell Row"]
+  },
+  {
+    "id": 52,
+    "name": "Standing Cable Fly (Single Arm)",
+    "muscles_affected": {
+      "chest": 80,
+      "anterior_deltoid": 10,
+      "core": 10
+    },
+    "category": "chest",
+    "description": "Stand beside a cable machine with a D-handle set at chest height. Grip the handle with one hand and step away from the machine. Bring the handle across your body, squeezing your chest, then slowly return.",
+    "name_fa": "فلای سیم‌کش ایستاده (تک دست)",
+    "description_fa": "کنار یک دستگاه سیم‌کش با دسته D-شکل در ارتفاع سینه بایستید. دسته را با یک دست بگیرید و از دستگاه فاصله بگیرید. دسته را عرض بدن خود بکشید، سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Dumbbell Flyes (single arm)"]
+  },
+  {
+    "id": 53,
+    "name": "Renegade Row (Dumbbell)",
+    "muscles_affected": {
+      "back": 40,
+      "core": 30,
+      "shoulders": 20,
+      "triceps": 10
+    },
+    "category": "full_body",
+    "description": "Start in a high plank position with a dumbbell in each hand, hands directly under your shoulders. Perform a row with one arm, pulling the dumbbell towards your chest, then lower. Alternate arms while maintaining core stability.",
+    "name_fa": "پارویی رنه‌گید (دمبل)",
+    "description_fa": "در وضعیت پلانک بالا با یک دمبل در هر دست شروع کنید، دست‌ها مستقیماً زیر شانه‌ها. با یک دست پارویی انجام دهید، دمبل را به سمت سینه خود بکشید، سپس پایین بیاورید. دست‌ها را یکی در میان انجام دهید در حالی که ثبات هسته بدن خود را حفظ می‌کنید.",
+    "similar_workouts": ["Plank with Arm Raise"]
+  },
+  {
+    "id": 54,
+    "name": "Turkish Get-up",
+    "muscles_affected": {
+      "full_body": 100
+    },
+    "category": "full_body",
+    "description": "A complex movement starting lying on your back with a kettlebell or dumbbell. It involves pressing the weight up, sitting up, sweeping your leg, lunging, and standing up, then reversing the movement. Focuses on stability, mobility, and strength.",
+    "name_fa": "ترکیش گت آپ",
+    "description_fa": "یک حرکت پیچیده که با دراز کشیدن به پشت با یک کتل بل یا دمبل شروع می‌شود. این حرکت شامل فشار دادن وزنه به بالا، نشستن، کشیدن پا، لانگ و ایستادن است، سپس حرکت را معکوس می‌کنید. بر ثبات، تحرک و قدرت تمرکز دارد.",
+    "similar_workouts": ["Windmill"]
+  },
+  {
+    "id": 55,
+    "name": "Kettlebell Swing",
+    "muscles_affected": {
+      "glutes": 50,
+      "hamstrings": 30,
+      "lower_back": 10,
+      "shoulders": 10
+    },
+    "category": "full_body",
+    "description": "Stand with feet wider than shoulder-width, holding a kettlebell with both hands. Hinge at your hips, allowing the kettlebell to swing between your legs. Explosively extend your hips and knees to propel the kettlebell forward to chest height, then let it swing back down.",
+    "name_fa": "کettlebell Swing",
+    "description_fa": "با پاهایی پهن‌تر از عرض شانه بایستید و یک کتل بل را با هر دو دست نگه دارید. از مفصل ران خم شوید، اجازه دهید کتل بل بین پاهایتان تاب بخورد. با انفجار باسن و زانوها را بکشید تا کتل بل را به ارتفاع سینه به جلو پرتاب کنید، سپس اجازه دهید به سمت پایین تاب بخورد.",
+    "similar_workouts": ["Goblet Squat (dynamic)", "Deadlift (explosive)"]
+  },
+  {
+    "id": 56,
+    "name": "Thrusters (Dumbbell)",
+    "muscles_affected": {
+      "quadriceps": 30,
+      "glutes": 20,
+      "shoulders": 30,
+      "triceps": 20
+    },
+    "category": "full_body",
+    "description": "Hold a dumbbell in each hand at shoulder height, palms facing each other. Perform a full squat, then explosively drive up, pressing the dumbbells overhead in one fluid motion. Lower the dumbbells back to shoulder height as you descend into the next squat.",
+    "name_fa": "تراستر (دمبل)",
+    "description_fa": "یک دمبل در هر دست در ارتفاع شانه نگه دارید، کف دست ها رو به یکدیگر. یک اسکوات کامل انجام دهید، سپس به صورت انفجاری به بالا حرکت کنید و دمبل ها را به صورت یک حرکت روان بالای سر خود فشار دهید. دمبل ها را به ارتفاع شانه برگردانید و به اسکوات بعدی بروید.",
+    "similar_workouts": ["Barbell Thrusters", "Push Press"]
+  },
+  {
+    "id": 57,
+    "name": "Burpees",
+    "muscles_affected": {
+      "full_body": 100
+    },
+    "category": "cardio",
+    "description": "Start standing, drop into a squat, kick your feet back into a plank, perform a push-up, jump your feet back to the squat position, and then jump explosively into the air.",
+    "name_fa": "برپی",
+    "description_fa": "ایستاده شروع کنید، به حالت اسکوات پایین بروید، پاهای خود را به عقب به حالت پلانک پرتاب کنید، یک شنا سوئدی انجام دهید، پاهای خود را به حالت اسکوات برگردانید، سپس به صورت انفجاری به هوا بپرید.",
+    "similar_workouts": ["Squat Jumps", "Mountain Climbers"]
+  },
+  {
+    "id": 58,
+    "name": "Mountain Climbers",
+    "muscles_affected": {
+      "abs": 30,
+      "hip_flexors": 30,
+      "quadriceps": 20,
+      "shoulders": 20
+    },
+    "category": "core",
+    "description": "Start in a high plank position. Bring one knee towards your chest, then quickly switch legs, mimicking a running motion. Keep your core engaged and hips stable.",
+    "name_fa": "کوهنورد",
+    "description_fa": "در وضعیت پلانک بالا شروع کنید. یک زانو را به سمت سینه خود بیاورید، سپس به سرعت پاها را عوض کنید، حرکتی شبیه دویدن. هسته بدن خود را درگیر و باسن خود را ثابت نگه دارید.",
+    "similar_workouts": ["Plank Jacks", "High Knees"]
+  },
+  {
+    "id": 59,
+    "name": "Box Jumps",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "calves": 10
+    },
+    "category": "cardio",
+    "description": "Stand in front of a sturdy box. Swing your arms and explode upwards, landing softly on top of the box with both feet. Step or jump back down.",
+    "name_fa": "پرش روی جعبه",
+    "description_fa": "جلوی یک جعبه محکم بایستید. بازوهای خود را تاب دهید و به سمت بالا بپرید، به آرامی با هر دو پا روی جعبه فرود بیایید. پایین بیایید یا به پایین بپرید.",
+    "similar_workouts": ["Broad Jumps", "Plyo Lunges"]
+  },
+  {
+    "id": 60,
+    "name": "Sled Push",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "calves": 10
+    },
+    "category": "full_body",
+    "description": "Push a weighted sled forward, engaging your legs and core. Maintain a low, powerful stance.",
+    "name_fa": "هل دادن سورتمه",
+    "description_fa": "یک سورتمه وزنه دار را به جلو هل دهید، پاها و هسته بدن خود را درگیر کنید. وضعیت پایین و قدرتمندی را حفظ کنید.",
+    "similar_workouts": ["Prowler Push"]
+  },
+  {
+    "id": 61,
+    "name": "Battle Ropes (Waves)",
+    "muscles_affected": {
+      "shoulders": 40,
+      "arms": 30,
+      "core": 20,
+      "cardio": 10
+    },
+    "category": "cardio",
+    "description": "Stand facing the anchor point, holding a rope in each hand. Create continuous waves by moving your arms up and down, alternating or simultaneously.",
+    "name_fa": "طناب‌های جنگی (موج)",
+    "description_fa": "روبروی نقطه لنگر بایستید و یک طناب در هر دست بگیرید. با حرکت دادن بازوهای خود به بالا و پایین، به صورت متناوب یا همزمان، امواج پیوسته ایجاد کنید.",
+    "similar_workouts": ["Slam Ball"]
+  },
+  {
+    "id": 62,
+    "name": "Farmers Walk",
+    "muscles_affected": {
+      "forearms": 30,
+      "traps": 20,
+      "core": 20,
+      "legs": 20,
+      "back": 10
+    },
+    "category": "full_body",
+    "description": "Hold a heavy dumbbell or kettlebell in each hand. Walk for a set distance, maintaining an upright posture and engaging your core.",
+    "name_fa": "پیاده روی کشاورز",
+    "description_fa": "یک دمبل یا کتل بل سنگین در هر دست نگه دارید. برای مسافت مشخصی راه بروید، حالت عمودی بدن خود را حفظ کرده و هسته بدن خود را درگیر کنید.",
+    "similar_workouts": ["Suitcase Carry"]
+  },
+  {
+    "id": 63,
+    "name": "Sumo Deadlift",
+    "muscles_affected": {
+      "glutes": 40,
+      "hamstrings": 30,
+      "quadriceps": 20,
+      "lower_back": 10
+    },
+    "category": "legs",
+    "description": "Stand with a very wide stance, toes pointed out, gripping the barbell with a closer grip than conventional deadlift. Keep your chest up and back straight, lift the bar by extending your hips and knees.",
+    "name_fa": "ددلیفت سومو",
+    "description_fa": "با یک وضعیت بسیار پهن بایستید، انگشتان پا به بیرون اشاره داشته باشند، هالتر را با دستگیره ای نزدیکتر از ددلیفت معمولی بگیرید. سینه خود را بالا و کمر خود را صاف نگه دارید، میله را با کشیدن باسن و زانوها بلند کنید.",
+    "similar_workouts": ["Conventional Deadlift"]
+  },
+  {
+    "id": 64,
+    "name": "Deficit Deadlift",
+    "muscles_affected": {
+      "hamstrings": 35,
+      "glutes": 30,
+      "lower_back": 25,
+      "traps": 10
+    },
+    "category": "legs",
+    "description": "Perform a conventional deadlift while standing on an elevated surface (e.g., a plate or low box) to increase the range of motion.",
+    "name_fa": "ددلیفت از نقص",
+    "description_fa": "یک ددلیفت معمولی را در حالی که روی یک سطح مرتفع (مثلاً یک صفحه یا جعبه کم ارتفاع) ایستاده‌اید، انجام دهید تا دامنه حرکت افزایش یابد.",
+    "similar_workouts": ["Conventional Deadlift (increased ROM)"]
+  },
+  {
+    "id": 65,
+    "name": "Rack Pulls",
+    "muscles_affected": {
+      "lower_back": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "traps": 10
+    },
+    "category": "back",
+    "description": "Set a barbell on pins in a power rack at a height just below your knees. Perform a deadlift from this elevated position, focusing on the top portion of the lift.",
+    "name_fa": "راک پول",
+    "description_fa": "یک هالتر را روی پین‌های یک راک قدرتی در ارتفاعی کمی پایین‌تر از زانوهای خود قرار دهید. یک ددلیفت از این موقعیت بلند شده انجام دهید، با تمرکز بر قسمت بالای لیفت.",
+    "similar_workouts": ["Deadlift (partial range)"]
+  },
+  {
+    "id": 66,
+    "name": "Glute-Ham Raise",
+    "muscles_affected": {
+      "hamstrings": 50,
+      "glutes": 30,
+      "lower_back": 20
+    },
+    "category": "legs",
+    "description": "Use a GHR machine. Anchor your feet and lower your torso towards the floor, extending at the knees and hips. Use your hamstrings and glutes to pull yourself back up.",
+    "name_fa": "جی اچ آر",
+    "description_fa": "از دستگاه GHR استفاده کنید. پاهای خود را محکم کنید و تنه خود را به سمت زمین پایین بیاورید، در زانوها و باسن خود را دراز کنید. از همسترینگ و باسن خود برای بالا کشیدن خود استفاده کنید.",
+    "similar_workouts": ["Nordic Hamstring Curl"]
+  },
+  {
+    "id": 67,
+    "name": "Nordic Hamstring Curl",
+    "muscles_affected": {
+      "hamstrings": 80,
+      "glutes": 20
+    },
+    "category": "legs",
+    "description": "Anchor your feet (e.g., under a stable bar or with a partner). Lean forward from your knees, resisting the movement with your hamstrings, then use your hamstrings to pull yourself back up. (Advanced bodyweight exercise)",
+    "name_fa": "نوردیک همسترینگ کرل",
+    "description_fa": "پاهای خود را محکم کنید (مثلاً زیر یک میله ثابت یا با یک شریک). از زانوهای خود به جلو خم شوید، با همسترینگ خود در برابر حرکت مقاومت کنید، سپس از همسترینگ خود برای بالا کشیدن خود استفاده کنید. (تمرین پیشرفته با وزن بدن)",
+    "similar_workouts": ["Glute-Ham Raise"]
+  },
+  {
+    "id": 68,
+    "name": "Reverse Hyperextension",
+    "muscles_affected": {
+      "glutes": 50,
+      "hamstrings": 30,
+      "lower_back": 20
+    },
+    "category": "legs",
+    "description": "Lie face down on a reverse hyperextension machine, securing your upper body. Extend your legs upwards, raising them as high as possible, squeezing your glutes and lower back, then slowly lower them.",
+    "name_fa": "هایپر اکستنشن معکوس",
+    "description_fa": "رو به شکم روی دستگاه هایپر اکستنشن معکوس دراز بکشید و قسمت بالایی بدن خود را محکم کنید. پاهای خود را به سمت بالا بکشید، آنها را تا جایی که ممکن است بالا بیاورید، باسن و کمر خود را منقبض کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Good Mornings", "Glute Bridge"]
+  },
+  {
+    "id": 69,
+    "name": "Ab Rollout (Barbell/Wheel)",
+    "muscles_affected": {
+      "abs": 60,
+      "obliques": 20,
+      "shoulders": 10,
+      "lower_back": 10
+    },
+    "category": "core",
+    "description": "Kneel on the floor, holding an ab wheel or barbell with plates. Roll forward, extending your body, keeping your core tight and back straight, then pull yourself back to the starting position using your abs.",
+    "name_fa": "ای بی رول اوت (هالتر/چرخ)",
+    "description_fa": "روی زمین زانو بزنید و یک چرخ شکم یا هالتر با وزنه بگیرید. به جلو غلت بزنید، بدن خود را دراز کنید، هسته بدن خود را سفت و کمر خود را صاف نگه دارید، سپس با استفاده از عضلات شکم خود را به موقعیت شروع بکشید.",
+    "similar_workouts": ["Plank with Arm Extension"]
+  },
+  {
+    "id": 70,
+    "name": "Hanging Leg Raises",
+    "muscles_affected": {
+      "lower_abs": 60,
+      "hip_flexors": 40
+    },
+    "category": "core",
+    "description": "Hang from a pull-up bar with an overhand grip. Keeping your legs straight or slightly bent, raise them until they are parallel to the floor or higher, engaging your lower abs, then slowly lower them.",
+    "name_fa": "بالا آوردن پا آویزان",
+    "description_fa": "از میله بارفیکس با دستگیره از بالا آویزان شوید. پاهای خود را صاف یا کمی خم نگه دارید، آنها را بالا بیاورید تا موازی با زمین یا بالاتر شوند، عضلات شکم پایین خود را درگیر کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Leg Raises (lying)", "Toes to Bar"]
+  },
+  {
+    "id": 71,
+    "name": "Toes to Bar",
+    "muscles_affected": {
+      "abs": 50,
+      "hip_flexors": 30,
+      "lats": 10,
+      "forearms": 10
+    },
+    "category": "core",
+    "description": "Hang from a pull-up bar. Engage your core and swing your legs up to touch the bar with your toes, then control the descent.",
+    "name_fa": "پنجه به میله",
+    "description_fa": "از میله بارفیکس آویزان شوید. هسته بدن خود را درگیر کنید و پاهای خود را به سمت بالا تاب دهید تا با پنجه هایتان به میله دست بزنید، سپس فرود را کنترل کنید.",
+    "similar_workouts": ["Hanging Leg Raises"]
+  },
+  {
+    "id": 72,
+    "name": "Machine Ab Crunch",
+    "muscles_affected": {
+      "abs": 80,
+      "obliques": 20
+    },
+    "category": "core",
+    "description": "Sit on the ab crunch machine and grip the handles. Crunch your torso forward, engaging your abs, then slowly return to the starting position.",
+    "name_fa": "کرانچ شکم (دستگاه)",
+    "description_fa": "روی دستگاه کرانچ شکم بنشینید و دسته ها را بگیرید. تنه خود را به سمت جلو جمع کنید، عضلات شکم خود را درگیر کنید، سپس به آرامی به موقعیت شروع بازگردید.",
+    "similar_workouts": ["Crunches", "Cable Crunches"]
+  },
+  {
+    "id": 73,
+    "name": "Cable Crunches",
+    "muscles_affected": {
+      "abs": 70,
+      "obliques": 30
+    },
+    "category": "core",
+    "description": "Kneel in front of a high pulley with a rope attachment. Hold the rope behind your head. Crunch your torso towards your knees, engaging your abs, then slowly return.",
+    "name_fa": "کرانچ سیم‌کش",
+    "description_fa": "جلوی یک سیم‌کش بالا با بند طنابی زانو بزنید. طناب را پشت سر خود نگه دارید. تنه خود را به سمت زانوهایتان جمع کنید، عضلات شکم خود را درگیر کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Machine Ab Crunch", "Crunches"]
+  },
+  {
+    "id": 74,
+    "name": "Side Plank",
+    "muscles_affected": {
+      "obliques": 60,
+      "abs": 20,
+      "hips": 20
+    },
+    "category": "core",
+    "description": "Support your body on one forearm and the side of your foot. Keep your body in a straight line from head to heels. Hold for time, then switch sides.",
+    "name_fa": "پلانک جانبی",
+    "description_fa": "بدن خود را روی یک ساعد و کنار پای خود حمایت کنید. بدن خود را از سر تا پاشنه پا در یک خط مستقیم نگه دارید. برای مدت زمان مشخص نگه دارید، سپس طرفین را عوض کنید.",
+    "similar_workouts": ["Plank (side variations)"]
+  },
+  {
+    "id": 75,
+    "name": "Reverse Crunch",
+    "muscles_affected": {
+      "lower_abs": 70,
+      "hip_flexors": 30
+    },
+    "category": "core",
+    "description": "Lie on your back with knees bent and feet off the floor. Bring your knees towards your chest, lifting your hips slightly off the floor, engaging your lower abs, then slowly lower your legs.",
+    "name_fa": "کرانچ معکوس",
+    "description_fa": "به پشت دراز بکشید و زانوهایتان را خم کرده و پاهایتان را از زمین بلند کنید. زانوهای خود را به سمت سینه خود بیاورید، باسن خود را کمی از زمین بلند کنید، عضلات شکم پایین خود را درگیر کنید، سپس به آرامی پاهای خود را پایین بیاورید.",
+    "similar_workouts": ["Leg Raises", "Hanging Leg Raises"]
+  },
+  {
+    "id": 76,
+    "name": "Bird Dog",
+    "muscles_affected": {
+      "core": 40,
+      "lower_back": 30,
+      "glutes": 20,
+      "shoulders": 10
+    },
+    "category": "core",
+    "description": "Start on all fours. Extend one arm forward and the opposite leg backward, keeping your back flat and core engaged. Hold briefly, then return to the start and switch sides.",
+    "name_fa": "برداگ",
+    "description_fa": "روی چهار دست و پا شروع کنید. یک بازو را به جلو و پای مخالف را به عقب دراز کنید، کمر خود را صاف و هسته بدن خود را درگیر نگه دارید. برای مدت کوتاهی نگه دارید، سپس به موقعیت شروع بازگردید و طرفین را عوض کنید.",
+    "similar_workouts": ["Superman"]
+  },
+  {
+    "id": 77,
+    "name": "Wood Chop (Cable)",
+    "muscles_affected": {
+      "obliques": 60,
+      "abs": 20,
+      "shoulders": 10,
+      "glutes": 10
+    },
+    "category": "core",
+    "description": "Stand sideways to a cable machine with a D-handle set at a high pulley. Grip the handle with both hands. Rotate your torso downwards and across your body as if chopping wood, engaging your obliques. Control the return.",
+    "name_fa": "هیزم‌شکن (سیم‌کش)",
+    "description_fa": "کنار یک دستگاه سیم‌کش با دسته D-شکل در سیم‌کش بالا بایستید. دسته را با هر دو دست بگیرید. تنه خود را به سمت پایین و عرض بدن خود بچرخانید، گویی در حال قطع کردن چوب هستید، عضلات مایل شکم خود را درگیر کنید. بازگشت را کنترل کنید.",
+    "similar_workouts": ["Medicine Ball Slams (rotational)"]
+  },
+  {
+    "id": 78,
+    "name": "Medicine Ball Slams",
+    "muscles_affected": {
+      "abs": 30,
+      "shoulders": 20,
+      "back": 20,
+      "legs": 20,
+      "cardio": 10
+    },
+    "category": "full_body",
+    "description": "Stand with a medicine ball. Lift the ball overhead, then forcefully slam it into the ground, engaging your entire core and exhaling. Catch it on the bounce and repeat.",
+    "name_fa": "کوبیدن توپ طبی",
+    "description_fa": "با یک توپ طبی بایستید. توپ را بالای سر خود بلند کنید، سپس آن را با قدرت به زمین بکوبید، تمام هسته بدن خود را درگیر کرده و بازدم کنید. آن را در برگشت بگیرید و تکرار کنید.",
+    "similar_workouts": ["Burpees (explosive)"]
+  },
+  {
+    "id": 79,
+    "name": "Kettlebell Front Squat",
+    "muscles_affected": {
+      "quadriceps": 50,
+      "glutes": 30,
+      "hamstrings": 10,
+      "core": 10
+    },
+    "category": "legs",
+    "description": "Hold one or two kettlebells in the rack position (kettlebells resting on your forearms at chest height). Perform a squat, keeping your chest up and elbows high.",
+    "name_fa": "اسکوات از جلو کتل بل",
+    "description_fa": "یک یا دو کتل بل را در وضعیت راک نگه دارید (کتل بل ها روی ساعد شما در ارتفاع سینه قرار گیرند). یک اسکوات انجام دهید، سینه رو به بالا و آرنج‌ها را بالا نگه دارید.",
+    "similar_workouts": ["Barbell Front Squat", "Goblet Squat"]
+  },
+  {
+    "id": 80,
+    "name": "Pistol Squat (Assisted)",
+    "muscles_affected": {
+      "quadriceps": 50,
+      "glutes": 30,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Perform a single-leg squat while holding onto a TRX strap, post, or door frame for balance and support. Focus on controlled descent and ascent.",
+    "name_fa": "اسکوات تک پا (با کمک)",
+    "description_fa": "یک اسکوات تک پا را در حالی که برای تعادل و حمایت به یک بند TRX، ستون یا چارچوب در چسبیده اید، انجام دهید. بر روی فرود و صعود کنترل شده تمرکز کنید.",
+    "similar_workouts": ["Single Leg Squat"]
+  },
+  {
+    "id": 81,
+    "name": "Bulgarian Split Squat (Dumbbell)",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 40,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Place the top of one foot on a bench behind you, holding a dumbbell in each hand. Lower your body by bending your front knee until your back knee is near the floor, then push back up through your front heel.",
+    "name_fa": "اسکوات بلغاری (دمبل)",
+    "description_fa": "نوک یک پا را روی نیمکتی پشت سر خود قرار دهید و یک دمبل در هر دست بگیرید. بدن خود را با خم کردن زانوی جلویی خود پایین بیاورید تا زانوی پشتی شما نزدیک زمین شود، سپس از طریق پاشنه پای جلویی خود به سمت بالا فشار دهید.",
+    "similar_workouts": ["Lunges (Dumbbell)"]
+  },
+  {
+    "id": 82,
+    "name": "Hack Squat (Machine)",
+    "muscles_affected": {
+      "quadriceps": 70,
+      "glutes": 20,
+      "hamstrings": 10
+    },
+    "category": "legs",
+    "description": "Stand on the platform of the hack squat machine with your shoulders under the pads. Lower your body by bending your knees, keeping your back against the pad, then push back up.",
+    "name_fa": "هاگ اسکوات (دستگاه)",
+    "description_fa": "روی سکوی دستگاه هاگ اسکوات با شانه های خود زیر پدها بایستید. بدن خود را با خم کردن زانوها، با حفظ کمر خود در برابر پد، پایین بیاورید، سپس به سمت بالا فشار دهید.",
+    "similar_workouts": ["Leg Press", "Barbell Squat"]
+  },
+  {
+    "id": 83,
+    "name": "Sissy Squat",
+    "muscles_affected": {
+      "quadriceps": 90,
+      "calves": 10
+    },
+    "category": "legs",
+    "description": "Stand tall, and keeping your body in a straight line from knees to head, lean back while bending your knees, letting your heels lift. Go as low as possible, then push back up. Can be done with assistance or holding a weight.",
+    "name_fa": "سیسی اسکوات",
+    "description_fa": "صاف بایستید، و بدن خود را در یک خط مستقیم از زانوها تا سر نگه دارید، به عقب خم شوید در حالی که زانوهای خود را خم می‌کنید، اجازه دهید پاشنه‌هایتان بلند شوند. تا جایی که ممکن است پایین بروید، سپس به سمت بالا فشار دهید. می‌توان آن را با کمک یا نگه داشتن وزنه انجام داد.",
+    "similar_workouts": ["Leg Extension"]
+  },
+  {
+    "id": 84,
+    "name": "Walking Lunges (Dumbbell)",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 40,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Perform lunges by stepping forward with one leg, then bringing the back leg forward to meet the front, continuing the movement as you walk.",
+    "name_fa": "لانگز راه رفتن (دمبل)",
+    "description_fa": "با قدم برداشتن به جلو با یک پا، سپس آوردن پای پشتی به جلو برای رسیدن به پای جلویی، حرکت را ادامه دهید.",
+    "similar_workouts": ["Static Lunges (Dumbbell)"]
+  },
+  {
+    "id": 85,
+    "name": "Reverse Lunges (Barbell)",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 40,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Stand with a barbell on your upper back. Step backward with one leg, lowering your hips until both knees are bent at approximately 90 degrees. Push off the back foot to return to the starting position. Alternate legs.",
+    "name_fa": "لانگز معکوس (هالتر)",
+    "description_fa": "با یک هالتر روی قسمت بالایی کمر خود بایستید. با یک پا به عقب قدم بردارید، باسن خود را پایین بیاورید تا هر دو زانو تقریباً 90 درجه خم شوند. با پای پشتی فشار وارد کنید تا به موقعیت شروع بازگردید. پاها را یکی در میان انجام دهید.",
+    "similar_workouts": ["Forward Lunges"]
+  },
+  {
+    "id": 86,
+    "name": "Single-Leg Romanian Deadlift (Dumbbell)",
+    "muscles_affected": {
+      "hamstrings": 50,
+      "glutes": 30,
+      "lower_back": 10,
+      "core": 10
+    },
+    "category": "legs",
+    "description": "Stand on one leg, holding a dumbbell in the opposite hand. Hinge at your hips, lowering the dumbbell towards the floor while extending your free leg straight back for balance. Return to upright.",
+    "name_fa": "ددلیفت رومانیایی تک پا (دمبل)",
+    "description_fa": "روی یک پا بایستید و یک دمبل را در دست مخالف نگه دارید. از مفصل ران خم شوید، دمبل را به سمت زمین پایین بیاورید در حالی که پای آزاد خود را برای تعادل به عقب دراز می‌کنید. به حالت عمودی بازگردید.",
+    "similar_workouts": ["Romanian Deadlift (Barbell)"]
+  },
+  {
+    "id": 87,
+    "name": "Seated Calf Raises (Machine)",
+    "muscles_affected": {
+      "soleus": 70,
+      "gastrocnemius": 30
+    },
+    "category": "legs",
+    "description": "Sit on the seated calf raise machine with the pads on your thighs. Lift your heels as high as possible, squeezing your calves, then lower them, feeling a stretch.",
+    "name_fa": "ساق پا نشسته (دستگاه)",
+    "description_fa": "روی دستگاه ساق پا نشسته بنشینید و پدها را روی ران‌های خود قرار دهید. پاشنه‌های خود را تا جایی که ممکن است بالا بیاورید، ساق پاهای خود را منقبض کنید، سپس آنها را پایین بیاورید و کشش را احساس کنید.",
+    "similar_workouts": ["Standing Calf Raises"]
+  },
+  {
+    "id": 88,
+    "name": "Donkey Calf Raises (Machine)",
+    "muscles_affected": {
+      "gastrocnemius": 60,
+      "soleus": 40
+    },
+    "category": "legs",
+    "description": "Position yourself on the donkey calf raise machine with your lower back/hips against the pad and balls of your feet on the platform. Perform calf raises.",
+    "name_fa": "ساق پا الاغی (دستگاه)",
+    "description_fa": "خود را روی دستگاه ساق پا الاغی قرار دهید به طوری که قسمت پایین کمر/باسن شما به پد و پنجه پاهای شما روی سکو باشد. ساق پا را انجام دهید.",
+    "similar_workouts": ["Standing Calf Raises"]
+  },
+  {
+    "id": 89,
+    "name": "Weighted Crunches",
+    "muscles_affected": {
+      "upper_abs": 70,
+      "obliques": 30
+    },
+    "category": "core",
+    "description": "Perform crunches while holding a weight plate or dumbbell on your chest or behind your head for added resistance.",
+    "name_fa": "کرانچ با وزنه",
+    "description_fa": "کرانچ را در حالی که یک صفحه وزنه یا دمبل را روی سینه یا پشت سر خود نگه داشته‌اید برای افزایش مقاومت انجام دهید.",
+    "similar_workouts": ["Machine Ab Crunch"]
+  },
+  {
+    "id": 90,
+    "name": "Decline Bench Press (Barbell)",
+    "muscles_affected": {
+      "lower_chest": 60,
+      "anterior_deltoid": 20,
+      "triceps": 20
+    },
+    "category": "chest",
+    "description": "Lie on a decline bench with your feet secured. Grip the barbell slightly wider than shoulder-width. Lower the bar to your lower chest, then press it back up.",
+    "name_fa": "پرس سینه شیب منفی (هالتر)",
+    "description_fa": "روی یک نیمکت شیب منفی با پاهای محکم شده دراز بکشید. هالتر را کمی پهن‌تر از عرض شانه بگیرید. میله را به سمت قسمت پایین سینه خود پایین بیاورید، سپس آن را به سمت بالا فشار دهید.",
+    "similar_workouts": ["Dumbbell Decline Press", "Cable Crossover (High)"]
+  },
+  {
+    "id": 91,
+    "name": "Dumbbell Flyes (Flat)",
+    "muscles_affected": {
+      "middle_chest": 80,
+      "anterior_deltoid": 10,
+      "biceps": 10
+    },
+    "category": "chest",
+    "description": "Lie on a flat bench with a dumbbell in each hand, palms facing each other. Keep a slight bend in your elbows and lower the dumbbells out to the sides in an arc, then bring them back together over your chest, squeezing your chest.",
+    "name_fa": "فلای دمبل (صاف)",
+    "description_fa": "روی یک نیمکت صاف با یک دمبل در هر دست، کف دست ها رو به یکدیگر دراز بکشید. آرنج های خود را کمی خم نگه دارید و دمبل ها را به صورت قوس‌دار به طرفین پایین بیاورید، سپس آنها را دوباره روی سینه خود به هم نزدیک کنید، سینه خود را منقبض کنید.",
+    "similar_workouts": ["Pec Deck Fly", "Cable Crossover (Middle)"]
+  },
+  {
+    "id": 92,
+    "name": "Dumbbell Flyes (Incline)",
+    "muscles_affected": {
+      "upper_chest": 80,
+      "anterior_deltoid": 10,
+      "biceps": 10
+    },
+    "category": "chest",
+    "description": "Set an adjustable bench to an incline (30-45 degrees). Lie back with a dumbbell in each hand. Perform dumbbell flyes, focusing on your upper chest.",
+    "name_fa": "فلای دمبل (بالاسینه)",
+    "description_fa": "یک نیمکت قابل تنظیم را به حالت شیبدار (30-45 درجه) تنظیم کنید. با یک دمبل در هر دست به پشت دراز بکشید. فلای دمبل را انجام دهید، با تمرکز بر قسمت بالایی سینه خود.",
+    "similar_workouts": ["Cable Crossover (Low)", "Incline Pec Deck Fly"]
+  },
+  {
+    "id": 93,
+    "name": "Machine Incline Press",
+    "muscles_affected": {
+      "upper_chest": 60,
+      "anterior_deltoid": 25,
+      "triceps": 15
+    },
+    "category": "chest",
+    "description": "Sit on the incline chest press machine, adjusting the seat so the handles are at upper chest height. Press the handles upwards and forward, then slowly return.",
+    "name_fa": "پرس بالاسینه دستگاه",
+    "description_fa": "روی دستگاه پرس سینه شیبدار بنشینید، صندلی را طوری تنظیم کنید که دسته‌ها در ارتفاع بالایی سینه قرار گیرند. دسته‌ها را به سمت بالا و جلو فشار دهید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Incline Barbell Press", "Incline Dumbbell Press"]
+  },
+  {
+    "id": 94,
+    "name": "Chest Dips (Assisted)",
+    "muscles_affected": {
+      "lower_chest": 50,
+      "triceps": 30,
+      "anterior_deltoid": 20
+    },
+    "category": "chest",
+    "description": "Use an assisted dip machine or bands. Lean forward significantly to emphasize the chest. Lower your body by bending your elbows, then push back up.",
+    "name_fa": "پارالل سینه (با کمک)",
+    "description_fa": "از دستگاه پارالل کمکی یا باندها استفاده کنید. به طور قابل توجهی به جلو خم شوید تا بر سینه تأکید کنید. بدن خود را با خم کردن آرنج ها پایین بیاورید، سپس به سمت بالا فشار دهید.",
+    "similar_workouts": ["Machine Dips", "Decline Bench Press"]
+  },
+  {
+    "id": 95,
+    "name": "T-Bar Row (Machine)",
+    "muscles_affected": {
+      "lats": 40,
+      "rhomboids": 30,
+      "middle_traps": 20,
+      "biceps": 10
+    },
+    "category": "back",
+    "description": "Stand on the platform of the T-bar row machine, gripping the handle. Hinge at your hips and pull the weight towards your chest, squeezing your shoulder blades, then slowly lower.",
+    "name_fa": "پارویی T-بار (دستگاه)",
+    "description_fa": "روی سکوی دستگاه پارویی T-بار بایستید و دسته را بگیرید. از مفصل ران خم شوید و وزنه را به سمت سینه خود بکشید، تیغه‌های شانه خود را منقبض کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Barbell Row", "Seated Cable Row"]
+  },
+  {
+    "id": 96,
+    "name": "Reverse Flyes (Dumbbell)",
+    "muscles_affected": {
+      "rear_deltoid": 60,
+      "rhomboids": 30,
+      "middle_traps": 10
+    },
+    "category": "shoulders",
+    "description": "Sit on a bench, leaning forward with a slight bend in your knees, holding a dumbbell in each hand, palms facing each other. Raise the dumbbells out to the sides, squeezing your shoulder blades together, then slowly lower.",
+    "name_fa": "فلای معکوس (دمبل)",
+    "description_fa": "روی یک نیمکت بنشینید، با کمی خمیدگی در زانوها به جلو خم شوید، یک دمبل در هر دست بگیرید، کف دست ها رو به یکدیگر. دمبل ها را به طرفین بالا بیاورید، تیغه‌های شانه خود را به هم نزدیک کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Face Pulls", "Reverse Pec Deck Fly"]
+  },
+  {
+    "id": 97,
+    "name": "Machine Lateral Raise",
+    "muscles_affected": {
+      "lateral_deltoid": 80,
+      "anterior_deltoid": 10,
+      "rear_deltoid": 10
+    },
+    "category": "shoulders",
+    "description": "Sit on the lateral raise machine with your arms positioned correctly. Raise your arms out to the sides, engaging your lateral deltoids, then slowly lower them.",
+    "name_fa": "بالا آوردن جانبی دستگاه",
+    "description_fa": "روی دستگاه بالا آوردن جانبی بنشینید و بازوهای خود را به درستی قرار دهید. بازوهای خود را به طرفین بالا بیاورید، دلتوئیدهای جانبی خود را درگیر کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Lateral Raise", "Cable Lateral Raise"]
+  },
+  {
+    "id": 98,
+    "name": "Upright Row (Barbell)",
+    "muscles_affected": {
+      "lateral_deltoid": 40,
+      "upper_traps": 30,
+      "anterior_deltoid": 20,
+      "biceps": 10
+    },
+    "category": "shoulders",
+    "description": "Stand with feet shoulder-width apart, gripping a barbell with an overhand, narrow grip. Pull the bar straight up towards your chin, leading with your elbows, then slowly lower it.",
+    "name_fa": "پارویی عمودی (هالتر)",
+    "description_fa": "با پاهای به عرض شانه بایستید، هالتر را با دستگیره از بالا و نزدیک بگیرید. میله را مستقیماً به سمت چانه خود بکشید، با آرنج‌هایتان جلوتر، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Upright Row"]
+  },
+  {
+    "id": 99,
+    "name": "Front Plate Raise",
+    "muscles_affected": {
+      "anterior_deltoid": 80,
+      "upper_chest": 20
+    },
+    "category": "shoulders",
+    "description": "Stand holding a weight plate with both hands in front of your thighs. Keeping your arms straight, raise the plate straight in front of you until it's at shoulder height, then slowly lower it.",
+    "name_fa": "بالا آوردن صفحه از جلو",
+    "description_fa": "ایستاده یک صفحه وزنه را با هر دو دست جلوی ران‌هایتان نگه دارید. با صاف نگه داشتن بازوها، صفحه را مستقیماً جلوی خود بالا بیاورید تا در ارتفاع شانه قرار گیرد، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Front Raise"]
+  },
+  {
+    "id": 100,
+    "name": "Dumbbell Shrugs",
+    "muscles_affected": {
+      "upper_traps": 80,
+      "middle_traps": 20
+    },
+    "category": "shoulders",
+    "description": "Stand with a dumbbell in each hand, palms facing your body. Keeping your arms straight, shrug your shoulders up towards your ears, squeezing your traps, then slowly lower them.",
+    "name_fa": "شراگ دمبل",
+    "description_fa": "با یک دمبل در هر دست، کف دست ها رو به بدن خود بایستید. با صاف نگه داشتن بازوها، شانه های خود را به سمت گوش هایتان بالا بیاورید، عضلات ذوزنقه‌ای خود را منقبض کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Barbell Shrugs"]
+  },
+  {
+    "id": 101,
+    "name": "Incline Dumbbell Curl",
+    "muscles_affected": {
+      "biceps": 80,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Sit on an incline bench with a dumbbell in each hand, arms fully extended and palms facing forward. Curl the dumbbells up towards your shoulders, keeping your upper arms stationary, then slowly lower them.",
+    "name_fa": "جلو بازو دمبل بالاسینه",
+    "description_fa": "روی یک نیمکت شیبدار با یک دمبل در هر دست بنشینید، بازوها کاملاً دراز و کف دست ها رو به جلو. دمبل ها را به سمت شانه های خود بالا بیاورید، بازوهای بالایی خود را ثابت نگه دارید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Bicep Curl (standing)"]
+  },
+  {
+    "id": 102,
+    "name": "Spider Curl (EZ Bar)",
+    "muscles_affected": {
+      "biceps": 90,
+      "forearms": 10
+    },
+    "category": "biceps",
+    "description": "Lie face down on an incline bench with your chest supported, arms hanging straight down, holding an EZ bar with an underhand grip. Curl the bar up towards your shoulders, squeezing your biceps, then slowly lower it.",
+    "name_fa": "اسپایدر کرل (میله EZ)",
+    "description_fa": "رو به شکم روی یک نیمکت شیبدار با سینه خود حمایت شده، بازوها مستقیم آویزان، یک میله EZ را با دستگیره از پایین بگیرید. میله را به سمت شانه های خود بالا بیاورید، جلو بازوهای خود را منقبض کنید، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Preacher Curl"]
+  },
+  {
+    "id": 103,
+    "name": "Reverse Curl (Barbell)",
+    "muscles_affected": {
+      "forearms": 60,
+      "brachialis": 30,
+      "biceps": 10
+    },
+    "category": "biceps",
+    "description": "Stand with feet shoulder-width apart, gripping a barbell with an overhand, narrow grip. Keeping your elbows tucked, curl the bar up towards your chest, focusing on your forearms, then slowly lower it.",
+    "name_fa": "جلو بازو معکوس (هالتر)",
+    "description_fa": "با پاهای به عرض شانه بایستید، هالتر را با دستگیره از بالا و نزدیک بگیرید. با نگه داشتن آرنج ها نزدیک بدن، میله را به سمت سینه خود بالا بیاورید، با تمرکز بر ساعد خود، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Hammer Curl"]
+  },
+  {
+    "id": 104,
+    "name": "Cable Hammer Curl",
+    "muscles_affected": {
+      "brachialis": 50,
+      "biceps": 30,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Stand facing a low pulley on a cable machine with a rope attachment. Grip the rope with a neutral grip. Keeping your elbows tucked, curl the rope up towards your shoulders, then slowly lower it.",
+    "name_fa": "جلو بازو چکشی سیم‌کش",
+    "description_fa": "روبروی یک سیم‌کش پایین روی دستگاه سیم‌کش با بند طنابی بایستید. طناب را با دستگیره خنثی بگیرید. با نگه داشتن آرنج ها نزدیک بدن، طناب را به سمت شانه های خود بالا بیاورید، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Hammer Curl"]
+  },
+  {
+    "id": 105,
+    "name": "Triceps Kickback (Dumbbell)",
+    "muscles_affected": {
+      "triceps": 80,
+      "rear_deltoid": 10,
+      "core": 10
+    },
+    "category": "triceps",
+    "description": "Hinge at your hips so your torso is almost parallel to the floor, holding a dumbbell in one hand. Keep your upper arm parallel to the floor and extend your forearm straight back, squeezing your triceps, then slowly return.",
+    "name_fa": "پشت بازو کیک بک (دمبل)",
+    "description_fa": "از مفصل ران خم شوید به طوری که تنه شما تقریباً موازی با زمین شود، یک دمبل در یک دست بگیرید. بازوی بالایی خود را موازی با زمین نگه دارید و ساعد خود را مستقیم به عقب بکشید، پشت بازوهای خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Cable Triceps Kickback"]
+  },
+  {
+    "id": 106,
+    "name": "Cable Overhead Triceps Extension",
+    "muscles_affected": {
+      "triceps": 90,
+      "forearms": 10
+    },
+    "category": "triceps",
+    "description": "Stand facing away from a high pulley, holding a rope attachment with both hands overhead. Extend your arms forward and down, squeezing your triceps, then slowly return.",
+    "name_fa": "پشت بازو سیم‌کش بالای سر",
+    "description_fa": "پشت به سیم‌کش بالا بایستید، یک بند طنابی را با هر دو دست بالای سر خود نگه دارید. بازوهای خود را به جلو و پایین دراز کنید، پشت بازوهای خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Overhead Dumbbell Extension"]
+  },
+  {
+    "id": 107,
+    "name": "Single-Arm Triceps Pushdown (Cable)",
+    "muscles_affected": {
+      "triceps": 90,
+      "forearms": 10
+    },
+    "category": "triceps",
+    "description": "Stand facing a high pulley with a D-handle. Grip the handle with one hand and push down, extending your arm fully, squeezing your triceps, then slowly return. Alternate arms.",
+    "name_fa": "پشت بازو سیم‌کش (تک دست)",
+    "description_fa": "روبروی یک سیم‌کش بالا با دسته D-شکل بایستید. دسته را با یک دست بگیرید و به پایین فشار دهید، بازوی خود را کاملاً بکشید، پشت بازوهای خود را منقبض کنید، سپس به آرامی بازگردید. دست‌ها را یکی در میان انجام دهید.",
+    "similar_workouts": ["Triceps Pushdown (Rope/Straight Bar)"]
+  },
+  {
+    "id": 108,
+    "name": "Dumbbell Floor Press",
+    "muscles_affected": {
+      "chest": 50,
+      "triceps": 40,
+      "anterior_deltoid": 10
+    },
+    "category": "chest",
+    "description": "Lie on the floor with a dumbbell in each hand, knees bent, feet flat. Press the dumbbells straight up over your chest, keeping your elbows close to your body as they touch the floor, then lower them.",
+    "name_fa": "پرس کف (دمبل)",
+    "description_fa": "روی زمین با یک دمبل در هر دست، زانوهای خمیده، پاهای صاف دراز بکشید. دمبل ها را مستقیماً بالای سینه خود فشار دهید، آرنج های خود را نزدیک بدن نگه دارید تا به زمین برخورد کنند، سپس آنها را پایین بیاورید.",
+    "similar_workouts": ["Close-Grip Bench Press"]
+  },
+  {
+    "id": 109,
+    "name": "Sled Pull (Reverse)",
+    "muscles_affected": {
+      "quadriceps": 50,
+      "glutes": 30,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Attach a harness to a sled and walk backward, pulling the sled. Focus on powerful steps and engaging your quads.",
+    "name_fa": "کشیدن سورتمه (برعکس)",
+    "description_fa": "یک هارنس را به یک سورتمه وصل کنید و به عقب راه بروید و سورتمه را بکشید. بر گام‌های قدرتمند و درگیر کردن عضلات چهارسر ران خود تمرکز کنید.",
+    "similar_workouts": ["Leg Press (concentric focus)"]
+  },
+  {
+    "id": 110,
+    "name": "Box Squat (Barbell)",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "lower_back": 10
+    },
+    "category": "legs",
+    "description": "Set a box behind you at a comfortable depth. Perform a squat, sitting down on the box with control, then driving back up without resting on the box.",
+    "name_fa": "اسکوات روی جعبه (هالتر)",
+    "description_fa": "یک جعبه را پشت سر خود در عمق راحت قرار دهید. یک اسکوات انجام دهید، با کنترل روی جعبه بنشینید، سپس بدون استراحت روی جعبه به سمت بالا حرکت کنید.",
+    "similar_workouts": ["Barbell Squat"]
+  },
+  {
+    "id": 111,
+    "name": "Zercher Squat",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 20,
+      "hamstrings": 10,
+      "core": 20,
+      "upper_back": 10
+    },
+    "category": "legs",
+    "description": "Hold a barbell in the crook of your elbows. Perform a squat, keeping your chest up and core tight. Challenging for upper back and core.",
+    "name_fa": "اسکوات زرچر",
+    "description_fa": "یک هالتر را در گودی آرنج های خود نگه دارید. یک اسکوات انجام دهید، سینه رو به بالا و هسته بدن خود را سفت نگه دارید. برای قسمت بالایی کمر و هسته بدن چالش برانگیز است.",
+    "similar_workouts": ["Front Squat"]
+  },
+  {
+    "id": 112,
+    "name": "Goblet Squat (Kettlebell)",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "core": 10
+    },
+    "category": "legs",
+    "description": "Stand with feet slightly wider than shoulder-width, holding a kettlebell vertically against your chest. Descend into a squat, keeping your chest up and elbows inside your knees, then drive back up.",
+    "name_fa": "اسکوات گابلت (کتل بل)",
+    "description_fa": "با پاهایی کمی پهن‌تر از عرض شانه بایستید و یک کتل بل را به صورت عمودی جلوی سینه خود نگه دارید. به حالت اسکوات پایین بروید، سینه رو به بالا و آرنج‌ها را داخل زانوها نگه دارید، سپس به سمت بالا حرکت کنید.",
+    "similar_workouts": ["Dumbbell Goblet Squat"]
+  },
+  {
+    "id": 113,
+    "name": "Pistol Squat (Unassisted)",
+    "muscles_affected": {
+      "quadriceps": 50,
+      "glutes": 30,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Perform a single-leg squat with no assistance, extending the non-working leg forward for balance. Requires significant strength and mobility.",
+    "name_fa": "اسکوات تک پا (بدون کمک)",
+    "description_fa": "یک اسکوات تک پا را بدون کمک انجام دهید، پای غیر فعال را برای تعادل به جلو دراز کنید. نیاز به قدرت و تحرک قابل توجهی دارد.",
+    "similar_workouts": ["Assisted Pistol Squat (progression)"]
+  },
+  {
+    "id": 114,
+    "name": "Sissy Squat (Weighted)",
+    "muscles_affected": {
+      "quadriceps": 90,
+      "calves": 10
+    },
+    "category": "legs",
+    "description": "Perform a sissy squat while holding a weight plate or dumbbell against your chest for added resistance.",
+    "name_fa": "سیسی اسکوات (با وزنه)",
+    "description_fa": "سیسی اسکوات را در حالی که یک صفحه وزنه یا دمبل را جلوی سینه خود نگه داشته‌اید برای افزایش مقاومت انجام دهید.",
+    "similar_workouts": ["Sissy Squat"]
+  },
+  {
+    "id": 115,
+    "name": "Machine Standing Calf Raise",
+    "muscles_affected": {
+      "gastrocnemius": 70,
+      "soleus": 30
+    },
+    "category": "legs",
+    "description": "Stand on the platform of the standing calf raise machine with your shoulders under the pads. Perform calf raises.",
+    "name_fa": "ساق پا ایستاده دستگاه",
+    "description_fa": "روی سکوی دستگاه ساق پا ایستاده با شانه های خود زیر پدها بایستید. ساق پا را انجام دهید.",
+    "similar_workouts": ["Standing Calf Raises (bodyweight)"]
+  },
+  {
+    "id": 116,
+    "name": "Weighted Reverse Crunches",
+    "muscles_affected": {
+      "lower_abs": 70,
+      "hip_flexors": 30
+    },
+    "category": "core",
+    "description": "Perform reverse crunches while holding a dumbbell between your feet or knees for added resistance.",
+    "name_fa": "کرانچ معکوس با وزنه",
+    "description_fa": "کرانچ معکوس را در حالی که یک دمبل را بین پاها یا زانوهای خود نگه داشته‌اید برای افزایش مقاومت انجام دهید.",
+    "similar_workouts": ["Reverse Crunches"]
+  },
+  {
+    "id": 117,
+    "name": "Medicine Ball Russian Twists",
+    "muscles_affected": {
+      "obliques": 70,
+      "abs": 30
+    },
+    "category": "core",
+    "description": "Perform Russian twists while holding a medicine ball, touching it to the floor on each side.",
+    "name_fa": "پیچش روسی با توپ طبی",
+    "description_fa": "پیچش روسی را در حالی که یک توپ طبی را نگه داشته‌اید، با لمس آن به زمین در هر طرف انجام دهید.",
+    "similar_workouts": ["Russian Twists"]
+  },
+  {
+    "id": 118,
+    "name": "Side Bends (Dumbbell)",
+    "muscles_affected": {
+      "obliques": 80,
+      "abs": 20
+    },
+    "category": "core",
+    "description": "Stand with a dumbbell in one hand. Bend sideways towards the hand holding the dumbbell, stretching your opposite oblique, then return to upright, contracting the oblique.",
+    "name_fa": "خم شدن جانبی (دمبل)",
+    "description_fa": "با یک دمبل در یک دست بایستید. به سمت دستی که دمبل را نگه داشته‌اید خم شوید، عضله مایل شکم مخالف خود را بکشید، سپس به حالت عمودی بازگردید و عضله مایل شکم را منقبض کنید.",
+    "similar_workouts": ["Russian Twists"]
+  },
+  {
+    "id": 119,
+    "name": "Cable Wood Chop (Low to High)",
+    "muscles_affected": {
+      "obliques": 60,
+      "abs": 20,
+      "shoulders": 10,
+      "glutes": 10
+    },
+    "category": "core",
+    "description": "Stand sideways to a cable machine with a D-handle set at a low pulley. Grip the handle with both hands. Rotate your torso upwards and across your body, bringing the handle to the opposite shoulder. Control the return.",
+    "name_fa": "هیزم‌شکن سیم‌کش (پایین به بالا)",
+    "description_fa": "کنار یک دستگاه سیم‌کش با دسته D-شکل در سیم‌کش پایین بایستید. دسته را با هر دو دست بگیرید. تنه خود را به سمت بالا و عرض بدن خود بچرخانید، دسته را به شانه مخالف بیاورید. بازگشت را کنترل کنید.",
+    "similar_workouts": ["Medicine Ball Wood Chop"]
+  },
+  {
+    "id": 120,
+    "name": "Cable Wood Chop (High to Low)",
+    "muscles_affected": {
+      "obliques": 60,
+      "abs": 20,
+      "shoulders": 10,
+      "glutes": 10
+    },
+    "category": "core",
+    "description": "Stand sideways to a cable machine with a D-handle set at a high pulley. Grip the handle with both hands. Rotate your torso downwards and across your body. Control the return.",
+    "name_fa": "هیزم‌شکن سیم‌کش (بالا به پایین)",
+    "description_fa": "کنار یک دستگاه سیم‌کش با دسته D-شکل در سیم‌کش بالا بایستید. دسته را با هر دو دست بگیرید. تنه خود را به سمت پایین و عرض بدن خود بچرخانید. بازگشت را کنترل کنید.",
+    "similar_workouts": ["Medicine Ball Slams (rotational)"]
+  },
+  {
+    "id": 121,
+    "name": "Ab Rollout (Standing)",
+    "muscles_affected": {
+      "abs": 60,
+      "obliques": 20,
+      "shoulders": 10,
+      "lower_back": 10
+    },
+    "category": "core",
+    "description": "An advanced version of the ab rollout, performed from a standing position. Requires significant core strength.",
+    "name_fa": "ای بی رول اوت (ایستاده)",
+    "description_fa": "نسخه پیشرفته‌ای از ای بی رول اوت، که در حالت ایستاده انجام می‌شود. نیاز به قدرت هسته بدن قابل توجهی دارد.",
+    "similar_workouts": ["Ab Rollout (Kneeling)"]
+  },
+  {
+    "id": 122,
+    "name": "Machine Reverse Fly",
+    "muscles_affected": {
+      "rear_deltoid": 60,
+      "rhomboids": 30,
+      "middle_traps": 10
+    },
+    "category": "shoulders",
+    "description": "Sit on the machine reverse fly with your chest against the pad. Grip the handles and bring them out to the sides, squeezing your rear deltoids and upper back, then slowly return.",
+    "name_fa": "فلای معکوس دستگاه",
+    "description_fa": "روی دستگاه فلای معکوس با سینه خود در برابر پد بنشینید. دسته ها را بگیرید و آنها را به طرفین بیرون بیاورید، دلتوئیدهای پشتی و قسمت بالایی کمر خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Dumbbell Reverse Flyes"]
+  },
+  {
+    "id": 123,
+    "name": "Hammer Strength Row (Plate Loaded)",
+    "muscles_affected": {
+      "back": 60,
+      "biceps": 20,
+      "rear_deltoid": 20
+    },
+    "category": "back",
+    "description": "Sit on the Hammer Strength row machine, gripping the handles. Pull the handles towards your torso, squeezing your back muscles, then slowly extend your arms.",
+    "name_fa": "پارویی همر استرنج (بارگذاری شده با صفحه)",
+    "description_fa": "روی دستگاه پارویی همر استرنج بنشینید و دسته ها را بگیرید. دسته ها را به سمت تنه خود بکشید، عضلات پشت خود را منقبض کنید، سپس به آرامی بازوهایتان را دراز کنید.",
+    "similar_workouts": ["Seated Cable Row", "T-Bar Row"]
+  },
+  {
+    "id": 124,
+    "name": "Hammer Strength Chest Press (Plate Loaded)",
+    "muscles_affected": {
+      "chest": 60,
+      "anterior_deltoid": 20,
+      "triceps": 20
+    },
+    "category": "chest",
+    "description": "Sit on the Hammer Strength chest press machine, gripping the handles. Press the handles forward, squeezing your chest, then slowly return.",
+    "name_fa": "پرس سینه همر استرنج (بارگذاری شده با صفحه)",
+    "description_fa": "روی دستگاه پرس سینه همر استرنج بنشینید و دسته ها را بگیرید. دسته ها را به جلو فشار دهید، سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Machine Chest Press", "Barbell Bench Press"]
+  },
+  {
+    "id": 125,
+    "name": "Hammer Strength Incline Press (Plate Loaded)",
+    "muscles_affected": {
+      "upper_chest": 60,
+      "anterior_deltoid": 25,
+      "triceps": 15
+    },
+    "category": "chest",
+    "description": "Sit on the Hammer Strength incline press machine, gripping the handles. Press the handles upwards and forward, then slowly return.",
+    "name_fa": "پرس بالاسینه همر استرنج (بارگذاری شده با صفحه)",
+    "description_fa": "روی دستگاه پرس بالاسینه همر استرنج بنشینید و دسته ها را بگیرید. دسته ها را به سمت بالا و جلو فشار دهید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Machine Incline Press", "Incline Barbell Press"]
+  },
+  {
+    "id": 126,
+    "name": "Hammer Strength Shoulder Press (Plate Loaded)",
+    "muscles_affected": {
+      "anterior_deltoid": 50,
+      "lateral_deltoid": 30,
+      "triceps": 20
+    },
+    "category": "shoulders",
+    "description": "Sit on the Hammer Strength shoulder press machine, gripping the handles. Press the handles overhead, extending your arms, then slowly lower them.",
+    "name_fa": "پرس شانه همر استرنج (بارگذاری شده با صفحه)",
+    "description_fa": "روی دستگاه پرس شانه همر استرنج بنشینید و دسته ها را بگیرید. دسته ها را بالای سر خود فشار دهید، بازوهایتان را دراز کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Machine Shoulder Press", "Overhead Press"]
+  },
+  {
+    "id": 127,
+    "name": "Landmine Press",
+    "muscles_affected": {
+      "shoulders": 40,
+      "triceps": 30,
+      "chest": 20,
+      "core": 10
+    },
+    "category": "shoulders",
+    "description": "Place one end of a barbell into a landmine attachment or corner. Stand facing the barbell, gripping the loaded end with one or both hands. Press the barbell upwards and forward, engaging your shoulder and core, then slowly lower.",
+    "name_fa": "پرس لندماین",
+    "description_fa": "یک سر هالتر را در یک اتصال لندماین یا گوشه قرار دهید. روبروی هالتر بایستید، سر بارگذاری شده را با یک یا هر دو دست بگیرید. هالتر را به سمت بالا و جلو فشار دهید، شانه و هسته بدن خود را درگیر کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Push Press"]
+  },
+  {
+    "id": 128,
+    "name": "Landmine Row",
+    "muscles_affected": {
+      "back": 50,
+      "biceps": 20,
+      "rear_deltoid": 20,
+      "core": 10
+    },
+    "category": "back",
+    "description": "Place one end of a barbell into a landmine attachment or corner. Stand perpendicular to the barbell, gripping the loaded end with one hand. Hinge at your hips and row the barbell towards your chest, then lower.",
+    "name_fa": "پارویی لندماین",
+    "description_fa": "یک سر هالتر را در یک اتصال لندماین یا گوشه قرار دهید. عمود بر هالتر بایستید، سر بارگذاری شده را با یک دست بگیرید. از مفصل ران خم شوید و هالتر را به سمت سینه خود بکشید، سپس پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Row"]
+  },
+  {
+    "id": 129,
+    "name": "Plate Loaded T-Bar Row (Freestanding)",
+    "muscles_affected": {
+      "lats": 40,
+      "rhomboids": 30,
+      "middle_traps": 20,
+      "biceps": 10
+    },
+    "category": "back",
+    "description": "Place one end of a barbell in a corner or landmine attachment. Load plates on the other end. Straddle the barbell and grip it with a V-handle or close grip handle. Hinge at your hips and pull the weight towards your chest.",
+    "name_fa": "پارویی T-بار با وزنه (آزاد)",
+    "description_fa": "یک سر هالتر را در یک گوشه یا اتصال لندماین قرار دهید. صفحه ها را روی سر دیگر بارگذاری کنید. هالتر را در بین پاهای خود قرار دهید و آن را با دسته V شکل یا دستگیره نزدیک بگیرید. از مفصل ران خم شوید و وزنه را به سمت سینه خود بکشید.",
+    "similar_workouts": ["Barbell Row"]
+  },
+  {
+    "id": 130,
+    "name": "Trap Bar Deadlift",
+    "muscles_affected": {
+      "quadriceps": 40,
+      "glutes": 30,
+      "hamstrings": 20,
+      "lower_back": 10
+    },
+    "category": "legs",
+    "description": "Stand inside a trap bar with feet hip-width apart. Hinge at your hips and bend your knees to grip the handles. Keeping your back straight, lift the bar by extending your hips and knees, then lower it with control. Offers a more upright torso than conventional deadlifts.",
+    "name_fa": "ددلیفت با هالتر ذوزنقه‌ای",
+    "description_fa": "داخل یک هالتر ذوزنقه‌ای با پاهای به عرض لگن بایستید. از مفصل ران خم شوید و زانوهای خود را خم کنید تا دسته‌ها را بگیرید. با صاف نگه داشتن کمر، میله را با کشیدن باسن و زانوها بلند کنید، سپس با کنترل پایین بیاورید. نسبت به ددلیفت معمولی، تنه عمودی‌تری را ارائه می‌دهد.",
+    "similar_workouts": ["Conventional Deadlift", "Squat"]
+  },
+  {
+    "id": 131,
+    "name": "Belt Squat (Machine)",
+    "muscles_affected": {
+      "quadriceps": 50,
+      "glutes": 30,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Stand on the platform of a belt squat machine, attaching a belt around your waist connected to the weight. Squat down, keeping your torso upright, then drive back up.",
+    "name_fa": "اسکوات با کمربند (دستگاه)",
+    "description_fa": "روی سکوی دستگاه اسکوات با کمربند بایستید و یک کمربند را دور کمر خود وصل کنید که به وزنه متصل است. به پایین اسکوات کنید، تنه خود را عمودی نگه دارید، سپس به سمت بالا حرکت کنید.",
+    "similar_workouts": ["Barbell Squat (lower back friendly)"]
+  },
+  {
+    "id": 132,
+    "name": "Glute Drive Machine",
+    "muscles_affected": {
+      "glutes": 80,
+      "hamstrings": 20
+    },
+    "category": "legs",
+    "description": "Sit on the Glute Drive machine with your upper back against the pad and feet on the floor. Drive your hips upwards against the padded lever, squeezing your glutes, then slowly lower.",
+    "name_fa": "دستگاه گلوت درایو",
+    "description_fa": "روی دستگاه گلوت درایو بنشینید و قسمت بالایی کمرتان به پد و پاهایتان روی زمین باشد. باسن خود را به سمت بالا در برابر اهرم پددار فشار دهید، باسن خود را منقبض کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Barbell Hip Thrust"]
+  },
+  {
+    "id": 133,
+    "name": "Reverse Hyperextension (Glute Focused)",
+    "muscles_affected": {
+      "glutes": 60,
+      "hamstrings": 30,
+      "lower_back": 10
+    },
+    "category": "legs",
+    "description": "On a reverse hyperextension machine, focus on maximally squeezing your glutes at the top of the movement, potentially using a slightly higher range of motion.",
+    "name_fa": "هایپر اکستنشن معکوس (تمرکز بر باسن)",
+    "description_fa": "روی دستگاه هایپر اکستنشن معکوس، بر روی انقباض حداکثری باسن خود در بالای حرکت تمرکز کنید، احتمالاً با استفاده از دامنه حرکت کمی بالاتر.",
+    "similar_workouts": ["Reverse Hyperextension"]
+  },
+  {
+    "id": 134,
+    "name": "Cable Glute Kickback",
+    "muscles_affected": {
+      "glutes": 70,
+      "hamstrings": 30
+    },
+    "category": "legs",
+    "description": "Attach an ankle strap to a low pulley. Stand facing the machine and kick one leg straight back, squeezing your glute, then slowly return. Perform controlled repetitions.",
+    "name_fa": "کیک بک باسن سیم‌کش",
+    "description_fa": "یک بند مچ پا را به یک سیم‌کش پایین وصل کنید. روبروی دستگاه بایستید و یک پا را مستقیم به عقب پرتاب کنید، باسن خود را منقبض کنید، سپس به آرامی بازگردید. تکرارهای کنترل شده انجام دهید.",
+    "similar_workouts": ["Donkey Kicks (bodyweight)"]
+  },
+  {
+    "id": 135,
+    "name": "Frog Pumps",
+    "muscles_affected": {
+      "glutes": 80,
+      "outer_thighs": 20
+    },
+    "category": "legs",
+    "description": "Lie on your back with the soles of your feet together and knees out to the sides. Drive your knees out further and lift your hips off the floor, squeezing your glutes, then slowly lower.",
+    "name_fa": "پمپ قورباغه‌ای",
+    "description_fa": "به پشت دراز بکشید و کف پاهای خود را به هم بچسبانید و زانوهایتان را به طرفین باز کنید. زانوهای خود را بیشتر به بیرون فشار دهید و باسن خود را از زمین بلند کنید، باسن خود را منقبض کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Glute Bridge (variation)"]
+  },
+  {
+    "id": 136,
+    "name": "Cable Pull-Through",
+    "muscles_affected": {
+      "glutes": 60,
+      "hamstrings": 40
+    },
+    "category": "legs",
+    "description": "Stand facing away from a low pulley with a rope attachment between your legs. Hinge at your hips, allowing the rope to go between your legs, then explosively extend your hips, squeezing your glutes and bringing the rope forward.",
+    "name_fa": "کشیدن سیم‌کش از بین پاها",
+    "description_fa": "پشت به سیم‌کش پایین با بند طنابی بین پاهایتان بایستید. از مفصل ران خم شوید، اجازه دهید طناب بین پاهایتان برود، سپس به صورت انفجاری باسن خود را بکشید، باسن خود را منقبض کنید و طناب را به جلو بیاورید.",
+    "similar_workouts": ["Kettlebell Swing"]
+  },
+  {
+    "id": 137,
+    "name": "Hip Abduction (Machine)",
+    "muscles_affected": {
+      "glutes": 60,
+      "outer_thighs": 40
+    },
+    "category": "legs",
+    "description": "Sit on the hip abduction machine with your knees against the pads. Push your knees outwards, engaging your outer thighs and glutes, then slowly return.",
+    "name_fa": "ابداکشن لگن (دستگاه)",
+    "description_fa": "روی دستگاه ابداکشن لگن بنشینید و زانوهایتان را به پدها بچسبانید. زانوهای خود را به سمت بیرون فشار دهید، ران‌های بیرونی و باسن خود را درگیر کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Banded Lateral Walk"]
+  },
+  {
+    "id": 138,
+    "name": "Hip Adduction (Machine)",
+    "muscles_affected": {
+      "inner_thighs": 90,
+      "quadriceps": 10
+    },
+    "category": "legs",
+    "description": "Sit on the hip adduction machine with your inner thighs against the pads. Bring your knees together, engaging your inner thighs, then slowly return.",
+    "name_fa": "اداکشن لگن (دستگاه)",
+    "description_fa": "روی دستگاه اداکشن لگن بنشینید و ران‌های داخلی خود را به پدها بچسبانید. زانوهای خود را به هم نزدیک کنید، ران‌های داخلی خود را درگیر کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Cossack Squat"]
+  },
+  {
+    "id": 139,
+    "name": "Good Mornings (Plate)",
+    "muscles_affected": {
+      "hamstrings": 50,
+      "lower_back": 30,
+      "glutes": 20
+    },
+    "category": "legs",
+    "description": "Perform good mornings holding a weight plate against your chest or behind your head for added resistance.",
+    "name_fa": "گود مورنینگ (صفحه)",
+    "description_fa": "گود مورنینگ را در حالی که یک صفحه وزنه را جلوی سینه یا پشت سر خود نگه داشته‌اید برای افزایش مقاومت انجام دهید.",
+    "similar_workouts": ["Good Mornings (Barbell)"]
+  },
+  {
+    "id": 140,
+    "name": "Dumbbell Shrugs (Single Arm)",
+    "muscles_affected": {
+      "upper_traps": 80,
+      "middle_traps": 20
+    },
+    "category": "shoulders",
+    "description": "Perform shrugs with one dumbbell at a time, allowing for a greater range of motion and focus on each side.",
+    "name_fa": "شراگ دمبل (تک دست)",
+    "description_fa": "شراگ را با یک دمبل در هر زمان انجام دهید، که امکان دامنه حرکت بیشتر و تمرکز بر هر طرف را فراهم می‌کند.",
+    "similar_workouts": ["Dumbbell Shrugs"]
+  },
+  {
+    "id": 141,
+    "name": "Cable Upright Row",
+    "muscles_affected": {
+      "lateral_deltoid": 40,
+      "upper_traps": 30,
+      "anterior_deltoid": 20,
+      "biceps": 10
+    },
+    "category": "shoulders",
+    "description": "Stand facing a low pulley with a straight bar or EZ bar attachment. Grip the bar with a narrow overhand grip. Pull the bar straight up towards your chin, leading with your elbows, then slowly lower it.",
+    "name_fa": "پارویی عمودی سیم‌کش",
+    "description_fa": "روبروی یک سیم‌کش پایین با یک میله صاف یا میله EZ بایستید. میله را با دستگیره از بالا و نزدیک بگیرید. میله را مستقیماً به سمت چانه خود بکشید، با آرنج‌هایتان جلوتر، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Barbell Upright Row"]
+  },
+  {
+    "id": 142,
+    "name": "Face Pulls (High Cable)",
+    "muscles_affected": {
+      "rear_deltoid": 50,
+      "upper_back": 30,
+      "rotator_cuff": 20
+    },
+    "category": "shoulders",
+    "description": "Set a cable machine to just above head height with a rope attachment. Perform face pulls, emphasizing external rotation and squeezing your rear delts.",
+    "name_fa": "فیس پول (سیم‌کش بالا)",
+    "description_fa": "دستگاه سیم‌کش را کمی بالاتر از ارتفاع سر با بند طنابی تنظیم کنید. فیس پول را انجام دهید، با تأکید بر چرخش خارجی و منقبض کردن دلتوئیدهای پشتی خود.",
+    "similar_workouts": ["Face Pulls"]
+  },
+  {
+    "id": 143,
+    "name": "Arnold Press",
+    "muscles_affected": {
+      "anterior_deltoid": 40,
+      "lateral_deltoid": 30,
+      "triceps": 20,
+      "rotator_cuff": 10
+    },
+    "category": "shoulders",
+    "description": "Sit or stand with a dumbbell in each hand, palms facing you at shoulder height. Press the dumbbells overhead while rotating your palms outward, then lower them, reversing the rotation.",
+    "name_fa": "پرس آرنولد",
+    "description_fa": "بنشینید یا بایستید و یک دمبل در هر دست، کف دست ها رو به شما در ارتفاع شانه. دمبل ها را بالای سر خود فشار دهید در حالی که کف دست های خود را به بیرون می چرخانید، سپس آنها را پایین بیاورید، چرخش را معکوس کنید.",
+    "similar_workouts": ["Dumbbell Overhead Press"]
+  },
+  {
+    "id": 144,
+    "name": "Dumbbell Clean and Press",
+    "muscles_affected": {
+      "full_body": 100
+    },
+    "category": "full_body",
+    "description": "Start with dumbbells on the floor. Perform a clean (lifting them to shoulder height) then a press (pressing them overhead) in one fluid motion.",
+    "name_fa": "کلین و پرس دمبل",
+    "description_fa": "با دمبل ها روی زمین شروع کنید. یک کلین (بلند کردن آنها تا ارتفاع شانه) سپس یک پرس (فشار دادن آنها بالای سر) را در یک حرکت روان انجام دهید.",
+    "similar_workouts": ["Dumbbell Thrusters"]
+  },
+  {
+    "id": 145,
+    "name": "Single-Arm Dumbbell Row",
+    "muscles_affected": {
+      "lats": 50,
+      "rhomboids": 30,
+      "biceps": 10,
+      "rear_deltoid": 10
+    },
+    "category": "back",
+    "description": "Place one knee and one hand on a bench. With the other hand, pull a dumbbell up towards your hip, squeezing your back, then lower with control. Maintain a flat back.",
+    "name_fa": "پارویی دمبل تک دست",
+    "description_fa": "یک زانو و یک دست را روی نیمکت قرار دهید. با دست دیگر، یک دمبل را به سمت لگن خود بکشید، پشت خود را منقبض کنید، سپس با کنترل پایین بیاورید. کمر خود را صاف نگه دارید.",
+    "similar_workouts": ["Barbell Row"]
+  },
+  {
+    "id": 146,
+    "name": "Machine Row (Chest Supported)",
+    "muscles_affected": {
+      "back": 60,
+      "biceps": 20,
+      "rear_deltoid": 20
+    },
+    "category": "back",
+    "description": "Lie chest down on a chest-supported row machine, gripping the handles. Pull the handles towards your torso, squeezing your back muscles, then slowly extend your arms.",
+    "name_fa": "پارویی دستگاه (سینه حمایت شده)",
+    "description_fa": "رو به شکم روی دستگاه پارویی با حمایت سینه دراز بکشید، دسته ها را بگیرید. دسته ها را به سمت تنه خود بکشید، عضلات پشت خود را منقبض کنید، سپس به آرامی بازوهایتان را دراز کنید.",
+    "similar_workouts": ["Seated Cable Row"]
+  },
+  {
+    "id": 147,
+    "name": "Seal Row (Barbell)",
+    "muscles_affected": {
+      "back": 70,
+      "biceps": 20,
+      "rear_deltoid": 10
+    },
+    "category": "back",
+    "description": "Lie chest down on a high incline bench, allowing your arms to hang straight down. Grip a barbell with an overhand grip and row it towards your chest, squeezing your back, then lower. Eliminates lower back involvement.",
+    "name_fa": "پارویی سیل (هالتر)",
+    "description_fa": "رو به شکم روی یک نیمکت شیبدار بالا دراز بکشید، اجازه دهید بازوهایتان مستقیم آویزان باشند. یک هالتر را با دستگیره از بالا بگیرید و آن را به سمت سینه خود بکشید، پشت خود را منقبض کنید، سپس پایین بیاورید. درگیری کمر را حذف می‌کند.",
+    "similar_workouts": ["Chest Supported Row"]
+  },
+  {
+    "id": 148,
+    "name": "Bent-Over Dumbbell Lateral Raise",
+    "muscles_affected": {
+      "rear_deltoid": 70,
+      "rhomboids": 20,
+      "middle_traps": 10
+    },
+    "category": "shoulders",
+    "description": "Hinge at your hips so your torso is almost parallel to the floor, holding a dumbbell in each hand, palms facing each other. Raise the dumbbells out to the sides, squeezing your rear deltoids, then slowly lower.",
+    "name_fa": "بالا آوردن جانبی خم شده با دمبل",
+    "description_fa": "از مفصل ران خم شوید به طوری که تنه شما تقریباً موازی با زمین شود، یک دمبل در هر دست بگیرید، کف دست ها رو به یکدیگر. دمبل ها را به طرفین بالا بیاورید، دلتوئیدهای پشتی خود را منقبض کنید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Reverse Flyes (Dumbbell)"]
+  },
+  {
+    "id": 149,
+    "name": "Band Pull-Aparts",
+    "muscles_affected": {
+      "rear_deltoid": 40,
+      "rhomboids": 40,
+      "rotator_cuff": 20
+    },
+    "category": "shoulders",
+    "description": "Hold a resistance band with both hands at shoulder-width, arms extended in front of you. Pull the band apart by squeezing your shoulder blades together, keeping your arms straight, then slowly return.",
+    "name_fa": "کشیدن باند به طرفین",
+    "description_fa": "یک باند مقاومتی را با هر دو دست به عرض شانه بگیرید، بازوها جلوی شما دراز. باند را با نزدیک کردن تیغه‌های شانه به هم جدا کنید، بازوهای خود را صاف نگه دارید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Face Pulls (light resistance)"]
+  },
+  {
+    "id": 150,
+    "name": "Cable Incline Bicep Curl",
+    "muscles_affected": {
+      "biceps": 80,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Sit on an incline bench facing a low cable pulley with a straight bar or EZ bar attachment. Curl the bar up towards your shoulders, keeping your upper arms stationary, then slowly lower.",
+    "name_fa": "جلو بازو سیم‌کش بالاسینه",
+    "description_fa": "روی یک نیمکت شیبدار روبروی یک سیم‌کش پایین با یک میله صاف یا میله EZ بنشینید. میله را به سمت شانه های خود بالا بیاورید، بازوهای بالایی خود را ثابت نگه دارید، سپس به آرامی پایین بیاورید.",
+    "similar_workouts": ["Incline Dumbbell Curl"]
+  },
+  {
+    "id": 151,
+    "name": "Cable Concentration Curl",
+    "muscles_affected": {
+      "biceps": 95,
+      "forearms": 5
+    },
+    "category": "biceps",
+    "description": "Sit on a bench facing a low cable pulley with a D-handle. Rest your elbow on your inner thigh and curl the handle up towards your shoulder, focusing on the bicep contraction, then slowly lower.",
+    "name_fa": "جلو بازو تمرکزی سیم‌کش",
+    "description_fa": "روی یک نیمکت روبروی یک سیم‌کش پایین با دسته D-شکل بنشینید. آرنج خود را روی ران داخلی خود قرار دهید و دسته را به سمت شانه خود بالا بیاورید، با تمرکز بر انقباض جلو بازو، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Dumbbell Concentration Curl"]
+  },
+  {
+    "id": 152,
+    "name": "Cable Reverse Curl",
+    "muscles_affected": {
+      "forearms": 60,
+      "brachialis": 30,
+      "biceps": 10
+    },
+    "category": "biceps",
+    "description": "Stand facing a low pulley with a straight bar or EZ bar attachment. Grip the bar with an overhand grip. Curl the bar up towards your chest, focusing on your forearms, then slowly lower it.",
+    "name_fa": "جلو بازو معکوس سیم‌کش",
+    "description_fa": "روبروی یک سیم‌کش پایین با یک میله صاف یا میله EZ بایستید. میله را با دستگیره از بالا بگیرید. میله را به سمت سینه خود بالا بیاورید، با تمرکز بر ساعد خود، سپس به آرامی آن را پایین بیاورید.",
+    "similar_workouts": ["Barbell Reverse Curl"]
+  },
+  {
+    "id": 153,
+    "name": "Single-Arm Cable Triceps Extension",
+    "muscles_affected": {
+      "triceps": 90,
+      "forearms": 10
+    },
+    "category": "triceps",
+    "description": "Stand facing a high pulley with a D-handle. Grip the handle with one hand. Extend your arm straight down, squeezing your triceps, then slowly return. Alternate arms.",
+    "name_fa": "پشت بازو سیم‌کش تک دست",
+    "description_fa": "روبروی یک سیم‌کش بالا با دسته D-شکل بایستید. دسته را با یک دست بگیرید. بازوی خود را مستقیم به پایین دراز کنید، پشت بازوهای خود را منقبض کنید، سپس به آرامی بازگردید. دست‌ها را یکی در میان انجام دهید.",
+    "similar_workouts": ["Overhead Cable Extension"]
+  },
+  {
+    "id": 154,
+    "name": "Weighted Dips (Triceps Focused)",
+    "muscles_affected": {
+      "triceps": 70,
+      "lower_chest": 20,
+      "anterior_deltoid": 10
+    },
+    "category": "triceps",
+    "description": "Perform triceps dips with added weight (e.g., a weight belt with plates).",
+    "name_fa": "پارالل با وزنه (تمرکز بر پشت بازو)",
+    "description_fa": "پارالل پشت بازو را با وزنه اضافه (مثلاً یک کمربند وزنه با صفحه) انجام دهید.",
+    "similar_workouts": ["Dips (Triceps Focused)"]
+  },
+  {
+    "id": 155,
+    "name": "Dumbbell Skullcrushers (Lying)",
+    "muscles_affected": {
+      "triceps": 90,
+      "forearms": 10
+    },
+    "category": "triceps",
+    "description": "Lie on a flat bench, holding a dumbbell in each hand, arms extended above your chest. Keeping your upper arms stationary, lower the dumbbells towards your head by bending your elbows, then extend your arms back up.",
+    "name_fa": "سیم‌کش بالای سر دمبل (خوابیده)",
+    "description_fa": "روی یک نیمکت صاف دراز بکشید، یک دمبل در هر دست بگیرید، بازوها بالای سینه دراز. با ثابت نگه داشتن بازوهای بالایی، دمبل ها را با خم کردن آرنج ها به سمت سر خود پایین بیاورید، سپس بازوهایتان را به سمت بالا بکشید.",
+    "similar_workouts": ["Skullcrushers (EZ Bar)"]
+  },
+  {
+    "id": 156,
+    "name": "Spider Curl (Dumbbell)",
+    "muscles_affected": {
+      "biceps": 90,
+      "forearms": 10
+    },
+    "category": "biceps",
+    "description": "Lie face down on an incline bench with your chest supported, arms hanging straight down, holding a dumbbell in each hand, palms facing forward. Curl the dumbbells up towards your shoulders, squeezing your biceps, then slowly lower them.",
+    "name_fa": "اسپایدر کرل (دمبل)",
+    "description_fa": "رو به شکم روی یک نیمکت شیبدار با سینه خود حمایت شده، بازوها مستقیم آویزان، یک دمبل در هر دست بگیرید، کف دست ها رو به جلو. دمبل ها را به سمت شانه های خود بالا بیاورید، جلو بازوهای خود را منقبض کنید، سپس به آرامی آنها را پایین بیاورید.",
+    "similar_workouts": ["Preacher Curl (Dumbbell)"]
+  },
+  {
+    "id": 157,
+    "name": "Zottman Curl",
+    "muscles_affected": {
+      "biceps": 60,
+      "brachialis": 20,
+      "forearms": 20
+    },
+    "category": "biceps",
+    "description": "Perform a regular dumbbell bicep curl (palms up), then rotate your palms to face down at the top of the movement and slowly lower the dumbbells with an overhand grip. Rotate back at the bottom for the next rep.",
+    "name_fa": "زاتمن کرل",
+    "description_fa": "یک جلو بازو دمبل معمولی (کف دست ها رو به بالا) انجام دهید، سپس کف دست های خود را در بالای حرکت به سمت پایین بچرخانید و دمبل ها را با دستگیره از بالا به آرامی پایین بیاورید. در پایین برای تکرار بعدی دوباره بچرخانید.",
+    "similar_workouts": ["Dumbbell Bicep Curl", "Reverse Curl"]
+  },
+  {
+    "id": 158,
+    "name": "Standing Cable Fly (Low to High)",
+    "muscles_affected": {
+      "upper_chest": 70,
+      "anterior_deltoid": 20,
+      "biceps": 10
+    },
+    "category": "chest",
+    "description": "Stand between two low pulleys with D-handles. Bring the handles up and across your body towards the opposite shoulder, squeezing your upper chest, then slowly return.",
+    "name_fa": "فلای سیم‌کش ایستاده (پایین به بالا)",
+    "description_fa": "بین دو سیم‌کش پایین با دسته‌های D-شکل بایستید. دسته‌ها را به سمت بالا و عرض بدن خود به سمت شانه مخالف بیاورید، قسمت بالایی سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Incline Cable Fly"]
+  },
+  {
+    "id": 159,
+    "name": "Standing Cable Fly (High to Low)",
+    "muscles_affected": {
+      "lower_chest": 70,
+      "middle_chest": 20,
+      "anterior_deltoid": 10
+    },
+    "category": "chest",
+    "description": "Stand between two high pulleys with D-handles. Bring the handles down and across your body towards the opposite hip, squeezing your lower chest, then slowly return.",
+    "name_fa": "فلای سیم‌کش ایستاده (بالا به پایین)",
+    "description_fa": "بین دو سیم‌کش بالا با دسته‌های D-شکل بایستید. دسته‌ها را به سمت پایین و عرض بدن خود به سمت لگن مخالف بیاورید، قسمت پایین سینه خود را منقبض کنید، سپس به آرامی بازگردید.",
+    "similar_workouts": ["Decline Cable Fly"]
+  }
+]

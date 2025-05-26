@@ -5,6 +5,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState, createContext } from "react";
 import "react-native-reanimated";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import "@/i18n"; // This line imports the i18n configuration
+
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 export interface ISettings {
@@ -15,6 +17,7 @@ export const Settings_createcontext = createContext<{
   settings: ISettings;
   setSettings: React.Dispatch<React.SetStateAction<ISettings>>;
 } | null>(null);
+
 export default function RootLayout() {
   const [loaded] = useFonts({ SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf") });
 

@@ -1,0 +1,31 @@
+{
+    "language": "Language",
+    "tabs": {
+        "workouts": "Workouts",
+        "home": "Home",
+        "diet": "Diet"
+    },
+    "home": {
+        "title": "Home",
+        "new_exercise": "New Exercise"
+    },
+    "settings": {
+        "title": "settings",
+        "weight_inc":  "Weight Scale",
+        "theme": "Theme",
+        "language": "Language"
+    },
+    "workouts": {
+        "categories": {
+            "shoulders": "Shoulders",
+            "chest": "Chest",
+            "back": "Back",
+            "full_body": "Full Body",
+            "biceps": "Biceps",
+            "triceps": "Triceps",
+            "legs": "Legs",
+            "core": "Core",
+            "cardio": "Cardio"
+        }
+    }
+}

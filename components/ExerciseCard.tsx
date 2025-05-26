@@ -1,43 +1,54 @@
-import { View, Image, Text, ViewStyle, StyleProp, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  View,
+  Image,
+  Text,
+  ViewStyle,
+  StyleProp,
+  StyleSheet,
+  TouchableOpacity,
+} from "react-native";
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
 import { useContext } from "react";
 import { Settings_createcontext } from "../app/_layout";
+import { useTranslation } from "react-i18next";
 
 interface IProps {
-  // isLightMode?: boolean;
-  isEnglish?: boolean;
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
-  titleEnglish?: string;
-  titleFarsi?: string;
-  detailEnglish?: string;
-  detailFarsi?: string;
-  onPress: () => void;
-  image: NodeJS.Require;
+  title?: string;
+  detail?: string;
+  onPress?: () => void;
+  image?: NodeJS.Require;
 }
 
 const ExerciseCard: React.FC<IProps> = ({
-  // isLightMode = true,
-  isEnglish = true,
   style,
-  titleEnglish,
-  titleFarsi,
-  detailFarsi,
-  detailEnglish,
+  title,
+  detail,
   onPress,
   image = require("../assets/images/muscle_groups/404.png"),
 }) => {
   const context = useContext(Settings_createcontext);
+  const { i18n, t } = useTranslation();
+  const isEnglish = i18n.language === "en-US";
 
-  const { settings, setSettings } = context ?? { settings: { lightMode: true }, setSettings: () => {} };
+  const { settings, setSettings } = context ?? {
+    settings: { lightMode: true },
+    setSettings: () => {},
+  };
   let lightMode = settings.lightMode;
 
   return (
     <TouchableOpacity onPress={onPress} style={style}>
-      <ThemedView style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi} lightMode={lightMode}>
+      <ThemedView
+        style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi}
+        lightMode={lightMode}
+      >
         <View>
-          <ThemedText type="subtitle">{isEnglish ? titleEnglish : titleFarsi}</ThemedText>
-          <ThemedText type="detail">{isEnglish ? detailEnglish : detailFarsi}</ThemedText>
+          <ThemedText type="subtitle" lightMode={lightMode}>
+            {title}
+          </ThemedText>
+          <ThemedText type="detail">{detail}</ThemedText>
         </View>
         <ThemedView lightMode={!lightMode} style={[styles.imageContainer]}>
           <Image style={styles.image} source={image} />

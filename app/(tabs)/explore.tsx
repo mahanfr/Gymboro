@@ -1,8 +1,19 @@
-import { StyleSheet, Image, Platform, Dimensions, View, ScrollView, Text, Button } from "react-native";
+import {
+  StyleSheet,
+  Image,
+  Platform,
+  Dimensions,
+  View,
+  ScrollView,
+  Text,
+  Button,
+} from "react-native";
 
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
 import ExerciseCard from "../../components/ExerciseCard";
 import { useNavigation } from "expo-router";
+import { categories } from "@/data/DataTypes";
+import { useTranslation } from "react-i18next";
 
 let list: {
   titleEnglish: string;
@@ -21,23 +32,20 @@ let list: {
 ];
 export default function TabTwoScreen() {
   const navigation: any = useNavigation();
+  const { t } = useTranslation();
+
   return (
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
           <View style={[styles.flex]}>
-            {list.map((item, index) => (
+            {Object.entries(categories).map((item, index) => (
               <ExerciseCard
+                title={t(`workouts.categories.${item[0]}`)}
                 key={index}
-                // isLightMode={false}
-                isEnglish={false}
-                titleEnglish={item.titleEnglish}
-                titleFarsi={item.titleFarsi}
-                detailEnglish={item.detailEnglish}
-                detailFarsi={item.detailFarsi}
-                image={item.image}
+                image={item[1]}
                 onPress={() => {
-                  navigation.navigate("muscles/[muscle]", { muscle: "chest" });
+                  navigation.navigate("muscles/[muscle]", { muscle: item[0] });
                 }}
               />
             ))}
