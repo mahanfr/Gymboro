@@ -15,21 +15,6 @@ import { useNavigation } from "expo-router";
 import { categories } from "@/data/DataTypes";
 import { useTranslation } from "react-i18next";
 
-let list: {
-  titleEnglish: string;
-  titleFarsi: string;
-  detailEnglish: string;
-  detailFarsi: string;
-  image: NodeJS.Require;
-}[] = [
-  {
-    titleEnglish: "Chest",
-    titleFarsi: "سینه",
-    detailEnglish: "All three chest muscles",
-    detailFarsi: "هر سه عضله ی سینه",
-    image: require("../../assets/images/muscle_groups/chest.png"),
-  },
-];
 export default function TabTwoScreen() {
   const navigation: any = useNavigation();
   const { t } = useTranslation();
@@ -39,16 +24,19 @@ export default function TabTwoScreen() {
       <SafeAreaProvider>
         <SafeAreaView>
           <View style={[styles.flex]}>
-            {Object.entries(categories).map((item, index) => (
-              <ExerciseCard
-                title={t(`workouts.categories.${item[0]}`)}
-                key={index}
-                image={item[1]}
-                onPress={() => {
-                  navigation.navigate("muscles/[muscle]", { muscle: item[0] });
-                }}
-              />
-            ))}
+            {Object.entries(categories).map((item, index) => {
+              if (item[0] === "rest") return;
+              return (
+                <ExerciseCard
+                  title={t(`workouts.categories.${item[0]}`)}
+                  key={index}
+                  image={item[1]}
+                  onPress={() => {
+                    navigation.navigate("muscles/[muscle]", { muscle: item[0] });
+                  }}
+                />
+              );
+            })}
             {/*<WorkoutDetails id={0} /> */}
           </View>
         </SafeAreaView>

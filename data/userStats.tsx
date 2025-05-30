@@ -6,7 +6,10 @@
 import { MusclesActivation, categories } from "../data/DataTypes";
 const userStats = () => {
   return {
-    gittyChart: { 2025: [0, 2, 3, 5, 6, 10, 20, 50, 12, 22], 2024: [0, 2, 11, 12, 15, 43, 46, 55, 56, 79] },
+    gittyChart: {
+      2025: [0, 2, 3, 5, 6, 10, 20, 50, 12, 22],
+      2024: [0, 2, 11, 12, 15, 43, 46, 55, 56, 79],
+    },
     hexygon: {
       _1day: [0, 10, 0, 5, 0, 2],
       _1week: [0, 2, 2, 0, 6, 0],

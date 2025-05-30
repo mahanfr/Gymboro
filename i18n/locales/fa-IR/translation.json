@@ -1,31 +1,32 @@
 {
-    "language": "زبان",
-    "tabs": {
-        "workouts": "حرکات",
-        "home": "خانه",
-        "diet": "رژیم غذایی"
-    },
-    "home": {
-        "title": "خانه",
-        "new_exercise": "حرکت جدید"
-    },
-    "settings": {
-        "title": "تنظیمات",
-        "weight_inc": "ضریب وزنی",
-        "theme": "تم",
-        "language": "زبان"
-    },
-    "workouts": {
-        "categories": {
-            "shoulders": "سر شانه ها",
-            "chest": "سینه",
-            "back": "کمر و زیر بقل",
-            "full_body": "تمام بدن",
-            "biceps": "جلو بازو",
-            "triceps": "پشت بازو",
-            "legs": "پا",
-            "core": "شکم",
-            "cardio": "هوازی"
-        }
+  "language": "زبان",
+  "tabs": {
+    "workouts": "حرکات",
+    "home": "خانه",
+    "diet": "رژیم غذایی"
+  },
+  "home": {
+    "title": "خانه",
+    "new_exercise": "حرکت جدید"
+  },
+  "settings": {
+    "title": "تنظیمات",
+    "weight_inc": "ضریب وزنی",
+    "theme": "تم",
+    "language": "زبان"
+  },
+  "workouts": {
+    "categories": {
+      "shoulders": "سر شانه ها",
+      "chest": "سینه",
+      "back": "کمر و زیر بقل",
+      "full_body": "تمام بدن",
+      "biceps": "جلو بازو",
+      "triceps": "پشت بازو",
+      "legs": "پا",
+      "core": "شکم",
+      "cardio": "هوازی",
+      "rest": "استراحت"
     }
+  }
 }

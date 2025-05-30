@@ -6,6 +6,9 @@ import { IExercise, ISet } from "@/data/Exercise";
 import { ThemedView } from "./ThemedView";
 import Svg, { Path } from "react-native-svg";
 import { MaterialIcons } from "@expo/vector-icons";
+import { useContext } from "react";
+import { Settings_createcontext } from "../app/_layout";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 interface IProps {
   exercise: IExercise;
@@ -14,13 +17,27 @@ type ExerciseItemProps = {
   title: string;
   image: NodeJS.Require; //TODO @release all these should be changed to string for release
 };
-
+type ExcersiseType = {};
+type SaveExerciseHistory = {
+  type: ExcersiseType;
+};
 export default function ExerciseItem(props: IProps) {
+  const todaysDate = new Date();
+  const context = useContext(Settings_createcontext);
+
+  const { settings, setSettings } = context ?? {
+    settings: { lightMode: true },
+    setSettings: () => {},
+  };
+  let lightMode = settings.lightMode;
+
   const defaultSet: ISet = { rep: 5, weight: 10 };
 
   const [title, setTitle] = useState<string>(props.exercise.title);
   const [titleOnFocus, setTitleOnFocus] = useState<boolean>(false);
-  const [sets, setSets] = useState<ISet[]>(props.exercise.sets ? props.exercise.sets : [defaultSet]);
+  const [sets, setSets] = useState<ISet[]>(
+    props.exercise.sets ? props.exercise.sets : [defaultSet]
+  );
   const [isDone, setIsDone] = useState<boolean>(false);
 
   const destroySet = (id: number) => {
@@ -46,11 +63,22 @@ export default function ExerciseItem(props: IProps) {
       setSets(newSet);
     }
   };
+
   return (
-    <ThemedView style={[styles.container, { backgroundColor: isDone ? "#DDF6D2" : "" }]}>
+    <ThemedView
+      style={[
+        styles.container,
+        { backgroundColor: isDone ? (lightMode ? "#DDF6D2" : "#90ffc96e") : "" },
+      ]}
+    >
       <View style={[styles.flex, { paddingHorizontal: 5 }]}>
         {titleOnFocus ? (
-          <TextInput style={styles.textInput} onChangeText={(val: string) => setTitle(val)} onBlur={() => setTitleOnFocus(false)} value={title} />
+          <TextInput
+            style={styles.textInput}
+            onChangeText={(val: string) => setTitle(val)}
+            onBlur={() => setTitleOnFocus(false)}
+            value={title}
+          />
         ) : (
           <ThemedText onPress={() => setTitleOnFocus(true)}>{title}</ThemedText>
         )}
@@ -64,7 +92,11 @@ export default function ExerciseItem(props: IProps) {
             setIsDone(!isDone);
           }}
         >
-          <MaterialIcons name={isDone ? "edit" : "check-circle"} color={isDone ? "black" : "#51e081"} size={28} />
+          <MaterialIcons
+            name={isDone ? "edit" : "check-circle"}
+            color={isDone ? "black" : "#51e081"}
+            size={28}
+          />
         </TouchableOpacity>
       </View>
       <View style={styles.flex}>

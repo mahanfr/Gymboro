@@ -8,6 +8,8 @@ import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import PopupManager, { usePopupManager } from "@/components/Popup";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
+import Routine from "@/app/Routine/Routine";
+import RoutineView from "@/app/Routine/RoutineView";
 
 export default function HomeScreen() {
   const defaultSet: ISet = { rep: 5, weight: 10 };
@@ -18,11 +20,12 @@ export default function HomeScreen() {
   };
   const [exercises, setExercises] = useState<IExercise[]>([defaultExercise]);
   const { popups, showPopup, hidePopup } = usePopupManager();
+
   return (
     <ScrollView>
       <SafeAreaProvider>
         <SafeAreaView>
-          <ThemedView style={styles.card}>
+          {/* <ThemedView style={styles.card}>
             {exercises.map((ex, index) => (
               <ExerciseItem key={index} exercise={ex} />
             ))}
@@ -32,9 +35,14 @@ export default function HomeScreen() {
                 setExercises((prevExercises) => [...prevExercises, defaultExercise]);
               }}
             />
-          </ThemedView>
-
-          <TouchableOpacity style={{ alignSelf: "center" }} onPress={() => showPopup({ popupKey: "errorPopup", message: "This is an error message" })}>
+          </ThemedView> */}
+          <RoutineView />
+          <TouchableOpacity
+            style={{ alignSelf: "center" }}
+            onPress={() =>
+              showPopup({ popupKey: "errorPopup", message: "This is an error message" })
+            }
+          >
             <MaterialIcons name="goat" color={"black"} size={28} />
           </TouchableOpacity>
           <PopupManager popups={popups} onClose={hidePopup} />
