@@ -6,6 +6,7 @@ import { useEffect, useState, createContext } from "react";
 import "react-native-reanimated";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import "@/i18n"; // This line imports the i18n configuration
+import { SQLiteProvider } from "expo-sqlite";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -52,17 +53,22 @@ export default function RootLayout() {
   }
   return (
     <ThemeProvider value={!settings.lightMode ? DarkTheme : DefaultTheme}>
-      <Settings_createcontext.Provider value={{ settings, setSettings }}>
-        <Stack screenOptions={{ animation: "none" }}>
-          <Stack.Screen
-            name="(tabs)"
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-      </Settings_createcontext.Provider>
+      <SQLiteProvider
+        databaseName="database.db"
+        assetSource={{ assetId: require("../assets/database.db") }}
+      >
+        <Settings_createcontext.Provider value={{ settings, setSettings }}>
+          <Stack screenOptions={{ animation: "none" }}>
+            <Stack.Screen
+              name="(tabs)"
+              options={{
+                headerShown: false,
+              }}
+            />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+        </Settings_createcontext.Provider>
+      </SQLiteProvider>
     </ThemeProvider>
   );
 }
