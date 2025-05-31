@@ -1,11 +1,10 @@
-import { Button, ScrollView, TouchableOpacity, View } from "react-native";
+import { ScrollView, TouchableOpacity, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
-import data from "../../data/workouts.json";
-import { ThemedText } from "@/components/ThemedText";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useTranslation } from "react-i18next";
+import * as SQLite from "expo-sqlite";
 
 export default function MuscleGroup() {
   const navigation: any = useNavigation();
@@ -14,8 +13,9 @@ export default function MuscleGroup() {
   const { i18n } = useTranslation();
   const isEnglish = i18n.language === "en-US";
 
-  const getData = () => {
-    const wks = data.filter((workout) => workout.category === muscle);
+  const getData = async () => {
+    const db = await SQLite.openDatabaseAsync("database.db");
+    const wks = await db.getAllAsync("SELECT * FROM workout");
     setWorkouts(wks);
   };
 
