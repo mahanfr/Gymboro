@@ -14,6 +14,9 @@ import { MusclesActivation } from "@/data/DataTypes";
 import MuscleFront from "../../components/MuscleFront";
 import MuscleBack from "../../components/MuscleBack";
 import { useState } from "react";
+import { MaterialIcons } from "@expo/vector-icons";
+import ExerciseCard from "@/components/ExerciseCard";
+import { useNavigation } from "expo-router";
 
 const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = new MusclesActivation({
   chest: 3,
@@ -76,16 +79,34 @@ const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = new MusclesAct
 });
 const RoutineView = () => {
   const [workouts, setWorkouts] = useState([]);
+  const navigation: any = useNavigation();
   return (
     <ScrollView>
       <ThemedView style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
         <MuscleGraph />
       </ThemedView>
       <View style={{ paddingHorizontal: 5 }}>
-        <ThemedView>
+        <ThemedView
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            padding: 4,
+            borderBottomWidth: 1,
+          }}
+        >
           <ThemedText type="subtitle">Modves:</ThemedText>
+          <TouchableOpacity onPress={() => {}}>
+            <MaterialIcons name="edit" color={"black"} size={28} />
+          </TouchableOpacity>
         </ThemedView>
-        <TouchableOpacity>
+        <ExerciseCard
+          title="BenchPress Barbel"
+          key={0}
+          image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
+          onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
+        />
+        {/* <TouchableOpacity>
           <ThemedView style={styles.workout}>
             <ThemedView>
               <ThemedText>Bench Press</ThemedText>
@@ -95,8 +116,8 @@ const RoutineView = () => {
               style={{ width: 80, height: 80 }}
             />
           </ThemedView>
-        </TouchableOpacity>
-        <View>
+        </TouchableOpacity> */}
+        <View style={{ marginVertical: 4 }}>
           <Button title="Start" />
         </View>
       </View>
@@ -106,13 +127,13 @@ const RoutineView = () => {
 const MuscleGraph = () => {
   return (
     <ThemedView style={styles.flex}>
-      <View style={{ width: "25%" }}>
+      <View>
         <MuscleFront
           style={styles.size}
           activator={theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded}
         />
       </View>
-      <View style={{ width: "25%" }}>
+      <View>
         <MuscleBack
           style={styles.size}
           activator={theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded}
@@ -140,7 +161,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   size: {
-    height: Dimensions.get("window").height / 4,
+    height: Dimensions.get("window").height / 3,
   },
   dateSelector: {
     display: "flex",
