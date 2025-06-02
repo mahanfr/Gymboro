@@ -1,7 +1,7 @@
 import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { Button, ScrollView } from "react-native";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
@@ -12,15 +12,33 @@ import Routine from "@/app/Routine/Routine";
 import RoutineView from "@/app/Routine/RoutineView";
 import { useNavigation } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
+import { categories } from "@/data/DataTypes";
+import * as SQLite from "expo-sqlite";
 
 export default function HomeScreen() {
   const { popups, showPopup, hidePopup } = usePopupManager();
   const navigation: any = useNavigation();
 
+  const [routines, setRoutines] = useState<any>();
+
+  const getData = async () => {
+    const db = await SQLite.openDatabaseAsync("database.db");
+    const wks = await db.getAllAsync("SELECT * FROM workout");
+    console.log(wks);
+    setRoutines(wks);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <ScrollView>
       <ThemedText type="subtitle">Routines:</ThemedText>
       <Routine
+        title="Chesterday"
+        numberOfMoves={4}
+        involvedMuscles={[categories.chest]}
         onPress={() => {
           navigation.navigate("Routine/RoutineView");
         }}

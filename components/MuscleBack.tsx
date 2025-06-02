@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, ViewStyle, StyleProp } from "react-native";
 import Svg, { Path } from "react-native-svg";
-import { MusclesActivation } from "./MuscleGraph";
+import { MusclesActivation } from "../data/DataTypes";
 
 interface IProps {
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];

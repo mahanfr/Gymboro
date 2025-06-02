@@ -13,10 +13,11 @@ import { ThemedView } from "../../components/ThemedView";
 import { MusclesActivation } from "@/data/DataTypes";
 import MuscleFront from "../../components/MuscleFront";
 import MuscleBack from "../../components/MuscleBack";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useNavigation } from "expo-router";
+import * as SQLite from "expo-sqlite";
 
 const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = new MusclesActivation({
   chest: 3,
@@ -78,8 +79,21 @@ const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = new MusclesAct
   semitendinosus: 0,
 });
 const RoutineView = () => {
-  const [workouts, setWorkouts] = useState([]);
   const navigation: any = useNavigation();
+  const [workouts, setWorkouts] = useState<any[]>([]);
+  const [editMode, setEditMode] = useState(false);
+
+  // const getData = async () => {
+  //   const db = await SQLite.openDatabaseAsync("database.db");
+  //   const wks = await db.getAllAsync("SELECT * FROM routine");
+  //   setWorkouts(wks);
+  //   console.log(wks);
+  // };
+
+  // useEffect(() => {
+  //   getData();
+  // }, []);
+
   return (
     <ScrollView>
       <ThemedView style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
@@ -96,8 +110,16 @@ const RoutineView = () => {
           }}
         >
           <ThemedText type="subtitle">Modves:</ThemedText>
-          <TouchableOpacity onPress={() => {}}>
-            <MaterialIcons name="edit" color={"black"} size={28} />
+          <TouchableOpacity
+            onPress={() => {
+              setEditMode(!editMode);
+            }}
+          >
+            <MaterialIcons
+              name={editMode ? "check-circle" : "edit"}
+              color={editMode ? "green" : "black"}
+              size={28}
+            />
           </TouchableOpacity>
         </ThemedView>
         <ExerciseCard
@@ -106,17 +128,22 @@ const RoutineView = () => {
           image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
           onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
         />
-        {/* <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}>
           <ThemedView style={styles.workout}>
-            <ThemedView>
-              <ThemedText>Bench Press</ThemedText>
+            <ThemedView style={{ maxWidth: "60%" }}>
+              <ThemedText>Bench Press </ThemedText>
             </ThemedView>
-            <Image
-              source={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
-              style={{ width: 80, height: 80 }}
-            />
+            <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+              <Image
+                source={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
+                style={{ width: 80, height: 80 }}
+              />
+              <TouchableOpacity onPress={() => {}} style={{ display: editMode ? "flex" : "none" }}>
+                <MaterialIcons name="delete" color={"red"} size={28} />
+              </TouchableOpacity>
+            </View>
           </ThemedView>
-        </TouchableOpacity> */}
+        </TouchableOpacity>
         <View style={{ marginVertical: 4 }}>
           <Button title="Start" />
         </View>
@@ -127,13 +154,13 @@ const RoutineView = () => {
 const MuscleGraph = () => {
   return (
     <ThemedView style={styles.flex}>
-      <View>
+      <View style={{ width: "50%" }}>
         <MuscleFront
           style={styles.size}
           activator={theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded}
         />
       </View>
-      <View>
+      <View style={{ width: "50%" }}>
         <MuscleBack
           style={styles.size}
           activator={theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded}

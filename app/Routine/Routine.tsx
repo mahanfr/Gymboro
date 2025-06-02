@@ -3,9 +3,15 @@ import { ThemedText } from "../../components/ThemedText";
 import { ThemedView } from "../../components/ThemedView";
 import PopupManager, { usePopupManager } from "@/components/Popup";
 import { MaterialIcons } from "@expo/vector-icons";
+import { categories } from "@/data/DataTypes";
 
-const Routine = ({ onPress }: { onPress: () => void }) => {
-  const theWorkoutsIds = [0, 5, 12];
+type RoutineProps = {
+  title: string;
+  numberOfMoves: number;
+  involvedMuscles: [typeof categories];
+  onPress: () => void;
+};
+const Routine: React.FC<RoutineProps> = ({ title, numberOfMoves, involvedMuscles, onPress }) => {
   const { popups, showPopup, hidePopup } = usePopupManager();
   return (
     <TouchableOpacity onPress={onPress}>
@@ -21,10 +27,11 @@ const Routine = ({ onPress }: { onPress: () => void }) => {
         }}
       >
         <View>
-          <ThemedText type="subtitle">Chester day</ThemedText>
-          <ThemedText style={{ color: "#969696" }}>total of 4 moves</ThemedText>
+          <ThemedText type="subtitle">{title}</ThemedText>
+          <ThemedText style={{ color: "#969696" }}>total of {numberOfMoves} moves</ThemedText>
         </View>
         <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+          {/* TODO fix the images to correspond to  "involvedMuscles" */}
           <Image
             source={require("../../assets/images/muscle_groups/chest.png")}
             style={{ width: 70, marginHorizontal: 2, height: 70 }}
