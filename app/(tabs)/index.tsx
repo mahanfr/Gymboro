@@ -1,15 +1,8 @@
 import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
-import { ThemedView } from "@/components/ThemedView";
 import { Button, ScrollView } from "react-native";
 import { useState, useRef, useEffect } from "react";
-import ExerciseItem from "@/components/ExerciseItem";
-import { IExercise, ISet } from "@/data/Exercise";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import PopupManager, { usePopupManager } from "@/components/Popup";
-import { MaterialIcons } from "@expo/vector-icons";
-import { useTranslation } from "react-i18next";
 import Routine from "@/app/Routine/Routine";
-import RoutineView from "@/app/Routine/RoutineView";
 import { useNavigation } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { categories } from "@/data/DataTypes";
@@ -18,14 +11,13 @@ import * as SQLite from "expo-sqlite";
 export default function HomeScreen() {
   const { popups, showPopup, hidePopup } = usePopupManager();
   const navigation: any = useNavigation();
+  const db = SQLite.useSQLiteContext();
 
   const [routines, setRoutines] = useState<any>();
 
   const getData = async () => {
-    const db = await SQLite.openDatabaseAsync("database.db");
     const wks = await db.getAllAsync("SELECT * FROM workout");
     console.log(wks);
-    setRoutines(wks);
   };
 
   useEffect(() => {
