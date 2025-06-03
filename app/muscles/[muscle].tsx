@@ -12,10 +12,10 @@ export default function MuscleGroup() {
   const [workouts, setWorkouts] = useState<any[]>();
   const { i18n } = useTranslation();
   const isEnglish = i18n.language === "en-US";
+  const db = SQLite.useSQLiteContext();
 
   const getData = async () => {
-    const db = await SQLite.openDatabaseAsync("database.db");
-    const wks = await db.getAllAsync("SELECT * FROM workout");
+    const wks = await db.getAllAsync(`SELECT * FROM workout WHERE category='${muscle}';`);
     setWorkouts(wks);
   };
 
