@@ -6,6 +6,7 @@ import {
   StyleProp,
   StyleSheet,
   TouchableOpacity,
+  TouchableWithoutFeedback,
 } from "react-native";
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
@@ -39,7 +40,7 @@ const ExerciseCard: React.FC<IProps> = ({
   let lightMode = settings.lightMode;
 
   return (
-    <TouchableOpacity onPress={onPress} style={style}>
+    <TouchableWithoutFeedback onPress={onPress} style={style}>
       <ThemedView
         style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi}
         lightMode={lightMode}
@@ -54,7 +55,7 @@ const ExerciseCard: React.FC<IProps> = ({
           <Image style={styles.image} source={image} />
         </ThemedView>
       </ThemedView>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
   );
 };
 

@@ -16,6 +16,7 @@ const WORKOUTS = [
 
 const { width, height } = Dimensions.get("window");
 const images = [
+  require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp"),
   require("../../assets/images/move_demonstration/bench_press_barbell/d1.webp"),
   require("../../assets/images/move_demonstration/bench_press_barbell/b1.jpg"),
   require("../../assets/images/move_demonstration/bench_press_barbell/b2.jpg"),
@@ -66,7 +67,13 @@ const WorkoutDetails = () => {
         <View style={styles.dotsContainer}>
           <Svg height={20} width={images.length * (6 + 10)}>
             {images.map((_, index) => (
-              <Circle key={index} cx={index * 15 + 10} cy="10" r="5" fill={index === currentIndex ? "#0F0" : "#ccc"} />
+              <Circle
+                key={index}
+                cx={index * 15 + 10}
+                cy="10"
+                r="5"
+                fill={index === currentIndex ? "#0F0" : "#ccc"}
+              />
             ))}
           </Svg>
         </View>

@@ -1,39 +1,49 @@
-import { Dimensions, StyleSheet } from "react-native";
+import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemedView } from "@/components/ThemedView";
 import { Button, ScrollView } from "react-native";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ExerciseItem from "@/components/ExerciseItem";
 import { IExercise, ISet } from "@/data/Exercise";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import MuscleGraph from "@/components/MuscleGraph";
+import PopupManager, { usePopupManager } from "@/components/Popup";
+import { MaterialIcons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
+import Routine from "@/app/Routine/Routine";
+import RoutineView from "@/app/Routine/RoutineView";
+import { useNavigation } from "expo-router";
+import { ThemedText } from "@/components/ThemedText";
+import { categories } from "@/data/DataTypes";
+import * as SQLite from "expo-sqlite";
 
 export default function HomeScreen() {
-  const defaultSet: ISet = { rep: 5, weight: 10 };
-  const { t } = useTranslation();
-  const defaultExercise: IExercise = {
-    title: "New Exercise",
-    sets: [defaultSet],
+  const { popups, showPopup, hidePopup } = usePopupManager();
+  const navigation: any = useNavigation();
+
+  const [routines, setRoutines] = useState<any>();
+
+  const getData = async () => {
+    const db = await SQLite.openDatabaseAsync("database.db");
+    const wks = await db.getAllAsync("SELECT * FROM workout");
+    console.log(wks);
+    setRoutines(wks);
   };
-  const [exercises, setExercises] = useState<IExercise[]>([defaultExercise]);
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
     <ScrollView>
-      <SafeAreaProvider>
-        <SafeAreaView>
-          <MuscleGraph />
-          <ThemedView style={styles.card}>
-            {exercises.map((ex, index) => (
-              <ExerciseItem key={index} exercise={ex} />
-            ))}
-            <Button
-              title={t("home.new_exercise")}
-              onPress={() => {
-                setExercises((prevExercises) => [...prevExercises, defaultExercise]);
-              }}
-            />
-          </ThemedView>
-        </SafeAreaView>
-      </SafeAreaProvider>
+      <ThemedText type="subtitle">Routines:</ThemedText>
+      <Routine
+        title="Chesterday"
+        numberOfMoves={4}
+        involvedMuscles={[categories.chest]}
+        onPress={() => {
+          navigation.navigate("Routine/RoutineView");
+        }}
+      />
+      <PopupManager popups={popups} onClose={hidePopup} />
     </ScrollView>
   );
 }
@@ -41,12 +51,10 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   card: {
     gap: 8,
-    // backgroundColor: "#1e1e1e",
     padding: 4,
     marginBottom: 8,
   },
   size: {
-    // width: "50%",
     height: Dimensions.get("window").height - 50,
   },
 });

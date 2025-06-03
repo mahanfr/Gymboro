@@ -12,6 +12,7 @@ interface IProps {
   weight: number;
   lastWeight?: number;
   lastRep?: number;
+  disable?: boolean;
   onDestroy: (id: number) => void;
   onUpdate: (id: number, rep: number, weight: number) => void;
 }
@@ -27,15 +28,13 @@ export default function ExerciseSetItem(props: IProps) {
     <View style={styles.container}>
       <ThemedText>{props.id + 1}</ThemedText>
       <ThemedText style={styles.flexChild}>
-        <ThemedText>
-          {props.lastRep}x{props.lastWeight}Kg
-        </ThemedText>
+        {props.lastRep}x{props.lastWeight}Kg
       </ThemedText>
       <View style={styles.button}>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep - 1, weight)}>
           -
-        </Text>
-        <Text
+        </ThemedText>
+        <ThemedText
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
             fontSize: 20,
@@ -51,16 +50,16 @@ export default function ExerciseSetItem(props: IProps) {
           }}
         >
           {props.rep}
-        </Text>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep + 1, weight)}>
+        </ThemedText>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep + 1, weight)}>
           +
-        </Text>
+        </ThemedText>
       </View>
       <View style={styles.button}>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep, weight - 1)}>
           -
-        </Text>
-        <Text
+        </ThemedText>
+        <ThemedText
           style={{
             color: lightMode ? Colors.dark.color : Colors.light.color,
             fontSize: 20,
@@ -76,14 +75,14 @@ export default function ExerciseSetItem(props: IProps) {
           }}
         >
           {props.weight}
-        </Text>
-        <Text style={{ color: lightMode ? Colors.light.color : Colors.dark.color, fontSize: 30 }} onPress={() => props.onUpdate(props.id, rep, weight + 1)}>
+        </ThemedText>
+        <ThemedText type="title" style={{ display: props.disable ? "none" : "flex" }} onPress={() => props.onUpdate(props.id, rep, weight + 1)}>
           +
-        </Text>
+        </ThemedText>
       </View>
       <View>
         <Text onPress={() => props.onDestroy(props.id)}>
-          <MaterialIcons name="remove-circle-outline" size={28} color={"#c83b60"} />
+          <MaterialIcons name="remove-circle-outline" size={28} color={props.disable ? "transparent" : "#c83b60"} />
         </Text>
       </View>
     </View>
@@ -92,9 +91,7 @@ export default function ExerciseSetItem(props: IProps) {
 
 const styles = StyleSheet.create({
   exerciseValueInput: {
-    // minHeight: 35,
     backgroundColor: "#f00",
-    // paddingInline: 2,
     borderRadius: 50,
     width: 50,
     padding: 4,
@@ -102,21 +99,14 @@ const styles = StyleSheet.create({
   },
   flexChild: {
     width: "29%",
-    color: "white",
     textAlign: "center",
   },
   button: {
     width: "29%",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "center",
+    justifyContent: "space-evenly",
     alignItems: "center",
-
-    // color: "white",
-    // textAlign: "center",
-  },
-  themedText: {
-    fontSize: 30,
   },
   flex: {
     width: "29%",
