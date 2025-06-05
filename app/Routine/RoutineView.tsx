@@ -18,65 +18,11 @@ import { MaterialIcons } from "@expo/vector-icons";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useNavigation } from "expo-router";
 import * as SQLite from "expo-sqlite";
+import { CalculateRepWeight } from "../calculators/rep_weight";
 
-const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = new MusclesActivation({
-  chest: 3,
-
-  shin: 0,
-  tibialis_anterior: 0,
-  extensor_digitorum_longus: 0,
-
-  traps: 0,
-  upper_trapezius: 0,
-  middle_trapezius: 0,
-  lower_trapezius: 0,
-
-  biceps: 0,
-  biceps_short_head: 0,
-  biceps_long_head: 0,
-  brachialis: 0,
-
-  triceps: 0,
-  triceps_lateral_head: 0,
-  triceps_long_head: 0,
-  triceps_medial_head: 0,
-
-  forearms: 0,
-  brachioradialis: 5,
-  wrist_extensors: 5,
-  wrist_flexors: 5,
-
-  abs: 5,
-  obliques: 4,
-
-  adductors: 3,
-
-  abductors: 5,
-
-  quadriceps: 5,
-  vastus_lateralis: 5,
-  vastus_intermedius: 5,
-  vastus_medialis: 5,
-
-  calves: 0,
-
-  shoulders: 0,
-  anterior_deltoid: 0,
-  lateral_deltoid: 0,
-  posterior_deltoid: 0,
-
-  upper_back: 0,
-  serratus_anterior: 0,
-  teres: 0,
-  infraspinatus: 0,
-
-  lats: 0,
-
-  glutes: 3,
-
-  hamstrings: 0,
-  biceps_femoris: 0,
-  semitendinosus: 0,
+const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = CalculateRepWeight({
+  sets: [{ rep: 10, weight: 10 }],
+  workoutId: 1,
 });
 const RoutineView = () => {
   const navigation: any = useNavigation();

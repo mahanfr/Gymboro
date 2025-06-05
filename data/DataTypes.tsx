@@ -64,7 +64,7 @@ export class MusclesActivation {
   public getColor(activation_value: number): string {
     switch (activation_value) {
       case 0:
-        return "#ffe4ea";
+        return "#696969";
       case 1:
         return "#ff91ab";
       case 2:
@@ -75,6 +75,8 @@ export class MusclesActivation {
         return "#80122c";
       case 5:
         return "#400916";
+      case 6:
+        return "#f00916";
       default:
         return "#bebebe";
     }
