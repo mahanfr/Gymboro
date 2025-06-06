@@ -34,6 +34,7 @@ cursor.execute('''
 cursor.execute('''
     CREATE TABLE IF NOT EXISTS routine_workout (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        set_json TEXT,
         routine INTEGER,
         workout INTEGER,
         FOREIGN KEY (routine) REFERENCES routine(id),
