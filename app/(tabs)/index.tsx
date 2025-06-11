@@ -2,7 +2,7 @@ import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
 import { Button, ScrollView } from "react-native";
 import { useState, useRef, useEffect } from "react";
 import PopupManager, { usePopupManager } from "@/components/Popup";
-import Routine from "@/app/Routine/Routine";
+import Routine from "@/components/Routine";
 import { useNavigation } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { categories } from "@/data/DataTypes";
@@ -16,8 +16,8 @@ export default function HomeScreen() {
   const [routines, setRoutines] = useState<any>();
 
   const getData = async () => {
-    const wks = await db.getAllAsync("SELECT * FROM workout");
-    console.log(wks);
+    const wks = await db.getAllAsync("SELECT * FROM routine");
+    setRoutines(wks);
   };
 
   useEffect(() => {
@@ -27,14 +27,16 @@ export default function HomeScreen() {
   return (
     <ScrollView>
       <ThemedText type="subtitle">Routines:</ThemedText>
-      <Routine
-        title="Chesterday"
-        numberOfMoves={4}
-        involvedMuscles={[categories.chest]}
-        onPress={() => {
-          navigation.navigate("Routine/RoutineView");
-        }}
-      />
+      {routines?.map((item: any, index: number) => (
+        <Routine
+          title={item.title}
+          numberOfMoves={4}
+          involvedMuscles={[categories.chest]}
+          onPress={() => {
+            navigation.navigate("routine/index");
+          }}
+        />
+      ))}
       <PopupManager popups={popups} onClose={hidePopup} />
     </ScrollView>
   );

@@ -1,20 +1,20 @@
 import { Image, TouchableOpacity, View } from "react-native";
-import { ThemedText } from "../../components/ThemedText";
-import { ThemedView } from "../../components/ThemedView";
+import { ThemedText } from "@/components/ThemedText";
+import { ThemedView } from "@/components/ThemedView";
 import PopupManager, { usePopupManager } from "@/components/Popup";
 import { MaterialIcons } from "@expo/vector-icons";
 import { categories } from "@/data/DataTypes";
 
-type RoutineProps = {
+interface IRoutineProps {
   title: string;
   numberOfMoves: number;
   involvedMuscles: [typeof categories];
   onPress: () => void;
-};
-const Routine: React.FC<RoutineProps> = ({ title, numberOfMoves, involvedMuscles, onPress }) => {
+}
+const Routine = (props: IRoutineProps) => {
   const { popups, showPopup, hidePopup } = usePopupManager();
   return (
-    <TouchableOpacity onPress={onPress}>
+    <TouchableOpacity onPress={props.onPress}>
       <ThemedView
         style={{
           display: "flex",
@@ -27,17 +27,17 @@ const Routine: React.FC<RoutineProps> = ({ title, numberOfMoves, involvedMuscles
         }}
       >
         <View>
-          <ThemedText type="subtitle">{title}</ThemedText>
-          <ThemedText style={{ color: "#969696" }}>total of {numberOfMoves} moves</ThemedText>
+          <ThemedText type="subtitle">{props.title}</ThemedText>
+          <ThemedText style={{ color: "#969696" }}>total of {props.numberOfMoves} moves</ThemedText>
         </View>
         <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
           {/* TODO fix the images to correspond to  "involvedMuscles" */}
           <Image
-            source={require("../../assets/images/muscle_groups/chest.png")}
+            source={require("@/assets/images/muscle_groups/chest.png")}
             style={{ width: 70, marginHorizontal: 2, height: 70 }}
           />
           <Image
-            source={require("../../assets/images/muscle_groups/core.png")}
+            source={require("@/assets/images/muscle_groups/core.png")}
             style={{ width: 70, marginHorizontal: 2, height: 70 }}
           />
           <TouchableOpacity

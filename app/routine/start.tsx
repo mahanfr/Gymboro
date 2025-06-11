@@ -16,6 +16,16 @@ const StartWorkout = () => {
   const [exercises, setExercises] = useState<IExercise[]>([defaultExercise]);
   return (
     <ThemedView style={styles.card}>
+      <ThemedView
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <ThemedText style={styles.timer}>00:00:00</ThemedText>
+      </ThemedView>
       {exercises.map((ex, index) => (
         <ExerciseItem key={index} exercise={ex} />
       ))}
@@ -30,6 +40,10 @@ const StartWorkout = () => {
 };
 export default StartWorkout;
 const styles = StyleSheet.create({
+  timer: {
+    fontSize: 42,
+    padding: 10,
+  },
   card: {
     gap: 8,
     // backgroundColor: "#1e1e1e",
