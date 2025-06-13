@@ -1,5 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Modal, Pressable } from "react-native";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Modal,
+  TouchableWithoutFeedback,
+} from "react-native";
 
 // Updated component to handle multiple popups
 interface PopupData {
@@ -23,9 +30,9 @@ const PopupManager: React.FC<PopupManagerProps> = ({ popups, onClose }) => {
 
   return (
     <Modal transparent={true} visible={true} onRequestClose={() => onClose(popupKey)}>
-      <Pressable onPress={() => onClose(popupKey)}>
+      <TouchableWithoutFeedback onPress={() => onClose(popupKey)}>
         <View style={styles.modalOverlay} />
-      </Pressable>
+      </TouchableWithoutFeedback>
       <View style={styles.modalContent}>
         <Text style={styles.messageText}>{message}</Text>
         <TouchableOpacity style={styles.closeButton} onPress={() => onClose(popupKey)}>

@@ -72,12 +72,9 @@ export function normolizeNumbers0To6(data: {}) {
 
 export async function calculateRepWeight(prop: CalculateRepWeightProps, db: any) {
   const workout = await getWorkoutFromDB(prop.workoutId, db);
-  let effectedMuscles = workout[0].muscles_affected_json;
-  let newEffectedMuscles = Object.fromEntries(
-    //remove all small defualts just so that if rep or weight is 0 so is the activation
-    workout.muscles_affected_json ??
-      Object.keys(workout.muscles_affected_json).map((key) => [key, 0])
-  );
+  let effectedMuscles = JSON.parse(workout[0].muscles_affected_json);
+  let musclesAffected = JSON.parse(workout[0].muscles_affected_json || "{}");
+  let newEffectedMuscles = Object.fromEntries(Object.keys(musclesAffected).map((key) => [key, 0]));
 
   for (const setIndex in prop.sets) {
     const set = prop.sets[setIndex];
