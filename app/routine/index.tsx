@@ -93,7 +93,12 @@ const RoutineView = () => {
           </ThemedView>
         </TouchableOpacity>
         <View style={{ marginVertical: 4 }}>
-          <Button title="Start" />
+          <Button
+            title="Start"
+            onPress={() => {
+              navigation.navigate("routine/start");
+            }}
+          />
         </View>
       </View>
     </ScrollView>
