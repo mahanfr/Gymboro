@@ -50,13 +50,13 @@ cursor.execute('''
     )''')
 
 
-with open("../data/workouts.json", "r", encoding='utf-8') as file:
+with open("C:\\Users\\Sam\\Documents\\projects\\Gymboro\\data\\workouts.json", "r", encoding='utf-8') as file:
     data = json.load(file)
 
 for item in data:
     cursor.execute("INSERT INTO workout (name, muscles_affected_json, category, description, name_fa, description_fa, similar_workouts_json) VALUES (?,?,?,?,?,?,?)",
                    (item['name'],
-                    str(item['muscles_affected']),
+                    str(item['muscles_affected']).replace("'","\""),
                     item['category'],
                     item['description'],
                     item['name_fa'],

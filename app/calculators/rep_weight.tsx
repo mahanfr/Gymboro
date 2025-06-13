@@ -1,20 +1,21 @@
 import { MusclesActivation } from "@/data/DataTypes";
+import * as SQLite from "expo-sqlite";
 
 type CalculateRepWeightProps = {
   sets: [{ rep: number; weight: number }];
   workoutId: number;
 };
 
-function getWorkoutMusclesFromDB(workoutId: number): {
-  id: number;
-  name: string;
-  muscles_affected_json: string;
-  category: string;
-  description: string;
-  name_fa: string;
-  description_fa: string;
-  similar_workouts_json: string;
-} {
+async function injectSQL(command: string) {
+  const db = SQLite.useSQLiteContext();
+  const wks = await db.getAllAsync(command);
+  console.log(wks);
+}
+
+async function getWorkoutFromDB(workoutId: number, db: any) {
+  const workouts = await db.getAllAsync(`SELECT * FROM workout WHERE id = ${workoutId}`);
+  console.log(JSON.parse(workouts[0].muscles_affected_json));
+  return workouts;
   return {
     id: 1,
     name: "Barbell Bench Press",
@@ -29,35 +30,21 @@ function getWorkoutMusclesFromDB(workoutId: number): {
     similar_workouts_json:
       "['Dumbbell Bench Press', 'Incline Barbell Press', 'Decline Barbell Press']",
   };
-  // return [
-  //   {
-  //     date: "10.10.24",
-  //     sets: [
-  //       { reps: 11, weight: 11 },
-  //       { reps: 12, weight: 12 },
-  //     ],
-  //   },
-  //   {
-  //     date: "11.10.24",
-  //     sets: [
-  //       { reps: 21, weight: 21 },
-  //       { reps: 22, weight: 22 },
-  //     ],
-  //   },
-  //   {
-  //     date: "12.10.24",
-  //     sets: [
-  //       { reps: 31, weight: 31 },
-  //       { reps: 32, weight: 32 },
-  //       { reps: 33, weight: 3 },
-  //     ],
-  //   },
-  // ];
 }
+function getRoutineFromDB(id: number) {
+  return { id: 1, name: "chesterday" };
+}
+function getWorkoutRoutineFromDB(id: number) {
+  return { id: 1, routine: 1, workout: 1 };
+}
+function getRoutineTreeFromDB(id: number) {
+  const routine = getRoutineFromDB(id);
+}
+
 function repWeightMultiplyer(set: { rep: number; weight: number }): number {
   return (set.weight * set.rep * 30) / (set.rep + 30);
 }
-function normolizeNumbers0To7(data: {}) {
+export function normolizeNumbers0To6(data: {}) {
   const nonZeroValues = Object.values(data).filter((val) => typeof val === "number" && val > 0);
   if (nonZeroValues.length === 0) {
     return Object.fromEntries(Object.keys(data).map((key) => [key, 0]));
@@ -82,12 +69,14 @@ function normolizeNumbers0To7(data: {}) {
   }
   return result;
 }
-export function CalculateRepWeight(prop: CalculateRepWeightProps): MusclesActivation {
-  const workout = getWorkoutMusclesFromDB(prop.workoutId);
-  let effectedMuscles = JSON.parse(workout.muscles_affected_json);
+
+export async function calculateRepWeight(prop: CalculateRepWeightProps, db: any) {
+  const workout = await getWorkoutFromDB(prop.workoutId, db);
+  let effectedMuscles = workout[0].muscles_affected_json;
   let newEffectedMuscles = Object.fromEntries(
     //remove all small defualts just so that if rep or weight is 0 so is the activation
-    Object.keys(JSON.parse(workout.muscles_affected_json)).map((key) => [key, 0])
+    workout.muscles_affected_json ??
+      Object.keys(workout.muscles_affected_json).map((key) => [key, 0])
   );
 
   for (const setIndex in prop.sets) {
@@ -96,8 +85,57 @@ export function CalculateRepWeight(prop: CalculateRepWeightProps): MusclesActiva
       newEffectedMuscles[key] += repWeightMultiplyer(set) * effectedMuscles[key];
     }
   }
-  console.log(newEffectedMuscles);
-  console.log(normolizeNumbers0To7(newEffectedMuscles));
-  return new MusclesActivation(normolizeNumbers0To7(newEffectedMuscles));
+  return newEffectedMuscles;
+  // console.log(normolizeNumbers0To6(newEffectedMuscles));
+  // console.log(newEffectedMuscles);
+  // return new MusclesActivation(normolizeNumbers0To6(newEffectedMuscles));
 }
-//TODO do this CalculateRepWeight but for routine
+
+function activatorsAverage(activator: any) {
+  const sumMap: Record<string, number> = {};
+  const countMap: Record<string, number> = {};
+
+  // Calculate sums and counts for each key
+  for (const obj of activator) {
+    for (const key in obj) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        sumMap[key] = (sumMap[key] || 0) + obj[key];
+        countMap[key] = (countMap[key] || 0) + 1;
+      }
+    }
+  }
+
+  // Calculate averages
+  const result: Record<string, number> = {};
+  for (const key in sumMap) {
+    if (Object.prototype.hasOwnProperty.call(sumMap, key)) {
+      result[key] = sumMap[key] / countMap[key];
+    }
+  }
+
+  return result;
+}
+export async function calculateByRoutine(id: number, db: any) {
+  const workouts =
+    await db.getAllAsync(`SELECT w.id FROM workout w JOIN routine_workout rw ON w.id = rw.workout
+     WHERE rw.routine = ${id}`);
+  let all_activations = [{}];
+  for (const w of workouts) {
+    //TODO get the rep weight from db
+    all_activations.push(
+      await calculateRepWeight({ sets: [{ weight: 1, rep: 1 }], workoutId: w.id }, db)
+    );
+  }
+
+  return activatorsAverage(all_activations);
+}
+
+export function saveRoutineToDB() {
+  // save new or edited routine to db
+}
+
+export function saveRoutineAsFinished(id: number) {
+  //calculateByRoutine(id)
+  //Add to gitty chart
+  //
+}

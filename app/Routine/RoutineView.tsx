@@ -18,32 +18,34 @@ import { MaterialIcons } from "@expo/vector-icons";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useNavigation } from "expo-router";
 import * as SQLite from "expo-sqlite";
-import { CalculateRepWeight } from "../calculators/rep_weight";
+import { calculateByRoutine, normolizeNumbers0To6 } from "../calculators/rep_weight";
 
-const theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded = CalculateRepWeight({
-  sets: [{ rep: 10, weight: 10 }],
-  workoutId: 1,
-});
 const RoutineView = () => {
+  const db = SQLite.useSQLiteContext();
   const navigation: any = useNavigation();
-  const [workouts, setWorkouts] = useState<any[]>([]);
   const [editMode, setEditMode] = useState(false);
 
-  // const getData = async () => {
-  //   const db = await SQLite.openDatabaseAsync("database.db");
-  //   const wks = await db.getAllAsync("SELECT * FROM routine");
-  //   setWorkouts(wks);
-  //   console.log(wks);
-  // };
+  const [muscleData, setMuscleData] = useState(new MusclesActivation());
 
-  // useEffect(() => {
-  //   getData();
-  // }, []);
+  useEffect(() => {
+    const fetchMuscleData = async () => {
+      const data = await calculateByRoutine(1, db);
+      setMuscleData(new MusclesActivation(normolizeNumbers0To6(data)));
+    };
+    fetchMuscleData();
+  }, []);
 
   return (
     <ScrollView>
       <ThemedView style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-        <MuscleGraph />
+        <ThemedView style={styles.flex}>
+          <View style={{ width: "50%" }}>
+            <MuscleFront style={styles.size} activator={muscleData} />
+          </View>
+          <View style={{ width: "50%" }}>
+            <MuscleBack style={styles.size} activator={muscleData} />
+          </View>
+        </ThemedView>
       </ThemedView>
       <View style={{ paddingHorizontal: 5 }}>
         <ThemedView
@@ -97,24 +99,7 @@ const RoutineView = () => {
     </ScrollView>
   );
 };
-const MuscleGraph = () => {
-  return (
-    <ThemedView style={styles.flex}>
-      <View style={{ width: "50%" }}>
-        <MuscleFront
-          style={styles.size}
-          activator={theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded}
-        />
-      </View>
-      <View style={{ width: "50%" }}>
-        <MuscleBack
-          style={styles.size}
-          activator={theDataOfThisRoutineThatShouldBeCalculatedAndNotHardCoded}
-        />
-      </View>
-    </ThemedView>
-  );
-};
+
 export default RoutineView;
 const styles = StyleSheet.create({
   flex: {
@@ -134,7 +119,7 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   size: {
-    height: Dimensions.get("window").height / 3,
+    height: Dimensions.get("window").height / 2,
   },
   dateSelector: {
     display: "flex",

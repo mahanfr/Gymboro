@@ -1,4 +1,12 @@
-import { Dimensions, StyleSheet, TouchableOpacity } from "react-native";
+import {
+  Dimensions,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { Button, ScrollView } from "react-native";
 import { useState, useRef, useEffect } from "react";
 import PopupManager, { usePopupManager } from "@/components/Popup";
@@ -14,10 +22,14 @@ export default function HomeScreen() {
   const db = SQLite.useSQLiteContext();
 
   const [routines, setRoutines] = useState<any>();
+  const [sql, setSql] = useState<string>("");
 
+  async function injectSQL(command: string) {
+    const wks = await db.getAllAsync(command);
+    console.log(wks);
+  }
   const getData = async () => {
     const wks = await db.getAllAsync("SELECT * FROM workout");
-    console.log(wks);
   };
 
   useEffect(() => {
@@ -35,6 +47,18 @@ export default function HomeScreen() {
           navigation.navigate("Routine/RoutineView");
         }}
       />
+
+      <View>
+        <TextInput
+          style={{ borderWidth: 1, padding: 2, margin: 2, height: 80 }}
+          placeholder="INSERT INTO * ..."
+          value={sql}
+          onChange={(event) => {
+            setSql(event.nativeEvent.text);
+          }}
+        ></TextInput>
+        <Button title="sql injection" onPress={() => injectSQL(sql)} />
+      </View>
       <PopupManager popups={popups} onClose={hidePopup} />
     </ScrollView>
   );
