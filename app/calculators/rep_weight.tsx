@@ -126,6 +126,13 @@ export async function calculateByRoutine(id: number, db: any) {
 
   return activatorsAverage(all_activations);
 }
+export async function workoutsOfRoutine(id: number, db: any) {
+  const workouts =
+    await db.getAllAsync(`SELECT w.* FROM workout w JOIN routine_workout rw ON w.id = rw.workout
+     WHERE rw.routine = ${id}`);
+
+  return workouts;
+}
 
 export function saveRoutineToDB() {
   // save new or edited routine to db

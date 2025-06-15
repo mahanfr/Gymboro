@@ -46,7 +46,7 @@ export default function HomeScreen() {
           numberOfMoves={4}
           involvedMuscles={[categories.chest]}
           onPress={() => {
-            navigation.navigate("routine/index");
+            navigation.navigate("routine/index?id=1");
           }}
         />
       ))}

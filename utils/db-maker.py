@@ -81,6 +81,14 @@ rep_set_json = '''
 ]
 '''
 
+cursor.execute("INSERT INTO workout_history (workout,work_json) VALUES (?,?)",
+               ( 1, rep_weight_set_json))
+cursor.execute("INSERT INTO workout_history (workout,work_json) VALUES (?,?)",
+               ( 5, rep_weight_set_json))
+cursor.execute("INSERT INTO workout_history (workout,work_json) VALUES (?,?)",
+               ( 92, rep_weight_set_json))
+
+
 cursor.execute("INSERT INTO routine (title) VALUES (?)", ("Chest Day",))
 cursor.execute("INSERT INTO routine (title) VALUES (?)", ("Leg Day",))
 cursor.execute("INSERT INTO routine (title) VALUES (?)", ("Back Day",))

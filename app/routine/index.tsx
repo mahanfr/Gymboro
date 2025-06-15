@@ -18,19 +18,27 @@ import { MaterialIcons } from "@expo/vector-icons";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useNavigation } from "expo-router";
 import * as SQLite from "expo-sqlite";
-import { calculateByRoutine, normolizeNumbers0To6 } from "../calculators/rep_weight";
+import {
+  calculateByRoutine,
+  normolizeNumbers0To6,
+  workoutsOfRoutine,
+} from "../calculators/rep_weight";
 
 const RoutineView = () => {
   const db = SQLite.useSQLiteContext();
   const navigation: any = useNavigation();
   const [editMode, setEditMode] = useState(false);
+  const [workouts, setWorkouts] = useState<{ name: string }[]>([]);
 
   const [muscleData, setMuscleData] = useState(new MusclesActivation());
 
   useEffect(() => {
     const fetchMuscleData = async () => {
-      const data = await calculateByRoutine(1, db);
+      const data = await calculateByRoutine(2, db); //TODO get id from path
+      const workoutsFromdb = await workoutsOfRoutine(2, db);
+      console.log(workoutsFromdb);
       setMuscleData(new MusclesActivation(normolizeNumbers0To6(data)));
+      setWorkouts(workoutsFromdb);
     };
     fetchMuscleData();
   }, []);
@@ -57,7 +65,7 @@ const RoutineView = () => {
             borderBottomWidth: 1,
           }}
         >
-          <ThemedText type="subtitle">Modves:</ThemedText>
+          <ThemedText type="subtitle">Moves:</ThemedText>
           <TouchableOpacity
             onPress={() => {
               setEditMode(!editMode);
@@ -70,13 +78,15 @@ const RoutineView = () => {
             />
           </TouchableOpacity>
         </ThemedView>
-        <ExerciseCard
-          title="BenchPress Barbel"
-          key={0}
-          image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
-          onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
-        />
-        <TouchableOpacity onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}>
+        {workouts?.map((w) => (
+          <ExerciseCard
+            title={w.name}
+            key={0}
+            // image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
+            onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
+          />
+        ))}
+        {/* <TouchableOpacity onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}>
           <ThemedView style={styles.workout}>
             <ThemedView style={{ maxWidth: "60%" }}>
               <ThemedText>Bench Press </ThemedText>
@@ -91,7 +101,7 @@ const RoutineView = () => {
               </TouchableOpacity>
             </View>
           </ThemedView>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
         <View style={{ marginVertical: 4 }}>
           <Button
             title="Start"
