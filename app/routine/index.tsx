@@ -16,7 +16,7 @@ import MuscleBack from "../../components/MuscleBack";
 import { useEffect, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import ExerciseCard from "@/components/ExerciseCard";
-import { useNavigation } from "expo-router";
+import { useNavigation, useLocalSearchParams } from "expo-router";
 import * as SQLite from "expo-sqlite";
 import {
   calculateByRoutine,
@@ -27,16 +27,16 @@ import {
 const RoutineView = () => {
   const db = SQLite.useSQLiteContext();
   const navigation: any = useNavigation();
+  const { id } = useLocalSearchParams();
   const [editMode, setEditMode] = useState(false);
-  const [workouts, setWorkouts] = useState<{ name: string }[]>([]);
+  const [workouts, setWorkouts] = useState<{ id: number; name: string }[]>([]);
 
   const [muscleData, setMuscleData] = useState(new MusclesActivation());
 
   useEffect(() => {
     const fetchMuscleData = async () => {
-      const data = await calculateByRoutine(2, db); //TODO get id from path
-      const workoutsFromdb = await workoutsOfRoutine(2, db);
-      console.log(workoutsFromdb);
+      const data = await calculateByRoutine(Number(id), db); // Ensure id is a number
+      const workoutsFromdb = await workoutsOfRoutine(Number(id), db);
       setMuscleData(new MusclesActivation(normolizeNumbers0To6(data)));
       setWorkouts(workoutsFromdb);
     };
@@ -81,9 +81,9 @@ const RoutineView = () => {
         {workouts?.map((w) => (
           <ExerciseCard
             title={w.name}
-            key={0}
+            key={w.id}
             // image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
-            onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
+            onPress={() => navigation.navigate("workouts/[id]", { id: w.id })}
           />
         ))}
         {/* <TouchableOpacity onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}>

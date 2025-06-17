@@ -14,7 +14,6 @@ async function injectSQL(command: string) {
 
 async function getWorkoutFromDB(workoutId: number, db: any) {
   const workouts = await db.getAllAsync(`SELECT * FROM workout WHERE id = ${workoutId}`);
-  console.log(JSON.parse(workouts[0].muscles_affected_json));
   return workouts;
   return {
     id: 1,

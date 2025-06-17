@@ -43,10 +43,10 @@ export default function HomeScreen() {
       {routines?.map((item: any, index: number) => (
         <Routine
           title={item.title}
-          numberOfMoves={4}
+          numberOfMoves={4} //TODO get this from DB
           involvedMuscles={[categories.chest]}
           onPress={() => {
-            navigation.navigate("routine/index?id=1");
+            navigation.navigate("routine/index", { id: item.id });
           }}
         />
       ))}

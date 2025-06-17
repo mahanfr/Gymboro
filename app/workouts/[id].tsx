@@ -4,15 +4,11 @@ import { View, Image, StyleSheet, ScrollView, Dimensions } from "react-native";
 import { useEffect, useRef, useState } from "react";
 import Svg, { Circle } from "react-native-svg";
 import { useLocalSearchParams, useNavigation } from "expo-router";
+import * as SQLite from "expo-sqlite";
 
 type WorkoutDetailsProps = {
   id: number;
 };
-
-const WORKOUTS = [
-  { name: "Bench Press", description: "Chest exercise" },
-  { name: "Squats", description: "Leg exercise" },
-];
 
 const { width, height } = Dimensions.get("window");
 const images = [
@@ -29,7 +25,10 @@ const images = [
 const WorkoutDetails = () => {
   const navigation = useNavigation();
   const { id } = useLocalSearchParams();
-  const workout = WORKOUTS[Number(id)];
+  const [workout, setWorkout] = useState<any>({
+    id: 0,
+    name: "Workout Details",
+  });
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<ScrollView>(null);
 
@@ -44,6 +43,15 @@ const WorkoutDetails = () => {
       title: workout.name || "Workout Details",
     });
   }, [workout.name]);
+
+  const db = SQLite.useSQLiteContext();
+  useEffect(() => {
+    const getData = async () => {
+      const wks = await db.getAllAsync(`SELECT * FROM workout WHERE id=${id}`);
+      setWorkout(wks[0]);
+    };
+    getData();
+  }, []);
 
   return (
     <ThemedView>
@@ -79,8 +87,8 @@ const WorkoutDetails = () => {
         </View>
       </View>
       <ThemedView>
-        <ThemedText type="subtitle">Bench Press</ThemedText>
-        <ThemedText>other stuff how to do it and stuff</ThemedText>
+        <ThemedText type="subtitle">{workout.name}</ThemedText>
+        <ThemedText>{workout.description}</ThemedText>
       </ThemedView>
     </ThemedView>
   );
