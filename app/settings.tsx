@@ -6,6 +6,8 @@ import { View, StyleSheet, TextInput, Text } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Settings_createcontext } from "../app/_layout";
 import { useTranslation } from "react-i18next";
+import { MaterialIcons } from "@expo/vector-icons";
+import Svg, { Line } from "react-native-svg";
 export interface ISettings {
   weightInc: string;
   lightMode: boolean;
@@ -14,6 +16,7 @@ export interface ISettings {
 export default function Settings() {
   const { i18n, t } = useTranslation();
   const currentLanguage = i18n.language;
+  const isEnglish = i18n.language === "en-US";
 
   const [sett, setSett] = useState<ISettings>({
     weightInc: "1.0",
@@ -63,7 +66,6 @@ export default function Settings() {
     setLocalSettings();
     setSettings(sett);
   }, [sett]);
-
   const context = useContext(Settings_createcontext);
   if (!context) {
     throw new Error("ThemedView must be used within a SettingsContext.Provider");
@@ -74,43 +76,64 @@ export default function Settings() {
     <SafeAreaProvider>
       <SafeAreaView>
         <ThemedView>
-          <ThemedText>Weight Increment:</ThemedText>
-          <TextInput
-            style={styles.textInput}
-            keyboardType="numeric"
-            value={sett?.weightInc}
-            onChangeText={(val) => setSett({ ...sett, weightInc: val })}
-          />
-          <ThemedText>
-            {t("settings.theme")}:
-            <Text
-              style={!sett.lightMode ? styles.toggle_on : styles.toggle_off}
-              onPress={() => setSett({ ...sett, lightMode: false })}
-            >
-              Dark
-            </Text>
-            <Text
-              style={sett.lightMode ? styles.toggle_on : styles.toggle_off}
-              onPress={() => setSett({ ...sett, lightMode: true })}
-            >
-              Light
-            </Text>
-          </ThemedText>
-          <ThemedText>{t("language")}:</ThemedText>
-          <View style={styles.flex}>
+          <View
+            style={{
+              padding: 6,
+              display: "flex",
+              flexDirection: isEnglish ? "row" : "row-reverse",
+            }}
+          >
+            <ThemedText type="defaultSemiBold">{t("settings.weight_inc")}</ThemedText>
+            <TextInput
+              style={styles.textInput}
+              keyboardType="numeric"
+              value={sett?.weightInc}
+              onChangeText={(val) => setSett({ ...sett, weightInc: val })}
+            />
+          </View>
+          <Line_ />
+          <View
+            style={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: isEnglish ? "row" : "row-reverse",
+              padding: 6,
+            }}
+          >
+            <ThemedText type="defaultSemiBold">{t("settings.theme")}:</ThemedText>
+            <MaterialIcons
+              size={30}
+              color={sett.lightMode ? "black" : "white"}
+              onPress={() => {
+                setSett({ ...sett, lightMode: !sett.lightMode });
+              }}
+              name={!sett.lightMode ? "light-mode" : "dark-mode"}
+            ></MaterialIcons>
+          </View>
+          <Line_ />
+          <View
+            style={[styles.flex, { padding: 6, flexDirection: isEnglish ? "row" : "row-reverse" }]}
+          >
+            <MaterialIcons
+              size={30}
+              color={sett.lightMode ? "black" : "white"}
+              name="language"
+            ></MaterialIcons>
+            <ThemedText type="defaultSemiBold">{t("language")}:</ThemedText>
             <ThemedText
               style={currentLanguage === "en-US" ? styles.toggle_on : styles.toggle_off}
               onPress={() => changeLanguage("en-US")}
             >
-              En
+              English
             </ThemedText>
             <ThemedText
               style={currentLanguage === "fa-IR" ? styles.toggle_on : styles.toggle_off}
               onPress={() => changeLanguage("fa-IR")}
             >
-              Fa
+              فارسی
             </ThemedText>
           </View>
+          <Line_ />
         </ThemedView>
       </SafeAreaView>
     </SafeAreaProvider>
@@ -132,6 +155,8 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     color: "black",
     padding: 5,
+    textAlign: "center",
+    width: 50,
   },
   toggle_on: {
     borderColor: "red",
@@ -144,3 +169,10 @@ const styles = StyleSheet.create({
     padding: 2,
   },
 });
+const Line_ = () => {
+  return (
+    <Svg height="2" width="100%">
+      <Line x1="0" y1="1" x2="100%" y2="1" stroke="#96969696" strokeWidth="2" />
+    </Svg>
+  );
+};

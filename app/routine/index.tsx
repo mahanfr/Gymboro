@@ -23,13 +23,16 @@ import {
   normolizeNumbers0To6,
   workoutsOfRoutine,
 } from "../calculators/rep_weight";
+import { useTranslation } from "react-i18next";
 
 const RoutineView = () => {
   const db = SQLite.useSQLiteContext();
   const navigation: any = useNavigation();
+  const { i18n, t } = useTranslation();
+  const isEnglish = i18n.language === "en-US";
   const { id } = useLocalSearchParams();
   const [editMode, setEditMode] = useState(false);
-  const [workouts, setWorkouts] = useState<{ id: number; name: string }[]>([]);
+  const [workouts, setWorkouts] = useState<{ id: number; name: string; name_fa: string }[]>([]);
 
   const [muscleData, setMuscleData] = useState(new MusclesActivation());
 
@@ -59,13 +62,20 @@ const RoutineView = () => {
         <ThemedView
           style={{
             display: "flex",
-            flexDirection: "row",
+            flexDirection: isEnglish ? "row" : "row-reverse",
             justifyContent: "space-between",
-            padding: 4,
+            padding: 6,
             borderBottomWidth: 1,
           }}
         >
-          <ThemedText type="subtitle">Moves:</ThemedText>
+          <ThemedText type="subtitle">{t("routine.Moves") + ":"}</ThemedText>
+          <TouchableOpacity
+            style={{ display: editMode ? "flex" : "none", flexDirection: "row" }}
+            onPress={() => {}}
+          >
+            <ThemedText type="subtitle">{t("routine.Add")}</ThemedText>
+            <MaterialIcons name={"add-circle"} color={"green"} size={28} />
+          </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
               setEditMode(!editMode);
@@ -80,8 +90,9 @@ const RoutineView = () => {
         </ThemedView>
         {workouts?.map((w) => (
           <ExerciseCard
-            title={w.name}
+            title={isEnglish ? w.name : w.name_fa}
             key={w.id}
+            editMode={editMode}
             // image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
             onPress={() => navigation.navigate("workouts/[id]", { id: w.id })}
           />

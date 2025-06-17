@@ -28,5 +28,11 @@
       "cardio": "Cardio",
       "rest": "Rest"
     }
+  },
+  "routine": {
+    "title": "Routine",
+    "Routines": "Routines",
+    "Moves": "Moves",
+    "Add": "Add"
   }
 }

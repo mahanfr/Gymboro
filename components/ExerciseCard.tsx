@@ -13,6 +13,7 @@ import { ThemedView } from "./ThemedView";
 import { useContext } from "react";
 import { Settings_createcontext } from "../app/_layout";
 import { useTranslation } from "react-i18next";
+import { MaterialIcons } from "@expo/vector-icons";
 
 interface IProps {
   style?: StyleProp<ViewStyle> | StyleProp<ViewStyle>[];
@@ -20,6 +21,7 @@ interface IProps {
   detail?: string;
   onPress?: () => void;
   image?: NodeJS.Require;
+  editMode?: boolean;
 }
 
 const ExerciseCard: React.FC<IProps> = ({
@@ -27,6 +29,7 @@ const ExerciseCard: React.FC<IProps> = ({
   title,
   detail,
   onPress,
+  editMode = false,
   image = require("../assets/images/muscle_groups/404.png"),
 }) => {
   const context = useContext(Settings_createcontext);
@@ -51,9 +54,20 @@ const ExerciseCard: React.FC<IProps> = ({
           </ThemedText>
           <ThemedText type="detail">{detail}</ThemedText>
         </View>
-        <ThemedView lightMode={!lightMode} style={[styles.imageContainer]}>
-          <Image style={styles.image} source={image} />
-        </ThemedView>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: isEnglish ? "row" : "row-reverse",
+            alignItems: "center",
+          }}
+        >
+          <ThemedView lightMode={!lightMode} style={[styles.imageContainer]}>
+            <Image style={styles.image} source={image} />
+          </ThemedView>
+          <TouchableOpacity onPress={() => {}} style={{ display: editMode ? "flex" : "none" }}>
+            <MaterialIcons name="delete" color={"red"} size={28} />
+          </TouchableOpacity>
+        </View>
       </ThemedView>
     </Pressable>
   );

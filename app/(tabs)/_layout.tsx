@@ -17,7 +17,10 @@ export default function TabLayout() {
   const context = useContext(Settings_createcontext);
   const { t } = useTranslation();
 
-  const { settings, setSettings } = context ?? { settings: { lightMode: true }, setSettings: () => {} };
+  const { settings, setSettings } = context ?? {
+    settings: { lightMode: true },
+    setSettings: () => {},
+  };
   let lightMode = settings.lightMode;
 
   const backgroundColor = lightMode ? Colors.light.background : Colors.dark.background;
@@ -38,13 +41,29 @@ export default function TabLayout() {
         tabBarActiveTintColor: lightMode ? Colors["light"].tint : Colors["dark"].tint,
         headerShown: true,
         headerTitle: pathNameToTitle(),
+        headerTitleAlign: "center", // Center the header title
         headerLeft: () => {
           if (pathName === "/" || pathName === "/diet" || pathName === "/explore") {
-            return null;
+            return (
+              <TouchableOpacity
+                style={{ marginHorizontal: 10 }}
+                onPress={() => navigation.navigate("stats")}
+              >
+                <MaterialIcons
+                  name="show-chart"
+                  size={28}
+                  color={lightMode ? Colors["light"].tint : Colors["dark"].tint}
+                />
+              </TouchableOpacity>
+            );
           }
           return (
             <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => router.back()}>
-              <Ionicons name="arrow-back" size={24} color={lightMode ? Colors["light"].tint : Colors["dark"].tint} />
+              <Ionicons
+                name="arrow-back"
+                size={24}
+                color={lightMode ? Colors["light"].tint : Colors["dark"].tint}
+              />
             </TouchableOpacity>
           );
         },
@@ -53,8 +72,15 @@ export default function TabLayout() {
             return null;
           }
           return (
-            <TouchableOpacity style={{ marginHorizontal: 10 }} onPress={() => navigation.navigate("settings")}>
-              <MaterialIcons name="settings" size={28} color={lightMode ? Colors["light"].tint : Colors["dark"].tint} />
+            <TouchableOpacity
+              style={{ marginHorizontal: 10 }}
+              onPress={() => navigation.navigate("settings")}
+            >
+              <MaterialIcons
+                name="settings"
+                size={28}
+                color={lightMode ? Colors["light"].tint : Colors["dark"].tint}
+              />
             </TouchableOpacity>
           );
         },
@@ -73,7 +99,9 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: t("tabs.workouts"),
-          tabBarIcon: ({ color }) => <MaterialIcons name="fitness-center" size={28} color={color} />,
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="fitness-center" size={28} color={color} />
+          ),
         }}
       />
       <Tabs.Screen

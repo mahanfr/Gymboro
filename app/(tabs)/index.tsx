@@ -15,8 +15,12 @@ import { useNavigation } from "expo-router";
 import { ThemedText } from "@/components/ThemedText";
 import { categories } from "@/data/DataTypes";
 import * as SQLite from "expo-sqlite";
+import { useTranslation } from "react-i18next";
 
 export default function HomeScreen() {
+  const { i18n, t } = useTranslation();
+  const currentLanguage = i18n.language;
+  const isEnglish = i18n.language === "en-US";
   const { popups, showPopup, hidePopup } = usePopupManager();
   const navigation: any = useNavigation();
   const db = SQLite.useSQLiteContext();
@@ -39,7 +43,7 @@ export default function HomeScreen() {
 
   return (
     <ScrollView>
-      <ThemedText type="subtitle">Routines:</ThemedText>
+      <ThemedText type="subtitle">{t("routine.Routines") + ":"}</ThemedText>
       {routines?.map((item: any, index: number) => (
         <Routine
           title={item.title}
