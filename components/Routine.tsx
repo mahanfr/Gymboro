@@ -4,6 +4,7 @@ import { ThemedView } from "@/components/ThemedView";
 import PopupManager, { usePopupManager } from "@/components/Popup";
 import { MaterialIcons } from "@expo/vector-icons";
 import { categories } from "@/data/DataTypes";
+import { useTranslation } from "react-i18next";
 
 interface IRoutineProps {
   title: string;
@@ -13,12 +14,15 @@ interface IRoutineProps {
 }
 const Routine = (props: IRoutineProps) => {
   const { popups, showPopup, hidePopup } = usePopupManager();
+  const { i18n, t } = useTranslation();
+  const isEnglish = i18n.language === "en-US";
+
   return (
     <TouchableOpacity onPress={props.onPress}>
       <ThemedView
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: isEnglish ? "row" : "row-reverse",
           alignItems: "center",
           paddingHorizontal: 9,
           paddingVertical: 10,
@@ -28,9 +32,17 @@ const Routine = (props: IRoutineProps) => {
       >
         <View>
           <ThemedText type="subtitle">{props.title}</ThemedText>
-          <ThemedText style={{ color: "#969696" }}>total of {props.numberOfMoves} moves</ThemedText>
+          <ThemedText style={{ color: "#969696" }}>
+            {t("routine.total")} {props.numberOfMoves} {t("routine.moves")}
+          </ThemedText>
         </View>
-        <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: isEnglish ? "row" : "row-reverse",
+            alignItems: "center",
+          }}
+        >
           {/* TODO fix the images to correspond to  "involvedMuscles" */}
           <Image
             source={require("@/assets/images/muscle_groups/chest.png")}

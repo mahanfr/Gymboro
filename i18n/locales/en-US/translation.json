@@ -33,6 +33,8 @@
     "title": "Routine",
     "Routines": "Routines",
     "Moves": "Moves",
+    "moves": "moves",
+    "total": "Total",
     "Add": "Add"
   }
 }

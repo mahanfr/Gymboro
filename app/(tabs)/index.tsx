@@ -17,6 +17,8 @@ import { categories } from "@/data/DataTypes";
 import * as SQLite from "expo-sqlite";
 import { useTranslation } from "react-i18next";
 
+type Routine = [{ id: number; title: string }];
+
 export default function HomeScreen() {
   const { i18n, t } = useTranslation();
   const currentLanguage = i18n.language;
@@ -25,16 +27,22 @@ export default function HomeScreen() {
   const navigation: any = useNavigation();
   const db = SQLite.useSQLiteContext();
 
-  const [routines, setRoutines] = useState<any>();
-  const [sql, setSql] = useState<string>("");
-
-  async function injectSQL(command: string) {
-    const wks = await db.getAllAsync(command);
-    console.log(wks);
-  }
+  const [routines, setRoutines] = useState<Routine>();
+  const [numberOfW, setNumberOfW] = useState<number[]>([0]);
   const getData = async () => {
-    const wks = await db.getAllAsync("SELECT * FROM routine");
-    setRoutines(wks);
+    const rts = (await db.getAllAsync("SELECT * FROM routine")) as Routine;
+    if (rts) {
+      var n = [];
+      for (const routine of rts) {
+        //TODO is this correct? idk my deepseek not working
+        const workouts = await db.getAllAsync(
+          `SELECT * FROM routine_workout WHERE routine = ${routine.id}`
+        );
+        n.push(workouts.length);
+      }
+      setNumberOfW(n);
+    }
+    setRoutines(rts as Routine);
   };
 
   useEffect(() => {
@@ -46,8 +54,9 @@ export default function HomeScreen() {
       <ThemedText type="subtitle">{t("routine.Routines") + ":"}</ThemedText>
       {routines?.map((item: any, index: number) => (
         <Routine
+          key={item.id}
           title={item.title}
-          numberOfMoves={4} //TODO get this from DB
+          numberOfMoves={numberOfW[index]}
           involvedMuscles={[categories.chest]}
           onPress={() => {
             navigation.navigate("routine/index", { id: item.id });
