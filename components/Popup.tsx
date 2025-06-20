@@ -91,14 +91,16 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+
   modalContent: {
     backgroundColor: "white",
     borderRadius: 10,
     padding: 20,
-    position: "absolute",
-    left: "50%",
-    top: "50%",
-    transform: "translateX(-50%) translateY(-50%)",
+
+    alignSelf: "center",
+    marginTop: "auto",
+    marginBottom: "auto",
+
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {

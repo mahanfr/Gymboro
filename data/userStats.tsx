@@ -20,7 +20,7 @@ const userStats = () => {
     },
     muscleGroup: {
       _1day: new MusclesActivation({
-        chest: 3,
+        chest: 5,
 
         shin: 0,
         tibialis_anterior: 0,
@@ -46,8 +46,8 @@ const userStats = () => {
         wrist_extensors: 0,
         wrist_flexors: 0,
 
-        abs: 0,
-        obliques: 4,
+        abs: 1,
+        obliques: 6,
 
         adductors: 3,
 
@@ -60,8 +60,8 @@ const userStats = () => {
 
         calves: 3,
 
-        shoulders: 3,
-        anterior_deltoid: 3,
+        shoulders: 4,
+        anterior_deltoid: 4,
         lateral_deltoid: 3,
         posterior_deltoid: 3,
 

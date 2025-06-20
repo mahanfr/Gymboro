@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import Svg, { Circle } from "react-native-svg";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import * as SQLite from "expo-sqlite";
+import { useTranslation } from "react-i18next";
 
 type WorkoutDetailsProps = {
   id: number;
@@ -21,10 +22,17 @@ const images = [
   require("../../assets/images/move_demonstration/bench_press_barbell/c1.jpg"),
   require("../../assets/images/move_demonstration/bench_press_barbell/c2.jpg"),
 ];
-
 const WorkoutDetails = () => {
+  const formatDescription = (text: string): string => {
+    if (!text) return "";
+    return text.replace(/\.\s*/g, ".\n").trimEnd();
+  };
   const navigation = useNavigation();
   const { id } = useLocalSearchParams();
+
+  const { i18n, t } = useTranslation();
+  const isEnglish = i18n.language === "en-US";
+
   const [workout, setWorkout] = useState<any>({
     id: 0,
     name: "Workout Details",
@@ -86,9 +94,13 @@ const WorkoutDetails = () => {
           </Svg>
         </View>
       </View>
-      <ThemedView>
-        <ThemedText type="subtitle">{workout.name}</ThemedText>
-        <ThemedText>{workout.description}</ThemedText>
+      <ThemedView style={{ padding: 6 }}>
+        <ThemedText type="subtitle" style={{ textAlign: "center", padding: 5 }}>
+          {isEnglish ? workout.name : workout.name_fa}
+        </ThemedText>
+        <ThemedText style={{ textAlign: isEnglish ? "left" : "right" }}>
+          {formatDescription(isEnglish ? workout.description : workout.description_fa)}
+        </ThemedText>
       </ThemedView>
     </ThemedView>
   );

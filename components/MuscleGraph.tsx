@@ -6,7 +6,9 @@ import { ThemedText } from "./ThemedText";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { Settings_createcontext } from "../app/_layout";
-import { MusclesActivation } from "../data/DataTypes";
+import { getColors, MusclesActivation } from "../data/DataTypes";
+import { useTranslation } from "react-i18next";
+import { MaterialIcons } from "@expo/vector-icons";
 
 type activatorsType = {
   _1day?: MusclesActivation;
@@ -29,7 +31,11 @@ interface MuscleGraphProps {
 
 const MuscleGraph: React.FC<MuscleGraphProps> = ({ activator }) => {
   const context = useContext(Settings_createcontext);
-  const { settings, setSettings } = context ?? { settings: { lightMode: true }, setSettings: () => {} };
+  const { t } = useTranslation();
+  const { settings, setSettings } = context ?? {
+    settings: { lightMode: true },
+    setSettings: () => {},
+  };
   let lightMode = settings.lightMode;
 
   // let activator = new MusclesActivation();
@@ -69,7 +75,10 @@ const MuscleGraph: React.FC<MuscleGraphProps> = ({ activator }) => {
           <ThemedText
             key={index}
             lightMode={!lightMode}
-            style={[styles.dates, selectedDateRange === index && { backgroundColor: lightMode ? "#ddd" : "#555" }]}
+            style={[
+              styles.dates,
+              selectedDateRange === index && { backgroundColor: lightMode ? "#ddd" : "#555" },
+            ]}
             onPress={() => setSelectedDateRange(index)}
           >
             {label}
@@ -84,6 +93,34 @@ const MuscleGraph: React.FC<MuscleGraphProps> = ({ activator }) => {
           <MuscleBack style={styles.size} activator={activators} />
         </View>
       </ThemedView>
+      <View>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 6,
+          }}
+        >
+          <ThemedText>{t("stats.less")}</ThemedText>
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <View
+              key={i}
+              style={{
+                backgroundColor: getColors(i),
+                width: 25,
+                height: 25,
+                marginHorizontal: 2,
+              }}
+            ></View>
+          ))}
+          <ThemedText>{t("stats.more")}</ThemedText>
+        </View>
+        <ThemedText style={{ textAlign: "center", padding: 4 }}>
+          {t("stats.Amount_of_involvements")}
+        </ThemedText>
+      </View>
     </View>
   );
 };

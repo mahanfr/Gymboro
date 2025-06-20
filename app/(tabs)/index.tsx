@@ -91,7 +91,9 @@ export default function HomeScreen() {
 
   return (
     <ScrollView>
-      <ThemedText type="subtitle">{t("routine.Routines") + ":"}</ThemedText>
+      <ThemedText type="subtitle" style={{ textAlign: isEnglish ? "left" : "right", padding: 4 }}>
+        {t("routine.Routines") + ":"}
+      </ThemedText>
       {routines?.map((item: any, index: number) => (
         <Routine
           key={item.id}

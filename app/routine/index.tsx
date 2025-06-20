@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import { ThemedText } from "../../components/ThemedText";
 import { ThemedView } from "../../components/ThemedView";
-import { MusclesActivation } from "@/data/DataTypes";
+import { getColors, MusclesActivation } from "@/data/DataTypes";
 import MuscleFront from "../../components/MuscleFront";
 import MuscleBack from "../../components/MuscleBack";
 import { useEffect, useState } from "react";
@@ -57,6 +57,34 @@ const RoutineView = () => {
             <MuscleBack style={styles.size} activator={muscleData} />
           </View>
         </ThemedView>
+      </ThemedView>
+      <ThemedView>
+        <View
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: 6,
+          }}
+        >
+          <ThemedText>{t("stats.less")}</ThemedText>
+          {[1, 2, 3, 4, 5, 6].map((i) => (
+            <View
+              key={i}
+              style={{
+                backgroundColor: getColors(i),
+                width: 25,
+                height: 25,
+                marginHorizontal: 2,
+              }}
+            ></View>
+          ))}
+          <ThemedText>{t("stats.more")}</ThemedText>
+        </View>
+        <ThemedText style={{ textAlign: "center", padding: 4 }}>
+          {t("stats.Amount_of_involvements")}
+        </ThemedText>
       </ThemedView>
       <View style={{ paddingHorizontal: 5 }}>
         <ThemedView

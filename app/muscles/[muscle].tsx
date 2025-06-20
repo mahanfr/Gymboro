@@ -39,7 +39,7 @@ export default function MuscleGroup() {
                 <ExerciseCard
                   title={isEnglish ? workout.name : workout.name_fa}
                   key={index}
-                  onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}
+                  onPress={() => navigation.navigate("workouts/[id]", { id: workout.id })}
                 />
               </TouchableOpacity>
             </View>

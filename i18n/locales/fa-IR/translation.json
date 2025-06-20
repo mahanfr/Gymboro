@@ -36,5 +36,10 @@
     "moves": "حرکت",
     "total": "مجموع",
     "Add": "افزودن"
+  },
+  "stats": {
+    "Amount_of_involvements": "میزان درگیر بودن عضله",
+    "more": "بیشتر",
+    "less": "کمتر"
   }
 }

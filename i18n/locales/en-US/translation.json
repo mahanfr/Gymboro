@@ -36,5 +36,10 @@
     "moves": "moves",
     "total": "Total",
     "Add": "Add"
+  },
+  "stats": {
+    "Amount_of_involvements": "Amount of involvements",
+    "more": "More",
+    "less": "Less"
   }
 }

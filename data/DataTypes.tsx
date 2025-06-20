@@ -62,24 +62,27 @@ export class MusclesActivation {
   }
 
   public getColor(activation_value: number): string {
-    switch (activation_value) {
-      case 0:
-        return "#696969";
-      case 1:
-        return "#ff91ab";
-      case 2:
-        return "#ef6c6e";
-      case 3:
-        return "#ff2357";
-      case 4:
-        return "#80122c";
-      case 5:
-        return "#400916";
-      case 6:
-        return "#f00916";
-      default:
-        return "#bebebe";
-    }
+    return getColors(activation_value);
+  }
+}
+export function getColors(activation_value: number): string {
+  switch (activation_value) {
+    case 0:
+      return "#d6d6d6";
+    case 1:
+      return "#ffb3c9";
+    case 2:
+      return "#e0708e";
+    case 3:
+      return "#c13d5f";
+    case 4:
+      return "#b3193d";
+    case 5:
+      return "#730b29";
+    case 6:
+      return "#40061a";
+    default:
+      return "#d6d6d6";
   }
 }
 export const categories = {
