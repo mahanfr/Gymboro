@@ -3,13 +3,13 @@ import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import PopupManager, { usePopupManager } from "@/components/Popup";
 import { MaterialIcons } from "@expo/vector-icons";
-import { categories } from "@/data/DataTypes";
+import { Category, categories } from "@/data/DataTypes";
 import { useTranslation } from "react-i18next";
 
 interface IRoutineProps {
   title: string;
   numberOfMoves: number;
-  involvedMuscles: [typeof categories];
+  involvedMuscles: Category[];
   onPress: () => void;
 }
 const Routine = (props: IRoutineProps) => {
@@ -43,15 +43,23 @@ const Routine = (props: IRoutineProps) => {
             alignItems: "center",
           }}
         >
-          {/* TODO fix the images to correspond to  "involvedMuscles" */}
-          <Image
-            source={require("@/assets/images/muscle_groups/chest.png")}
-            style={{ width: 70, marginHorizontal: 2, height: 70 }}
-          />
-          <Image
-            source={require("@/assets/images/muscle_groups/core.png")}
-            style={{ width: 70, marginHorizontal: 2, height: 70 }}
-          />
+          {props.involvedMuscles.length > 1 ? (
+            <View style={{ display: "flex", flexDirection: "row" }}>
+              <Image
+                source={categories[props.involvedMuscles[0]]}
+                style={{ width: 70, marginHorizontal: 2, height: 70 }}
+              />
+              <Image
+                source={categories[props.involvedMuscles[1]]}
+                style={{ width: 70, marginHorizontal: 2, height: 70 }}
+              />
+            </View>
+          ) : (
+            <Image
+              source={categories[props.involvedMuscles[0]]}
+              style={{ width: 70, marginHorizontal: 2, height: 70 }}
+            />
+          )}
           <TouchableOpacity
             // style={{ alignSelf: "center" }}
             onPress={() => showPopup({ popupKey: "edit", message: "edit name or delete routine" })}

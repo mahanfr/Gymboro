@@ -94,3 +94,13 @@ export const categories = {
   cardio: require("../assets/images/muscle_groups/cardio.png"),
   rest: require("../assets/images/muscle_groups/rest.png"),
 };
+export type Category =
+  | "shoulders"
+  | "chest"
+  | "back"
+  | "full_body"
+  | "biceps"
+  | "triceps"
+  | "legs"
+  | "core"
+  | "cardio";
