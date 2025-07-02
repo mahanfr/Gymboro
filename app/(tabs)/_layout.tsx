@@ -43,7 +43,12 @@ export default function TabLayout() {
         headerTitle: pathNameToTitle(),
         headerTitleAlign: "center", // Center the header title
         headerLeft: () => {
-          if (pathName === "/" || pathName === "/diet" || pathName === "/explore") {
+          if (
+            pathName === "/" ||
+            pathName === "/diet" ||
+            pathName === "/explore" ||
+            pathName === "/ai"
+          ) {
             return (
               <TouchableOpacity
                 style={{ marginHorizontal: 10 }}
@@ -116,6 +121,13 @@ export default function TabLayout() {
         options={{
           title: t("tabs.diet"),
           tabBarIcon: ({ color }) => <MaterialIcons size={28} name="restaurant" color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="ai"
+        options={{
+          title: t("tabs.ai"),
+          tabBarIcon: ({ color }) => <MaterialIcons size={28} name="psychology" color={color} />,
         }}
       />
     </Tabs>

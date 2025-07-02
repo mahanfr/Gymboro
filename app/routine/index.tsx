@@ -59,6 +59,9 @@ const RoutineView = () => {
         </ThemedView>
       </ThemedView>
       <ThemedView>
+        <ThemedText style={{ textAlign: "center", padding: 4 }}>
+          {t("stats.Amount_of_involvements")}
+        </ThemedText>
         <View
           style={{
             display: "flex",
@@ -66,6 +69,7 @@ const RoutineView = () => {
             justifyContent: "center",
             alignItems: "center",
             padding: 6,
+            borderBottomWidth: 1,
           }}
         >
           <ThemedText>{t("stats.less")}</ThemedText>
@@ -82,9 +86,6 @@ const RoutineView = () => {
           ))}
           <ThemedText>{t("stats.more")}</ThemedText>
         </View>
-        <ThemedText style={{ textAlign: "center", padding: 4 }}>
-          {t("stats.Amount_of_involvements")}
-        </ThemedText>
       </ThemedView>
       <View style={{ paddingHorizontal: 5 }}>
         <ThemedView

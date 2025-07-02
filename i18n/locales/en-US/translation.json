@@ -3,7 +3,8 @@
   "tabs": {
     "workouts": "Workouts",
     "home": "Home",
-    "diet": "Diet"
+    "diet": "Diet",
+    "ai": "AI"
   },
   "home": {
     "title": "Home",

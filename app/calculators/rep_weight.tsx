@@ -1,4 +1,4 @@
-import { MusclesActivation } from "@/data/DataTypes";
+import { MusclesActivation, TimeFrame } from "@/data/DataTypes";
 import * as SQLite from "expo-sqlite";
 
 type CalculateRepWeightProps = {
@@ -15,20 +15,6 @@ async function injectSQL(command: string) {
 async function getWorkoutFromDB(workoutId: number, db: any) {
   const workouts = await db.getAllAsync(`SELECT * FROM workout WHERE id = ${workoutId}`);
   return workouts;
-  return {
-    id: 1,
-    name: "Barbell Bench Press",
-    muscles_affected_json:
-      '{"chest": 0.5, "anterior_deltoid": 0.15, "triceps_lateral_head": 0.1, "triceps_long_head": 0.1, "triceps_medial_head": 0.05, "serratus_anterior": 0.1}',
-    category: "chest",
-    description:
-      "Lie on a flat bench with your feet flat on the floor. Grip the barbell slightly wider than shoulder-width apart.",
-    name_fa: "پرس سینه با هالتر",
-    description_fa:
-      "روی یک نیمکت صاف دراز بکشید و پاهایتان را روی زمین قرار دهید. هالتر را کمی پهن‌تر از عرض شانه بگیرید.",
-    similar_workouts_json:
-      "['Dumbbell Bench Press', 'Incline Barbell Press', 'Decline Barbell Press']",
-  };
 }
 function getRoutineFromDB(id: number) {
   return { id: 1, name: "chesterday" };
@@ -141,4 +127,18 @@ export function saveRoutineAsFinished(id: number) {
   //calculateByRoutine(id)
   //Add to gitty chart
   //
+}
+
+async function getWorkoutHistoryByDate(time: string, db: any) {
+  const workouts = await db.getAllAsync(
+    `SELECT * FROM workout_history WHERE created_at >= ${time}`
+  ); //
+  return workouts;
+}
+function muscleActivationHistoryByTime(timeFrame: TimeFrame, db: any) {
+  /**
+   * Date.Today() - timeFrame
+   * workout[] = getWorkoutHistoryByDate()
+   * for w in workout[] : calculateRepWeight()
+   */
 }

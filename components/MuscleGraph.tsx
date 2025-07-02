@@ -94,6 +94,9 @@ const MuscleGraph: React.FC<MuscleGraphProps> = ({ activator }) => {
         </View>
       </ThemedView>
       <View>
+        <ThemedText style={{ textAlign: "center", padding: 4 }}>
+          {t("stats.Amount_of_involvements")}
+        </ThemedText>
         <View
           style={{
             display: "flex",
@@ -117,9 +120,6 @@ const MuscleGraph: React.FC<MuscleGraphProps> = ({ activator }) => {
           ))}
           <ThemedText>{t("stats.more")}</ThemedText>
         </View>
-        <ThemedText style={{ textAlign: "center", padding: 4 }}>
-          {t("stats.Amount_of_involvements")}
-        </ThemedText>
       </View>
     </View>
   );

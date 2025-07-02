@@ -107,3 +107,5 @@ export type Category =
   | "legs"
   | "core"
   | "cardio";
+
+export type TimeFrame = "1D" | "1W" | "1M" | "3M" | "1Y" | "ALL";
