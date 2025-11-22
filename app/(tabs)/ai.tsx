@@ -12,41 +12,56 @@ import {
 } from "react-native";
 import { useNavigation } from "expo-router";
 
-// Mock function for AI API request - replace with your actual API call
-const mockAIRequest = async (prompt: string): Promise<string> => {
-  // Simulate network delay
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-
-  // This is just a mock response - replace with your actual API call
-  return `باشه، این یک برنامه تمرینی سه روزه برای شماست که شامل تمرینات موجود در لیست شماست:\n\n**روز 1: سینه و پشت بازو**\n\n*   <a src=\"path/1\">Barbell Bench Press</a>: 3 ست، 8-12 تکرار\n*   <a src=\"path/2\">Incline Dumbbell Press</a>: 3 ست، 8-12 تکرار\n*   <a src=\"path/3\">Pec Deck Fly</a>: 3 ست، 12-15 تکرار\n*   <a src=\"path/4\">Push-ups</a>: 3 ست، تا حد توان\n*   <a src=\"path/21\">Triceps Pushdown (Rope)</a>: 3 ست، 12-15 تکرار\n*   <a src=\"path/22\">Overhead Dumbbell Extension</a>: 3 ست، 10-12 تکرار\n*   <a src=\"path/24\">Dips (Triceps Focused)</a>: 3 ست، تا حد توان\n\n**روز 2: پا و شکم**`;
-};
-
 async function run(input: any) {
   const response = await fetch("https://cors-header-proxy.samini7a.workers.dev/", {
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     method: "POST",
     body: JSON.stringify(input),
   });
 
-  // Handle potential streaming response
+  // Check for HTTP errors first
+  if (!response.ok) {
+    const errorText = await response.text();
+    throw new Error(`API request failed: ${response.status} - ${errorText}`);
+  }
+
+  // Handle streaming response
   const reader = response.body?.getReader();
   if (reader) {
-    let result = "";
+    let chunks = [];
+    let totalLength = 0;
+
     while (true) {
       const { done, value } = await reader.read();
-      console.log(result);
       if (done) break;
-      result += new TextDecoder().decode(value);
+
+      // Store chunks instead of concatenating strings
+      chunks.push(value);
+      totalLength += value.length;
     }
-    const jsonResponse = JSON.parse(result);
-    console.log(jsonResponse);
-    return jsonResponse.result?.response || jsonResponse.response || jsonResponse;
-  } else {
-    // Normal non-streaming response
+
+    // Combine all chunks into single Uint8Array
+    const combined = new Uint8Array(totalLength);
+    let position = 0;
+    for (const chunk of chunks) {
+      combined.set(chunk, position);
+      position += chunk.length;
+    }
+
+    // Decode once at the end
+    const result = new TextDecoder().decode(combined);
+
+    try {
+      const jsonResponse = JSON.parse(result);
+      return jsonResponse.result?.response || jsonResponse.response || jsonResponse;
+    } catch (e) {
+      console.error("JSON parse error:", e, "Response:", result);
+      throw new Error("Invalid JSON response from API");
+    }
+  }
+  // Handle non-streaming response
+  else {
     const result = await response.json();
-    console.log(result);
     return result.result?.response || result.response || result;
   }
 }
@@ -153,7 +168,7 @@ const AIPage = () => {
 
   const handleSubmit = async () => {
     if (!prompt.trim()) return;
-
+    console.log(prompt);
     setIsLoading(true);
     setResponse("");
 

@@ -48,7 +48,7 @@ const ExerciseCard: React.FC<IProps> = ({
         style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi}
         lightMode={lightMode}
       >
-        <View>
+        <View style={{maxWidth:"70%"}}>
           <ThemedText type="subtitle" lightMode={lightMode}>
             {title}
           </ThemedText>
