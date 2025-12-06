@@ -1,42 +1,76 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
 import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet,
   Modal,
+  StyleSheet,
   TouchableWithoutFeedback,
+  ViewStyle,
+  TextStyle,
+  GestureResponderEvent,
 } from "react-native";
 
-// Updated component to handle multiple popups
+// Interface for Popup Data
 interface PopupData {
   visible: boolean;
-  message: string;
+  message: React.ReactNode; // Can accept any type of content (e.g., string, JSX)
+  actions?: Array<PopupAction>; // List of actions with a label and handler
+}
+
+interface PopupAction {
+  label: string;
+  onPress: (event: GestureResponderEvent) => void;
+  style?: ViewStyle; // Custom style for the action button
 }
 
 interface PopupManagerProps {
   popups: Record<string, PopupData>;
   onClose: (popupKey: string) => void;
+  modalStyle?: ViewStyle; // Override styles for the modal container
+  contentStyle?: ViewStyle; // Override styles for the content inside the popup
+  messageStyle?: TextStyle; // Override styles for the message text
 }
 
-const PopupManager: React.FC<PopupManagerProps> = ({ popups, onClose }) => {
-  // Get the first visible popup (you could modify this to show multiple if needed)
+const PopupManager: React.FC<PopupManagerProps> = ({
+  popups,
+  onClose,
+  modalStyle,
+  contentStyle,
+  messageStyle,
+}) => {
+  // Get the first visible popup
   const visiblePopup = Object.entries(popups).find(([key, value]) => value.visible);
 
   if (!visiblePopup) return null;
 
   const [popupKey, popupData] = visiblePopup;
-  const { message } = popupData;
+  const { message, actions } = popupData;
 
   return (
     <Modal transparent={true} visible={true} onRequestClose={() => onClose(popupKey)}>
       <TouchableWithoutFeedback onPress={() => onClose(popupKey)}>
-        <View style={styles.modalOverlay} />
+        <View style={[styles.modalOverlay, modalStyle]} />
       </TouchableWithoutFeedback>
-      <View style={styles.modalContent}>
-        <Text style={styles.messageText}>{message}</Text>
+
+      <View style={[styles.modalContent, contentStyle]}>
+        <Text style={[styles.messageText, messageStyle]}>{message}</Text>
+
+        {/* Render action buttons if any */}
+        {actions &&
+          actions.map((action, index) => (
+            <TouchableOpacity
+              key={index}
+              style={[styles.actionButton, action.style]}
+              onPress={action.onPress}
+            >
+              <Text style={styles.actionButtonText}>{action.label}</Text>
+            </TouchableOpacity>
+          ))}
+
         <TouchableOpacity style={styles.closeButton} onPress={() => onClose(popupKey)}>
-          <Text style={styles.closeButtonText}>Close</Text>
+          <MaterialIcons name="close" color={"#969696"} size={28} />
         </TouchableOpacity>
       </View>
     </Modal>
@@ -49,13 +83,14 @@ export const usePopupManager = () => {
 
   interface ShowPopupParams {
     popupKey: string;
-    message: string;
+    message: React.ReactNode;
+    actions?: Array<PopupAction>;
   }
 
-  const showPopup = ({ popupKey, message }: ShowPopupParams): void => {
+  const showPopup = ({ popupKey, message, actions }: ShowPopupParams): void => {
     setPopups((prev) => ({
       ...prev,
-      [popupKey]: { visible: true, message },
+      [popupKey]: { visible: true, message, actions },
     }));
   };
 
@@ -77,6 +112,7 @@ export const usePopupManager = () => {
   return { popups, showPopup, hidePopup, hideAllPopups };
 };
 
+// Styles
 const styles = StyleSheet.create({
   modalOverlay: {
     position: "absolute",
@@ -86,21 +122,14 @@ const styles = StyleSheet.create({
     right: 0,
     backgroundColor: "rgba(0,0,0,0.5)",
   },
-  centeredView: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-
   modalContent: {
     backgroundColor: "white",
     borderRadius: 10,
     padding: 20,
-
+    paddingTop: 35,
     alignSelf: "center",
     marginTop: "auto",
     marginBottom: "auto",
-
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -117,12 +146,26 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   closeButton: {
-    backgroundColor: "#2196F3",
+    position: "absolute",
+    top: 0,
+    right: 0,
     borderRadius: 5,
     padding: 10,
     elevation: 2,
   },
   closeButtonText: {
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  actionButton: {
+    backgroundColor: "#4CAF50",
+    borderRadius: 5,
+    padding: 10,
+    marginTop: 10,
+    elevation: 2,
+  },
+  actionButtonText: {
     color: "white",
     fontWeight: "bold",
     textAlign: "center",
