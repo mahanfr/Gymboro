@@ -86,26 +86,65 @@ export function getColors(activation_value: number): string {
   }
 }
 export const categories = {
-  shoulders: require("../assets/images/muscle_groups/shoulders.png"),
-  chest: require("../assets/images/muscle_groups/chest.png"),
+  abs: require("../assets/images/muscle_groups/core.png"),
   back: require("../assets/images/muscle_groups/back.png"),
-  full_body: require("../assets/images/muscle_groups/full_body.png"),
   biceps: require("../assets/images/muscle_groups/biceps.png"),
-  triceps: require("../assets/images/muscle_groups/triceps.png"),
-  legs: require("../assets/images/muscle_groups/legs.png"),
-  core: require("../assets/images/muscle_groups/core.png"),
+  calves: require("../assets/images/muscle_groups/biceps.png"),
   cardio: require("../assets/images/muscle_groups/cardio.png"),
+  chest: require("../assets/images/muscle_groups/chest.png"),
+  forearms: require("../assets/images/muscle_groups/biceps.png"),
+  front_deltoid: require("../assets/images/muscle_groups/biceps.png"),
+  glutes: require("../assets/images/muscle_groups/biceps.png"),
+  hamstrings: require("../assets/images/muscle_groups/biceps.png"),
+  hips: require("../assets/images/muscle_groups/biceps.png"),
+  latissimus_dorsi: require("../assets/images/muscle_groups/biceps.png"),
+  neck: require("../assets/images/muscle_groups/biceps.png"),
+  obliques: require("../assets/images/muscle_groups/biceps.png"),
+  quadriceps: require("../assets/images/muscle_groups/biceps.png"),
+  rear_deltoid: require("../assets/images/muscle_groups/biceps.png"),
+  shoulders: require("../assets/images/muscle_groups/shoulders.png"),
+  side_deltoid: require("../assets/images/muscle_groups/biceps.png"),
+  spine: require("../assets/images/muscle_groups/biceps.png"),
+  thighs: require("../assets/images/muscle_groups/biceps.png"),
+  traps: require("../assets/images/muscle_groups/biceps.png"),
+  triceps: require("../assets/images/muscle_groups/triceps.png"),
+  upper_arms: require("../assets/images/muscle_groups/biceps.png"),
+  waist: require("../assets/images/muscle_groups/biceps.png"),
+  weightlifting: require("../assets/images/muscle_groups/biceps.png"),
+  wrist: require("../assets/images/muscle_groups/biceps.png"),
+  yoga: require("../assets/images/muscle_groups/biceps.png"),
+  // full_body: require("../assets/images/muscle_groups/full_body.png"),
+  // legs: require("../assets/images/muscle_groups/legs.png"),
   rest: require("../assets/images/muscle_groups/rest.png"),
 };
 export type Category =
-  | "shoulders"
-  | "chest"
+  | "abs"
   | "back"
-  | "full_body"
   | "biceps"
+  | "calves"
+  | "cardio"
+  | "chest"
+  | "forearms"
+  | "front_deltoid"
+  | "glutes"
+  | "hamstrings"
+  | "hips"
+  | "latissimus_dorsi"
+  | "neck"
+  | "obliques"
+  | "quadriceps"
+  | "rear_deltoid"
+  | "shoulders"
+  | "side_deltoid"
+  | "spine"
+  | "thighs"
+  | "traps"
   | "triceps"
-  | "legs"
-  | "core"
-  | "cardio";
+  | "upper_arms"
+  | "waist"
+  | "weightlifting"
+  | "wrist"
+  | "yoga"
+  | "rest";
 
 export type TimeFrame = "1D" | "1W" | "1M" | "3M" | "1Y" | "ALL";

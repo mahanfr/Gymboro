@@ -6,22 +6,23 @@ import Svg, { Circle } from "react-native-svg";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import * as SQLite from "expo-sqlite";
 import { useTranslation } from "react-i18next";
+import images from "../../data/import_images";
 
 type WorkoutDetailsProps = {
   id: number;
 };
 
 const { width, height } = Dimensions.get("window");
-const images = [
-  require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/d1.webp"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/b1.jpg"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/b2.jpg"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/a1.png"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/a2.png"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/c1.jpg"),
-  require("../../assets/images/move_demonstration/bench_press_barbell/c2.jpg"),
-];
+// const images = [
+//   require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/d1.webp"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/b1.jpg"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/b2.jpg"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/a1.png"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/a2.png"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/c1.jpg"),
+//   require("../../assets/images/move_demonstration/bench_press_barbell/c2.jpg"),
+// ];
 const WorkoutDetails = () => {
   const formatDescription = (text: string): string => {
     if (!text) return "";
@@ -62,47 +63,39 @@ const WorkoutDetails = () => {
   }, []);
 
   return (
-    <ThemedView>
-      <View style={styles.wrapper}>
-        <ScrollView
-          ref={scrollRef}
-          horizontal={true}
-          contentContainerStyle={styles.scrollContent}
-          showsHorizontalScrollIndicator={false}
-          pagingEnabled={true}
-          onScroll={handleScroll}
-          scrollEventThrottle={16}
-        >
-          {images.map((image, index) => (
-            <View style={styles.slide} key={index}>
-              <Image style={styles.image} source={image} />
-            </View>
-          ))}
-        </ScrollView>
-
-        <View style={styles.dotsContainer}>
-          <Svg height={20} width={images.length * (6 + 10)}>
-            {images.map((_, index) => (
-              <Circle
-                key={index}
-                cx={index * 15 + 10}
-                cy="10"
-                r="5"
-                fill={index === currentIndex ? "#0F0" : "#ccc"}
-              />
-            ))}
-          </Svg>
+    <ScrollView>
+      <ThemedView style={{ padding: 6, paddingBottom: 10 }}>
+        <View style={styles.wrapper}>
+          <View style={styles.slide}>
+            <Image style={styles.image} source={images[workout.image]} />
+          </View>
         </View>
-      </View>
-      <ThemedView style={{ padding: 6 }}>
+
+        <ThemedView style={{ padding: 6 }}>
+          <ThemedText type="subtitle" style={{ textAlign: "center", padding: 5 }}>
+            {isEnglish ? workout.name : workout.name_fa}
+          </ThemedText>
+          <ThemedText style={{ textAlign: isEnglish ? "left" : "right" }}>
+            {formatDescription(isEnglish ? workout.description : workout.description_fa)}
+          </ThemedText>
+        </ThemedView>
         <ThemedText type="subtitle" style={{ textAlign: "center", padding: 5 }}>
-          {isEnglish ? workout.name : workout.name_fa}
+          <ThemedText>{t(`workouts.index.instructions`)}</ThemedText>
         </ThemedText>
         <ThemedText style={{ textAlign: isEnglish ? "left" : "right" }}>
-          {formatDescription(isEnglish ? workout.description : workout.description_fa)}
+          {formatDescription(isEnglish ? workout.instructions : workout.instructions_fa)
+            .split("\n")
+            .map((line, index) => (
+              <View style={{ marginBottom: 4 }}>
+                <ThemedText key={index}>
+                  {index + 1}. {line} {"\n"}
+                </ThemedText>
+              </View>
+            ))}
+          {}
         </ThemedText>
       </ThemedView>
-    </ThemedView>
+    </ScrollView>
   );
 };
 

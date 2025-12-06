@@ -48,7 +48,7 @@ const ExerciseCard: React.FC<IProps> = ({
         style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi}
         lightMode={lightMode}
       >
-        <View style={{maxWidth:"70%"}}>
+        <View style={{ maxWidth: "70%" }}>
           <ThemedText type="subtitle" lightMode={lightMode}>
             {title}
           </ThemedText>
@@ -61,7 +61,7 @@ const ExerciseCard: React.FC<IProps> = ({
             alignItems: "center",
           }}
         >
-          <ThemedView lightMode={!lightMode} style={[styles.imageContainer]}>
+          <ThemedView lightMode={lightMode} style={[styles.imageContainer]}>
             <Image style={styles.image} source={image} />
           </ThemedView>
           <TouchableOpacity onPress={() => {}} style={{ display: editMode ? "flex" : "none" }}>
@@ -76,6 +76,7 @@ const ExerciseCard: React.FC<IProps> = ({
 const styles = StyleSheet.create({
   flexContainerEnglish: {
     display: "flex",
+    minHeight: 120,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   },
   flexContainerFarsi: {
     display: "flex",
+    minHeight: 120,
     flexDirection: "row-reverse",
     justifyContent: "space-between",
     alignItems: "center",
@@ -103,6 +105,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     maxWidth: 100,
     maxHeight: 100,
+    backgroundColor: "white",
   },
   image: {
     maxWidth: 100,

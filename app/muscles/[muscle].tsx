@@ -5,18 +5,19 @@ import { useEffect, useState } from "react";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useTranslation } from "react-i18next";
 import * as SQLite from "expo-sqlite";
-import images from "../../data/images_icon"
+import images from "../../data/import_images";
 
 export default function MuscleGroup() {
   const navigation: any = useNavigation();
   const { muscle } = useLocalSearchParams();
-  const [workouts, setWorkouts] = useState<any[]>();
+  const [workouts, setWorkouts] = useState<any[]>(); //TODO FIX should not be type any
   const { i18n } = useTranslation();
   const isEnglish = i18n.language === "en-US";
   const db = SQLite.useSQLiteContext();
 
+  //SELECT * FROM your_table WHERE json_array_contains(your_column, 'Abs');
   const getData = async () => {
-    const wks = await db.getAllAsync(`SELECT * FROM workout WHERE category='${muscle}';`);
+    const wks = await db.getAllAsync(`SELECT * FROM workout WHERE category LIKE '%"${muscle}"%';`);
     setWorkouts(wks);
   };
 
@@ -29,25 +30,19 @@ export default function MuscleGroup() {
       title: muscle || "Muscles",
     });
   }, [muscle]);
-
   return (
     <ScrollView>
-      <SafeAreaProvider>
-        <SafeAreaView>
-          {workouts?.map((workout, index) => (
-            <View key={index}>
-              <TouchableOpacity>
-                <ExerciseCard
-                  title={isEnglish ? workout.name : workout.name_fa}
-                  key={index}
-                  onPress={() => navigation.navigate("workouts/[id]", { id: workout.id })}
-                  image={images[workout.id-1]}
-                />
-              </TouchableOpacity>
-            </View>
-          ))}
-        </SafeAreaView>
-      </SafeAreaProvider>
+      {workouts?.map((workout, index) => (
+        <View key={index}>
+          <TouchableOpacity>
+            <ExerciseCard
+              title={isEnglish ? workout.name : workout.name_fa}
+              onPress={() => navigation.navigate("workouts/[id]", { id: workout.id })}
+              image={images[workout.image]}
+            />
+          </TouchableOpacity>
+        </View>
+      ))}
     </ScrollView>
   );
 }

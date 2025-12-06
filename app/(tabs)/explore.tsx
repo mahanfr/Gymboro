@@ -21,26 +21,25 @@ export default function TabTwoScreen() {
 
   return (
     <ScrollView>
-      <SafeAreaProvider>
-        <SafeAreaView>
-          <View style={[styles.flex]}>
-            {Object.entries(categories).map((item, index) => {
-              if (item[0] === "rest") return;
-              return (
-                <ExerciseCard
-                  title={t(`workouts.categories.${item[0]}`)}
-                  key={index}
-                  image={item[1]}
-                  onPress={() => {
-                    navigation.navigate("muscles/[muscle]", { muscle: item[0] });
-                  }}
-                />
-              );
-            })}
-            {/*<WorkoutDetails id={0} /> */}
-          </View>
-        </SafeAreaView>
-      </SafeAreaProvider>
+      <View style={[styles.flex]}>
+        {Object.entries(categories).map((item, index) => {
+          if (item[0] === "rest") return;
+          return (
+            <ExerciseCard
+              title={t(`workouts.categories.${item[0]}`)}
+              key={index}
+              image={item[1]}
+              onPress={() => {
+                navigation.navigate("muscles/[muscle]", {
+                  muscle: item[0],
+                  preload: true, // any value, just prevents undefined params
+                });
+              }}
+            />
+          );
+        })}
+        {/*<WorkoutDetails id={0} /> */}
+      </View>
     </ScrollView>
   );
 }
