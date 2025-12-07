@@ -51,25 +51,28 @@ export default function HomeScreen() {
   const [routines, setRoutines] = useState<Routine>();
   const [numberOfW, setNumberOfW] = useState<number[]>([0]);
   const [muscleCategory, setMuscleCategory] = useState<string[][]>([]);
-  const [newRoutineName, setNewRoutineName] = useState<string>("");
+  // const [newRoutineName, setNewRoutineName] = useState<string>("");
+  const newRoutineName = useRef<string>("");
 
   async function getCategory(id: number) {
     const workout = await db.getAllAsync(`SELECT category FROM workout WHERE id = ${id}`);
     let a = workout as { category: string }[];
     return a[0]; // type of Category
   }
-  async function addNewRoutine() {
-    const routine = await db.getAllAsync(
-      `INSERT INTO routine (title) VALUES ('${newRoutineName}')`
-    );
+  async function addNewRoutine(routineName: string) {
+    try {
+      await db.getAllAsync(`INSERT INTO routine (title) VALUES ('${routineName}')`);
+    } catch (error) {
+      console.error("Failed to insert routine:", error);
+    }
     getData();
   }
   const Input = () => {
     return (
       <View>
         <TextInput
-          // value={newRoutineName}
-          onChangeText={(val) => setNewRoutineName(val)}
+          // value={newRoutineName.current}
+          onChangeText={(val) => (newRoutineName.current = val)}
           placeholder={t("workouts.categories.triceps")}
           style={{ borderWidth: 2, height: 40, padding: 8 }}
         ></TextInput>
@@ -85,8 +88,10 @@ export default function HomeScreen() {
           label: t("routine.Add"),
           style: { backgroundColor: "green" },
           onPress: () => {
-            addNewRoutine();
-            hidePopup("add_routine");
+            if (newRoutineName.current && newRoutineName.current != "") {
+              addNewRoutine(newRoutineName.current);
+              hidePopup("add_routine");
+            }
           },
         },
       ],

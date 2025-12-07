@@ -55,7 +55,11 @@ const PopupManager: React.FC<PopupManagerProps> = ({
       </TouchableWithoutFeedback>
 
       <View style={[styles.modalContent, contentStyle]}>
-        <Text style={[styles.messageText, messageStyle]}>{message}</Text>
+        {React.isValidElement(message) ? (
+          message
+        ) : (
+          <Text style={[styles.messageText, messageStyle]}>{message}</Text>
+        )}
 
         {/* Render action buttons if any */}
         {actions &&
