@@ -111,7 +111,7 @@ const RoutineView = () => {
             }}
           >
             <MaterialIcons
-              name={editMode ? "check-circle" : "edit"}
+              name={editMode ? "check-circle" : "edit"} //TODO make it say "ADD" if there are no workouts instead of "edit pen"
               color={editMode ? "green" : "black"}
               size={28}
             />

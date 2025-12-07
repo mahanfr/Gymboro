@@ -73,7 +73,7 @@ export default function HomeScreen() {
         <TextInput
           // value={newRoutineName.current}
           onChangeText={(val) => (newRoutineName.current = val)}
-          placeholder={t("workouts.categories.triceps")}
+          placeholder={t("routine.new")}
           style={{ borderWidth: 2, height: 40, padding: 8 }}
         ></TextInput>
       </View>
@@ -131,7 +131,7 @@ export default function HomeScreen() {
   }, []);
 
   return (
-    <ScrollView>
+    <ScrollView style={{ position: "relative" }}>
       <View
         style={{ display: "flex", flexDirection: "row-reverse", justifyContent: "space-between" }}
       >

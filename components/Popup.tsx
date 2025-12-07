@@ -124,6 +124,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
+    height: 1000,
+    width: 1000, //TODO fix this
     backgroundColor: "rgba(0,0,0,0.5)",
   },
   modalContent: {
@@ -140,6 +142,8 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
+    height: 200,
+    width: 300,
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
