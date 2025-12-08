@@ -1,28 +1,17 @@
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { View, Image, StyleSheet, ScrollView, Dimensions } from "react-native";
+import { View, Image, StyleSheet, ScrollView, Dimensions, TouchableOpacity } from "react-native";
 import { useEffect, useRef, useState } from "react";
 import Svg, { Circle } from "react-native-svg";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import * as SQLite from "expo-sqlite";
 import { useTranslation } from "react-i18next";
 import images from "../../data/import_images";
-
-type WorkoutDetailsProps = {
-  id: number;
-};
+import { MaterialIcons } from "@expo/vector-icons";
+import PopupManager, { usePopupManager } from "@/components/Popup";
 
 const { width, height } = Dimensions.get("window");
-// const images = [
-//   require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/d1.webp"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/b1.jpg"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/b2.jpg"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/a1.png"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/a2.png"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/c1.jpg"),
-//   require("../../assets/images/move_demonstration/bench_press_barbell/c2.jpg"),
-// ];
+
 const WorkoutDetails = () => {
   const formatDescription = (text: string): string => {
     if (!text) return "";
@@ -34,17 +23,72 @@ const WorkoutDetails = () => {
   const { i18n, t } = useTranslation();
   const isEnglish = i18n.language === "en-US";
 
+  const { popups, showPopup, hidePopup } = usePopupManager();
+
   const [workout, setWorkout] = useState<any>({
     id: 0,
     name: "Workout Details",
   });
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollRef = useRef<ScrollView>(null);
-
-  const handleScroll = (event: any) => {
-    const contentOffset = event.nativeEvent.contentOffset.x;
-    const index = Math.round(contentOffset / width);
-    setCurrentIndex(index);
+  const [routine, setRoutine] = useState<Array<{ id: number; title: string }>>([
+    {
+      id: 0,
+      title: "routine",
+    },
+  ]);
+  const RoutineView = ({ routine }: { routine: Array<{ id: number; title: string }> }) => {
+    return (
+      <ScrollView>
+        <ThemedView>
+          {routine.map((item, index) => (
+            <TouchableOpacity
+              onPress={() => {
+                addToRoutine(item.id, Number(id));
+                hidePopup("show_routine");
+              }}
+            >
+              <ThemedText
+                style={{
+                  borderColor: "black",
+                  borderWidth: 1,
+                  width: 100,
+                  marginBottom: 10,
+                  textAlign: "center",
+                  fontSize: 25,
+                }}
+                key={index}
+              >
+                {item.title}
+              </ThemedText>
+            </TouchableOpacity>
+          ))}
+        </ThemedView>
+      </ScrollView>
+    );
+  };
+  const handleShowPopup = () => {
+    showPopup({
+      popupKey: "show_routine",
+      message: <RoutineView routine={routine} />,
+      actions: [
+        {
+          style: { display: "none" },
+          label: t("routine.close"),
+          onPress: () => {
+            hidePopup("show_routine");
+          },
+        },
+      ],
+    });
+  };
+  const getRoutines = async () => {
+    const routine: { id: number; title: string }[] = await db.getAllAsync(`SELECT * FROM routine`);
+    setRoutine(routine);
+    return routine;
+  };
+  const addToRoutine = async (routine_id: number, workout_id: number) => {
+    await db.runAsync(
+      `INSERT INTO routine_workout (routine, workout) VALUES (${routine_id}, ${workout_id})`
+    );
   };
 
   useEffect(() => {
@@ -61,10 +105,28 @@ const WorkoutDetails = () => {
     };
     getData();
   }, []);
-
+  const [openRoutinePopup, setOpenRoutinePopup] = useState(false);
+  useEffect(() => {
+    if (openRoutinePopup) {
+      handleShowPopup();
+      setOpenRoutinePopup(false); // reset for next time
+    }
+  }, [routine]);
   return (
     <ScrollView>
+      <PopupManager popups={popups} onClose={hidePopup} />
       <ThemedView style={{ padding: 6, paddingBottom: 10 }}>
+        <TouchableOpacity
+          style={{ display: "flex", flexDirection: "row" }}
+          onPress={() => {
+            getRoutines(); // loads routine into state
+            setOpenRoutinePopup(true);
+          }}
+        >
+          <ThemedText type="subtitle">{t("routine.Add")}</ThemedText>
+          <MaterialIcons name={"add-circle"} color={"green"} size={28} />
+        </TouchableOpacity>
+
         <View style={styles.wrapper}>
           <View style={styles.slide}>
             <Image style={styles.image} source={images[workout.image]} />
@@ -86,8 +148,8 @@ const WorkoutDetails = () => {
           {formatDescription(isEnglish ? workout.instructions : workout.instructions_fa)
             .split("\n")
             .map((line, index) => (
-              <View style={{ marginBottom: 4 }}>
-                <ThemedText key={index}>
+              <View key={index} style={{ marginBottom: 4 }}>
+                <ThemedText key={index} style={{ direction: isEnglish ? "ltr" : "rtl" }}>
                   {index + 1}. {line} {"\n"}
                 </ThemedText>
               </View>

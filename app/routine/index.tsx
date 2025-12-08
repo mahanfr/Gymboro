@@ -13,7 +13,7 @@ import { ThemedView } from "../../components/ThemedView";
 import { getColors, MusclesActivation } from "@/data/DataTypes";
 import MuscleFront from "../../components/MuscleFront";
 import MuscleBack from "../../components/MuscleBack";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import ExerciseCard from "@/components/ExerciseCard";
 import { useNavigation, useLocalSearchParams } from "expo-router";
@@ -24,6 +24,8 @@ import {
   workoutsOfRoutine,
 } from "../calculators/rep_weight";
 import { useTranslation } from "react-i18next";
+import { Settings_createcontext } from "../_layout";
+import images from "@/data/import_images";
 
 const RoutineView = () => {
   const db = SQLite.useSQLiteContext();
@@ -32,9 +34,18 @@ const RoutineView = () => {
   const isEnglish = i18n.language === "en-US";
   const { id } = useLocalSearchParams();
   const [editMode, setEditMode] = useState(false);
-  const [workouts, setWorkouts] = useState<{ id: number; name: string; name_fa: string }[]>([]);
+  const [workouts, setWorkouts] = useState<
+    { id: number; name: string; name_fa: string; image: string }[]
+  >([]);
 
   const [muscleData, setMuscleData] = useState(new MusclesActivation());
+
+  const context = useContext(Settings_createcontext);
+  const { settings, setSettings } = context ?? {
+    settings: { lightMode: true },
+    setSettings: () => {},
+  };
+  let lightMode = settings.lightMode;
 
   useEffect(() => {
     const fetchMuscleData = async () => {
@@ -112,7 +123,7 @@ const RoutineView = () => {
           >
             <MaterialIcons
               name={editMode ? "check-circle" : "edit"} //TODO make it say "ADD" if there are no workouts instead of "edit pen"
-              color={editMode ? "green" : "black"}
+              color={editMode ? "green" : lightMode ? "black" : "white"}
               size={28}
             />
           </TouchableOpacity>
@@ -122,26 +133,11 @@ const RoutineView = () => {
             title={isEnglish ? w.name : w.name_fa}
             key={w.id}
             editMode={editMode}
-            // image={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
+            image={images[w.image]}
             onPress={() => navigation.navigate("workouts/[id]", { id: w.id })}
           />
         ))}
-        {/* <TouchableOpacity onPress={() => navigation.navigate("workouts/[id]", { id: 0 })}>
-          <ThemedView style={styles.workout}>
-            <ThemedView style={{ maxWidth: "60%" }}>
-              <ThemedText>Bench Press </ThemedText>
-            </ThemedView>
-            <View style={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-              <Image
-                source={require("../../assets/images/move_demonstration/bench_press_barbell/e1.webp")}
-                style={{ width: 80, height: 80 }}
-              />
-              <TouchableOpacity onPress={() => {}} style={{ display: editMode ? "flex" : "none" }}>
-                <MaterialIcons name="delete" color={"red"} size={28} />
-              </TouchableOpacity>
-            </View>
-          </ThemedView>
-        </TouchableOpacity> */}
+
         <View style={{ marginVertical: 4 }}>
           <Button
             title="Start"
