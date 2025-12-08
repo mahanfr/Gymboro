@@ -71,10 +71,9 @@ export default function HomeScreen() {
     return (
       <View>
         <TextInput
-          // value={newRoutineName.current}
           onChangeText={(val) => (newRoutineName.current = val)}
           placeholder={t("routine.new")}
-          style={{ borderWidth: 2, height: 40, padding: 8 }}
+          style={{ borderWidth: 2, height: 40, width: 200, padding: 8 }}
         ></TextInput>
       </View>
     );
@@ -86,7 +85,7 @@ export default function HomeScreen() {
       actions: [
         {
           label: t("routine.Add"),
-          style: { backgroundColor: "green" },
+
           onPress: () => {
             if (newRoutineName.current && newRoutineName.current != "") {
               addNewRoutine(newRoutineName.current);
@@ -132,6 +131,7 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={{ position: "relative" }}>
+      <PopupManager popups={popups} onClose={hidePopup} />
       <View
         style={{ display: "flex", flexDirection: "row-reverse", justifyContent: "space-between" }}
       >
@@ -140,7 +140,6 @@ export default function HomeScreen() {
         </ThemedText>
         <ThemedText type="subtitle" style={{ textAlign: isEnglish ? "left" : "right", padding: 4 }}>
           <MaterialIcons name="add" color={"#35b42aff"} size={28} onPress={handleShowPopup} />
-          <PopupManager popups={popups} onClose={hidePopup} />
         </ThemedText>
       </View>
       {routines?.map((item: any, index: number) => (
