@@ -6,6 +6,7 @@ import ExerciseCard from "@/components/ExerciseCard";
 import { useTranslation } from "react-i18next";
 import * as SQLite from "expo-sqlite";
 import images from "../../data/import_images";
+import image_icons from "@/data/images_icon";
 
 export default function MuscleGroup() {
   const navigation: any = useNavigation();
@@ -38,7 +39,7 @@ export default function MuscleGroup() {
             <ExerciseCard
               title={isEnglish ? workout.name : workout.name_fa}
               onPress={() => navigation.navigate("workouts/[id]", { id: workout.id })}
-              image={images[workout.image]}
+              image={image_icons[workout.image]}
             />
           </TouchableOpacity>
         </View>
