@@ -11,7 +11,7 @@ import image_icons from "@/data/images_icon";
 export default function MuscleGroup() {
   const navigation: any = useNavigation();
   const { muscle } = useLocalSearchParams();
-  const [workouts, setWorkouts] = useState<any[]>(); //TODO FIX should not be type any
+  const [workouts, setWorkouts] = useState<any[]>();
   const { i18n } = useTranslation();
   const isEnglish = i18n.language === "en-US";
   const db = SQLite.useSQLiteContext();
@@ -40,6 +40,7 @@ export default function MuscleGroup() {
               title={isEnglish ? workout.name : workout.name_fa}
               onPress={() => navigation.navigate("workouts/[id]", { id: workout.id })}
               image={image_icons[workout.image]}
+              onDelete={() => {}}
             />
           </TouchableOpacity>
         </View>

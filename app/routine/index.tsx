@@ -46,14 +46,17 @@ const RoutineView = () => {
     setSettings: () => {},
   };
   let lightMode = settings.lightMode;
-
+  async function handleWorkoutDelete(workout_id: number) {
+    await db.getAllAsync(`DELETE FROM routine_workout WHERE workout = ${workout_id}`);
+    fetchMuscleData();
+  }
+  const fetchMuscleData = async () => {
+    const data = await calculateByRoutine(Number(id), db); // Ensure id is a number
+    const workoutsFromdb = await workoutsOfRoutine(Number(id), db);
+    setMuscleData(new MusclesActivation(normolizeNumbers0To6(data)));
+    setWorkouts(workoutsFromdb);
+  };
   useEffect(() => {
-    const fetchMuscleData = async () => {
-      const data = await calculateByRoutine(Number(id), db); // Ensure id is a number
-      const workoutsFromdb = await workoutsOfRoutine(Number(id), db);
-      setMuscleData(new MusclesActivation(normolizeNumbers0To6(data)));
-      setWorkouts(workoutsFromdb);
-    };
     fetchMuscleData();
   }, []);
 
@@ -110,19 +113,26 @@ const RoutineView = () => {
         >
           <ThemedText type="subtitle">{t("routine.Moves") + ":"}</ThemedText>
           <TouchableOpacity
-            style={{ display: editMode ? "flex" : "none", flexDirection: "row" }}
-            onPress={() => {}}
+            style={{
+              display: editMode ? "flex" : workouts.length < 1 ? "flex" : "none",
+              flexDirection: "row",
+            }}
+            onPress={() => {
+              navigation.navigate("(tabs)", { screen: "explore" });
+              setEditMode(false);
+            }}
           >
-            <ThemedText type="subtitle">{t("routine.Add")}</ThemedText>
+            <ThemedText type="subtitle">{t("routine.add_workout")}</ThemedText>
             <MaterialIcons name={"add-circle"} color={"green"} size={28} />
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
               setEditMode(!editMode);
             }}
+            style={{ display: workouts.length < 1 ? "none" : "contents" }}
           >
             <MaterialIcons
-              name={editMode ? "check-circle" : "edit"} //TODO make it say "ADD" if there are no workouts instead of "edit pen"
+              name={editMode ? "check-circle" : "edit"}
               color={editMode ? "green" : lightMode ? "black" : "white"}
               size={28}
             />
@@ -133,6 +143,7 @@ const RoutineView = () => {
             title={isEnglish ? w.name : w.name_fa}
             key={w.id}
             editMode={editMode}
+            onDelete={() => handleWorkoutDelete(w.id)}
             image={images[w.image]}
             onPress={() => navigation.navigate("workouts/[id]", { id: w.id })}
           />

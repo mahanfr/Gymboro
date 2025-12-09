@@ -29,6 +29,7 @@ export default function TabTwoScreen() {
               title={t(`workouts.categories.${item[0]}`)}
               key={index}
               image={item[1]}
+              onDelete={() => {}}
               onPress={() => {
                 navigation.navigate("muscles/[muscle]", {
                   muscle: item[0],

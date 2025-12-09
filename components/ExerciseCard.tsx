@@ -20,6 +20,7 @@ interface IProps {
   title?: string;
   detail?: string;
   onPress?: () => void;
+  onDelete: () => void;
   image?: NodeJS.Require;
   editMode?: boolean;
 }
@@ -29,6 +30,7 @@ const ExerciseCard: React.FC<IProps> = ({
   title,
   detail,
   onPress,
+  onDelete,
   editMode = false,
   image = require("../assets/images/muscle_groups/404.png"),
 }) => {
@@ -64,7 +66,10 @@ const ExerciseCard: React.FC<IProps> = ({
           <ThemedView lightMode={lightMode} style={[styles.imageContainer]}>
             <Image style={styles.image} source={image} />
           </ThemedView>
-          <TouchableOpacity onPress={() => {}} style={{ display: editMode ? "flex" : "none" }}>
+          <TouchableOpacity
+            onPress={() => onDelete()}
+            style={{ display: editMode ? "flex" : "none" }}
+          >
             <MaterialIcons name="delete" color={"red"} size={28} />
           </TouchableOpacity>
         </View>

@@ -15,7 +15,7 @@ interface IProps {
 }
 type ExerciseItemProps = {
   title: string;
-  image: NodeJS.Require; //TODO @release all these should be changed to string for release
+  image: NodeJS.Require;
 };
 type ExcersiseType = {};
 type SaveExerciseHistory = {

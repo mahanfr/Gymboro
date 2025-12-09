@@ -104,8 +104,6 @@ export default function HomeScreen() {
       var c;
       let all_c = [];
       for (const routine of rts) {
-        //TODO fix this
-        //TODO this is the image on the routine of the most used muscles
         const workouts_routine = await db.getAllAsync(
           `SELECT * FROM routine_workout WHERE routine = ${routine.id}`
         );
@@ -113,10 +111,11 @@ export default function HomeScreen() {
         category = [];
         for (const row of workouts_routine) {
           let workout_id = (row as { workout: number }).workout;
-          c = await getCategory(workout_id);
-          category.push(c.category);
+          c = (await getCategory(workout_id)) as any;
+          category.push(JSON.parse(c.category)[0].toLowerCase().replace(/-/g, "_"));
         }
         all_c.push(findTwoMostRepeated(category));
+        console.log(all_c);
       }
 
       setMuscleCategory(all_c);
@@ -126,7 +125,7 @@ export default function HomeScreen() {
   };
 
   useEffect(() => {
-    getData();
+    getData(); //TODO dosn't update when adding or removing workout from routine... ui sync issue
   }, []);
 
   return (

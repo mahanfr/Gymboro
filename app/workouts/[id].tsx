@@ -17,7 +17,7 @@ const WorkoutDetails = () => {
     if (!text) return "";
     return text.replace(/\.\s*/g, ".\n").trimEnd();
   };
-  const navigation = useNavigation();
+  const navigation: any = useNavigation();
   const { id } = useLocalSearchParams();
 
   const { i18n, t } = useTranslation();
@@ -44,13 +44,16 @@ const WorkoutDetails = () => {
               onPress={() => {
                 addToRoutine(item.id, Number(id));
                 hidePopup("show_routine");
+                navigation.navigate("(tabs)", { screen: "index" });
               }}
             >
               <ThemedText
                 style={{
                   borderColor: "black",
                   borderWidth: 1,
-                  width: 100,
+                  width: 200,
+                  paddingTop: 4,
+                  paddingBottom: 4,
                   marginBottom: 10,
                   textAlign: "center",
                   fontSize: 25,
