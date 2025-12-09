@@ -7,178 +7,116 @@ import {
   ActivityIndicator,
   TextInput,
   TouchableOpacity,
-  Linking,
-  Pressable,
 } from "react-native";
-import { useNavigation } from "expo-router";
 
-async function run(input: any) {
+async function run(input: string) {
   const response = await fetch("https://cors-header-proxy.samini7a.workers.dev/", {
-    headers: { "Content-Type": "application/json" },
     method: "POST",
-    body: JSON.stringify(input),
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: input }),
   });
 
-  // Check for HTTP errors first
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(`API request failed: ${response.status} - ${errorText}`);
-  }
+  const json = await response.json();
+  const outputs = json?.result?.output || [];
+  const text = outputs
+    .map((out: any) => (out.content || []).map((c: any) => c.text || "").join(""))
+    .join("\n");
 
-  // Handle streaming response
-  const reader = response.body?.getReader();
-  if (reader) {
-    let chunks = [];
-    let totalLength = 0;
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-
-      // Store chunks instead of concatenating strings
-      chunks.push(value);
-      totalLength += value.length;
-    }
-
-    // Combine all chunks into single Uint8Array
-    const combined = new Uint8Array(totalLength);
-    let position = 0;
-    for (const chunk of chunks) {
-      combined.set(chunk, position);
-      position += chunk.length;
-    }
-
-    // Decode once at the end
-    const result = new TextDecoder().decode(combined);
-
-    try {
-      const jsonResponse = JSON.parse(result);
-      return jsonResponse.result?.response || jsonResponse.response || jsonResponse;
-    } catch (e) {
-      console.error("JSON parse error:", e, "Response:", result);
-      throw new Error("Invalid JSON response from API");
-    }
-  }
-  // Handle non-streaming response
-  else {
-    const result = await response.json();
-    return result.result?.response || result.response || result;
-  }
+  return text || "No response";
 }
-// Function to format AI response with special characters and links
+
+// Simple markdown parser
+const parseMarkdown = (text: string) => {
+  const lines = text.split("\n");
+
+  return lines.map((line, index) => {
+    // Headers
+    if (line.startsWith("### ")) {
+      return (
+        <Text key={index} style={styles.header3}>
+          {line.replace("### ", "")}
+        </Text>
+      );
+    }
+    if (line.startsWith("## ")) {
+      return (
+        <Text key={index} style={styles.header2}>
+          {line.replace("## ", "")}
+        </Text>
+      );
+    }
+    if (line.startsWith("# ")) {
+      return (
+        <Text key={index} style={styles.header1}>
+          {line.replace("# ", "")}
+        </Text>
+      );
+    }
+
+    // Code blocks
+    if (line.startsWith("```") || line.startsWith("`")) {
+      return (
+        <Text key={index} style={styles.codeBlock}>
+          {line.replace(/```/g, "").replace(/`/g, "")}
+        </Text>
+      );
+    }
+
+    // Lists
+    if (line.startsWith("- ")) {
+      return (
+        <Text key={index} style={styles.listItem}>
+          {"\u2022 " + line.replace("- ", "")}
+        </Text>
+      );
+    }
+
+    // Bold **text**
+    const boldPattern = /\*\*(.*?)\*\*/g;
+    const parts = [];
+    let lastIndex = 0;
+    let match;
+    while ((match = boldPattern.exec(line)) !== null) {
+      if (match.index > lastIndex) {
+        parts.push(<Text key={lastIndex}>{line.slice(lastIndex, match.index)}</Text>);
+      }
+      parts.push(
+        <Text key={match.index} style={styles.boldText}>
+          {match[1]}
+        </Text>
+      );
+      lastIndex = match.index + match[0].length;
+    }
+    if (lastIndex < line.length) {
+      parts.push(<Text key={lastIndex}>{line.slice(lastIndex)}</Text>);
+    }
+    if (parts.length > 0) return <Text key={index}>{parts}</Text>;
+
+    // Regular text
+    return (
+      <Text key={index} style={styles.regularText}>
+        {line}
+      </Text>
+    );
+  });
+};
 
 const AIPage = () => {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const navigation: any = useNavigation();
-  const formatAIResponse = (text: string) => {
-    const lines = text.split("\n");
-    return lines.map((line, index) => {
-      if (line.startsWith("**") && line.endsWith("**")) {
-        // Heading style
-        return (
-          <Text key={index} style={styles.heading}>
-            {line.replace(/\*\*/g, "")}
-          </Text>
-        );
-      } else if (line.trim().startsWith("*")) {
-        // List item style with potential links
-        const lineContent = line.replace(/^\*\s+/, "").trim();
-
-        // Check for <a> tags
-        const linkRegex = /<a src="([^"]+)">([^<]+)<\/a>/;
-        const match = lineContent.match(linkRegex);
-
-        if (match) {
-          const [fullMatch, url, linkText] = match;
-          const parts = lineContent.split(fullMatch);
-
-          return (
-            <View key={index} style={styles.listItemContainer}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={styles.listItemText}>
-                {parts[0]}
-                <Pressable style={styles.linkBox} onPress={() => handleLinkPress(url)}>
-                  <Text style={styles.linkBoxText}>{linkText}</Text>
-                </Pressable>
-                {parts[1]}
-              </Text>
-            </View>
-          );
-        } else {
-          return (
-            <View key={index} style={styles.listItemContainer}>
-              <Text style={styles.bullet}>•</Text>
-              <Text style={styles.listItemText}>{lineContent}</Text>
-            </View>
-          );
-        }
-      } else if (line.trim() === "") {
-        // Empty line (spacing)
-        return <View key={index} style={styles.spacing}></View>;
-      } else {
-        // Regular text with potential links
-        const linkRegex = /<a src="([^"]+)">([^<]+)<\/a>/g;
-        let lastIndex = 0;
-        const elements = [];
-        let match;
-
-        while ((match = linkRegex.exec(line)) !== null) {
-          const [fullMatch, url, linkText] = match;
-
-          // Add text before the link
-          if (match.index > lastIndex) {
-            elements.push(
-              <Text key={`${index}-${lastIndex}`}>{line.substring(lastIndex, match.index)}</Text>
-            );
-          }
-
-          // Add the link box
-          elements.push(
-            <Pressable
-              key={`${index}-${match.index}`}
-              style={styles.linkBox}
-              onPress={() => handleLinkPress(url)}
-            >
-              <Text style={styles.linkBoxText}>{linkText}</Text>
-            </Pressable>
-          );
-
-          lastIndex = match.index + fullMatch.length;
-        }
-
-        // Add remaining text after last link
-        if (lastIndex < line.length) {
-          elements.push(<Text key={`${index}-end`}>{line.substring(lastIndex)}</Text>);
-        }
-
-        return (
-          <Text key={index} style={styles.regularText}>
-            {elements.length > 0 ? elements : line}
-          </Text>
-        );
-      }
-    });
-  };
-  // Function to handle link press
-  const handleLinkPress = (url: string) => {
-    navigation.navigate("workouts/[id]", { id: url });
-  };
 
   const handleSubmit = async () => {
     if (!prompt.trim()) return;
-    console.log(prompt);
     setIsLoading(true);
     setResponse("");
 
     try {
-      // Replace mockAIRequest with your actual API call
       const aiResponse = await run(prompt);
       setResponse(aiResponse);
-    } catch (error) {
-      setResponse("Error: Failed to get response from AI");
-      console.error(error);
+    } catch (e) {
+      setResponse("Error fetching AI response");
+      console.log(e);
     } finally {
       setIsLoading(false);
     }
@@ -187,7 +125,6 @@ const AIPage = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>AI Assistant</Text>
-
       <TextInput
         style={styles.input}
         value={prompt}
@@ -195,112 +132,57 @@ const AIPage = () => {
         placeholder="Enter your request..."
         multiline
       />
-
       <TouchableOpacity style={styles.button} onPress={handleSubmit} disabled={isLoading}>
         <Text style={styles.buttonText}>Submit</Text>
       </TouchableOpacity>
-
       <ScrollView style={styles.responseContainer}>
-        {isLoading ? (
-          <ActivityIndicator size="large" color="#0000ff" />
-        ) : response ? (
-          formatAIResponse(response)
-        ) : (
-          <Text style={styles.placeholder}>Your AI response will appear here...</Text>
-        )}
+        {isLoading ? <ActivityIndicator size="large" color="#0000ff" /> : parseMarkdown(response)}
       </ScrollView>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#f5f5f5",
-  },
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    marginBottom: 20,
-    textAlign: "center",
-  },
+  container: { flex: 1, padding: 20, backgroundColor: "#f5f5f5" },
+  title: { fontSize: 24, fontWeight: "bold", marginBottom: 20, textAlign: "center" },
   input: {
     borderWidth: 1,
     borderColor: "#ccc",
     borderRadius: 8,
     padding: 12,
-    marginBottom: 15,
     minHeight: 80,
     backgroundColor: "white",
+    marginBottom: 15,
   },
   button: {
     backgroundColor: "#007AFF",
     padding: 15,
     borderRadius: 8,
-    alignItems: "center",
     marginBottom: 20,
+    alignItems: "center",
   },
-  buttonText: {
-    color: "white",
-    fontWeight: "bold",
-    fontSize: 16,
-  },
+  buttonText: { fontWeight: "bold", color: "white", fontSize: 16 },
   responseContainer: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: "#ddd",
-    borderRadius: 8,
     padding: 15,
     backgroundColor: "white",
-  },
-  heading: {
-    fontSize: 18,
-    fontWeight: "bold",
-    marginVertical: 10,
-    color: "#333",
-  },
-  listItemContainer: {
-    flexDirection: "row",
-    marginVertical: 5,
-    alignItems: "flex-start",
-  },
-  bullet: {
-    marginRight: 8,
-    fontSize: 16,
-    color: "#444",
-  },
-  listItemText: {
-    fontSize: 16,
-    color: "#444",
-    flex: 1,
-  },
-  regularText: {
-    fontSize: 16,
-    marginVertical: 5,
-    color: "#444",
-  },
-  linkBox: {
-    backgroundColor: "#e3f2fd",
+    borderRadius: 8,
     borderWidth: 1,
-    borderColor: "#90caf9",
+    borderColor: "#ddd",
+  },
+  regularText: { fontSize: 16, marginBottom: 5 },
+  header1: { fontSize: 24, fontWeight: "bold", marginBottom: 10 },
+  header2: { fontSize: 20, fontWeight: "bold", marginBottom: 8 },
+  header3: { fontSize: 18, fontWeight: "bold", marginBottom: 6 },
+  codeBlock: {
+    fontFamily: "monospace",
+    backgroundColor: "#f0f0f0",
+    padding: 8,
     borderRadius: 4,
-    paddingHorizontal: 6,
-    paddingVertical: 2,
-    marginHorizontal: 2,
+    marginBottom: 5,
   },
-  linkBoxText: {
-    color: "#1976d2",
-    fontSize: 16,
-  },
-  spacing: {
-    height: 10,
-  },
-  placeholder: {
-    color: "#999",
-    textAlign: "center",
-    marginTop: 20,
-  },
+  listItem: { fontSize: 16, marginLeft: 10, marginBottom: 5 },
+  boldText: { fontWeight: "bold" },
 });
 
 export default AIPage;
