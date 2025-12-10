@@ -45,7 +45,7 @@ const ExerciseCard: React.FC<IProps> = ({
   let lightMode = settings.lightMode;
 
   return (
-    <Pressable onPress={onPress} style={style}>
+    <TouchableOpacity onPress={onPress} style={style}>
       <ThemedView
         style={isEnglish ? styles.flexContainerEnglish : styles.flexContainerFarsi}
         lightMode={lightMode}
@@ -74,7 +74,7 @@ const ExerciseCard: React.FC<IProps> = ({
           </TouchableOpacity>
         </View>
       </ThemedView>
-    </Pressable>
+    </TouchableOpacity>
   );
 };
 

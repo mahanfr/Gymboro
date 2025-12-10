@@ -1,4 +1,4 @@
-import { ScrollView, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView, TouchableOpacity, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { useLocalSearchParams, useNavigation } from "expo-router";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { useTranslation } from "react-i18next";
 import * as SQLite from "expo-sqlite";
 import images from "../../data/import_images";
 import image_icons from "@/data/images_icon";
+import { Image } from "react-native";
 
 export default function MuscleGroup() {
   const navigation: any = useNavigation();
@@ -32,19 +33,17 @@ export default function MuscleGroup() {
     });
   }, [muscle]);
   return (
-    <ScrollView>
-      {workouts?.map((workout, index) => (
-        <View key={index}>
-          <TouchableOpacity>
-            <ExerciseCard
-              title={isEnglish ? workout.name : workout.name_fa}
-              onPress={() => navigation.navigate("workouts/[id]", { id: workout.id })}
-              image={image_icons[workout.image]}
-              onDelete={() => {}}
-            />
-          </TouchableOpacity>
-        </View>
-      ))}
-    </ScrollView>
+    <FlatList
+      data={workouts}
+      keyExtractor={(item) => item.id.toString()}
+      renderItem={({ item }) => (
+        <ExerciseCard
+          title={isEnglish ? item.name : item.name_fa}
+          image={image_icons[item.image]}
+          onDelete={() => {}}
+          onPress={() => navigation.navigate("workouts/[id]", { id: item.id })}
+        />
+      )}
+    />
   );
 }

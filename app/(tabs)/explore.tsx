@@ -7,6 +7,7 @@ import {
   ScrollView,
   Text,
   Button,
+  FlatList,
 } from "react-native";
 
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
@@ -18,30 +19,35 @@ import { useTranslation } from "react-i18next";
 export default function TabTwoScreen() {
   const navigation: any = useNavigation();
   const { t } = useTranslation();
-
+  const data = Object.entries(categories).filter(([key]) => key !== "rest");
   return (
-    <ScrollView>
-      <View style={[styles.flex]}>
-        {Object.entries(categories).map((item, index) => {
-          if (item[0] === "rest") return;
-          return (
-            <ExerciseCard
-              title={t(`workouts.categories.${item[0]}`)}
-              key={index}
-              image={item[1]}
-              onDelete={() => {}}
-              onPress={() => {
-                navigation.navigate("muscles/[muscle]", {
-                  muscle: item[0],
-                  preload: true, // any value, just prevents undefined params
-                });
-              }}
-            />
-          );
-        })}
-        {/*<WorkoutDetails id={0} /> */}
-      </View>
-    </ScrollView>
+    <FlatList
+      removeClippedSubviews={false}
+      data={data}
+      keyExtractor={([key]) => key}
+      renderItem={({ item }) => {
+        const [key, value] = item;
+
+        return (
+          <ExerciseCard
+            title={t(`workouts.categories.${key}`)}
+            image={value}
+            onDelete={() => {}}
+            onPress={() =>
+              navigation.navigate("muscles/[muscle]", {
+                muscle: key,
+                preload: true,
+              })
+            }
+          />
+        );
+      }}
+      contentContainerStyle={styles.flex}
+      showsVerticalScrollIndicator={false}
+      initialNumToRender={10}
+      maxToRenderPerBatch={10}
+      windowSize={5}
+    />
   );
 }
 
