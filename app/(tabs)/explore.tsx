@@ -31,7 +31,7 @@ export default function TabTwoScreen() {
         return (
           <ExerciseCard
             title={t(`workouts.categories.${key}`)}
-            image={value}
+            // image={value}
             onDelete={() => {}}
             onPress={() =>
               navigation.navigate("muscles/[muscle]", {

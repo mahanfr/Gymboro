@@ -17,7 +17,6 @@ export default function MuscleGroup() {
   const isEnglish = i18n.language === "en-US";
   const db = SQLite.useSQLiteContext();
 
-  //SELECT * FROM your_table WHERE json_array_contains(your_column, 'Abs');
   const getData = async () => {
     const wks = await db.getAllAsync(`SELECT * FROM workout WHERE category LIKE '%"${muscle}"%';`);
     setWorkouts(wks);
@@ -39,7 +38,7 @@ export default function MuscleGroup() {
       renderItem={({ item }) => (
         <ExerciseCard
           title={isEnglish ? item.name : item.name_fa}
-          image={image_icons[item.image]}
+          image={"move_icons/" + item.image}
           onDelete={() => {}}
           onPress={() => navigation.navigate("workouts/[id]", { id: item.id })}
         />
