@@ -115,7 +115,6 @@ export default function HomeScreen() {
           category.push(JSON.parse(c.category)[0].toLowerCase().replace(/-/g, "_"));
         }
         all_c.push(findTwoMostRepeated(category));
-        console.log(all_c);
       }
 
       setMuscleCategory(all_c);

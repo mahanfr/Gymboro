@@ -28,8 +28,22 @@ async function run(input: string) {
 // Simple markdown parser
 const parseMarkdown = (text: string) => {
   const lines = text.split("\n");
+  let inList = false;
+  let listItems: string[] = [];
 
-  return lines.map((line, index) => {
+  const renderList = (items: string[], key: number) => (
+    <View key={key} style={{ marginVertical: 4 }}>
+      {items.map((item, idx) => (
+        <Text key={idx} style={styles.listItem}>
+          {"\u2022 " + item}
+        </Text>
+      ))}
+    </View>
+  );
+
+  return lines.flatMap((line, index) => {
+    line = line.trim();
+
     // Headers
     if (line.startsWith("### ")) {
       return (
@@ -62,11 +76,42 @@ const parseMarkdown = (text: string) => {
       );
     }
 
-    // Lists
+    // HTML List handling
+    if (line.startsWith("<ul>")) {
+      inList = true;
+      listItems = [];
+      return null;
+    }
+
+    if (line.startsWith("</ul>")) {
+      inList = false;
+      const renderedList = renderList(listItems, index);
+      listItems = [];
+      return renderedList;
+    }
+
+    if (inList && line.startsWith("<li>") && line.endsWith("</li>")) {
+      const item = line.replace("<li>", "").replace("</li>", "");
+      listItems.push(item);
+      return null;
+    }
+
+    // Markdown Lists
     if (line.startsWith("- ")) {
+      const content = line
+        .replace("- ", "")
+        .split("-<br>")
+        .map((part, i) => (
+          <Text key={i}>
+            {part}
+            {i < line.split("-<br>").length - 1 ? "\n" : ""}
+          </Text>
+        ));
+
       return (
         <Text key={index} style={styles.listItem}>
-          {"\u2022 " + line.replace("- ", "")}
+          {"\u2022 "}
+          {content}
         </Text>
       );
     }
@@ -91,6 +136,21 @@ const parseMarkdown = (text: string) => {
       parts.push(<Text key={lastIndex}>{line.slice(lastIndex)}</Text>);
     }
     if (parts.length > 0) return <Text key={index}>{parts}</Text>;
+
+    // Handle -<br> in normal text
+    if (line.includes("-<br>")) {
+      const parts = line.split("-<br>").map((part, i) => (
+        <Text key={i}>
+          {part}
+          {i < line.split("-<br>").length - 1 ? "\n" : ""}
+        </Text>
+      ));
+      return (
+        <Text key={index} style={styles.regularText}>
+          {parts}
+        </Text>
+      );
+    }
 
     // Regular text
     return (
@@ -165,6 +225,8 @@ const styles = StyleSheet.create({
   responseContainer: {
     flex: 1,
     padding: 15,
+    direction: "rtl",
+    paddingBottom: 30,
     backgroundColor: "white",
     borderRadius: 8,
     borderWidth: 1,

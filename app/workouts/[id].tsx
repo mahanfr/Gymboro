@@ -41,6 +41,7 @@ const WorkoutDetails = () => {
         <ThemedView>
           {routine.map((item, index) => (
             <TouchableOpacity
+              key={index}
               onPress={() => {
                 addToRoutine(item.id, Number(id));
                 hidePopup("show_routine");

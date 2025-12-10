@@ -116,13 +116,13 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <MaterialIcons size={28} name="home" color={color} />,
         }}
       />
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="diet"
         options={{
           title: t("tabs.diet"),
           tabBarIcon: ({ color }) => <MaterialIcons size={28} name="restaurant" color={color} />,
         }}
-      />
+      /> */}
       <Tabs.Screen
         name="ai"
         options={{
