@@ -133,7 +133,7 @@ const WorkoutDetails = () => {
 
         <View style={styles.wrapper}>
           <View style={styles.slide}>
-            <Image style={styles.image} source={{ uri: "move_images/" + workout.image }} />
+            <Image style={styles.image} source={images[workout.image]} />
           </View>
         </View>
 

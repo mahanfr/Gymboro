@@ -38,7 +38,7 @@ export default function MuscleGroup() {
       renderItem={({ item }) => (
         <ExerciseCard
           title={isEnglish ? item.name : item.name_fa}
-          image={"move_icons/" + item.image}
+          image={image_icons[item.image]}
           onDelete={() => {}}
           onPress={() => navigation.navigate("workouts/[id]", { id: item.id })}
         />

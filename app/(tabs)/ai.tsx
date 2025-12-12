@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
   responseContainer: {
     flex: 1,
     padding: 15,
-    direction: "rtl",
+    writingDirection: "rtl",
     paddingBottom: 30,
     backgroundColor: "white",
     borderRadius: 8,
